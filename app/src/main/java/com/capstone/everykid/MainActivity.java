@@ -10,5 +10,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }[노수진] 로그인/회원가입 초기 화면 구현
+    }
 }
