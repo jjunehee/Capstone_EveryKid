@@ -5,7 +5,7 @@
 ### Log
 03/30   
 ``` [팀 첫 대면회의] ```
- - Git 연결(Git bash)
+ - Git 연결
  - 개발 순서 및 방향 결정(Front,Back)
 ### 04/03
 ```[노수진] Android Studio 연결```
