@@ -19,5 +19,8 @@
 - 구입 전 운영체제(라즈비안) 설치, 와이파이, 한글 설정 및 부가 설정 공부
 <img width="20%" src="https://user-images.githubusercontent.com/83155528/161475595-96a3c612-087d-48f5-84b1-e2375cbf1220.jpg"/>
 
-
+### 04/05
+```[최희정] Android Studio 레이아웃, 클래스 추가```
+- fragment_setting.xml / SettingFragment.java
+- parent_main.xml / MainParent.java
 
