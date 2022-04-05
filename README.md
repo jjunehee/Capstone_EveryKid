@@ -4,7 +4,7 @@
 
 ### Log
 <details>
- <summary> Front </summary>
+ <summary> Frontend </summary>
  <div markdown="1">
   
   ### 04/03
@@ -22,15 +22,27 @@
 - create_account.xml / AccountCreate.java
 - create_account.xml 스크롤뷰 추가
   
-  
  </div>
 </details>
-03/30   
-``` [팀 첫 대면회의] ```
- - Git 연결
- - 개발 순서 및 방향 결정(Front,Back)
 
 
+
+
+<details>
+ <summary> Backend </summary>
+ <div markdown="1">
+  
+</div>
+</details>
+
+
+
+
+
+<details>
+ <summary> Raspberry pi </summary>
+ <div markdown="1">
+  
 ### 04/04
 ``` [조준희] 라즈베리파이 초기설정 ```
 - model 4 조립 완료
@@ -38,4 +50,5 @@
 - 구입 전 운영체제(라즈비안) 설치, 와이파이, 한글 설정 및 부가 설정 공부
 <img width="20%" src="https://user-images.githubusercontent.com/83155528/161475595-96a3c612-087d-48f5-84b1-e2375cbf1220.jpg"/>
 
-
+</div>
+</details>
