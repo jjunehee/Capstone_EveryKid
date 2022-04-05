@@ -12,6 +12,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/containers">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선생님" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
