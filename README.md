@@ -3,6 +3,12 @@
 경기대학교 컴퓨터공학부 캡스톤디자인 ' 어린이집 통합 관리서비스 - EveryKid '의 repository입니다.
 
 ### Log
+<details>
+ <summary> 토글 접기/ 펼치기 </summary>
+ <div markdown="1">
+  안녕
+ </div>
+</details>
 03/30   
 ``` [팀 첫 대면회의] ```
  - Git 연결
