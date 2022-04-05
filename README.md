@@ -17,11 +17,11 @@
 - fragment_setting.xml / SettingFragment.java
 - parent_main.xml / MainParent.java
 
-### 04/05
+  ### 04/05
 ```[노수진] Android Studio 회원가입 화면 레이아웃, 클래스 추가```
 - create_account.xml / AccountCreate.java
 - create_account.xml 스크롤뷰 추가
-  
+ 
  </div>
 </details>
 
@@ -43,7 +43,7 @@
  <summary> Raspberry pi </summary>
  <div markdown="1">
   
-### 04/04
+  ### 04/04
 ``` [조준희] 라즈베리파이 초기설정 ```
 - model 4 조립 완료
 - 학교 지원 통해 부속재료 구입 지원서 제출 완료 (04/05 주문실시 한다고 함)
