@@ -25,6 +25,10 @@
 ```[최희정] Android Studio 레이아웃, 클래스 수정```
 - bottom_menu.xml / menu_selector_color.xml 하단바 아이콘 선택시 색상 변경
 - MainParent.java  signin 이후 home 아이콘 선택
+  
+```[노수진] Android Studio 레이아웃 수정```
+- create_account.xml 정보 입력 창 추가
+
  </div>
 </details>
 
