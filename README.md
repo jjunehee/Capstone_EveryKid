@@ -28,6 +28,11 @@
   
 ```[노수진] Android Studio 레이아웃 수정```
 - create_account.xml 정보 입력 창 추가
+  
+### 04/06
+```[조준희] 부모 Profile 레이아웃 추가 ```
+- fragment_profile.xml
+- enter.png, exit.png, default_profile.png
 
  </div>
 </details>
