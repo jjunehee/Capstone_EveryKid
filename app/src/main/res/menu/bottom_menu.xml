@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/home"
-        android:enabled="true"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="home"
-        app:showAsAction="always"
-        />
+
     <item
         android:id="@+id/chatting"
         android:enabled="true"
@@ -20,6 +14,13 @@
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
         android:title="community"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="home"
         app:showAsAction="always"
         />
     <item
