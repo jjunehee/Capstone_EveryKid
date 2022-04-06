@@ -17,7 +17,6 @@
 - fragment_setting.xml / SettingFragment.java
 - parent_main.xml / MainParent.java
 
-### 04/05
 ```[노수진] Android Studio 회원가입 화면 레이아웃, 클래스 추가```
 - create_account.xml / AccountCreate.java
 - create_account.xml 스크롤뷰 추가
