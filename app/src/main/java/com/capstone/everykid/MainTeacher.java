@@ -32,14 +32,15 @@ public class MainTeacher extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
-                        return true;
+
                     case R.id.chatting:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, chatFragment).commit();
                         return true;
                     case R.id.community:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, communityFragment).commit();
+                        return true;
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
                         return true;
                     case R.id.profile:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, profileFragment).commit();
