@@ -28,6 +28,7 @@ public class MainParent extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
 
         NavigationBarView navigationBarView = findViewById(R.id.bottom_navigationview);
+        navigationBarView.setSelectedItemId(R.id.home);
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
