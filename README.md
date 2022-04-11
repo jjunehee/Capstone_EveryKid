@@ -71,7 +71,8 @@
   
   ### 04/11
   ```[조준희] VNC Viewer를 통한 원격설정 완료```
-  - 원격데스크탑으로는 연결 실패했지만 라즈베리파이4의 버그라는 말이 있기도하고 해결이 잘 되지않아, VNC Viewer를 통해 원격  
+  - 원격데스크탑으로는 연결 실패했지만 라즈베리파이4의 버그라는 말이 있기도하고 해결이 잘 되지않아, VNC Viewer를 통해 원격
+  <img width="20%" src="https://user-images.githubusercontent.com/83155528/162694620-ad6623ed-6d45-466f-b8c5-0ba2632bc0f9.PNG"/>
   
 </div>
 </details>
