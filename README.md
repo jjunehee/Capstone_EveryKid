@@ -79,7 +79,7 @@
   ### 04/12
   ```[조준희] openCV 설치 ~ing ```
   - 이해하지 못할 오류가 다수 발생. 계속해서 구글링을 통해 해결 중에 있음
-  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162979569-49c273f5-ef1a-4cba-9b17-2df8e1182333.PNG"/>
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162980283-7067f8d0-2f01-49ca-893d-8d4df0bc3855.PNG"/>
   
 </div>
 </details>
