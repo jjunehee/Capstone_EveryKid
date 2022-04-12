@@ -83,7 +83,7 @@
   
   ### 04/13
   ```[조준희] opencv 설치 완료```
-  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162995979-1a190d68-251f-4ca9-9233-1d53f45e0388.PNG"/>
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162995979-1a190d68-251f-4ca9-9233-1d53f45e0388.PNG"/>
   
   
 </div>
