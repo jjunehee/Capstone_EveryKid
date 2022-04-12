@@ -75,5 +75,9 @@
   - 카몌라 모듈 연결 완료하고 카메라 캡쳐 Test 성공.
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/162694620-ad6623ed-6d45-466f-b8c5-0ba2632bc0f9.PNG"/>  
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/162709515-e773a66d-ea8c-4ec5-bf27-d015215475a7.jpg"/>
+  
+  ### 04/12
+  ```[조준희] openCV 설치```
+  - 이해하지 못할 오류가 다수 발생. 계속해서 구글링을 통해 해결 중에 있음
 </div>
 </details>
