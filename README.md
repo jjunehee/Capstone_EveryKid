@@ -77,7 +77,7 @@
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/162709515-e773a66d-ea8c-4ec5-bf27-d015215475a7.jpg"/>
   
   ### 04/12
-  ```[조준희] openCV 설치```
+  ```[조준희] openCV 설치 ~ing ```
   - 이해하지 못할 오류가 다수 발생. 계속해서 구글링을 통해 해결 중에 있음
 </div>
 </details>
