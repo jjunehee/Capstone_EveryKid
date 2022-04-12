@@ -81,5 +81,10 @@
   - 이해하지 못할 오류가 다수 발생. 계속해서 구글링을 통해 해결 중에 있음
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/162980283-7067f8d0-2f01-49ca-893d-8d4df0bc3855.PNG"/>
   
+  ### 04/13
+  ```[조준희] opencv 설치 완료```
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162995979-1a190d68-251f-4ca9-9233-1d53f45e0388.PNG"/>
+  
+  
 </div>
 </details>
