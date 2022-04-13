@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ParentRepository extends CrudRepository<Parent, String> {
 
+        Parent findByPPHONE(String pPHONE);
 }
