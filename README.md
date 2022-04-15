@@ -89,6 +89,11 @@
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162998415-6dd1869d-6e8d-4472-bf4a-f93450e69d2a.PNG"/>
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163096689-f259bed1-631d-4e42-927b-326c8e9af6df.PNG"/>
   
+  ### 04/14
+  ```[조준희] 얼굴 학습 및 인식 성공```
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163320253-be08344c-5ff8-4ca5-9ffa-04b236a78c93.PNG"/>
+   
+  
   
   
 >>>>>>> 5decdc79eba6ff5189199561de559d138a9dc613
