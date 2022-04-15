@@ -61,9 +61,6 @@
 - 학교 지원 통해 부속재료 구입 지원서 제출 완료 (04/05 주문실시 한다고 함)
 - 구입 전 운영체제(라즈비안) 설치, 와이파이, 한글 설정 및 부가 설정 공부
 <img width="20%" src="https://user-images.githubusercontent.com/83155528/161475595-96a3c612-087d-48f5-84b1-e2375cbf1220.jpg"/>
-
-<<<<<<< HEAD
-=======
   
   ### ~04/10
   ``` [조준희] 라즈베리파이 원격데스크탑 설정```
@@ -94,8 +91,5 @@
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163320253-be08344c-5ff8-4ca5-9ffa-04b236a78c93.PNG"/>
    
   
-  
-  
->>>>>>> 5decdc79eba6ff5189199561de559d138a9dc613
 </div>
 </details>
