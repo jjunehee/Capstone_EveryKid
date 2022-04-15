@@ -62,5 +62,35 @@
 - 구입 전 운영체제(라즈비안) 설치, 와이파이, 한글 설정 및 부가 설정 공부
 <img width="20%" src="https://user-images.githubusercontent.com/83155528/161475595-96a3c612-087d-48f5-84b1-e2375cbf1220.jpg"/>
 
+<<<<<<< HEAD
+=======
+  
+  ### ~04/10
+  ``` [조준희] 라즈베리파이 원격데스크탑 설정```
+  - 모니터 연결없이 노트북을 통해 원격으로 작업하기 위한 환경 조성을 하고있는데, remote 계정으로는 로그인이 되는데,
+  pi 계정으로의 원격 접속이 자꾸 오류가 나고있음. pi로 로그인을 해야 나중에 자동실행과 같은 기능을 수행할 수 있기 때문에 꼭 해결해야함.
+  - 구글링을 통해 여러 조치들을 해보고, OS도 다시 설치해보면서 해결하는 중. 아직 미해결
+  
+  ### 04/11
+  ```[조준희] VNC Viewer를 통한 원격설정 완료```
+  - 원격데스크탑으로는 연결 실패했지만 라즈베리파이4의 버그라는 말이 있기도하고 해결이 잘 되지않아, VNC Viewer를 통해 원격접속 완료.
+  - 카몌라 모듈 연결 완료하고 카메라 캡쳐 Test 성공.
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162694620-ad6623ed-6d45-466f-b8c5-0ba2632bc0f9.PNG"/>  
+  <img width="30%" src="https://user-images.githubusercontent.com/83155528/162709515-e773a66d-ea8c-4ec5-bf27-d015215475a7.jpg"/>
+  
+  ### 04/12
+  ```[조준희] openCV 설치 ~ing ```
+  - 이해하지 못할 오류가 다수 발생. 계속해서 구글링을 통해 해결 중에 있음
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/162980283-7067f8d0-2f01-49ca-893d-8d4df0bc3855.PNG"/>
+  
+  ### 04/13
+  ```[조준희] opencv 설치 완료 및 눈,코,미소 인식 가능 확인```
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162995979-1a190d68-251f-4ca9-9233-1d53f45e0388.PNG"/>
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162998415-6dd1869d-6e8d-4472-bf4a-f93450e69d2a.PNG"/>
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163096689-f259bed1-631d-4e42-927b-326c8e9af6df.PNG"/>
+  
+  
+  
+>>>>>>> 5decdc79eba6ff5189199561de559d138a9dc613
 </div>
 </details>
