@@ -23,6 +23,16 @@ public class AccountCreate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
+
+        Button LogIn_button = (Button) findViewById(R.id.btn_start);
+        LogIn_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
 
