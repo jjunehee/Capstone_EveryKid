@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Frontend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,13 +36,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -64,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -71,11 +69,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Spring Shop Project/shop/shop" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 파생 언어" value="MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../everykid clone" />
+    <property name="project.structure.last.edited" value="모듈" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RunManager">
     <configuration name="EverykidApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -105,12 +104,8 @@
       <workItem from="1649381983556" duration="65000" />
       <workItem from="1649435781140" duration="932000" />
       <workItem from="1649468964659" duration="1849000" />
-      <workItem from="1649471388867" duration="523000" />
-      <workItem from="1649515345020" duration="581000" />
-      <workItem from="1649518502196" duration="290000" />
-      <workItem from="1649655305747" duration="1732000" />
-      <workItem from="1649809036392" duration="5341000" />
-      <workItem from="1649840381229" duration="5060000" />
+      <workItem from="1649471480591" duration="12496000" />
+      <workItem from="1649597949209" duration="33836000" />
     </task>
     <servers />
   </component>

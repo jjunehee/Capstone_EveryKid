@@ -6,32 +6,32 @@ import javax.persistence.Id;
 @Entity
 public class Teacher {
 
-    @Column
-    private String T_NAME;
+    @Column(name = "T_NAME")
+    private String tNAME;
 
-    @Column
-    private String T_PHONE;
+    @Column(name = "T_PHONE")
+    private String tPHONE;
 
-    @Column
-    private String T_EMAIL;
+    @Column(name = "T_EMAIL")
+    private String tEMAIL;
 
     @Id
-    @Column
-    private String T_ID;
+    @Column(name = "T_ID")
+    private String tID;
 
-    @Column
-    private String T_PWD;
+    @Column(name = "T_PWD")
+    private String tPWD;
 
-    @Column
-    private String K_ID;
+    @Column(name = "K_ID")
+    private String kID;
 
-    public Teacher(String t_NAME, String t_PHONE, String t_EMAIL, String t_ID, String t_PWD, String k_ID) {
-        T_NAME = t_NAME;
-        T_PHONE = t_PHONE;
-        T_EMAIL = t_EMAIL;
-        T_ID = t_ID;
-        T_PWD = t_PWD;
-        K_ID = k_ID;
+    public Teacher(String tNAME, String tPHONE, String tEMAIL, String tID, String tPWD, String kID) {
+        this.tNAME = tNAME;
+        this.tPHONE = tPHONE;
+        this.tEMAIL = tEMAIL;
+        this.tID = tID;
+        this.tPWD = tPWD;
+        this.kID = kID;
     }
 
     public Teacher() {
@@ -41,12 +41,12 @@ public class Teacher {
     @Override
     public String toString() {
         return "Teacher{" +
-                "T_NAME='" + T_NAME + '\'' +
-                ", T_PHONE='" + T_PHONE + '\'' +
-                ", T_EMAIL='" + T_EMAIL + '\'' +
-                ", T_ID='" + T_ID + '\'' +
-                ", T_PWD='" + T_PWD + '\'' +
-                ", K_ID='" + K_ID + '\'' +
+                "tNAME='" + tNAME + '\'' +
+                ", tPHONE='" + tPHONE + '\'' +
+                ", tEMAIL='" + tEMAIL + '\'' +
+                ", tID='" + tID + '\'' +
+                ", tPWD='" + tPWD + '\'' +
+                ", kID='" + kID + '\'' +
                 '}';
     }
 }

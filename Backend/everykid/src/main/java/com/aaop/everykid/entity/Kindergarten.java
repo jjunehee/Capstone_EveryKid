@@ -7,23 +7,23 @@ import javax.persistence.Id;
 public class Kindergarten {
 
     @Id
-    @Column
-    private String K_ID;
+    @Column(name = "K_ID")
+    private String kID;
 
-    @Column
-    private String K_PHONE;
+    @Column(name = "K_PHONE")
+    private String kPHONE;
 
-    @Column
-    private String K_ADDRESS;
+    @Column(name = "K_ADDRESS")
+    private String kADDRESS;
 
-    @Column
-    private String K_NAME;
+    @Column(name = "K_NAME")
+    private String kNAME;
 
-    public Kindergarten(String k_ID, String k_PHONE, String k_ADDRESS, String k_NAME) {
-        K_ID = k_ID;
-        K_PHONE = k_PHONE;
-        K_ADDRESS = k_ADDRESS;
-        K_NAME = k_NAME;
+    public Kindergarten(String kID, String kPHONE, String kADDRESS, String kNAME) {
+        this.kID = kID;
+        this.kPHONE = kPHONE;
+        this.kADDRESS = kADDRESS;
+        this.kNAME = kNAME;
     }
 
     public Kindergarten() {
@@ -33,10 +33,10 @@ public class Kindergarten {
     @Override
     public String toString() {
         return "Kindergarten{" +
-                "K_ID='" + K_ID + '\'' +
-                ", K_PHONE='" + K_PHONE + '\'' +
-                ", K_ADDRESS='" + K_ADDRESS + '\'' +
-                ", K_NAME='" + K_NAME + '\'' +
+                "kID='" + kID + '\'' +
+                ", kPHONE='" + kPHONE + '\'' +
+                ", kADDRESS='" + kADDRESS + '\'' +
+                ", kNAME='" + kNAME + '\'' +
                 '}';
     }
 }

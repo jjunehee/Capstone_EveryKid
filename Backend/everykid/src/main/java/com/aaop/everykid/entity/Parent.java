@@ -53,6 +53,24 @@ public class Parent {
     private boolean cSTATUS;
 
 
+    public Parent(String pNAME, String pPHONE, String pEMAIL, String pID, String pPWD, String pALIAS, String kID, String tID, String cNAME, String cAGE, boolean cSTATUS) {
+        this.pNAME = pNAME;
+        this.pPHONE = pPHONE;
+        this.pEMAIL = pEMAIL;
+        this.pID = pID;
+        this.pPWD = pPWD;
+        this.pALIAS = pALIAS;
+        this.kID = kID;
+        this.tID = tID;
+        this.cNAME = cNAME;
+        this.cAGE = cAGE;
+        this.cSTATUS = cSTATUS;
+    }
+
+    public Parent() {
+
+    }
+
     public static Parent createParent(ParentFormDto parentFormDto, PasswordEncoder passwordEncoder){
         Parent parent = new Parent();
         parent.setPNAME(parentFormDto.getP_NAME());
