@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EveryKid">
+        <activity android:name=".ChatActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -20,19 +21,13 @@
         </activity>
         <activity
             android:name=".MainTeacher"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainParent"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AccountCreate"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

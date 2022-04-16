@@ -21,12 +21,8 @@
                 android:text="숫자로만 입력"
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.119"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
-                app:layout_constraintVertical_bias="0.012" />
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="456dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -35,12 +31,8 @@
                 android:text="예시) 01012345678"
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.133"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-                app:layout_constraintVertical_bias="0.018" />
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="650dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button5"
@@ -50,12 +42,8 @@
                 android:fontFamily="sans-serif"
                 android:text="중복확인"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.511"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName4"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4"
-                app:layout_constraintVertical_bias="1.0" />
+                tools:layout_editor_absoluteX="281dp"
+                tools:layout_editor_absoluteY="352dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName4"
@@ -65,40 +53,8 @@
                 android:inputType="textPersonName"
                 android:text="아이디를 입력하세요."
                 android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.167"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-                app:layout_constraintVertical_bias="0.089" />
-
-            <CheckBox
-                android:id="@+id/checkBox_teacher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="교사"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/checkBox_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/checkBox_parent"
-                app:layout_constraintTop_toTopOf="@+id/checkBox_parent" />
-
-            <CheckBox
-                android:id="@+id/checkBox_parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="학부모"
-                android:textColor="#070707"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.376"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
-                app:layout_constraintVertical_bias="0.001" />
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="334dp" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -108,11 +64,8 @@
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.052" />
+                tools:layout_editor_absoluteX="96dp"
+                tools:layout_editor_absoluteY="51dp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -121,12 +74,8 @@
                 android:text="유치원을 등록해주세요."
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.119"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox_parent"
-                app:layout_constraintVertical_bias="0.052" />
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="204dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -136,12 +85,8 @@
                 android:inputType="textPersonName"
                 android:text="유치원 이름"
                 android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.167"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
-                app:layout_constraintVertical_bias="0.005" />
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="224dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button3"
@@ -151,10 +96,8 @@
                 android:fontFamily="sans-serif"
                 android:text="검색"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3" />
+                tools:layout_editor_absoluteX="280dp"
+                tools:layout_editor_absoluteY="233dp" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
@@ -163,12 +106,8 @@
                 android:ems="10"
                 android:hint="이메일을 입력하세요."
                 android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.174"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:layout_constraintVertical_bias="0.078" />
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="690dp" />
 
             <EditText
                 android:id="@+id/editTextPhone"
@@ -177,12 +116,8 @@
                 android:ems="10"
                 android:hint="전화번호를 입력하세요."
                 android:inputType="phone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.184"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-                app:layout_constraintVertical_bias="0.069" />
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="598dp" />
 
             <EditText
                 android:id="@+id/editTextNumberPassword"
@@ -191,12 +126,8 @@
                 android:ems="10"
                 android:hint="비밀번호를 입력하세요"
                 android:inputType="numberPassword"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.184"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-                app:layout_constraintVertical_bias="0.039" />
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="405dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName7"
@@ -205,38 +136,26 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="이름을 입력하세요."
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.184"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
-                app:layout_constraintVertical_bias="0.107" />
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="526dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="236dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="사용할 닉네임을 입력하세요."
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.174"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="734dp" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="시작하기"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.484"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9"
-                app:layout_constraintVertical_bias="0.33" />
+                tools:layout_editor_absoluteX="156dp"
+                tools:layout_editor_absoluteY="841dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
