@@ -1,8 +1,9 @@
 package com.aaop.everykid.repository;
 
 import com.aaop.everykid.entity.Parent;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ParentRepository extends CrudRepository<Parent, String> {
+public interface ParentRepository extends JpaRepository<Parent, String> {
+
 
 }

@@ -1,3 +1,4 @@
+/*
 package com.aaop.everykid.controller;
 
 import com.aaop.everykid.dto.ParentDto;
@@ -12,21 +13,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/test")
 public class testController {
 
-    @Autowired
-    private ParentRepository parentRepository;
 
-    @PostMapping("/test")
-    public String login(ParentDto parentdto) {
-        System.out.println(parentdto.toString());
-
-        // 1. Dto -> Entity
-        Parent parents = parentdto.toEntity();
-        System.out.println(parents.toString());
-
-        // 2. Repository에게 Entity를 DB에 저장하게 함
-        Parent saved = parentRepository.save(parents);
-        System.out.println(saved.toString());
-
-        return "";
-    }
-}
+}*/

@@ -23,6 +23,28 @@ public class AccountCreate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
+
+
+        Button Teacher_button = (Button) findViewById(R.id.btn_teacher);
+        Teacher_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AccountCreate2.class);
+                startActivity(intent);
+            }
+        });
+
+        Button Parent_button = (Button) findViewById(R.id.btn_parent);
+        Parent_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AccountCreate2.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }
 

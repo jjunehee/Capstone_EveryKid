@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">작성시간</th>
+    </tr>
+    </thead>
+    {{#searchList}}
+        <tbody>
+        <tr>
+            <th scope="row">{{KID}}</th>
+            <td><a href="/{{KID}}">{{WRITESUBJECT}}</a></td>
+            <td>{{KID}}</td>
+            <td>{{WRITEDATE}}</td>
+        </tr>
+        </tbody>
+    {{/searchList}}
+</table>
+
+{{>search/searchForm}}
+
+{{>layout/footer}}

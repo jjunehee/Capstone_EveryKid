@@ -61,7 +61,6 @@
 - 학교 지원 통해 부속재료 구입 지원서 제출 완료 (04/05 주문실시 한다고 함)
 - 구입 전 운영체제(라즈비안) 설치, 와이파이, 한글 설정 및 부가 설정 공부
 <img width="20%" src="https://user-images.githubusercontent.com/83155528/161475595-96a3c612-087d-48f5-84b1-e2375cbf1220.jpg"/>
-
   
   ### ~04/10
   ``` [조준희] 라즈베리파이 원격데스크탑 설정```
@@ -82,10 +81,15 @@
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/162980283-7067f8d0-2f01-49ca-893d-8d4df0bc3855.PNG"/>
   
   ### 04/13
-  ```[조준희] opencv 설치 완료 및 눈,코 인식 가능 확인```
+  ```[조준희] opencv 설치 완료 및 눈,코,미소 인식 가능 확인```
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162995979-1a190d68-251f-4ca9-9233-1d53f45e0388.PNG"/>
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/162998415-6dd1869d-6e8d-4472-bf4a-f93450e69d2a.PNG"/>
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163096689-f259bed1-631d-4e42-927b-326c8e9af6df.PNG"/>
   
+  ### 04/14
+  ```[조준희] 얼굴 학습 및 인식 성공```
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163320253-be08344c-5ff8-4ca5-9ffa-04b236a78c93.PNG"/>
+   
   
 </div>
 </details>

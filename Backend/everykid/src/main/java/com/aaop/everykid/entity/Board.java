@@ -2,44 +2,45 @@ package com.aaop.everykid.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
 public class Board {
 
     @Id
-    @Column
-    private int B_ID;
+    @Column(name = "B_ID")
+    private int bID;
 
-    @Column
-    private String K_ID;
+    @Column(name = "K_ID")
+    private String kID;
 
-    @Column
-    private String T_ID;
+    @Column(name = "T_ID")
+    private String tID;
 
-    @Column
-    private String P_ID;
+    @Column(name = "P_ID")
+    private String pID;
 
-    @Column
-    private Date WRITE_DATE;
+    @Column(name = "WRITE_DATE")
+    private Date writeDATE;
 
-    @Column
-    private String WRITE_SUBJECT;
+    @Column(name = "WRITE_SUBJECT")
+    private String writeSUBJECT;
 
-    @Column
-    private String TEXT;
+    @Column(columnDefinition = "TEXT")
+    private String contents;
 
     @Column
     private int HITS;
 
-    public Board(int b_ID, String k_ID, String t_ID, String p_ID, Date WRITE_DATE, String WRITE_SUBJECT, String TEXT, int HITS) {
-        B_ID = b_ID;
-        K_ID = k_ID;
-        T_ID = t_ID;
-        P_ID = p_ID;
-        this.WRITE_DATE = WRITE_DATE;
-        this.WRITE_SUBJECT = WRITE_SUBJECT;
-        this.TEXT = TEXT;
+    public Board(int bID, String kID, String tID, String pID, Date writeDATE, String writeSUBJECT, String contents, int HITS) {
+        this.bID = bID;
+        this.kID = kID;
+        this.tID = tID;
+        this.pID = pID;
+        this.writeDATE = writeDATE;
+        this.writeSUBJECT = writeSUBJECT;
+        this.contents = contents;
         this.HITS = HITS;
     }
 
@@ -50,15 +51,19 @@ public class Board {
     @Override
     public String toString() {
         return "Board{" +
-                "B_ID=" + B_ID +
-                ", K_ID='" + K_ID + '\'' +
-                ", T_ID='" + T_ID + '\'' +
-                ", P_ID='" + P_ID + '\'' +
-                ", WRITE_DATE=" + WRITE_DATE +
-                ", WRITE_SUBJECT='" + WRITE_SUBJECT + '\'' +
-                ", TEXT='" + TEXT + '\'' +
+                "bID=" + bID +
+                ", kID='" + kID + '\'' +
+                ", tID='" + tID + '\'' +
+                ", pID='" + pID + '\'' +
+                ", writeDATE=" + writeDATE +
+                ", writeSUBJECT='" + writeSUBJECT + '\'' +
+                ", contents='" + contents + '\'' +
                 ", HITS=" + HITS +
                 '}';
+    }
+
+    public void modifyContents(String contents) {
+        this.contents = contents;
     }
 }
 
