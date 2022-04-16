@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @Service
 @Transactional
 @RequiredArgsConstructor
-
 public class ParentService implements UserDetailsService {
 
     private final ParentRepository parentRepository;

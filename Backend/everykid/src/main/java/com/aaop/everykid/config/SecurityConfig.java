@@ -21,6 +21,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     ParentService parentService;
 
+
+    public SecurityConfig(ParentService parentService) {
+        this.parentService = parentService;
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
