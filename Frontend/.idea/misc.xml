@@ -5,6 +5,21 @@
       <map>
         <entry key="..\:/Users/choi/AndroidStudioProjects/EveryKid/app/src/main/res/layout/activity_main.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/jjunehee/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.24974358974358973" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_post.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_post_list.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_register.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account2.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account3.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account4.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_chat.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_community.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_list.xml" value="0.22" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_setting.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/listview_item.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/app/src/main/res/layout/create_account.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/app/src/main/res/layout/fragment_chat.xml" value="0.14666666666666667" />
@@ -27,7 +42,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

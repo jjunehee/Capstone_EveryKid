@@ -17,34 +17,33 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AccountCreate extends AppCompatActivity {
+public class AccountCreate extends AppCompatActivity{
+
+    private Button btn1;
+    private Button btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
 
+        btn1 = (Button)findViewById(R.id.btn_teacher);
+        btn2 = (Button)findViewById(R.id.btn_parent);
 
-        Button Teacher_button = (Button) findViewById(R.id.btn_teacher);
-        Teacher_button.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AccountCreate2.class);
                 startActivity(intent);
             }
         });
-
-        Button Parent_button = (Button) findViewById(R.id.btn_parent);
-        Parent_button.setOnClickListener(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AccountCreate2.class);
                 startActivity(intent);
             }
         });
-
     }
-
-
 }
 
