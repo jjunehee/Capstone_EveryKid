@@ -18,38 +18,14 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    ParentService parentService;
-
-
-    public SecurityConfig(ParentService parentService) {
-        this.parentService = parentService;
-    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
-                .loginPage("/parents/login")
-                .defaultSuccessUrl("/")
-                .usernameParameter("pPHONE")
-                .failureUrl("/members/login/error")
-                .and()
-                .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/parents/logout"))
-                .logoutSuccessUrl("/")
-        ;
 
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(parentService)
-                .passwordEncoder(passwordEncoder());
     }
 
 

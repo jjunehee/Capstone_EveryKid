@@ -25,8 +25,4 @@ public class ParentDto {
     private String C_AGE;
     private boolean C_STATUS;
 
-    public Parent toEntity() {
-        return new Parent(P_NAME, P_PHONE, P_EMAIL, P_ID, P_PWD, P_ALIAS, K_ID, T_ID, C_NAME, C_AGE, C_STATUS);
-    }
-
 }

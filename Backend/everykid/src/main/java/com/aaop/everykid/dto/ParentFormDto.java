@@ -14,14 +14,14 @@ public class ParentFormDto {
 
     private String P_PHONE;
 
-    private String K_NAME;
+    //private String K_NAME;
 
     private String P_EMAIL;
 
-    private String P_ALIAS;
+    //private String P_ALIAS;
 
-    private String C_NAME;
+    //private String C_NAME;
 
-    private String C_AGE;
+    //private String C_AGE;
 
 }

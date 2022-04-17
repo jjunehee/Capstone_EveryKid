@@ -89,6 +89,13 @@
   ### 04/14
   ```[조준희] 얼굴 학습 및 인식 성공```
   - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163320253-be08344c-5ff8-4ca5-9ffa-04b236a78c93.PNG"/>
+  
+  ### ~04/17
+  ```[조준희] 다수의 얼굴 인식 및 식별 성공```
+  - <img width="50%" src="https://user-images.githubusercontent.com/83155528/163717459-48aa7c2b-d79c-4717-b34b-3b661f34c786.PNG"/>
+  
+  ### ~ing
+  ```[조준희] Firebase 연동```
    
   
 </div>

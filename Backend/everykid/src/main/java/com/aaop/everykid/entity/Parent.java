@@ -31,59 +31,41 @@ public class Parent {
     @Column(name="P_PWD")
     private String pPWD;
 
-    @Column(name="P_ALIAS")
-    private String pALIAS;
+    //@Column(name="P_ALIAS")
+    //private String pALIAS;
 
-    @Column(name="K_ID")
-    private String kID;
+    //@Column(name="K_ID")
+    //private String kID;
 
-    @Column(name="T_ID")
-    private String tID;
+    //@Column(name="T_ID")
+    //private String tID;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(name="C_NAME")
-    private String cNAME;
+    //@Column(name="C_NAME")
+    //private String cNAME;
 
-    @Column(name="C_AGE")
-    private String cAGE;
+    //@Column(name="C_AGE")
+    //private String cAGE;
 
-    @Column(name="C_STATUS")
-    private boolean cSTATUS;
+    //@Column(name="C_STATUS")
+    //private boolean cSTATUS;
 
-
-    public Parent(String pNAME, String pPHONE, String pEMAIL, String pID, String pPWD, String pALIAS, String kID, String tID, String cNAME, String cAGE, boolean cSTATUS) {
-        this.pNAME = pNAME;
-        this.pPHONE = pPHONE;
-        this.pEMAIL = pEMAIL;
-        this.pID = pID;
-        this.pPWD = pPWD;
-        this.pALIAS = pALIAS;
-        this.kID = kID;
-        this.tID = tID;
-        this.cNAME = cNAME;
-        this.cAGE = cAGE;
-        this.cSTATUS = cSTATUS;
-    }
-
-    public Parent() {
-
-    }
 
     public static Parent createParent(ParentFormDto parentFormDto, PasswordEncoder passwordEncoder){
         Parent parent = new Parent();
         parent.setPNAME(parentFormDto.getP_NAME());
         parent.setPPHONE(parentFormDto.getP_PHONE());
         parent.setPEMAIL(parentFormDto.getP_EMAIL());
-        parent.setPID(parentFormDto.getP_ID());
+        //parent.setPID(parentFormDto.getP_ID());
         //비밀번호 암호화
         String password = passwordEncoder.encode(parentFormDto.getP_PWD());
         parent.setPPWD(password);
-        parent.setPALIAS(parentFormDto.getP_ALIAS());
-        parent.setCNAME(parentFormDto.getC_NAME());
-        parent.setCAGE(parentFormDto.getC_AGE());
-        parent.setRole(Role.PARENTS);
+        //parent.setPALIAS(parentFormDto.getP_ALIAS());
+        //parent.setCNAME(parentFormDto.getC_NAME());
+        //parent.setCAGE(parentFormDto.getC_AGE());
+        parent.setRole(Role.PARENT);
 
         return parent;
     }

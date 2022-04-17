@@ -26,3 +26,4 @@ public class BoardService {
         board.modifyContents(contents); //수정된 content
     }
 }
+

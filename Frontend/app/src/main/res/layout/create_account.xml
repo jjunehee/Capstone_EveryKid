@@ -4,6 +4,167 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+<<<<<<< HEAD
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1015dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="숫자로만 입력"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="456dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예시) 01012345678"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="650dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:background="#F1E194"
+                android:fontFamily="sans-serif"
+                android:text="중복확인"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="281dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="아이디를 입력하세요."
+                android:textSize="17sp"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="334dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="219dp"
+                android:layout_height="37dp"
+                android:text="회원가입"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="96dp"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="유치원을 등록해주세요."
+                android:textColor="#000000"
+                android:textSize="12sp"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="204dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="유치원 이름"
+                android:textSize="17sp"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="224dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:background="#F1E194"
+                android:fontFamily="sans-serif"
+                android:text="검색"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="280dp"
+                tools:layout_editor_absoluteY="233dp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="이메일을 입력하세요."
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="690dp" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="전화번호를 입력하세요."
+                android:inputType="phone"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="598dp" />
+
+            <EditText
+                android:id="@+id/editTextNumberPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="비밀번호를 입력하세요"
+                android:inputType="numberPassword"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="405dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="이름을 입력하세요."
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="526dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="사용할 닉네임을 입력하세요."
+                tools:layout_editor_absoluteX="35dp"
+                tools:layout_editor_absoluteY="734dp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시작하기"
+                tools:layout_editor_absoluteX="156dp"
+                tools:layout_editor_absoluteY="841dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>
+=======
     android:layout_height="match_parent"
     tools:context=".AccountCreate">
 
@@ -50,3 +211,4 @@
         app:layout_constraintVertical_bias="0.18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 2bbe1ebb642d80f873c0276c48655ec1ba754f84

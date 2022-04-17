@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EveryKid">
+        <activity android:name=".ChatActivity"></activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -35,6 +36,15 @@
         </activity>
         <activity
             android:name=".MainTeacher"
+<<<<<<< HEAD
+            android:exported="true"></activity>
+        <activity
+            android:name=".MainParent"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AccountCreate"
+            android:exported="true"></activity>
+=======
             android:exported="true" />
         <activity
             android:name=".MainParent"
@@ -42,6 +52,7 @@
         <activity
             android:name=".AccountCreate"
             android:exported="true" />
+>>>>>>> 2bbe1ebb642d80f873c0276c48655ec1ba754f84
     </application>
 
 </manifest>
