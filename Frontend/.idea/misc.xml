@@ -14,6 +14,12 @@
         <entry key="..\:/Users/choi/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/menu/bottom_menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/choi/AndroidStudioProjects/EveryKid/app/src/main/res/layout/activity_main.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/jjunehee/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.24974358974358973" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1725" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable/back_et_mymsgbox.xml" value="0.1725" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable/back_et_name.xml" value="0.1725" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable/back_et_othermsgbox.xml" value="0.1725" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1725" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/drawable/menu_selector_color.xml" value="0.1725" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_chat.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/activity_post.xml" value="0.22" />
@@ -24,13 +30,14 @@
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account2.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account3.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/create_account4.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_chat.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_chat.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_community.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_list.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_profile.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/fragment_setting.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/listview_item.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/my_msgbox.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/Frontend/app/src/main/res/layout/other_msgbox.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/nosuj/AndroidStudioProjects/Capstone_EveryKid/app/src/main/res/layout/create_account.xml" value="0.22" />

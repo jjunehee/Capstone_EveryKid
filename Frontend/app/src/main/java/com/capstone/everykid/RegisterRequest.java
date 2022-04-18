@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterRequest extends StringRequest {
-    final static private String URL = "http://";
+    final static private String URL = "http://~~.jsp";
     private Map<String, String> parameters;
-
-
-    public RegisterRequest(String userID, String userPassword, String userName, String userEmail,int userPhone,String Nickname, String K_ID, Response.Listener<String> listener){
+    public RegisterRequest(String userID, String userPassword, String userName,
+                           String userEmail,int userPhone, String Nickname, String K_ID,
+                           Response.Listener<String> listener){
         super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
@@ -21,15 +21,9 @@ public class RegisterRequest extends StringRequest {
         parameters.put("userPhonenumber",userPhone+"");
         parameters.put("Nickname",Nickname);
         parameters.put("kindergartenID",K_ID);
-
-
-
-
     }
     @Override
     public Map<String, String> getParams(){
         return parameters;
-
     }
-
 }
