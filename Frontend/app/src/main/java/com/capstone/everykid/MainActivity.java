@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 String ID = userID.getText().toString();
                 String PW = userPW.getText().toString();
-
+                Intent intent = new Intent(MainActivity.this, MainParent.class);
+                startActivity(intent);
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                  @Override
                  public void onResponse(String response){
