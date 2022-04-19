@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.Model;
 
 public class MessageItem {
 

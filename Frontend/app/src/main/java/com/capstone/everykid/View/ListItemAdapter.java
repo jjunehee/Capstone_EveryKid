@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.capstone.everykid.Model.ListItem;
+import com.capstone.everykid.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListItemAdapter extends BaseAdapter {
    ArrayList<ListItem> items = new ArrayList<ListItem>();

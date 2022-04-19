@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.capstone.everykid.Model.G;
+import com.capstone.everykid.Model.MessageItem;
+import com.capstone.everykid.R;
 
 import java.util.ArrayList;
 

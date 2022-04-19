@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_main_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EveryKid.NoActionBar">
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".View.ChatActivity"></activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".View.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".AccountCreate4"
+            android:name=".View.AccountCreate4"
             android:exported="false" />
         <activity
-            android:name=".AccountCreate3"
+            android:name=".View.AccountCreate3"
             android:exported="false" />
         <activity
-            android:name=".AccountCreate2"
+            android:name=".View.AccountCreate2"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
 
             android:exported="true">
             <intent-filter>
@@ -34,13 +34,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainTeacher"
+            android:name=".View.MainTeacher"
             android:exported="true"></activity>
         <activity
-            android:name=".MainParent"
+            android:name=".View.MainParent"
             android:exported="true"></activity>
         <activity
-            android:name=".AccountCreate"
+            android:name=".View.AccountCreate"
             android:exported="true"></activity>
 
     </application>

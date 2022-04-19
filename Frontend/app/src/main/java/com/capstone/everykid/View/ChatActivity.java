@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +11,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.capstone.everykid.Model.G;
+import com.capstone.everykid.Model.MessageItem;
+import com.capstone.everykid.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
