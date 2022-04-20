@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.capstone.everykid.Model.G;
+import com.capstone.everykid.Model.MessageItem;
+import com.capstone.everykid.R;
 
 import java.util.ArrayList;
 
@@ -44,10 +47,10 @@ public class ChatAdapter extends BaseAdapter {
         //현재 보여줄 번째의(position)의 데이터로 뷰를 생성
         MessageItem item=messageItems.get(position);
 
-        //재활용할 뷰는 사용하지 않음!!
+        //재활용할 뷰는 사용하지 않음
         View itemView=null;
 
-        //메세지가 내 메세지인지??
+        //메세지가 내 메세지인지 확인
         if(item.getName().equals(G.nickName)){
             itemView= layoutInflater.inflate(R.layout.my_msgbox,viewGroup,false);
         }else{

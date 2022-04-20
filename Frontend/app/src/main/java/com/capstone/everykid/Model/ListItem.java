@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.Model;
 
 public class ListItem {
     private String Date;
@@ -11,7 +11,7 @@ public class ListItem {
         Date = date;
     }
 
-    ListItem(String Date){
+    public ListItem(String Date){
         this.Date=Date;
     }
 }

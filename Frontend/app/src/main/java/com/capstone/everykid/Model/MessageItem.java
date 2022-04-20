@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.Model;
 
 public class MessageItem {
 
@@ -14,8 +14,8 @@ public class MessageItem {
         this.pofileUrl = pofileUrl;
     }
 
-    //firebase DB에 객체로 값을 읽어올 때..
-    //파라미터가 비어있는 생성자가 핑요함.
+    //firebase DB에 객체로 값을 읽어올 때
+    //파라미터가 비어있는 생성자가 필요함.
     public MessageItem() {
     }
 

@@ -1,16 +1,11 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
-import java.io.*;
-import java.net.*;
 
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +13,8 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.capstone.everykid.LoginRequest;
+import com.capstone.everykid.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,8 +48,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 String ID = userID.getText().toString();
                 String PW = userPW.getText().toString();
+
+                //임시
                 Intent intent = new Intent(MainActivity.this, MainParent.class);
                 startActivity(intent);
+
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                  @Override
                  public void onResponse(String response){

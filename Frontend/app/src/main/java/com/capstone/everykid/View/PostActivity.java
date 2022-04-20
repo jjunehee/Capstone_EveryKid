@@ -1,8 +1,10 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.capstone.everykid.R;
 
 public class PostActivity  extends AppCompatActivity {
 

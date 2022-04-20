@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.capstone.everykid.R;
 
 public class AccountCreate2 extends AppCompatActivity {
     EditText name;

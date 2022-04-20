@@ -1,6 +1,5 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,32 +10,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class ProfileFragment extends Fragment {
+import com.capstone.everykid.R;
 
-    public ProfileFragment() {
+public class ChatFragment extends Fragment {
+    private View view;
+    private Button btn;
+
+    public ChatFragment() {
         // Required empty public constructor
     }
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
+    public static ChatFragment newInstance(String param1, String param2) {
+        ChatFragment fragment = new ChatFragment();
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        Button btn =view.findViewById(R.id.btn_setting);
+        btn = (Button) view.findViewById(R.id.btn_chatting);
+
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
             }
         });
         return view;

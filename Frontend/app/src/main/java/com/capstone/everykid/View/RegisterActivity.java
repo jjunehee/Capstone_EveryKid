@@ -1,10 +1,12 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.capstone.everykid.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
