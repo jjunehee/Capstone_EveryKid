@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="button_yellow">#FFD864</color>
+    <color name="main_yellow">#FFBC00</color>
     <color name="gray_text_color">#7F7F7F</color>
 
 
