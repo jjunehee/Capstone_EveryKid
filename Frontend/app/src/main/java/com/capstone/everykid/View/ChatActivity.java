@@ -42,7 +42,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        //제목줄 제목글시를 닉네임으로(또는 채팅방)
+        //제목줄 제목글시를 닉네임으로(또는 채팅방) 현재 닉네임이 없어서 채팅 실행 불가 학부모 계정 생성 후 테스트 해야함
         getSupportActionBar().setTitle(G.nickName);
 
         et=findViewById(R.id.et);

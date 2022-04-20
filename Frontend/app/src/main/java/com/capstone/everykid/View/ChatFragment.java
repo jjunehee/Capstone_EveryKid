@@ -14,7 +14,7 @@ import com.capstone.everykid.R;
 
 public class ChatFragment extends Fragment {
     private View view;
-    private Button btn;
+    private Button gochat_btn;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -35,9 +35,9 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        btn = (Button) view.findViewById(R.id.btn_chatting);
+        gochat_btn = (Button) view.findViewById(R.id.btn_gochatting);
 
-        btn.setOnClickListener(new View.OnClickListener(){
+        gochat_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getActivity(), ChatActivity.class);

@@ -10,29 +10,34 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFB0B0"
+        android:background="@drawable/button_round"
+        android:backgroundTint="#FFD864"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
         android:text="SIGN IN"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFB0B0"
+        android:background="@drawable/button_round"
+        android:backgroundTint="#FFD864"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
         android:text="CREATE ACCOUNT"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -46,38 +51,48 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="EVERYKID"
-        android:textColor="#FFB0B0"
+        android:textColor="#FFD864"
         android:textColorHighlight="#FFFFFF"
         android:textSize="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="331dp"
-        android:layout_height="191dp"
+        android:layout_width="341dp"
+        android:layout_height="147dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:layout_constraintVertical_bias="0.126">
+        app:layout_constraintVertical_bias="0.166">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:padding="30dp"
-                android:text="ID"
-                android:textSize="30dp" />
+            <!--            <TextView-->
+            <!--                android:layout_width="110dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="30dp"-->
+            <!--                android:text="ID"-->
+            <!--                android:textSize="30dp" />-->
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:src="@mipmap/ic_login" />
 
             <EditText
                 android:id="@+id/userID"
@@ -87,20 +102,24 @@
                 android:background="#eeeeee"
                 android:hint="ID"
                 android:padding="16dp"
-                android:textSize="30dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
 
-            <TextView
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:padding="30dp"
-                android:text="PW"
-                android:textSize="30dp" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:src="@mipmap/ic_lock" />
 
             <EditText
                 android:id="@+id/userPW"
@@ -110,7 +129,7 @@
                 android:background="#eeeeee"
                 android:hint="PASSWORD"
                 android:padding="16dp"
-                android:textSize="30dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
     </LinearLayout>

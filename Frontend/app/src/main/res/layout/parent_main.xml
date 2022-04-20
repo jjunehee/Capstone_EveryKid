@@ -23,7 +23,7 @@
         app:itemBackground="@color/white"
         app:menu="@menu/bottom_menu"
         app:itemIconTint="@drawable/menu_selector_color"
-        app:itemTextColor="@drawable/menu_selector_color"
-        />
+        app:itemTextColor="@drawable/menu_selector_color"/>
+
 </LinearLayout>
 
