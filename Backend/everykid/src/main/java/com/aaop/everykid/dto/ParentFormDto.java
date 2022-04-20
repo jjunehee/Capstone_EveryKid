@@ -2,8 +2,11 @@ package com.aaop.everykid.dto;
 //회원가입 폼 dto
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter @Setter
+@Getter
+@Setter
+@ToString
 public class ParentFormDto {
 
     private String P_ID;

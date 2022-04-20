@@ -1,38 +1,46 @@
 package com.aaop.everykid.controller;
 
 import com.aaop.everykid.dto.ParentFormDto;
+import com.aaop.everykid.entity.Parent;
+import com.aaop.everykid.service.LoginService;
 import com.aaop.everykid.service.ParentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import com.aaop.everykid.entity.Parent;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 
-
+@Slf4j
 @RequestMapping("/parents")
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class ParentController {
 
     private final ParentService parentService;
-    private final PasswordEncoder passwordEncoder;
+    private final LoginService loginService;
+//    private final PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/new")
-    public String parentForm(Model model){
-        model.addAttribute("parentFormDto", new ParentFormDto());
-        return "parent/parentForm";
+    public ParentFormDto getParameter(ParentFormDto pa) {
+
+        return pa;
     }
 
-    @PostMapping(value="/new")
-    public String parentForm(ParentFormDto parentFormDto){
-
-        Parent parent = Parent.createParent(parentFormDto, passwordEncoder);
+    //jpa 문자열
+   @PostMapping(value = "/new")
+    public ParentFormDto parentForm(@RequestBody ParentFormDto parentFormDto){
+        Parent parent = Parent.createParent(parentFormDto);
         parentService.saveParent(parent);
+       System.out.println("회원가입 시도" + parentFormDto);
+    return parentFormDto;
+    }
 
-        return "redirect:/";
+    @PostMapping(value = "login")
+    public String loginId(@ModelAttribute Parent parent){
+        if(loginService.login(parent)){
+            return "aa";
+        }
+        return " ";
     }
-    }
+}

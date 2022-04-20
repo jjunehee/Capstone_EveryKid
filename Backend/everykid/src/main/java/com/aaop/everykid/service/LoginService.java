@@ -1,3 +1,4 @@
+/*
 package com.aaop.everykid.service;
 
 import com.aaop.everykid.entity.Parent;
@@ -8,21 +9,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-//import org.springframework.security.core.userdetails.User;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UserDetailsService;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
-
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class ParentService {
+public class LoginService {
 
     private final ParentRepository parentRepository;
 
-    public Parent saveParent(Parent parent) {
+    public boolean login(Parent parent){
 
-        return parentRepository.save(parent);
+        //Parent findParent = parentRepository.findByPNAME(parent.getPID());
+
+        if(findParent == null){
+            return false;
+
+        }
+
+        if(!findParent.getPPWD().equals(parent.getPPWD())){
+            return false;
+        }
+        return true;
     }
-}
+
+};*/

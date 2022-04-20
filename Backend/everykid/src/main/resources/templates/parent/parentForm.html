@@ -28,26 +28,26 @@
 
 <div layout:fragment="content">
 
-    <form action="/parents/new" role="form" method="post"  th:object="${memberFormDto}">
+    <form action="/parents/new" role="form" method="post"  th:object="${parentFormDto}">
         <div class="form-group">
             <label th:for="name">이름</label>
-            <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력해주세요">
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError">Incorrect data</p>
+            <input type="text" th:field="*{p_NAME}" class="form-control" placeholder="이름을 입력해주세요">
+            <p th:if="${#fields.hasErrors('p_NAME')}" th:errors="*{p_NAME}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
             <label th:for="email">이메일주소</label>
-            <input type="email" th:field="*{email}" class="form-control" placeholder="이메일을 입력해주세요">
-            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">Incorrect data</p>
+            <input type="email" th:field="*{p_EMAIL}" class="form-control" placeholder="이메일을 입력해주세요">
+            <p th:if="${#fields.hasErrors('p_EMAIL')}" th:errors="*{p_EMAIL}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
             <label th:for="password">비밀번호</label>
-            <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호 입력">
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
+            <input type="password" th:field="*{p_PWD}" class="form-control" placeholder="비밀번호 입력">
+            <p th:if="${#fields.hasErrors('p_PWD')}" th:errors="*{p_PWD}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
             <label th:for="address">주소</label>
-            <input type="text" th:field="*{address}" class="form-control" placeholder="주소를 입력해주세요">
-            <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect data</p>
+            <input type="text" th:field="*{p_PHONE}" class="form-control" placeholder="주소를 입력해주세요">
+            <p th:if="${#fields.hasErrors('p_PHONE')}" th:errors="*{p_PHONE}" class="fieldError">Incorrect data</p>
         </div>
         <div style="text-align: center">
             <button type="submit" class="btn btn-primary" style="">Submit</button>

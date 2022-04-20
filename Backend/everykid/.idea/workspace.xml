@@ -41,7 +41,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -104,10 +104,8 @@
       <workItem from="1649381983556" duration="65000" />
       <workItem from="1649435781140" duration="932000" />
       <workItem from="1649468964659" duration="1849000" />
-<<<<<<< HEAD
       <workItem from="1649471480591" duration="12496000" />
       <workItem from="1649597949209" duration="33836000" />
-=======
       <workItem from="1649471388867" duration="523000" />
       <workItem from="1649515345020" duration="581000" />
       <workItem from="1649518502196" duration="290000" />
@@ -117,15 +115,18 @@
       <workItem from="1650024438014" duration="259000" />
       <workItem from="1650024735311" duration="575000" />
       <workItem from="1650074794646" duration="2153000" />
-<<<<<<< Updated upstream
->>>>>>> fe4612ceac19fdfc2acd40f6c87e584ddc46dd1a
-=======
       <workItem from="1650083140732" duration="1975000" />
       <workItem from="1650087791674" duration="2406000" />
       <workItem from="1650116688834" duration="34000" />
       <workItem from="1650119604025" duration="23000" />
       <workItem from="1650119703155" duration="73000" />
->>>>>>> Stashed changes
+      <workItem from="1650137384968" duration="1202000" />
+      <workItem from="1650175076554" duration="248000" />
+      <workItem from="1650175350005" duration="596000" />
+      <workItem from="1650348197030" duration="688000" />
+      <workItem from="1650432053896" duration="3610000" />
+      <workItem from="1650439600055" duration="3803000" />
+      <workItem from="1650447009558" duration="9528000" />
     </task>
     <servers />
   </component>
