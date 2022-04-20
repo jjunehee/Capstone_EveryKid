@@ -20,8 +20,5 @@ public class RegisterActivity extends AppCompatActivity {
 
         id=findViewById(R.id.editText_ID);
         pw=findViewById(R.id.editText_PW);
-
-
-
     }
 }

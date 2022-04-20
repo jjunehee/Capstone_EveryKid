@@ -9,6 +9,16 @@
         android:title="chat"
         app:showAsAction="always"
         />
+
+    <item
+        android:id="@+id/list"
+        android:enabled="true"
+        android:icon="@drawable/listicon"
+        android:title="list"
+        app:showAsAction="always"
+        />
+
+
     <item
         android:id="@+id/community"
         android:enabled="true"
@@ -29,13 +39,6 @@
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
         android:title="profile"
-        app:showAsAction="always"
-        />
-    <item
-        android:id="@+id/list"
-        android:enabled="true"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="list"
         app:showAsAction="always"
         />
 

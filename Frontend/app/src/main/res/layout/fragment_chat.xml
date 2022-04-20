@@ -38,7 +38,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
             <ImageView
 
-                android:id="@+id/user_image"
+                android:id="@+id/teacher"
 
                 android:layout_width="200dp"
 
