@@ -33,7 +33,29 @@
 ```[조준희] 부모 Profile 레이아웃 추가 ```
 - fragment_profile.xml
 - enter.png, exit.png, default_profile.png
+  
+### 04/14
+```[최희정] 채팅```
+- activity_caht.xml / ChatActivity.java 채팅 액티비티
+- ChatAdapter.java / G.java / MessageItem.java
+- back_et_mymsgbox.xml / back_et_othermsgbox.xml 메시지 박스 디자인
+- my_msgbox_xml / other_msgbox.xml 메시지 박스 레이아웃
 
+### 04/15
+```[노수진] Activity 생성```
+- fragment_list.xml / LisftFragment.java / ListItem.java / ListItemAdapter.java 등하원리스트
+- AccountCreate2, 3, 4 회원가입 단계별 액티비티 
+  
+### 04/20
+```[최희정] UI 디자인, MVC ```
+- colors.xml, themes.xml 항목별 색상 지정
+- MVC 패턴 패키지 분류
+
+```[노수진] UI 디자인, 레이아웃 수정```
+- 디자인 수정
+- 하단 메뉴 아이콘 적용
+- 
+  
  </div>
 </details>
 
