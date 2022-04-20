@@ -42,9 +42,14 @@
 - my_msgbox_xml / other_msgbox.xml 메시지 박스 레이아웃
 
 ### 04/15
-```[노수진] Activity 생성```
+```[노수진] Activity 생성, 등하원 리스트 클래스 추가```
 - fragment_list.xml / LisftFragment.java / ListItem.java / ListItemAdapter.java 등하원리스트
 - AccountCreate2, 3, 4 회원가입 단계별 액티비티 
+
+  
+### 4/16
+```[노수진] 로그인, 회원가입```  
+- LoginRequest.java, RegisterRequest.java 로그인, 회원가입 
   
 ### 04/20
 ```[최희정] UI 디자인, MVC ```
@@ -54,7 +59,7 @@
 ```[노수진] UI 디자인, 레이아웃 수정```
 - 디자인 수정
 - 하단 메뉴 아이콘 적용
-- 
+- WriteRequest.java 글작성
   
  </div>
 </details>
