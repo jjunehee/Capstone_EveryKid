@@ -1,4 +1,3 @@
-/*
 package com.aaop.everykid.service;
 
 import com.aaop.everykid.entity.Parent;
@@ -17,18 +16,10 @@ public class LoginService {
     private final ParentRepository parentRepository;
 
     public boolean login(Parent parent){
-
-        //Parent findParent = parentRepository.findByPNAME(parent.getPID());
-
+        Parent findParent = parentRepository.findBypID(parent.getPID());
         if(findParent == null){
-            return false;
-
-        }
-
-        if(!findParent.getPPWD().equals(parent.getPPWD())){
             return false;
         }
         return true;
     }
-
-};*/
+}

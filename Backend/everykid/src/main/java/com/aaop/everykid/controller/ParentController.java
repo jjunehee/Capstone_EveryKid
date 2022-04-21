@@ -38,9 +38,11 @@ public class ParentController {
 
     @PostMapping(value = "login")
     public String loginId(@ModelAttribute Parent parent){
+        System.out.println(parent+"aaaaa");
+        System.out.println(loginService.login(parent));
         if(loginService.login(parent)){
-            return "aa";
+            return "성공";
         }
-        return " ";
+        return "실패";
     }
 }
