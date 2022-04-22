@@ -61,6 +61,11 @@
 - 하단 메뉴 아이콘 적용
 - WriteRequest.java 글작성
   
+### 04/23
+```[최희정] 회원가입 ```
+- create_account2.xml 버튼 아이디 수정
+- RegisterRequest.java, AccountCreate2.java 회원가입 첫 단계 값 요청/처리(서버 url 연동 필요)
+  
  </div>
 </details>
 
