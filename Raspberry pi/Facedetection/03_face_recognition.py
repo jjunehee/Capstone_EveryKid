@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+import datetime
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -13,7 +14,7 @@ id = 0
 
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
-names = ['None', 'Junhee', 'Seunghyun', 'chs', 'ksw']
+names = ['None', 'Junhee', 'kyungju', 'hyeokjin', 'ksw']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -42,13 +43,22 @@ while True:
         # Check if confidence is less them 100 ==> "0" is perfect match
         if (confidence < 100):
             id = names[id]
-            confidence = "  {0}%".format(round(100 - confidence))
+            #confidence = "  {0}%".format(round(100 - confidence))
+            #5초 이상 지속되면 캡쳐해서 파일명을 id(name)으로 저장하고 그 이미지  Firebase로
+            now = datetime.datetime.now()
+            nowDate = now.strftime('%Y-%m-%d')
+            if(confidence < 40):
+                cv2.imwrite( 'result/' + str(id) + nowDate + '.jpg', img)
+                
+                #Check image capture
+                cv2.imshow('image', img)
+    
         else:
             id = "unknown"
             confidence = "  {0}%".format(round(100 - confidence))
         
         cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
-        cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
+        # cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
     
     cv2.imshow('camera',img) 
     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
