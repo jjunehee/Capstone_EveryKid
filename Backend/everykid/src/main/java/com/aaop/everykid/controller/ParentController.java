@@ -1,5 +1,6 @@
 package com.aaop.everykid.controller;
 
+import com.aaop.everykid.dto.ParentDto;
 import com.aaop.everykid.dto.ParentFormDto;
 import com.aaop.everykid.entity.Parent;
 import com.aaop.everykid.service.LoginService;
@@ -36,10 +37,13 @@ public class ParentController {
     return parentFormDto;
     }
 
-    @PostMapping(value = "login")
-    public String loginId(@ModelAttribute Parent parent){
+    @PostMapping(value = "/login")
+    public String loginId(@RequestBody Parent parent){
+
+        loginService.login(parent);
         System.out.println(parent+"aaaaa");
         System.out.println(loginService.login(parent));
+
         if(loginService.login(parent)){
             return "성공";
         }

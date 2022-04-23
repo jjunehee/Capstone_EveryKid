@@ -13,16 +13,26 @@ import lombok.ToString;
 @ToString
 public class ParentDto {
 
-    private String P_NAME;
-    private String P_PHONE;
-    private String P_EMAIL;
     private String P_ID;
+
+    private String P_NAME;
+
+    private String P_PHONE;
+
+    private String P_EMAIL;
+
     private String P_PWD;
+
     private String P_ALIAS;
+
     private String K_ID;
+
     private String T_ID;
+
     private String C_NAME;
+
     private String C_AGE;
+
     private boolean C_STATUS;
 
 }
