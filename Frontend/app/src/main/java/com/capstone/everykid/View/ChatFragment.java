@@ -1,6 +1,7 @@
 package com.capstone.everykid.View;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.capstone.everykid.R;
 
 public class ChatFragment extends Fragment {
     private View view;
     private Button gochat_btn;
+    private ImageView img;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -35,7 +38,10 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_chat, container, false);
 
+
         gochat_btn = (Button) view.findViewById(R.id.btn_gochatting);
+        img = (ImageView) view.findViewById(R.id.chat_profile);
+        img.setClipToOutline(true);
 
         gochat_btn.setOnClickListener(new View.OnClickListener(){
             @Override

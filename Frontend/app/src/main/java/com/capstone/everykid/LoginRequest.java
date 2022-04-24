@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest {
 
-    final static private String URL ="";
+    final static private String URL ="http/";
     private Map<String, String> map;
 
     public LoginRequest (String userID,String userPW, Response.Listener<String>listener ){
