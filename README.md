@@ -49,7 +49,7 @@
   
 ### 4/16
 ```[노수진] 로그인, 회원가입```  
-- LoginRequest.java, RegisterRequest.java 로그인, 회원가입 
+- MainActivity.java, LoginRequest.java, RegisterRequest.java 로그인, 회원가입 코드 작성
   
 ### 04/20
 ```[최희정] UI 디자인, MVC ```
