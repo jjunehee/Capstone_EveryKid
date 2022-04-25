@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.Model;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;

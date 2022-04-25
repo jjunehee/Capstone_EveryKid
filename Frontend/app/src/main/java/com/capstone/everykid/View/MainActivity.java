@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.capstone.everykid.LoginRequest;
+import com.capstone.everykid.Model.LoginRequest;
 import com.capstone.everykid.R;
 
 import org.json.JSONException;

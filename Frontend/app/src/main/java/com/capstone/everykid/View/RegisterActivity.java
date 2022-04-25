@@ -13,13 +13,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.capstone.everykid.R;
-import com.capstone.everykid.WriteRequest;
+import com.capstone.everykid.Model.WriteRequest;
 import com.capstone.everykid.Model.CurrentTime;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity {
 
