@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="선택해주세요"
-        android:textColor="#000000"
+        android:textColor="@color/gray_text_color"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +22,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.319" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFB0B0"
         android:text="학부모"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_teacher"
@@ -36,11 +35,10 @@
         app:layout_constraintTop_toTopOf="@+id/btn_teacher"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_teacher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFB0B0"
         android:text="선생님"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

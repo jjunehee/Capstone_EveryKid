@@ -9,37 +9,6 @@
 <!--    android:paddingRight="16dp" -->
 <!--    android:paddingTop="8dp" -->
 <!--    android:paddingLeft="16dp"-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#FFD864"
-        android:background="@drawable/button_round"
-        android:text="SIGN IN"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.114" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="255dp"
-        android:layout_height="45dp"
-        android:background="@drawable/button_round"
-        android:backgroundTint="#FFD864"
-        android:text="CREATE ACCOUNT"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.172" />
-
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
@@ -48,13 +17,46 @@
         android:text="EVERYKID"
         android:textColor="#FFD864"
         android:textColorHighlight="#FFFFFF"
-        android:textSize="55dp"
+        android:textSize="45dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.178" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="36dp"
+        android:backgroundTint="#FFD864"
+        android:background="@drawable/button_round"
+        android:text="SIGN IN"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="36dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="#FFD864"
+        android:text="CREATE ACCOUNT"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.072" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -74,8 +76,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:paddingLeft="5dp"
                 android:paddingTop="5dp"
                 android:paddingRight="5dp"
@@ -87,7 +89,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#eeeeee"
                 android:hint="ID"
                 android:padding="16dp"
                 android:textSize="18dp" />
@@ -101,25 +102,25 @@
             android:paddingTop="10dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:paddingLeft="5dp"
                 android:paddingTop="5dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
                 android:src="@mipmap/ic_lock" />
-
             <EditText
                 android:id="@+id/userPW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#eeeeee"
                 android:hint="PASSWORD"
+                android:ems="10"
                 android:padding="16dp"
                 android:textSize="18dp" />
 
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

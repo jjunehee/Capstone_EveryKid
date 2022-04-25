@@ -40,7 +40,9 @@ public class ChatFragment extends Fragment {
 
 
         gochat_btn = (Button) view.findViewById(R.id.btn_gochatting);
-        img = (ImageView) view.findViewById(R.id.chat_profile);
+
+        //프로필 사진 배경에 맞게 자르기
+        img = (ImageView) view.findViewById(R.id.chat_profile); //프로필 사진
         img.setClipToOutline(true);
 
         gochat_btn.setOnClickListener(new View.OnClickListener(){

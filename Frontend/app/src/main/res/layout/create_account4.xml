@@ -34,11 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_ID"
         app:layout_constraintVertical_bias="0.151" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFB0B0"
         android:text="중복확인"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/editText_ID"
@@ -46,11 +45,10 @@
         app:layout_constraintStart_toEndOf="@+id/editText_ID"
         app:layout_constraintTop_toTopOf="@+id/editText_ID" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFB0B0"
         android:text="회원가입"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
