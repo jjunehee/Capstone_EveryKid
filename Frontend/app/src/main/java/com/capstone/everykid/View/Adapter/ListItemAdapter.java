@@ -1,4 +1,4 @@
-package com.capstone.everykid.View;
+package com.capstone.everykid.View.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

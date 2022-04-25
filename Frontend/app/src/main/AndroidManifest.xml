@@ -16,23 +16,23 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.EveryKid.NoActionBar">
 
-        <activity android:name=".View.ChatActivity"></activity>
+        <activity android:name=".View.Activity.ChatActivity"></activity>
         <activity
-            android:name=".View.RegisterActivity"
+            android:name=".View.Activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".View.AccountCreate4"
+            android:name=".View.Activity.AccountCreate4"
             android:exported="false" />
         <activity
-            android:name=".View.AccountCreate3"
+            android:name=".View.Activity.AccountCreate3"
             android:exported="false"></activity>
         <activity
-            android:name=".View.AccountCreate2"
+            android:name=".View.Activity.AccountCreate2"
             android:exported="false" ></activity>
 
             android:exported="false" />
         <activity
-            android:name=".View.MainActivity"
+            android:name=".View.Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,13 +40,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.MainTeacher"
+            android:name=".View.Activity.MainTeacher"
             android:exported="true"></activity>
         <activity
-            android:name=".View.MainParent"
+            android:name=".View.Activity.MainParent"
             android:exported="true"></activity>
         <activity
-            android:name=".View.AccountCreate"
+            android:name=".View.Activity.AccountCreate"
             android:exported="true"></activity>
 
     </application>

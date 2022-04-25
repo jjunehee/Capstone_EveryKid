@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.capstone.everykid.View.ChatActivity">
+    tools:context="com.capstone.everykid.View.Activity.ChatActivity">
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"

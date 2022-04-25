@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:layout_marginTop="40dp"
     android:orientation="vertical"
-    tools:context=".View.ChatFragment">
+    tools:context=".View.Activity.ChatFragment">
     <LinearLayout
-        android:background="@drawable/round_background_2"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="18dp"
-                android:text="봉미선 선생님"
+                android:text="김민지 선생님"
                 android:textSize="28dp" />
         <LinearLayout
             android:layout_width="wrap_content"

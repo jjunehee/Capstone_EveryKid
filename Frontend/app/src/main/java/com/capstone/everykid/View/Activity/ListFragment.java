@@ -1,4 +1,4 @@
-package com.capstone.everykid.View;
+package com.capstone.everykid.View.Activity;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -9,6 +9,7 @@ import android.widget.ListView;
 import com.capstone.everykid.R;
 
 import com.capstone.everykid.Model.ListItem;
+import com.capstone.everykid.View.Adapter.ListItemAdapter;
 
 public class ListFragment extends Fragment {
     private View view;

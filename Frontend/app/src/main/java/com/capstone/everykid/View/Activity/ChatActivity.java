@@ -1,4 +1,4 @@
-package com.capstone.everykid.View;
+package com.capstone.everykid.View.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.capstone.everykid.Model.G;
 import com.capstone.everykid.Model.MessageItem;
 import com.capstone.everykid.R;
+import com.capstone.everykid.View.Adapter.ChatAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

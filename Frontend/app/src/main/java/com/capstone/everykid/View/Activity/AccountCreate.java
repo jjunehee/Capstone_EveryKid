@@ -1,4 +1,4 @@
-package com.capstone.everykid.View;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

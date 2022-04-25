@@ -1,4 +1,4 @@
-package com.capstone.everykid.View;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,18 +68,14 @@ public class AccountCreate2 extends AppCompatActivity {
                             if (success) {
                                 Intent intent = new Intent(AccountCreate2.this, AccountCreate3.class);
                                 startActivity(intent);
-
                             //다음 페이지 이동 실패
                             } else {
                                 Toast.makeText(getApplicationContext(), "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                 return;
                             }
-
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
                 };
             }
