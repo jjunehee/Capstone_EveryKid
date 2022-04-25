@@ -38,7 +38,7 @@ public class ChatFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_chat, container, false);
 
 
-        gochat_btn = (Button) view.findViewById(R.id.btn_gochatting);
+        gochat_btn = (Button) view.findViewById(R.id.btn_gochat);
 
         //프로필 사진 배경에 맞게 자르기
         img = (ImageView) view.findViewById(R.id.chat_profile); //프로필 사진
