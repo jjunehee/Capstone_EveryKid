@@ -16,7 +16,7 @@ public class LoginService  {
     private final ParentRepository parentRepository;
 
     public boolean login(Parent parent){
-        Parent findParent = parentRepository.findParentBypID(parent.getPID());
+        Parent findParent = parentRepository.findParentBypID(parent.getPKID());
         if(findParent == null){
             return false;
         }

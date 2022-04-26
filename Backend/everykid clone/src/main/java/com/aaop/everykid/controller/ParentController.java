@@ -28,7 +28,7 @@ public class ParentController {
 
     //jpa 문자열
     @PostMapping(value = "/new")     //p_NAME
-    public ParentFormDto parentForm(@RequestBody ParentFormDto parentFormDto) {
+    public ParentFormDto parentForm(ParentFormDto parentFormDto) {
         Parent parent = Parent.createParent(parentFormDto);
         parentService.saveParent(parent);
         System.out.println("회원가입 시도" + parentFormDto);
@@ -36,7 +36,7 @@ public class ParentController {
     }
 
     @PostMapping(value = "/login")    //pid
-    public String loginId(@RequestBody Parent parent) {
+    public String loginId(Parent parent) {
 
         loginService.login(parent);
         System.out.println(parent + "aaaaa");

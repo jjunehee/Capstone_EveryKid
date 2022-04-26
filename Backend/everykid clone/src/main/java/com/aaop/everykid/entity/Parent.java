@@ -27,12 +27,15 @@ public class Parent {
     private String pEMAIL;
 
     @Id
-    @Column(name="P_ID")
+    @Column(name="P_KID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pID;
+    private Long pKID;
 
     @Column(name="P_PWD")
     private String pPWD;
+
+    @Column(name="P_ID")
+    private String pID;
 
     //@Column(name="P_ALIAS")
     //private String pALIAS;
@@ -62,7 +65,7 @@ public class Parent {
         parent.setPNAME(parentFormDto.getP_NAME());
         parent.setPPHONE(parentFormDto.getP_PHONE());
         parent.setPEMAIL(parentFormDto.getP_EMAIL());
-        //parent.setPID(parentFormDto.getP_ID());
+        parent.setPID(parentFormDto.getP_ID());
         //비밀번호 암호화
         parent.setPPWD(parentFormDto.getP_PWD());
         //parent.setPALIAS(parentFormDto.getP_ALIAS());
