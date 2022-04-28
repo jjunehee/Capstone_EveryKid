@@ -11,6 +11,4 @@ import retrofit2.http.Path;
 public interface RetrofitAPI {
     @GET("/board/board/{kID}")
     Call<List<Board>> listBoard(@Path("kID") String kID);
-
-
 }

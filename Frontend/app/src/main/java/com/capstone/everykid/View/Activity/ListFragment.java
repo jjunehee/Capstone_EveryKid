@@ -40,6 +40,8 @@ public class ListFragment extends Fragment {
         listView=view.findViewById(R.id.list);
         adapter = new ListItemAdapter();
         adapter.addItem(new ListItem("4월 20일 수요일")); //임시
+        adapter.addItem(new ListItem("4월 21일 목요일"));
+        adapter.addItem(new ListItem("4월 22일 금요일"));
         listView.setAdapter(adapter);
 
 

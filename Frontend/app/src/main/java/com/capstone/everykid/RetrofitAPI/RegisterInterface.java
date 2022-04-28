@@ -17,5 +17,6 @@ public interface RegisterInterface
             @Field("p_NAME") String username,
             @Field("p_PWD") String password,
             @Field("p_EMAIL") String email
+
     );
 }

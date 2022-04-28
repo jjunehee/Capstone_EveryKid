@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.capstone.everykid.Model.Board;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
+import com.capstone.everykid.View.Adapter.CommunityFragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,6 +108,5 @@ public class CommunityFragment extends Fragment {
             }
         });
         return view;
-
     }
 }

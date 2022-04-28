@@ -7,7 +7,7 @@
     tools:context=".View.Activity.AccountCreate4">
 
     <EditText
-        android:id="@+id/editText_ID"
+        android:id="@+id/join_id"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.329" />
 
     <EditText
-        android:id="@+id/editText_PW"
+        android:id="@+id/join_pwd"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:ems="10"
@@ -30,8 +30,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText_ID"
-        app:layout_constraintTop_toBottomOf="@+id/editText_ID"
+        app:layout_constraintStart_toStartOf="@+id/join_id"
+        app:layout_constraintTop_toBottomOf="@+id/join_id"
         app:layout_constraintVertical_bias="0.151" />
 
     <Button
@@ -40,13 +40,13 @@
         android:layout_height="wrap_content"
         android:text="중복확인"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_ID"
+        app:layout_constraintBottom_toBottomOf="@+id/join_id"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText_ID"
-        app:layout_constraintTop_toTopOf="@+id/editText_ID" />
+        app:layout_constraintStart_toEndOf="@+id/join_id"
+        app:layout_constraintTop_toTopOf="@+id/join_id" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/join_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입"
@@ -54,5 +54,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_PW" />
+        app:layout_constraintTop_toBottomOf="@+id/join_pwd" />
 </androidx.constraintlayout.widget.ConstraintLayout>
