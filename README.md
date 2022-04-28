@@ -66,6 +66,12 @@
 - create_account2.xml 버튼 아이디 수정
 - RegisterRequest.java, AccountCreate2.java 회원가입 첫 단계 값 요청/처리(서버 url 연동 필요)
   
+### 04/29
+```[노수진] 회원가입 ```
+- AccountCreate.java, AccountCreate2.java, AccountCreate3.java, AccountCreate4.java 코드 수정
+- Globals.java, AndroidManifest.xml  전역변수 추가
+- create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
+  
  </div>
 </details>
 
