@@ -143,6 +143,10 @@
   - faceDetection을 통해 학습된 개인이 인식이 되면 이미지 캡쳐 후 firebase storage에 올리기 구현 완료
   <img width="50%" src="https://user-images.githubusercontent.com/83155528/166153652-0156d300-86e8-4ab6-8fb6-5fe1e93c76a6.PNG"/>
   
+  ### ~ing
+  ```[조준희] 개인별 저장되는 storage 폴더 나누기(개인별 FCM 구현을 위해) ```
+  
+  
    
   
 </div>
