@@ -3,6 +3,7 @@ import numpy as np
 import os
 import datetime
 
+
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
 cascadePath = "haarcascades/haarcascade_frontalface_default.xml"
@@ -14,7 +15,7 @@ id = 0
 
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
-names = ['None', 'Junhee', 'kyungju', 'hyeokjin', 'ksw']
+names = ['None', 'Junhee', 'Jinsun', 'hyeokjin', 'ksw']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -51,7 +52,7 @@ while True:
                 cv2.imwrite( 'result/' + str(id) + nowDate + '.jpg', img)
                 
                 #Check image capture
-                cv2.imshow('image', img)
+                #cv2.imshow('image', img)
     
         else:
             id = "unknown"
