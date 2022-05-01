@@ -2,8 +2,48 @@ import cv2
 import numpy as np
 import os
 import datetime
+from picamera import PiCamera
+from time import sleep
+import datetime
+import sys, os
+import requests
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import storage
+from uuid import uuid4
+import schedule
 
+PROJECT_ID = "people-6bda1"
 
+cred = credentials.Certificate("/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/people-6bda1-firebase-adminsdk-3z19w-1c304b3e10.json") #(키 이름 ) 부분에 본인의 키이름을 적어주세요.
+default_app = firebase_admin.initialize_app(cred,{'storageBucket':f"{PROJECT_ID}.appspot.com"})
+#버킷은 바이너리 객체의 상위 컨테이너이다. 버킷은 Storage에서 데이터를 보관하는 기본 컨테이너이다.
+bucket = storage.bucket()#기본 버킷 사용
+
+def fileUpload(file):
+    blob = bucket.blob('image_store/'+file) #저장p한 사진을 파이어베이스 storage의 image_store라는 이름의 디렉토리에 저장
+    #new token and metadata 설정
+    new_token = uuid4()
+    metadata = {"firebaseStorageDownloadTokens": new_token} #access token이 필요하다.
+    blob.metadata = metadata
+ 
+    #upload file
+    blob.upload_from_filename(filename='/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/'+file, content_type='image/jpeg') #파일이 저장된 주소와 이미지 형식(jpeg도 됨)
+    #debugging hello
+    print("hello ")
+    print(blob.public_url)
+    
+
+#메모리 카드의 파일을 정리 해 주자.
+def clearAll():
+    #제대로 할려면 용량 체크 하고 먼저 촬영된 이미지 부터 지워야 할것 같지만 여기선 폴더안에 파일을 몽땅 지우자.
+    path = '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage'
+    os.system('rm -rf %s/*' % path)
+
+def firebase():
+    cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + nowDate + '.jpg', img)
+    fileUpload(str(id) + nowDate + '.jpg')
+    
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
 cascadePath = "haarcascades/haarcascade_frontalface_default.xml"
@@ -26,6 +66,7 @@ cam.set(4, 480) # set video height
 minW = 0.1*cam.get(3)
 minH = 0.1*cam.get(4)
 
+count = 0
 while True:
     ret, img =cam.read()
     img = cv2.flip(img, -1) # Flip vertically
@@ -48,9 +89,10 @@ while True:
             #5초 이상 지속되면 캡쳐해서 파일명을 id(name)으로 저장하고 그 이미지  Firebase로
             now = datetime.datetime.now()
             nowDate = now.strftime('%Y-%m-%d')
-            if(confidence < 40):
-                cv2.imwrite( 'result/' + str(id) + nowDate + '.jpg', img)
-                
+            
+            count+=1
+            if(count % 30 == 0and confidence < 40 ):
+                firebase()
                 #Check image capture
                 #cv2.imshow('image', img)
     
