@@ -30,7 +30,7 @@ def fileUpload(file):
     #upload file
     blob.upload_from_filename(filename='/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/'+file, content_type='image/jpeg') #파일이 저장된 주소와 이미지 형식(jpeg도 됨)
     #debugging hello
-    print("hello ")
+    print("capture ")
     print(blob.public_url)
     
 
