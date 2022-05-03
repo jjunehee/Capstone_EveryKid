@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_main_icon_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.EveryKid.NoActionBar">
+        android:theme="@style/Theme.EveryKid">
 
         <activity android:name=".View.Activity.ChatActivity"></activity>
         <activity
