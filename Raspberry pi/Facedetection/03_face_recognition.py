@@ -30,7 +30,7 @@ def fileUpload(file):
     #upload file
     blob.upload_from_filename(filename='/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/'+file, content_type='image/jpeg') #파일이 저장된 주소와 이미지 형식(jpeg도 됨)
     #debugging hello
-    print("hello ")
+    print("capture ")
     print(blob.public_url)
     
 
@@ -41,8 +41,15 @@ def clearAll():
     os.system('rm -rf %s/*' % path)
 
 def firebase():
-    cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + nowDate + '.jpg', img)
-    fileUpload(str(id) + nowDate + '.jpg')
+    if(now.hour < 12):
+        cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + ' ' + nowDate + ' 등원' + '.jpg', img)
+        fileUpload(str(id) + ' ' + nowDate + ' 등원' +'.jpg')
+    elif(now.hour >12):
+        cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + ' '+ nowDate + ' 하원' + '.jpg', img)
+        fileUpload(str(id) + ' ' + nowDate + ' 하원' +'.jpg')
+        
+    
+    
     
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -90,9 +97,11 @@ while True:
             now = datetime.datetime.now()
             nowDate = now.strftime('%Y-%m-%d')
             
+            
             count+=1
-            if(count % 30 == 0and confidence < 40 ):
+            if(count % 30 == 0 and confidence < 45 ):
                 firebase()
+                
                 #Check image capture
                 #cv2.imshow('image', img)
     
