@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <!--레이아웃 틀        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -17,8 +17,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            //test
 
+<!--            사용자 프로필-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +63,9 @@
 
                 </LinearLayout>
             </LinearLayout>
+<!--            사용자 레이아웃 end-->
 
+<!--            프로필 확인 버튼-->
             <Button
                 android:id="@+id/profile_btn"
                 android:layout_width="match_parent"
@@ -73,15 +75,12 @@
                 android:text="프로필 정보 확인"
                 android:textStyle="bold" />
 
-
+<!--구분선-->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:background="#E4E4E4"
                 android:padding="4dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,22 +88,32 @@
                     android:textSize="10dp"
                     android:textStyle="bold" />
             </FrameLayout>
-
+<!--            구분선 end-->
+<!--            자녀 리스트 recyclerview-->
             <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
                 android:id="@+id/recycler1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="5dp" />
-
+               />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile_kidadd_btn"
+                android:background="@drawable/round_background_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:backgroundTint="#CCCCCC"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                />
+<!--            구분선-->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:background="#E4E4E4"
                 android:padding="4dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +121,8 @@
                     android:textSize="10dp"
                     android:textStyle="bold" />
             </FrameLayout>
-
+<!--구분선 end-->
+<!--            어린이집 정보 start-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,6 +180,47 @@
                 </FrameLayout>
 
             </LinearLayout>
+<!--어린이집 정보 end-->
+<!--            구분선 start-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E4E4E4"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="9dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+<!--            구분선 end-->
+<!--            메뉴 start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/profile_post_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:background="#FFFFFF"
+                    android:paddingStart="10dp"
+                    android:text="내가 쓴 게시글" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="로그아웃"
+                    android:paddingStart="10dp"
+                    android:gravity="start|center"
+                    android:id="@+id/profile_post"
+                    android:background="#FFFFFF"
+                    />
+
+            </LinearLayout>
+
 
 
         </LinearLayout>

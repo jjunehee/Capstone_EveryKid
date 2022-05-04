@@ -1,11 +1,9 @@
 package com.capstone.everykid.View.Activity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +15,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.capstone.everykid.InfoActivity;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
@@ -72,9 +69,10 @@ public class ProfileFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recycler1);
         mAdapter = new RecyclerImageTextAdapter(mList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        //자녀들 리사이클러뷰어댑터에 임시 추가
         addItem(getResources().getDrawable(R.drawable.kidprofile), "김말이(7세)");
         addItem(getResources().getDrawable(R.drawable.kidprofile), "김밥(2세)");
-        mRecyclerView.setAdapter(mAdapter); //자녀들 리사이클러뷰어댑터에 추가
+        mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
         return view;
     }

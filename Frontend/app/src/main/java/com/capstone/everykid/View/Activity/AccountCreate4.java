@@ -29,7 +29,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class AccountCreate4 extends AppCompatActivity
 {
-    public final String TAG = "SignUpActivity";
+    public final String TAG = "AccountCreate4";
 
     private EditText etid, etpwd;
     private Button btnregister;
@@ -39,7 +39,7 @@ public class AccountCreate4 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_account2);
+        setContentView(R.layout.create_account4);
 
         preferenceHelper = new PreferenceHelper(this);
 

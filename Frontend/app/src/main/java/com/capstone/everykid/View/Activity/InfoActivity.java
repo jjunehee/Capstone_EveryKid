@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.capstone.everykid.R;
 
 public class InfoActivity extends Activity {
     @Override

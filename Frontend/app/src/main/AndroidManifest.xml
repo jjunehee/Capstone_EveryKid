@@ -17,11 +17,14 @@
         android:theme="@style/Theme.EveryKid"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".InfoActivity"
-            android:theme="@android:style/Theme.Dialog"
+            android:name=".ChildAddActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".View.Activity.InfoActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".View.Activity.SettingActivity"
             android:exported="false" />
         <activity android:name=".View.Activity.ChatActivity" />
         <activity

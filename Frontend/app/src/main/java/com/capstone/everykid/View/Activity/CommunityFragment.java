@@ -98,8 +98,8 @@ public class CommunityFragment extends Fragment {
         }
         listView.setAdapter(adapter);
 
+        //글쓰기 버튼
         btn = (FloatingActionButton) view.findViewById(R.id.fab);
-
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -10,7 +10,7 @@ public interface RegisterInterface
     String REGIST_URL = "http://10.0.2.2:8080/";
 
     @FormUrlEncoded
-    @POST("/parents/new")
+    @POST("/parent/new")
     Call<String> getUserRegist(
             @Field("p_ID") String id,
             @Field("p_PHONE") String phone,
