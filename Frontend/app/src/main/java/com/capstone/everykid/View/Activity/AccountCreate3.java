@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.capstone.everykid.Model.Globals;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 public class AccountCreate3 extends AppCompatActivity {
@@ -35,7 +35,7 @@ public class AccountCreate3 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((Globals)getApplication() ).setK_id(k_id.getText().toString());
+                //((CreateAccountItem)getApplication() ).setK_id(k_id.getText().toString());
                 Intent intent = new Intent(getApplicationContext(), AccountCreate4.class);
                 startActivity(intent);
             }
