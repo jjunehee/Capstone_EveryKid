@@ -35,7 +35,7 @@ public class AccountCreate2 extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AccountCreate3.class);
+                Intent intent = new Intent(getApplicationContext(), AccountCreate4.class);
                 startActivity(intent);
             }
         });

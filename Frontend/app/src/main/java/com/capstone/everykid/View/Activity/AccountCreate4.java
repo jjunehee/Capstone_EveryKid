@@ -27,19 +27,17 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class AccountCreate4 extends AppCompatActivity
 {
-    public final String TAG = "SignUpActivity";
+    public final String TAG = "AccountCreate4";
 
     private EditText etid, etpwd;
     private Button btnregister;
-    private PreferenceHelper preferenceHelper;
+    private CreateAccountItem createaccountitem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_account2);
-
-        preferenceHelper = new PreferenceHelper(this);
+        setContentView(R.layout.create_account4);
 
         etid = (EditText) findViewById(R.id.join_id);
         etpwd = (EditText) findViewById(R.id.join_pwd);
@@ -67,7 +65,7 @@ public class AccountCreate4 extends AppCompatActivity
         final String username = ((CreateAccountItem)getApplication()).getName();
         final String password = ((CreateAccountItem)getApplication()).getPwd();
         final String email = ((CreateAccountItem)getApplication()).getEmail();
-        final String k_id =((CreateAccountItem)getApplication()).getK_id();
+       // final String k_id =((CreateAccountItem)getApplication()).getK_id();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -111,7 +109,7 @@ public class AccountCreate4 extends AppCompatActivity
         JSONObject jsonObject = new JSONObject(response);
         if (jsonObject.optString("status").equals("true"))
         {
-            saveInfo(response);
+            //saveInfo(response);
             Toast.makeText(AccountCreate4.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
         }
         else
@@ -120,27 +118,27 @@ public class AccountCreate4 extends AppCompatActivity
         }
     }
 
-    private void saveInfo(String response)
-    {
-        preferenceHelper.putIsLogin(true);
-        try
-        {
-            JSONObject jsonObject = new JSONObject(response);
-            if (jsonObject.getString("status").equals("true"))
-            {
-                JSONArray dataArray = jsonObject.getJSONArray("data");
-                for (int i = 0; i < dataArray.length(); i++)
-                {
-                    JSONObject dataobj = dataArray.getJSONObject(i);
-                    preferenceHelper.putName(dataobj.getString("name"));
-                    preferenceHelper.putHobby(dataobj.getString("hobby"));
-                }
-            }
-        }
-        catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
-    }
+//    private void saveInfo(String response)
+//    {
+//        createaccountitem.putIsLogin(true);
+//        try
+//        {
+//            JSONObject jsonObject = new JSONObject(response);
+//            if (jsonObject.getString("status").equals("true"))
+//            {
+//                JSONArray dataArray = jsonObject.getJSONArray("data");
+//                for (int i = 0; i < dataArray.length(); i++)
+//                {
+//                    JSONObject dataobj = dataArray.getJSONObject(i);
+//                    createaccountitem.putName(dataobj.getString("name"));
+//                    createaccountitem.putHobby(dataobj.getString("hobby"));
+//                }
+//            }
+//        }
+//        catch (JSONException e)
+//        {
+//            e.printStackTrace();
+//        }
+//    }
 
 }

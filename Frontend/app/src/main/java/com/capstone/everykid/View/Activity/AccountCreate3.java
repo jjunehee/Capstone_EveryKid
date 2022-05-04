@@ -35,7 +35,7 @@ public class AccountCreate3 extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((CreateAccountItem)getApplication() ).setK_id(k_id.getText().toString());
+                //((CreateAccountItem)getApplication() ).setK_id(k_id.getText().toString());
                 Intent intent = new Intent(getApplicationContext(), AccountCreate4.class);
                 startActivity(intent);
             }
