@@ -18,10 +18,23 @@
             android:background="@drawable/round_background" />
     </FrameLayout>
     <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:id="@+id/kid_name"
-      android:textSize="24dp"
-      android:gravity="center"
-      android:padding="10dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kid_name"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="10dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end|center_vertical"
+
+            android:background="@drawable/ic_baseline_chevron_right_24"
+            />
+    </FrameLayout>
+
 </LinearLayout>
