@@ -16,6 +16,7 @@ import com.capstone.everykid.Model.Board;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.CommunityFragmentAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class CommunityFragment extends Fragment {
     private View view;
     private ListView listView;
     private CommunityFragmentAdapter adapter;
-    private Button btn;
+    private FloatingActionButton btn;
 
     public CommunityFragment() {
         // Required empty public constructor
@@ -97,7 +98,7 @@ public class CommunityFragment extends Fragment {
         }
         listView.setAdapter(adapter);
 
-        btn = (Button) view.findViewById(R.id.btn_reg);
+        btn = (FloatingActionButton) view.findViewById(R.id.fab);
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override

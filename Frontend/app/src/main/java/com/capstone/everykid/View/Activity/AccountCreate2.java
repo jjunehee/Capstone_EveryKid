@@ -11,7 +11,6 @@ import com.capstone.everykid.R;
 
 
 public class AccountCreate2 extends AppCompatActivity {
-    public final String TAG = "SignUpActivity";
 
     private EditText etphone, etusername,etemail;
     private Button btnregister;
