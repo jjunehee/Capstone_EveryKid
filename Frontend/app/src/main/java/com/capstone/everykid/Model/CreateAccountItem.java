@@ -2,7 +2,8 @@ package com.capstone.everykid.Model;
 
 import android.app.Application;
 
-public class Globals extends Application {
+public class CreateAccountItem extends Application {
+
     private String Name;
     private String Phone;
     private String Email;
