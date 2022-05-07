@@ -2,9 +2,11 @@ package com.aaop.everykid.controller;
 
 import com.aaop.everykid.dto.BoardDto;
 import com.aaop.everykid.entity.Board;
+import com.aaop.everykid.entity.BoardList;
 import com.aaop.everykid.repository.BoardRepository;
 import com.aaop.everykid.service.BoardService;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,10 +14,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/board")
@@ -39,27 +41,35 @@ public class BoardController {
         System.out.println(board.getContent());
         System.out.println(board);
 
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(board);
+        BoardList boardList = new BoardList(board.getContent(), (int)board.getTotalElements(), board.getSize(), board.getNumber(), board.getTotalPages());
+
+        Gson gson = new GsonBuilder().setDateFormat("MMM dd, yyyy HH:mm:ss a").create();
+        String jsonString = gson.toJson(boardList);
         System.out.println(jsonString);
 
         return jsonString;
     }
 
-    //글쓰기
-    @RequestMapping ("/write")
-    public String writeContent(BoardDto boardDto) {
-        System.out.println(boardDto.toString());
+    @RequestMapping ("/write/{kID}/{tID}/{pID}/{writeSUBJECT}/{contents}")
+    public Boolean writeContent(@PathVariable("kID") String kID, @PathVariable("tID") String tID, @PathVariable("pID") String pID,
+                                @PathVariable("writeSUBJECT") String writeSUBJECT, @PathVariable("contents") String contents) {
+
+        BoardDto boardDto = null;
+        System.out.println("111");
+        if(tID.equals("null")) {
+            boardDto = new BoardDto(boardService.getMaxBID() + 1, kID, null, pID, null, writeSUBJECT, contents, 0);
+        }
+        System.out.println(boardDto);
 
         // 1. Dto -> Entity
         Board board = boardDto.toEntity();
-        System.out.println(board.toString());
+        //System.out.println(board.toString());
 
         // 2. Repository에게 Entity를 DB에 저장하게 함
         Board saved = boardRepository.save(board);
-        System.out.println(saved.toString());
+        //System.out.println(saved.toString());
 
-        return "";
+        return true;
     }
 
     //글삭제(아무나 삭제하지 못하도록 수정)
@@ -89,7 +99,7 @@ public class BoardController {
         if(key.length() < 2)
             return "";
 
-        Page<Board> board = boardRepository.searchBoard(key, kID, pageable);
+        Page<Board> board = boardService.getSearchList(key, kID, pageable);
 
         System.out.println(board.getTotalElements());
         System.out.println(board.getTotalPages());
@@ -97,8 +107,10 @@ public class BoardController {
         System.out.println(board.getSize());
         System.out.println(board.getContent());
 
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(board);
+        BoardList boardList = new BoardList(board.getContent(), (int)board.getTotalElements(), board.getSize(), board.getNumber(), board.getTotalPages());
+
+        Gson gson = new GsonBuilder().setDateFormat("MMM dd, yyyy HH:mm:ss a").create();
+        String jsonString = gson.toJson(boardList);
         System.out.println(jsonString);
 
         return jsonString;

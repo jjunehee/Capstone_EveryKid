@@ -38,11 +38,11 @@ public class AccountCreate4 extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account4);
-<<<<<<< HEAD
-
-        preferenceHelper = new PreferenceHelper(this);
-=======
->>>>>>> 343b282ee2fa0655ebed818c01c232357034eeb0
+//<<<<<<< HEAD
+//
+//        preferenceHelper = new PreferenceHelper(this);
+//=======
+//>>>>>>> 343b282ee2fa0655ebed818c01c232357034eeb0
 
         etid = (EditText) findViewById(R.id.join_id);
         etpwd = (EditText) findViewById(R.id.join_pwd);

@@ -21,8 +21,18 @@ public class BoardService {
     }
 
     @Transactional
+    public Page<Board> getSearchList(String key, String kID, Pageable pageable) {
+        return boardRepository.searchBoard(key, kID, pageable);
+    }
+
+    @Transactional
     public void update(int b_ID, String contents) { //수정완료 눌렀을 때 실행
         Board board = boardRepository.findBybID(b_ID);
         board.modifyContents(contents); //수정된 content
+    }
+
+    @Transactional
+    public int getMaxBID() {
+        return boardRepository.maxBID();
     }
 }

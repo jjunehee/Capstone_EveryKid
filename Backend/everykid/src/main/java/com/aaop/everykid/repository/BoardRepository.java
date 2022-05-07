@@ -19,4 +19,7 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
             "OR T_ID LIKE CONCAT('%', ?1, '%')" +
             "OR CONTENTS LIKE CONCAT('%', ?1, '%'))", nativeQuery = true)
     Page<Board> searchBoard(String key, String kID, Pageable pageable);
+
+    @Query(value="select ifnull(max(B_ID), 0) from everykid.board", nativeQuery = true)
+    int maxBID();
 }

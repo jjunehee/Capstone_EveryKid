@@ -56,4 +56,6 @@ public class CommunityFragmentAdapter extends BaseAdapter {
         items.add(item);
     }
 
+    public void removeItem() { items = new ArrayList<>(); }
+
 }

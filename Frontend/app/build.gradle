@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0-beta01'
     implementation 'com.github.bumptech.glide:glide:4.13.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.lakue119:LakuePagingButton:1.0.0'
 
     //Network
     implementation 'com.google.code.gson:gson:2.8.6'
