@@ -1,6 +1,7 @@
+/*
 package com.aaop.everykid.controller;
 
-import com.aaop.everykid.dto.ParentFormDto;
+import com.aaop.everykid.dto.RegisterFormDto;
 import com.aaop.everykid.entity.Parent;
 import com.aaop.everykid.service.LoginService;
 import com.aaop.everykid.service.ParentService;
@@ -21,14 +22,14 @@ public class ParentController {
 //    private final PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/new")
-    public ParentFormDto getParameter(ParentFormDto pa) {
+    public RegisterFormDto getParameter(RegisterFormDto pa) {
 
         return pa;
     }
 
     //jpa 문자열
     @PostMapping(value = "/new")     //p_NAME
-    public ParentFormDto parentForm(ParentFormDto parentFormDto) {
+    public RegisterFormDto parentForm(@RequestBody RegisterFormDto parentFormDto) {
         Parent parent = Parent.createParent(parentFormDto);
         parentService.saveParent(parent);
         System.out.println("회원가입 시도" + parentFormDto);
@@ -48,4 +49,4 @@ public class ParentController {
         return "실패";
     }
 
-}
+}*/

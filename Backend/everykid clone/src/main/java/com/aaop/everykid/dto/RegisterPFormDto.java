@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ParentFormDto {
+public class RegisterPFormDto {
 
     private String P_ID;
 
@@ -17,11 +17,11 @@ public class ParentFormDto {
 
     private String P_PHONE;
 
-    //private String K_NAME;
+    private String K_ID;
 
     private String P_EMAIL;
 
-    //private String P_ALIAS;
+    private String P_ALIAS;
 
     //private String C_NAME;
 

@@ -1,7 +1,5 @@
 package com.aaop.everykid.dto;
 
-import com.aaop.everykid.entity.Parent;
-import com.aaop.everykid.entity.Teacher;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
