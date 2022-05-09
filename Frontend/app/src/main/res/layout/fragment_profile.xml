@@ -5,109 +5,227 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/appBarLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/backgrond">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/top_nave_menu"
-
-            app:popupTheme="@style/Theme.TitleBar.PopupOverlay"/>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="45dp">
-    //test
-
-        <Button
-            android:id="@+id/btn_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="15dp"
-            android:background="#00ff0000"
-            android:gravity="right"
-            android:text="프로필 수정"
-            android:textColor="@color/black">
-
-        </Button>
-        <ImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/default_profile" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="000학년 000반 000"
-            android:textSize="25dp">
-
-        </TextView>
-
-    <LinearLayout
-        android:id="@+id/add_top_list"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        >
-
-        <Button
-            android:id="@+id/enter"
-            android:text="등원"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            />
-        <Button
-            android:id="@+id/exit"
-            android:text="하원"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            />
-    </LinearLayout>
+        android:layout_height="match_parent">
+        <!--레이아웃 틀        -->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_profiles"
-                android:layout_width="100dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/enter"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"/>
-            <ImageView
-                android:id="@+id/iv_profiles2"
-                android:layout_width="100dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/exit"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"/>
+<!--            사용자 프로필-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/round_background"
+
+                    android:src="@drawable/img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:text="김태희"
+                        android:textSize="23dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+
+                        android:gravity="center"
+                        android:text="학부모님"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+<!--            사용자 레이아웃 end-->
+
+<!--            프로필 확인 버튼-->
+            <Button
+                android:id="@+id/profile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:text="프로필 정보 확인"
+                android:textStyle="bold" />
+
+<!--구분선-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E4E4E4"
+                android:padding="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우리 아이"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+<!--            구분선 end-->
+<!--            자녀 리스트 recyclerview-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
+                android:id="@+id/recycler1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile_kidadd_btn"
+                android:background="@drawable/round_background_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:backgroundTint="#CCCCCC"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                />
+<!--            구분선-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E4E4E4"
+                android:padding="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우리 아이 유치원"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+<!--구분선 end-->
+<!--            어린이집 정보 start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="5dp"
+                android:background="@drawable/round_background_2"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/kinder_profile"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/round_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/kinderprofile"/>
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:id="@+id/kinder_name"
+                        android:text="참사랑 어린이집"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kinder_phone"
+                        android:text="02)1234-1234"
+                        android:padding="8dp"/>
+                </LinearLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="50dp" android:layout_height="50dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:background="@drawable/ic_baseline_chevron_right_24"
+                        android:id="@+id/kinder_btn"
+                        android:backgroundTint="@color/gray_text_color"
+                        android:textColor="#7A7A7A" />
+                </FrameLayout>
+
+            </LinearLayout>
+<!--어린이집 정보 end-->
+<!--            구분선 start-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E4E4E4"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="9dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+<!--            구분선 end-->
+<!--            메뉴 start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/profile_post_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:background="#FFFFFF"
+                    android:paddingStart="10dp"
+                    android:text="내가 쓴 게시글" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="로그아웃"
+                    android:paddingStart="10dp"
+                    android:gravity="start|center"
+                    android:id="@+id/profile_post"
+                    android:background="#FFFFFF"
+                    />
+
+            </LinearLayout>
+
+
+
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

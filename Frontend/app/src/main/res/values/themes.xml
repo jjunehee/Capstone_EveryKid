@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.EveryKid.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.EveryKid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/main_yellow</item>
         <item name="colorPrimaryVariant">@color/main_yellow</item>
@@ -14,5 +14,6 @@
         <!-- Customize your theme here. -->
 
     </style>
-    <style name="Theme.TitleBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
 </resources>
