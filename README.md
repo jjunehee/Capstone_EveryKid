@@ -153,7 +153,7 @@
   ### ~ing
   ```[조준희] 안드로이드 FCM 연동 테스트 완료 ```
   - 본 프로젝트에 적용예정( 채팅과 같은 firebase 계정으로 적용해야할듯함 )
-  <img width="50%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
+  <img width="15%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
   
   
    
