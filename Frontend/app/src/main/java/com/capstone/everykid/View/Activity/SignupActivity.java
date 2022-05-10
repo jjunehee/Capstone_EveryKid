@@ -1,18 +1,20 @@
 package com.capstone.everykid.View.Activity;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.capstone.everykid.Model.CreateAccountItem;
-import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.R;
+import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
 
 import org.json.JSONArray;
@@ -25,11 +27,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-public class AccountCreate4 extends AppCompatActivity
-{
-    public final String TAG = "AccountCreate4";
 
-    private EditText etid, etpwd;
+
+public class SignupActivity extends AppCompatActivity
+{
+    public final String TAG = "SignupActivity";
+
+    private EditText etid, etphone, etusername, etpassword, etemail;
     private Button btnregister;
     private PreferenceHelper preferenceHelper;
 
@@ -37,18 +41,17 @@ public class AccountCreate4 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_account4);
+        setContentView(R.layout.activity_signup);
 
         preferenceHelper = new PreferenceHelper(this);
 
+        etid = (EditText) findViewById(R.id.id);
+        etphone = (EditText) findViewById(R.id.phone);
+        etusername = (EditText) findViewById(R.id.name);
+        etpassword = (EditText) findViewById(R.id.pw);
+        etemail = (EditText) findViewById(R.id.email);
 
-        etid = (EditText) findViewById(R.id.join_id);
-        etpwd = (EditText) findViewById(R.id.join_pwd);
-
-        ((CreateAccountItem)getApplication() ).setId(etid.getText().toString());
-        ((CreateAccountItem)getApplication() ).setPwd(etpwd.getText().toString());
-
-        btnregister=(Button)findViewById(R.id.join_btn);
+        btnregister = (Button) findViewById(R.id.button4);
 
         btnregister.setOnClickListener(new View.OnClickListener()
         {
@@ -62,13 +65,11 @@ public class AccountCreate4 extends AppCompatActivity
 
     private void registerMe()
     {
-
-        final String id =((CreateAccountItem)getApplication()).getId();
-        final String phone =((CreateAccountItem)getApplication()).getPhone();
-        final String username = ((CreateAccountItem)getApplication()).getName();
-        final String password = ((CreateAccountItem)getApplication()).getPwd();
-        final String email = ((CreateAccountItem)getApplication()).getEmail();
-       // final String k_id =((CreateAccountItem)getApplication()).getK_id();
+        final String id = etid.getText().toString();
+        final String phone = etphone.getText().toString();
+        final String username = etusername.getText().toString();
+        final String password = etpassword.getText().toString();
+        final String email = etemail.getText().toString();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -97,6 +98,7 @@ public class AccountCreate4 extends AppCompatActivity
                     }
 
                 }
+                Toast.makeText(SignupActivity.this, "if문 이후", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -113,11 +115,13 @@ public class AccountCreate4 extends AppCompatActivity
         if (jsonObject.optString("status").equals("true"))
         {
             saveInfo(response);
-            Toast.makeText(AccountCreate4.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         }
         else
         {
-            Toast.makeText(AccountCreate4.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignupActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
         }
     }
 

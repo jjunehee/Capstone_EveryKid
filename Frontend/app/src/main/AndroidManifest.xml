@@ -2,14 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.capstone.everykid">
-
-
-<!--    Network-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Network -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -24,7 +20,10 @@
         android:theme="@style/Theme.EveryKid"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ChildAddActivity"
+            android:name=".View.Activity.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Activity.ChildAddActivity"
             android:exported="false" />
         <activity
             android:name=".View.Activity.InfoActivity"
