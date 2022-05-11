@@ -38,8 +38,8 @@ public class Parent {
     @Column(name="P_ALIAS")
     private String pALIAS;
 
-    @Column(name="K_ID")
-    private String kID;
+/*    @Column(name="K_KID")
+    private String kID;*/
 
     //@Column(name="T_ID")
     //private String tID;

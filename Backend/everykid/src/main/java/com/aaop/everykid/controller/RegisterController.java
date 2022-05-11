@@ -34,7 +34,7 @@ public class RegisterController {
 
     //jpa 문자열
     @PostMapping(value = "/parent")     //p_NAME
-    public RegisterPFormDto registerForm(@RequestBody RegisterPFormDto registerPFormDto) {
+    public RegisterPFormDto registerForm(RegisterPFormDto registerPFormDto) {
         Parent parent = Parent.createParent(registerPFormDto);
         parentService.saveParent(parent);
         System.out.println("부모 회원가입 시도" + registerPFormDto);
@@ -42,7 +42,7 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/teacher")     //p_NAME
-    public RegisterTFormDto registerForm2(@RequestBody RegisterTFormDto registerTFormDto) {
+    public RegisterTFormDto registerForm2(RegisterTFormDto registerTFormDto) {
         Teacher teacher = Teacher.createTeacher(registerTFormDto);
         teacherService.saveTeacher(teacher);
         System.out.println("선생 회원가입 시도" + registerTFormDto);

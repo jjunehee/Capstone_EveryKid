@@ -19,4 +19,14 @@ public interface RegisterInterface
             @Field("p_PWD") String password,
             @Field("p_EMAIL") String email
     );
+
+//선생님 회원가입 아직 추가 안함
+//    @FormUrlEncoded
+//    @POST("/register/teacher")
+//    Call<String> getUserRegist(
+//            @Field("t_ID") String id,
+//
+//    )
+
+
 }
