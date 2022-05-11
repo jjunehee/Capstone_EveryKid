@@ -109,7 +109,7 @@ public class BoardController {
 
         BoardList boardList = new BoardList(board.getContent(), (int)board.getTotalElements(), board.getSize(), board.getNumber(), board.getTotalPages());
 
-        Gson gson = new GsonBuilder().setDateFormat("MMM dd, yyyy HH:mm:ss a").create();
+        Gson gson = new GsonBuilder().setDateFormat("MM, dd, yyyy HH:mm:ss a").create();
         String jsonString = gson.toJson(boardList);
         System.out.println(jsonString);
 
