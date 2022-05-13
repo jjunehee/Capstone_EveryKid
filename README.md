@@ -156,6 +156,8 @@
   - 안드로이드에서 앱 토큰을 Firebase Database로 보내기 완료
   - 앞으로 라즈베리파이에서 해당 Database에 접근해서 사용자별 Token값을 가져올 예정
   <img width="20%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
+  <img width="20%" src="https://user-images.githubusercontent.com/83155528/168300733-c461ce30-dcde-407b-9641-f210c5f1b055.png"/>
+  <img width="20%" src="https://user-images.githubusercontent.com/83155528/168300453-7772b1e5-ebfa-4621-ade2-b70e5a647b9e.png"/>
   
   ### ~ing
   ```[조준희] 라즈베리파이로 Token 가져오기```
