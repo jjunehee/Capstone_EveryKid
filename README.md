@@ -71,6 +71,12 @@
 - AccountCreate.java, AccountCreate2.java, AccountCreate3.java, AccountCreate4.java 코드 수정
 - Globals.java, AndroidManifest.xml  전역변수 추가
 - create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
+
+### 05/16
+```[노수진] HomeFragment, 회원가입 ```
+- AccountCreate.java, SignupActivity.java, activity_signup.xml 회원가입시 선생님, 학부모 구별하게 수정
+- HomeFragment.java, fragment_home.xml 홈화면에 달력, 공지사항 레이아웃 추가 
+- notice_item.xml, NoticeItemAdapter.java 공지사항 제목 리싸이클러뷰 추가, RecyclerItem.java 수정 
   
  </div>
 </details>
