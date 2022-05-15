@@ -74,7 +74,7 @@
 
 ### 05/16
 ```[노수진] HomeFragment, 회원가입 ```
-- AccountCreate.java, SignupActivity.java, activity_signup.xml 회원가입시 선생님, 학부모 구별하게 수정(선생님 회원가입시 데이터베이스 컬럼 오류남)
+- AccountCreate.java, SignupActivity.java, activity_signup.xml, RegisterInterface.java 회원가입시 선생님, 학부모 구별하게 수정(선생님 회원가입시 데이터베이스 컬럼 오류남)
 - HomeFragment.java, fragment_home.xml 홈화면에 달력, 공지사항 레이아웃 추가 
 - notice_item.xml, NoticeItemAdapter.java 공지사항 제목 리싸이클러뷰 추가, RecyclerItem.java 수정 
   
