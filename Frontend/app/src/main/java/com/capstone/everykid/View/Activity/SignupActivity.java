@@ -1,6 +1,5 @@
 package com.capstone.everykid.View.Activity;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,21 +26,27 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-
-
 public class SignupActivity extends AppCompatActivity
 {
     public final String TAG = "SignupActivity";
 
     private EditText etid, etphone, etusername, etpassword, etemail;
+    private TextView text;
     private Button btnregister;
     private PreferenceHelper preferenceHelper;
+    private String accountUser;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        intent = getIntent();
+        accountUser= intent.getExtras().getString("User");
+
+        text=findViewById(R.id.textView6);
+        text.setText(accountUser);
 
         preferenceHelper = new PreferenceHelper(this);
 
@@ -53,17 +58,21 @@ public class SignupActivity extends AppCompatActivity
 
         btnregister = (Button) findViewById(R.id.button4);
 
+
         btnregister.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                registerMe();
+                if(accountUser.equals("Parent")){
+                    registerParent();
+                }else if(accountUser.equals("Teacher")){
+                    registerTeacher();
+                }
             }
         });
     }
-
-    private void registerMe()
+    private void registerParent()
     {
         final String id = etid.getText().toString();
         final String phone = etphone.getText().toString();
@@ -77,7 +86,53 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getUserRegist(id, phone, username, password, email);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email);
+        call.enqueue(new Callback<String>()
+        {
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response)
+            {
+                if (response.isSuccessful() && response.body() != null)
+                {
+                    Log.e("onSuccess", response.body());
+
+                    String jsonResponse = response.body();
+                    try
+                    {
+                        parseRegData(jsonResponse);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }
+                    catch (JSONException e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t)
+            {
+                Log.e(TAG, "에러 = " + t.getMessage());
+            }
+        });
+    }
+    private void registerTeacher()
+    {
+        final String id = etid.getText().toString();
+        final String phone = etphone.getText().toString();
+        final String username = etusername.getText().toString();
+        final String password = etpassword.getText().toString();
+        final String email = etemail.getText().toString();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RegisterInterface.REGIST_URL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+
+        RegisterInterface api = retrofit.create(RegisterInterface.class);
+        Call<String> call = api.getTeacherRegist(id, phone, username, password, email);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -98,7 +153,6 @@ public class SignupActivity extends AppCompatActivity
                     }
 
                 }
-                Toast.makeText(SignupActivity.this, "if문 이후", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -116,8 +170,6 @@ public class SignupActivity extends AppCompatActivity
         {
             saveInfo(response);
             Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
         }
         else
         {

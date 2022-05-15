@@ -12,7 +12,7 @@ public interface RegisterInterface
 
     @FormUrlEncoded
     @POST("/register/parent")
-    Call<String> getUserRegist(
+    Call<String> getParentRegist(
             @Field("P_ID") String id,
             @Field("P_PHONE") String phone,
             @Field("P_NAME") String username,
@@ -20,13 +20,13 @@ public interface RegisterInterface
             @Field("P_EMAIL") String email
     );
 
-//선생님 회원가입 아직 추가 안함
-//    @FormUrlEncoded
-//    @POST("/register/teacher")
-//    Call<String> getUserRegist(
-//            @Field("t_ID") String id,
-//
-//    )
-
-
+    @FormUrlEncoded
+    @POST("/register/teacher")
+    Call<String> getTeacherRegist(
+            @Field("T_ID") String id,
+            @Field("T_PHONE") String phone,
+            @Field("T_NAME") String username,
+            @Field("T_PWD") String password,
+            @Field("T_EMAIL") String email
+   );
 }

@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.applandeo:material-calendar-view:1.7.0'
     implementation platform('com.google.firebase:firebase-bom:30.0.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-messaging'
