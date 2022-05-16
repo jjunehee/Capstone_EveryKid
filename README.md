@@ -72,6 +72,12 @@
 - Globals.java, AndroidManifest.xml  전역변수 추가
 - create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
 
+### 05/11
+```[최희정] 회원가입, 데이터베이스```
+- Spring Boot - mysql - Android Studio 서버 통신 성공
+- 학부모 회원가입 정상 실행 확인(+레이아웃 수정해서 모든 값 받을 수 있게 수정 필요)
+- entity.Teacher.java 내의 컬럼명 K_ID -> K_KID 수정
+  
 ### 05/16
 ```[노수진] 홈화면, 회원가입, 아이등록화면 ```
 - AccountCreate.java, SignupActivity.java, activity_signup.xml, RegisterInterface.java 회원가입: 회원가입시 선생님과 학부모 구별하게 수정(선생님 회원가입시 데이터베이스 컬럼 오류남)
@@ -80,6 +86,10 @@
 - ScheduleActivity.java, activity_schedule.xml 달력: 특정 날짜 클릭 시 그 날짜의 학사일정 보여주는 팝업창 (데이터베이스 연결 필요)
 - activity_child_add.xml, ChildAddActivity.java 아이등록화면: 갤러리에서 사진등록가능 (데이터베이스에 추가하는 코드 필요)
  
+### 05/17
+```[최희정] 선생님 회원가입```
+- 선생님 회원가입 오류 수정, 정상 실행 확인(+레이아웃 수정해서 모든 값 받을 수 있게 수정 필요, 현재 t_name, t_phone, t_email, t_id, t_pwd만 insert됨)
+
   
  </div>
 </details>
