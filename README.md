@@ -169,9 +169,10 @@
   <img width="80%" src="https://user-images.githubusercontent.com/83155528/168300453-7772b1e5-ebfa-4621-ade2-b70e5a647b9e.png"/>
   
   ### ~ing
-  ```[조준희] 라즈베리파이로 Token 가져오기```
-  
-  
+  ```[조준희] 라즈베리파이로 Token 가져오고, 안드로이드 기기로 푸쉬알림 보내기```
+  - Firebase Databbase로 부터 알림설정 허용한 기기들의 token 정보를 가져오고, 해당 기기로 푸쉬 알림 보내기 완료 ( notification.py )
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/168577423-3a2d68ab-afaf-4d40-b313-466faf6f8f37.gif"/>
+  <img width="50%" src="https://user-images.githubusercontent.com/83155528/168577444-d5b3a24f-65e0-4c99-b41f-fe45bc260588.gif"/>
   
    
   
