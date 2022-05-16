@@ -171,8 +171,10 @@
   ### ~ing
   ```[조준희] 라즈베리파이로 Token 가져오고, 안드로이드 기기로 푸쉬알림 보내기```
   - Firebase Databbase로 부터 알림설정 허용한 기기들의 token 정보를 가져오고, 해당 기기로 푸쉬 알림 보내기 완료 ( notification.py )
-  <img width="50%" src="https://user-images.githubusercontent.com/83155528/168577423-3a2d68ab-afaf-4d40-b313-466faf6f8f37.gif"/>
-  <img width="50%" src="https://user-images.githubusercontent.com/83155528/168577444-d5b3a24f-65e0-4c99-b41f-fe45bc260588.gif"/>
+  ![192 168 45 44_1-_raspberrypi_1-_pi__-VNC-Viewer-2022-05-16-19-43-41](https://user-images.githubusercontent.com/83155528/168578247-743822da-2f8a-4fdd-b115-966cc2085c3c.gif)
+![Android-Emulator-Pixel_2_API_30_5554-2022-05-16-19-44-10](https://user-images.githubusercontent.com/83155528/168578280-5ac2cdfb-d2a0-43fa-bfde-aa07afa1aa7f.gif)
+
+ 
   
    
   
