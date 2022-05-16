@@ -31,7 +31,7 @@ public class Teacher {
     @Column(name = "T_PWD")
     private String tPWD;
 
-    @Column(name = "K_ID")
+    @Column(name = "K_KID")
     private String kID;
 
     public static Teacher createTeacher(RegisterTFormDto registerTFormDto){
