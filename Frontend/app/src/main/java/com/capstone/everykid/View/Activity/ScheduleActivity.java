@@ -20,11 +20,11 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        txt =(TextView)findViewById(R.id.txt_schedule);
+        txt =(TextView)findViewById(R.id.txt_schedule); // 학사일정 보여주는 textview
 
         intent = getIntent();
         text= intent.getExtras().getString("context");
-        if(text==null){
+        if(text==null){ //일정 없을 때
             txt.setText("일정 없음");
         }else{
             txt.setText(text);

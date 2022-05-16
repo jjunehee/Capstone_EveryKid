@@ -69,14 +69,17 @@ public class HomeFragment extends Fragment {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
                 Date date = clickedDayCalendar.getTime();
                 String dateToStr = dateFormat.format(date);
+
                 String context =null;//그 날짜의 일정 가져와야함
+
                 Log.d("CREATION", dateToStr);
                 Intent intent = new Intent(view.getContext(), ScheduleActivity.class);
+
+                //날짜와 그날의 학사일정 값 넘겨주기
                 intent.putExtra("date", dateToStr);
                 intent.putExtra("context", context);
+
                 view.getContext().startActivity(intent);
-
-
             }
         });
 
@@ -84,7 +87,7 @@ public class HomeFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recycler_notice);
         mAdapter = new NoticeItemAdapter(mList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        //리사이클러뷰어댑터에 임시 추가
+        //리사이클러뷰어댑터에 아이템 임시 추가
         addItem("공지사항 제목");
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
