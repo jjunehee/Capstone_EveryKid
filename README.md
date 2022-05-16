@@ -77,7 +77,9 @@
 - AccountCreate.java, SignupActivity.java, activity_signup.xml, RegisterInterface.java 회원가입: 회원가입시 선생님과 학부모 구별하게 수정(선생님 회원가입시 데이터베이스 컬럼 오류남)
 - HomeFragment.java, fragment_home.xml 홈화면: 학사일정 달력, 공지사항 레이아웃 추가 
 - notice_item.xml, NoticeItemAdapter.java, RecyclerItem.java 홈화면: 공지사항 제목 리싸이클러뷰 추가, 수정
+- ScheduleActivity.java, activity_schedule.xml 달력: 특정 날짜 클릭 시 그 날짜의 학사일정 보여주는 팝업창 (데이터베이스 연결 필요)
 - activity_child_add.xml, ChildAddActivity.java 아이등록화면: 갤러리에서 사진등록가능 (데이터베이스에 추가하는 코드 필요)
+ 
   
  </div>
 </details>
