@@ -35,6 +35,8 @@ public class CreateAccountItem extends Application {
     public void setId(String id){  this.Id = id; }
     public void setPwd(String pwd){ this.Pwd = pwd; }
 
+
+
     public String getName(){ return Name; }
     public String getPhone(){ return Phone; }
     public String getEmail(){  return Email; }

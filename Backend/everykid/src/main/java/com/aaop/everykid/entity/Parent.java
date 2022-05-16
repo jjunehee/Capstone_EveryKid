@@ -38,13 +38,10 @@ public class Parent {
     @Column(name="P_ALIAS")
     private String pALIAS;
 
-<<<<<<< HEAD
 /*    @Column(name="K_KID")
     private String kID;*/
-=======
     @Column(name="K_KID")
     private String kID;
->>>>>>> 6ad79a5875f2508ba51ef8f5bd862984727df72c
 
     //@Column(name="T_ID")
     //private String tID;
