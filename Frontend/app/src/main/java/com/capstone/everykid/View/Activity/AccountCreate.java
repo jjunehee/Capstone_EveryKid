@@ -26,14 +26,18 @@ public class AccountCreate extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                intent.putExtra("User", "Teacher");
                 startActivity(intent);
+                finish();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                intent.putExtra("User","Parent");
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -14,7 +14,7 @@ public class CreateAccountItem extends Application {
 
     @Override
     public void onCreate() {
-        Name =null;
+        Name=null;
         Phone = null;
         Email = null;
         //K_id=null;
