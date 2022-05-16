@@ -89,6 +89,11 @@
 ### 05/17
 ```[최희정] 선생님 회원가입```
 - 선생님 회원가입 오류 수정, 정상 실행 확인(+레이아웃 수정해서 모든 값 받을 수 있게 수정 필요, 현재 t_name, t_phone, t_email, t_id, t_pwd만 insert됨)
+ <img src="https://user-images.githubusercontent.com/83461991/168654330-b257de6f-6914-4626-991e-02cf475b9d68.png" width="150"/>
+ <img src="https://user-images.githubusercontent.com/83461991/168654770-d9441c22-9978-41d9-905c-36bd15d17e37.png" width="400"/>
+
+
+
 
   
  </div>
