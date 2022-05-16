@@ -1,6 +1,7 @@
 package com.capstone.everykid.View.Activity;
 
 import android.annotation.SuppressLint;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -15,10 +16,14 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Adapter.NoticeItemAdapter;
@@ -57,7 +62,23 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
         CalendarView calendarView = (CalendarView) view.findViewById(R.id.calendarView); //달력 전체
+        calendarView.setOnDayClickListener(new OnDayClickListener() {
+            @Override
+            public void onDayClick(EventDay eventDay) {
+                Calendar clickedDayCalendar = eventDay.getCalendar();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+                Date date = clickedDayCalendar.getTime();
+                String dateToStr = dateFormat.format(date);
+                String context =null;//그 날짜의 일정 가져와야함
+                Log.d("CREATION", dateToStr);
+                Intent intent = new Intent(view.getContext(), ScheduleActivity.class);
+                intent.putExtra("date", dateToStr);
+                intent.putExtra("context", context);
+                view.getContext().startActivity(intent);
 
+
+            }
+        });
 
 //공지사항 리사이클러뷰
         mRecyclerView = view.findViewById(R.id.recycler_notice);

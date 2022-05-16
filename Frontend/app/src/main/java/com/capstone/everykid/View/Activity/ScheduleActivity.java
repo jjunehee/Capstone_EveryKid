@@ -1,44 +1,36 @@
 package com.capstone.everykid.View.Activity;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.capstone.everykid.R;
 
-public class InfoActivity extends Activity {
+public class ScheduleActivity extends AppCompatActivity {
+    TextView txt;
+    private Intent intent;
+    String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //타이틀바 없애기
+        setContentView(R.layout.activity_schedule);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_info);
+        txt =(TextView)findViewById(R.id.txt_schedule);
 
-//        txtText = (TextView)findViewById(R.id.txtText);
-
-        //데이터 가져오기
-        //   Intent intent = getIntent();
-        // String data = intent.getStringExtra("data");
-        // txtText.setText(data);
-
-//        Button imageButton1 = (Button) findViewById(R.id.button5);
-//        imageButton1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), play1Activity.class);
-//                intent.putExtra("number", 1);
-//                //startActivityForResult(intent, 1);
-//                startActivity(intent);
-//            }
-//        });
+        intent = getIntent();
+        text= intent.getExtras().getString("context");
+        if(text==null){
+            txt.setText("일정 없음");
+        }else{
+            txt.setText(text);
+        }
 
     }
-    //확인 버튼 클릭
     public void mOnClose(View v){
         //데이터 전달하기
         Intent intent = new Intent();

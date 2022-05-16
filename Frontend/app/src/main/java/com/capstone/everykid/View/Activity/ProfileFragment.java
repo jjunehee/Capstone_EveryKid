@@ -86,10 +86,8 @@ public class ProfileFragment extends Fragment {
     }
     public void addItem(Drawable icon, String title){
         RecyclerItem item = new RecyclerItem();
-
         item.setIcon(icon);
         item.setTitle(title);
         mList.add(item);
     }
-
 }
