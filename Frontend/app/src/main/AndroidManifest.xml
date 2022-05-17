@@ -26,8 +26,17 @@
         android:theme="@style/Theme.EveryKid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".View.Activity.NoticeActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity
+            android:name=".View.Activity.NoticeWriteActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity
             android:name=".View.Activity.ScheduleActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".View.Activity.SignupActivity"
             android:exported="false" />

@@ -1,10 +1,7 @@
 package com.capstone.everykid.View.Activity;
 
-import android.annotation.SuppressLint;
-import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,18 +20,15 @@ import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.capstone.everykid.Model.RecyclerItem;
+import com.capstone.everykid.OnItemClickListener;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Adapter.NoticeItemAdapter;
 
 
 public class HomeFragment extends Fragment {
     private View view;
-    public String fname = null;
-    public String str = null;
 
-    public Button cha_Btn, del_Btn, save_Btn;
-    public TextView diaryTextView, textView2, textView3;
-    public EditText contextEditText;
+    public Button noticeWrite_btn;
     RecyclerView mRecyclerView=null;
     NoticeItemAdapter mAdapter=null;
     ArrayList<RecyclerItem> mList= new ArrayList<RecyclerItem>();
@@ -53,6 +45,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mList= new ArrayList<RecyclerItem>();
     }
 
     @Override
@@ -61,7 +54,17 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
-        CalendarView calendarView = (CalendarView) view.findViewById(R.id.calendarView); //달력 전체
+
+        noticeWrite_btn = (Button)view.findViewById(R.id.noticeWrite_btn); //공지사항 글쓰는 버튼
+        noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), NoticeWriteActivity.class);
+                startActivity(intent);
+            }
+        });
+//        달력
+        CalendarView calendarView = (CalendarView) view.findViewById(R.id.calendarView);
         calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(EventDay eventDay) {
@@ -73,7 +76,7 @@ public class HomeFragment extends Fragment {
                 String context =null;//그 날짜의 일정 가져와야함
 
                 Log.d("CREATION", dateToStr);
-                Intent intent = new Intent(view.getContext(), ScheduleActivity.class);
+                Intent intent = new Intent(view.getContext(), ScheduleActivity.class); //스케쥴 보여주는 창
 
                 //날짜와 그날의 학사일정 값 넘겨주기
                 intent.putExtra("date", dateToStr);
@@ -83,13 +86,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//공지사항 리사이클러뷰
-        mRecyclerView = view.findViewById(R.id.recycler_notice);
+
+//        공지사항 리사이클러뷰
+        mRecyclerView = view.findViewById(R.id.notice_recycler);
         mAdapter = new NoticeItemAdapter(mList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        //리사이클러뷰어댑터에 아이템 임시 추가
-        addItem("공지사항 제목");
+        addItem("공지사항 제목"); //리사이클러뷰어댑터에 아이템 임시 추가
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClicklistener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(NoticeItemAdapter.ViewHolder holder, View view, int position) {
+                //RecyclerItem item = mAdapter.getItem(position);
+                Intent intent = new Intent(getActivity(), NoticeActivity.class);
+                intent.putExtra("notice_content", "");
+                startActivity(intent);
+            }
+        });
         mAdapter.notifyDataSetChanged();
         return view;
     }

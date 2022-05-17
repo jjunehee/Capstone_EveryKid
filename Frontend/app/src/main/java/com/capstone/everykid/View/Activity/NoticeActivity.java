@@ -8,29 +8,16 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
 
 import com.capstone.everykid.R;
 
-public class ScheduleActivity extends Activity {
-    TextView txt;
-    private Intent intent;
-    String text;
+public class NoticeActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_schedule);
-        txt =(TextView)findViewById(R.id.txt_schedule); // 학사일정 보여주는 textview
-
-        intent = getIntent();
-        text= intent.getExtras().getString("context");
-        if(text==null){ //일정 없을 때
-            txt.setText("일정 없음");
-        }else{
-            txt.setText(text);
-        }
-
+        setContentView(R.layout.activity_notice);
     }
     public void mOnClose(View v){
         //데이터 전달하기

@@ -52,31 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 //임시
                 Intent intent = new Intent(MainActivity.this, MainParent.class);
                 startActivity(intent);
-
-                Response.Listener<String> responseListener = new Response.Listener<String>(){
-                 @Override
-                 public void onResponse(String response){
-                     try{
-                         JSONObject jsonObject = new JSONObject(response);
-                         boolean success = jsonObject.getBoolean("success");
-
-                         if(success){
-                             Toast.makeText(getApplicationContext(),"로그인 성공",Toast.LENGTH_SHORT).show();
-                             Intent intent = new Intent(MainActivity.this, MainParent.class);
-                             startActivity(intent);
-                         }
-                         else{
-                             Toast.makeText( getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT ).show();
-                             return;
-                         }
-                     }catch (JSONException e){
-                         e.printStackTrace();
-                     }
-                 }
-                };
-                LoginRequest loginRequest = new LoginRequest(ID, PW, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                queue.add(loginRequest);
             }
         });
 

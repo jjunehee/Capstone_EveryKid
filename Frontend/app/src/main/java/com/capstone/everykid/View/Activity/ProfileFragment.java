@@ -40,6 +40,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mList= new ArrayList<RecyclerItem>();
     }
 
     @Override
@@ -56,6 +57,7 @@ public class ProfileFragment extends Fragment {
         kinder_img=view.findViewById(R.id.kinder_profile);
         info_btn=view.findViewById(R.id.kinder_btn);
         add_btn=view.findViewById(R.id.profile_kidadd_btn);
+//        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +65,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+//        자녀 추가 버튼
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

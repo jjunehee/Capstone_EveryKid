@@ -6,7 +6,7 @@
     android:background="#eeeeee"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
-    tools:context=".View.Activity.InfoActivity">
+    tools:context=".View.Activity.NoticeActivity">
 
     <!-- 타이틀바 -->
     <LinearLayout
@@ -19,67 +19,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/gray_text_color"
-            android:text="정보"
-            android:textSize="20sp" />
+            android:text="공지사항"
+            android:textSize="18dp" />
     </LinearLayout>
     <!-- 타이틀바 end -->
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="220dp"
-            android:layout_height="197dp"
-
-            app:srcCompat="@drawable/kinderprofile" />
-
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txt_schedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="공지사항 내용"
+            android:layout_gravity="center"
             />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            />
-
     </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="9dp">
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
+            android:text="확인"
+            android:textSize="13dp"
+            android:background="@drawable/round_background_2"
+            android:textColor="#000000"
+            android:padding="3dp"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:background="@drawable/round_background_2"
-            android:backgroundTint="@color/main_yellow"
-            android:gravity="center"
-            android:padding="10dp"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
-            android:text="확인"
-            android:textColor="@color/gray_text_color"
-            android:textSize="15dp"
             android:onClick="mOnClose"/>
     </LinearLayout>
 
