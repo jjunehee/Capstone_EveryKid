@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences auto;
     EditText userID,userPW;
     Button signinBtn, createBtn;
-    CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
+    CheckBox checkBox;
     String userId, userPwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        checkBox=findViewById(R.id.checkBox);
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
         signinBtn = (Button) findViewById(R.id.button);
@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         auto = getSharedPreferences("autoLogin",MainActivity.MODE_PRIVATE);
         userId = auto.getString("userID",null);
         userPwd = auto.getString("userPWD",null);
-
-        if(userId != null && userPwd!= null){
-            login();
-        }else{
+//
+//        if(userId != null && userPwd!= null){
+//            login();
+//        }else{
             //회원가입버튼
             createBtn.setOnClickListener( new View.OnClickListener() {
                 @Override
@@ -65,18 +65,20 @@ public class MainActivity extends AppCompatActivity {
                         autoLoginEdit.putString("userID", userID.getText().toString());
                         autoLoginEdit.putString("userPWD", userPW.getText().toString());
                         autoLoginEdit.commit();
+
                     }
 
                     //임시
                     Intent intent = new Intent(MainActivity.this, MainParent.class);
                     startActivity(intent);
+                    login();
                 }
             });
         }
 
-    }
+//    }
 
     public void login(){
-
+        return;
     }
 }

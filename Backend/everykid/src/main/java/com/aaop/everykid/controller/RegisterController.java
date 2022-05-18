@@ -32,33 +32,32 @@ public class RegisterController {
 
     //jpa 문자열
 
-        @PostMapping(value = "/parent")     //p_NAME
-        public RegisterPFormDto registerForm(RegisterPFormDto registerPFormDto) {
-//            Parent parent = Parent.createParent(registerPFormDto);
-//            parentService.saveParent(parent);
-            System.out.println("부모 회원가입 시도" + registerPFormDto);
-            return parentService.findBypID(registerPFormDto.getPID()).isPresent()
-                    ? ResponseEntity.badRequest().build()
-                    : ResponseEntity.ok(parentService.signUp(registerPFormDto));
-        }
-
-        @PostMapping(value = "/teacher")     //p_NAME
-        public RegisterTFormDto registerForm2(RegisterTFormDto registerTFormDto) {
-            Teacher teacher = Teacher.createTeacher(registerTFormDto);
-            registerTService.saveTeacher(teacher);
-            System.out.println("선생 회원가입 시도" + registerTFormDto);
-            return registerTFormDto;
-        }
-
-        @PostMapping(value = "/login")     //p_NAME
-        public ResponseEntity<TokenResponseDto> signIn(@RequestBody RegisterPFormDto registerPFormDto) throws Exception {
-
-            return ResponseEntity.ok().body(parentService.signIn(registerPFormDto));
-        }
-
-        @GetMapping("/info")
-        public ResponseEntity<List<Parent>> findUser() {
-            return ResponseEntity.ok().body(parentService.findUsers());
-        }
+    @PostMapping(value = "/parent")     //p_NAME
+    public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
+        //Parent parent = Parent.createParent(registerPFormDto);
+        //registerPService.saveParent(parent);
+        System.out.println("부모 회원가입 시도" + registerPFormDto);
+        return parentService.findBypID(registerPFormDto.getPID()).isPresent()
+                ? ResponseEntity.badRequest().build()
+                : ResponseEntity.ok(parentService.signUp(registerPFormDto));
     }
 
+    @PostMapping(value = "/teacher")     //p_NAME
+    public RegisterTFormDto registerForm2(RegisterTFormDto registerTFormDto) {
+        Teacher teacher = Teacher.createTeacher(registerTFormDto);
+        registerTService.saveTeacher(teacher);
+        System.out.println("선생 회원가입 시도" + registerTFormDto);
+        return registerTFormDto;
+    }
+
+    @PostMapping(value = "/login")     //p_NAME
+    public ResponseEntity<TokenResponseDto> signIn(RegisterPFormDto registerPFormDto) throws Exception {
+
+        return ResponseEntity.ok().body(parentService.signIn(registerPFormDto));
+    }
+
+    @GetMapping("/info")
+    public ResponseEntity<List<Parent>> findUser() {
+        return ResponseEntity.ok().body(parentService.findUsers());
+    }
+}

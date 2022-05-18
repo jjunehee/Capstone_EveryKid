@@ -3,15 +3,14 @@ import com.aaop.everykid.dto.RegisterPFormDto;
 
 import javax.persistence.*;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Table(name="Parent")
 @Getter @Setter
 @ToString
+@RequiredArgsConstructor
 public class Parent {
 
 
@@ -27,7 +26,7 @@ public class Parent {
     @Id
     @Column(name="P_KID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pKID;
+    private Long PKID;
 
     @Column(name="P_PWD")
     private String pPWD;
@@ -38,10 +37,9 @@ public class Parent {
     @Column(name="P_ALIAS")
     private String pALIAS;
 
-    /*    @Column(name="K_KID")
-        private String kID;*/
     @Column(name="K_KID")
-    private String kID;
+    private String kKID;
+
 
     //@Column(name="T_ID")
     //private String tID;
@@ -58,22 +56,30 @@ public class Parent {
     //@Column(name="C_STATUS")
     //private boolean cSTATUS;
 
-
-    //public static Parent createParent(ParentFormDto parentFormDto, PasswordEncoder passwordEncoder){
-    public static Parent createParent(RegisterPFormDto registerPFormDto){
+/*    public static Parent createParent(RegisterPFormDto registerPFormDto){
         Parent parent = new Parent();
-        parent.setPNAME(registerPFormDto.getP_NAME());
-        parent.setPPHONE(registerPFormDto.getP_PHONE());
-        parent.setPEMAIL(registerPFormDto.getP_EMAIL());
-        parent.setPID(registerPFormDto.getP_ID());
+        parent.setPNAME(registerPFormDto.getPNAME());
+        parent.setPPHONE(registerPFormDto.getPPHONE());
+        parent.setPEMAIL(registerPFormDto.getPEMAIL());
+        parent.setPID(registerPFormDto.getPID());
         //비밀번호 암호화
-        parent.setPPWD(registerPFormDto.getP_PWD());
-        parent.setKID(registerPFormDto.getK_ID());
-        parent.setPALIAS(registerPFormDto.getP_ALIAS());
+        parent.setPPWD(registerPFormDto.getPPWD());
+        parent.setKKID(registerPFormDto.getKKID());
+        parent.setPALIAS(registerPFormDto.getPALIAS());
         //parent.setCNAME(parentFormDto.getC_NAME());
         //parent.setCAGE(parentFormDto.getC_AGE());
         //parent.setRole(Role.PARENT);
-
         return parent;
+    }*/
+
+    @Builder
+    public Parent(String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+        this.pID = pID;
+        this.pPWD = pPWD;
+        this.pNAME = pNAME;
+        this.pPHONE = pPHONE;
+        this.pEMAIL = pEMAIL;
+        this.pALIAS = pALIAS;
     }
+
 }

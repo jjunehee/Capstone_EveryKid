@@ -13,11 +13,11 @@ public interface RegisterInterface
     @FormUrlEncoded
     @POST("/register/parent")
     Call<String> getParentRegist(
-            @Field("P_ID") String id,
-            @Field("P_PHONE") String phone,
-            @Field("P_NAME") String username,
-            @Field("P_PWD") String password,
-            @Field("P_EMAIL") String email
+            @Field("PID") String id,
+            @Field("PPHONE") String phone,
+            @Field("PNAME") String username,
+            @Field("PPWD") String password,
+            @Field("PEMAIL") String email
     );
 
     @FormUrlEncoded

@@ -15,7 +15,7 @@ import com.capstone.everykid.R;
 public class ChildAddActivity extends AppCompatActivity {
     private final int GET_GALLERY_IMAGE =200;
     private ImageView imageview;
-    EditText name;
+    EditText name,age;
     Button btn;
 
     @Override
@@ -23,17 +23,24 @@ public class ChildAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_add);
 
-        btn =(Button)findViewById(R.id.btn_UploadPicture);
         imageview=(ImageView)findViewById(R.id.user_image);
-        name = (EditText) findViewById(R.id.editTextTextPersonName2);
+        name = (EditText) findViewById(R.id.addchildName_et);
 
-        btn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
-                startActivityForResult(intent, GET_GALLERY_IMAGE);
-            }
-        });
+        age = (EditText) findViewById(R.id.addchildAge_et);
+
+
+    }
+
+    //사진 등록 버튼
+    public void opengallery(View v){
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+        startActivityForResult(intent, GET_GALLERY_IMAGE);
+    }
+
+    //아이 등록 버튼
+    public void register(View v){
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
