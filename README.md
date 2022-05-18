@@ -72,6 +72,10 @@
 - Globals.java, AndroidManifest.xml  전역변수 추가
 - create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
 
+### 05/04
+```[노수진] 프로필화면 ```
+- ProfileFragment.xml, fragment_profile.java 수정   
+
 ### 05/11
 ```[최희정] 회원가입, 데이터베이스```
 - Spring Boot - mysql - Android Studio 서버 통신 성공
