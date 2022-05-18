@@ -90,13 +90,58 @@
             </FrameLayout>
 <!--            구분선 end-->
 <!--            자녀 리스트 recyclerview-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:overScrollMode="never"
-                android:nestedScrollingEnabled="false"
-                android:id="@+id/recycler1"
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:overScrollMode="never"-->
+<!--                android:nestedScrollingEnabled="false"-->
+<!--                android:id="@+id/recycler1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--               />-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-               />
+                android:layout_margin="15dp"
+                android:padding="5dp"
+                android:background="@drawable/round_background_2"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/kidprofile_img"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/round_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/kidprofile"/>
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:id="@+id/child_name"
+                        android:text="김밥"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kid_info"
+                        android:text="7세 햇님반"
+                        android:padding="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/profile_kidadd_btn"
                 android:background="@drawable/round_background_2"
@@ -105,8 +150,10 @@
                 android:layout_margin="15dp"
                 android:backgroundTint="#CCCCCC"
                 android:text="+"
+                android:padding="13dp"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="30dp"
+
                 />
 <!--            구분선-->
             <FrameLayout

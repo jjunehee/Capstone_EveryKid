@@ -30,7 +30,7 @@ public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImage
         Context context = parent.getContext() ;
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
 
-        View view = inflater.inflate(R.layout.childlist_item, parent, false) ;
+        View view = inflater.inflate(R.layout.notice_item, parent, false) ;
         RecyclerImageTextAdapter.ViewHolder vh = new RecyclerImageTextAdapter.ViewHolder(view) ;
 
         return vh ;
@@ -41,9 +41,10 @@ public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImage
     public void onBindViewHolder(RecyclerImageTextAdapter.ViewHolder holder, int position) {
 
         RecyclerItem item = mData.get(position) ;
-
-        holder.icon.setImageDrawable(item.getIcon()) ;
-        holder.title.setText(item.getTitle()) ;
+//
+//        holder.icon.setImageDrawable(item.getIcon()) ;
+//        holder.title.setText(item.getTitle()) ;
+        holder.noticetitle.setText(item.getNotice_title()) ;
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
@@ -64,15 +65,18 @@ public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImage
 //    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView icon ;
-        TextView title ;
+//        ImageView icon ;
+        TextView noticetitle ;
 
         ViewHolder(View itemView) {
             super(itemView) ;
             // 뷰 객체에 대한 참조. (hold strong reference)
-            icon = itemView.findViewById(R.id.kid_profile) ;
-            icon.setClipToOutline(true);
-            title = itemView.findViewById(R.id.kid_name) ;
+//            icon = itemView.findViewById(R.id.kid_profile) ;
+//            icon.setClipToOutline(true);
+//            title = itemView.findViewById(R.id.kid_name) ;
+
+            noticetitle = itemView.findViewById(R.id.notice_title) ;
+
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
