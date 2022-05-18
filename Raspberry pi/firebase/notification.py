@@ -6,8 +6,8 @@ import datetime
 
 
 #Firebase database 인증 및 앱 초기화
-cred = credentials.Certificate('/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/people-6bda1-firebase-adminsdk-3z19w-1c304b3e10.json')
-firebase_admin.initialize_app(cred,{ 'databaseURL' : 'https://people-6bda1-default-rtdb.firebaseio.com/' })
+cred = credentials.Certificate('/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/everykid-86be9-firebase-adminsdk-1xnck-d63d817d09.json')
+firebase_admin.initialize_app(cred,{ 'databaseURL' : 'https://everykid-86be9-default-rtdb.firebaseio.com/' })
 
 
 def mesgSend(token):
@@ -17,7 +17,7 @@ def mesgSend(token):
     message = messaging.Message (
         notification=messaging.Notification(
             title='알림 Test',
-            body='안녕하세요. 준희가 등원했어요',
+            body='안녕하세요. 아이가 등원했어요!',
             ),
         android=messaging.AndroidConfig(
             ttl=datetime.timedelta(seconds=3600),
