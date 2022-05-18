@@ -96,7 +96,8 @@
  <img src="https://user-images.githubusercontent.com/83461991/168654330-b257de6f-6914-4626-991e-02cf475b9d68.png" width="150"/>
  <img src="https://user-images.githubusercontent.com/83461991/168654770-d9441c22-9978-41d9-905c-36bd15d17e37.png" width="400"/>
   
-  ```[노수진] 공지사항 글쓰기, 글 확인 ```
+  
+```[노수진] 공지사항 글쓰기, 글 확인 ```
 - 공지사항 글쓰기 화면, 글 확인 화면 생성
 
 
