@@ -9,19 +9,19 @@ import lombok.ToString;
 @ToString
 public class RegisterTFormDto {
 
-    private String T_ID;
+    private String tID;
 
-    private String T_NAME;
+    private String tNAME;
 
-    private String T_PWD;
+    private String tPWD;
 
-    private String T_PHONE;
+    private String tPHONE;
 
-    private String T_EMAIL;
+    private String tEMAIL;
 
-    private String K_ID;
+    private String kKID;
 
-    private String P_ALIAS;
+    private String pALIAS;
 
     //private String C_NAME;
 

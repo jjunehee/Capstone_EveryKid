@@ -4,8 +4,11 @@ import com.aaop.everykid.entity.Parent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ParentRepository extends JpaRepository<Parent, Long> {
 
-    Parent findParentBypID(Long id);
+    Optional<Parent> findBypID(String PID);
+    //Parent findParentBypID(Long id);
 }
