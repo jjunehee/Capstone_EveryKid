@@ -72,6 +72,10 @@
 - Globals.java, AndroidManifest.xml  전역변수 추가
 - create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
 
+### 05/04
+```[노수진] 프로필화면 ```
+- ProfileFragment.xml, fragment_profile.java 수정   
+
 ### 05/11
 ```[최희정] 회원가입, 데이터베이스```
 - Spring Boot - mysql - Android Studio 서버 통신 성공
@@ -92,7 +96,8 @@
  <img src="https://user-images.githubusercontent.com/83461991/168654330-b257de6f-6914-4626-991e-02cf475b9d68.png" width="150"/>
  <img src="https://user-images.githubusercontent.com/83461991/168654770-d9441c22-9978-41d9-905c-36bd15d17e37.png" width="400"/>
   
-  ```[노수진] 공지사항 글쓰기, 글 확인 ```
+  
+```[노수진] 공지사항 글쓰기, 글 확인 ```
 - 공지사항 글쓰기 화면, 글 확인 화면 생성
 
 
