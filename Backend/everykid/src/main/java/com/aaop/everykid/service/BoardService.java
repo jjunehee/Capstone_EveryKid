@@ -3,14 +3,18 @@ package com.aaop.everykid.service;
 import com.aaop.everykid.dto.BoardDto;
 import com.aaop.everykid.entity.Board;
 import com.aaop.everykid.repository.BoardRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Repository
+@Service
+@Transactional
+@RequiredArgsConstructor
 public class BoardService {
     @Autowired
     BoardRepository boardRepository;

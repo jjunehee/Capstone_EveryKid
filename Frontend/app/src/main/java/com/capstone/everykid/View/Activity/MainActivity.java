@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 String PW = userPW.getText().toString();
 
                 //임시
-                Intent intent = new Intent(MainActivity.this, MainParent.class);
+//                Intent intent = new Intent(MainActivity.this, MainParent.class);
+                Intent intent = new Intent(MainActivity.this, findKindergarten.class);
                 startActivity(intent);
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){

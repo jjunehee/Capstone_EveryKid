@@ -18,6 +18,7 @@ import com.capstone.everykid.Model.BoardList;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.CommunityFragmentAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.lakue.pagingbutton.LakuePagingButton;
 import com.lakue.pagingbutton.OnPageSelectListener;
 
@@ -33,7 +34,7 @@ public class CommunityFragment extends Fragment {
     private View view;
     private ListView listView;
     private CommunityFragmentAdapter adapter;
-    private Button btn;
+    private FloatingActionButton btn;
     private LakuePagingButton lpb_buttonlist;
     private Call<BoardList> call;
     private EditText search;
@@ -74,7 +75,7 @@ public class CommunityFragment extends Fragment {
         listView.setAdapter(adapter);
 
         lpb_buttonlist = (LakuePagingButton) view.findViewById(R.id.lpb_buttonlist);
-        btn = (Button) view.findViewById(R.id.btn_reg);
+        btn = (FloatingActionButton) view.findViewById(R.id.btn_reg);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
