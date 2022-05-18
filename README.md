@@ -189,13 +189,15 @@
   <img width="20%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
   <img width="80%" src="https://user-images.githubusercontent.com/83155528/168300453-7772b1e5-ebfa-4621-ade2-b70e5a647b9e.png"/>
   
-  ### ~ing
+  ### 05/16
   ```[조준희] 라즈베리파이로 Token 가져오고, 안드로이드 기기로 푸쉬알림 보내기```
   - Firebase Databbase로 부터 알림설정 허용한 기기들의 token 정보를 가져오고, 해당 기기로 푸쉬 알림 보내기 완료 ( notification.py )
   
   <img src="https://user-images.githubusercontent.com/83155528/168578247-743822da-2f8a-4fdd-b115-966cc2085c3c.gif" width="500" height="490">
   <img src="https://user-images.githubusercontent.com/83155528/168578280-5ac2cdfb-d2a0-43fa-bfde-aa07afa1aa7f.gif" width="300" height="490">
   
+  ### ~ing
+  ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
   
 </div>
 </details>
