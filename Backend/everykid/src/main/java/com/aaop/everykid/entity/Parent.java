@@ -37,15 +37,9 @@ public class Parent {
     @Column(name="P_ALIAS")
     private String pALIAS;
 
-<<<<<<< HEAD
     @Column(name="K_KID")
     private String kKID;
-=======
-/*    @Column(name="K_KID")
-    private String kID;*/
-    @Column(name="K_KID")
-    private String kID;
->>>>>>> fe936ab4572fcdce4cd177c05708f8f4958a8169
+
 
     //@Column(name="T_ID")
     //private String tID;
