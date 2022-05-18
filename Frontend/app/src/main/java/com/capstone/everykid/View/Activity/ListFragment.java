@@ -1,10 +1,12 @@
 package com.capstone.everykid.View.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import com.capstone.everykid.R;
 
@@ -15,6 +17,8 @@ public class ListFragment extends Fragment {
     private View view;
     ListView listView;
     ListItemAdapter adapter;
+    Button notiBtn;
+
 
 
     public ListFragment() {
@@ -44,6 +48,15 @@ public class ListFragment extends Fragment {
         adapter.addItem(new ListItem("4월 22일 금요일"));
         listView.setAdapter(adapter);
 
+        notiBtn = (Button) view.findViewById(R.id.notificationSetting);
+
+        notiBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), NotificationSetting.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

@@ -10,13 +10,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.capstone.everykid.Model.RecyclerItem;
+import com.capstone.everykid.OnItemClickListener;
 import com.capstone.everykid.R;
 
 import java.util.ArrayList;
 
-public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImageTextAdapter.ViewHolder> {
+public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImageTextAdapter.ViewHolder>  {
+//    implements OnItemClickListener
     private ArrayList<RecyclerItem> mData = null ;
-
+    OnItemClickListener listener;
     // 생성자에서 데이터 리스트 객체를 전달받음.
     public RecyclerImageTextAdapter(ArrayList<RecyclerItem> list) {
         mData = list ;
@@ -49,18 +51,37 @@ public class RecyclerImageTextAdapter extends RecyclerView.Adapter<RecyclerImage
     public int getItemCount() {
         return mData.size() ;
     }
+    public void setOnItemClicklistener(OnItemClickListener listener){
+        this.listener = listener;
+    }
+
+
+//    @Override
+//    public void onItemClick(RecyclerImageTextAdapter.ViewHolder holder, View view, int position) {
+//        if(listener != null){
+//            listener.onItemClick(holder, view, position);
+//        }
+//    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView icon ;
         TextView title ;
 
-
         ViewHolder(View itemView) {
             super(itemView) ;
-
             // 뷰 객체에 대한 참조. (hold strong reference)
             icon = itemView.findViewById(R.id.kid_profile) ;
             icon.setClipToOutline(true);
             title = itemView.findViewById(R.id.kid_name) ;
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    int position = getAdapterPosition();
+                    if(listener!=null){
+                        //listener.onItemClick(RecyclerImageTextAdapter.ViewHolder.this, v, position);
+                    }
+                }
+            });
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.capstone.everykid.View.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,24 +32,25 @@ public class AccountCreate4 extends AppCompatActivity
 
     private EditText etid, etpwd;
     private Button btnregister;
-    private CreateAccountItem createaccountitem;
+    private PreferenceHelper preferenceHelper;
+    CreateAccountItem createAccountItem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account4);
-//<<<<<<< HEAD
-//
-//        preferenceHelper = new PreferenceHelper(this);
-//=======
-//>>>>>>> 343b282ee2fa0655ebed818c01c232357034eeb0
+
+        preferenceHelper = new PreferenceHelper(this);
+        createAccountItem = (CreateAccountItem)getApplicationContext();
+
 
         etid = (EditText) findViewById(R.id.join_id);
         etpwd = (EditText) findViewById(R.id.join_pwd);
 
-        ((CreateAccountItem)getApplication() ).setId(etid.getText().toString());
-        ((CreateAccountItem)getApplication() ).setPwd(etpwd.getText().toString());
+        createAccountItem.setId(etid.getText().toString());
+        createAccountItem.setPwd(etpwd.getText().toString());
 
         btnregister=(Button)findViewById(R.id.join_btn);
 
@@ -64,12 +66,11 @@ public class AccountCreate4 extends AppCompatActivity
 
     private void registerMe()
     {
-
-        final String id =((CreateAccountItem)getApplication()).getId();
-        final String phone =((CreateAccountItem)getApplication()).getPhone();
-        final String username = ((CreateAccountItem)getApplication()).getName();
-        final String password = ((CreateAccountItem)getApplication()).getPwd();
-        final String email = ((CreateAccountItem)getApplication()).getEmail();
+        String id =createAccountItem.getId();
+        String phone =createAccountItem.getPhone();
+        String username =createAccountItem.getName();
+        String password = createAccountItem.getPwd();
+        String email = createAccountItem.getEmail();
        // final String k_id =((CreateAccountItem)getApplication()).getK_id();
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -78,7 +79,7 @@ public class AccountCreate4 extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getUserRegist(id, phone, username, password, email);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -114,8 +115,10 @@ public class AccountCreate4 extends AppCompatActivity
         JSONObject jsonObject = new JSONObject(response);
         if (jsonObject.optString("status").equals("true"))
         {
-            //saveInfo(response);
+            saveInfo(response);
             Toast.makeText(AccountCreate4.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         }
         else
         {
@@ -123,27 +126,27 @@ public class AccountCreate4 extends AppCompatActivity
         }
     }
 
-//    private void saveInfo(String response)
-//    {
-//        createaccountitem.putIsLogin(true);
-//        try
-//        {
-//            JSONObject jsonObject = new JSONObject(response);
-//            if (jsonObject.getString("status").equals("true"))
-//            {
-//                JSONArray dataArray = jsonObject.getJSONArray("data");
-//                for (int i = 0; i < dataArray.length(); i++)
-//                {
-//                    JSONObject dataobj = dataArray.getJSONObject(i);
-//                    createaccountitem.putName(dataobj.getString("name"));
-//                    createaccountitem.putHobby(dataobj.getString("hobby"));
-//                }
-//            }
-//        }
-//        catch (JSONException e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    private void saveInfo(String response)
+    {
+        preferenceHelper.putIsLogin(true);
+        try
+        {
+            JSONObject jsonObject = new JSONObject(response);
+            if (jsonObject.getString("status").equals("true"))
+            {
+                JSONArray dataArray = jsonObject.getJSONArray("data");
+                for (int i = 0; i < dataArray.length(); i++)
+                {
+                    JSONObject dataobj = dataArray.getJSONObject(i);
+                    preferenceHelper.putName(dataobj.getString("name"));
+                    preferenceHelper.putHobby(dataobj.getString("hobby"));
+                }
+            }
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 }

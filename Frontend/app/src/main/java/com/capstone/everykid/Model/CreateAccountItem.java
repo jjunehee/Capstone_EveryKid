@@ -14,7 +14,7 @@ public class CreateAccountItem extends Application {
 
     @Override
     public void onCreate() {
-        Name =null;
+        Name=null;
         Phone = null;
         Email = null;
         //K_id=null;
@@ -34,6 +34,8 @@ public class CreateAccountItem extends Application {
     //public void setK_id(String k_id){ this.K_id = k_id; }
     public void setId(String id){  this.Id = id; }
     public void setPwd(String pwd){ this.Pwd = pwd; }
+
+
 
     public String getName(){ return Name; }
     public String getPhone(){ return Phone; }

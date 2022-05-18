@@ -31,10 +31,17 @@ public class RegisterController {
 //    private final PasswordEncoder passwordEncoder;
 
     //jpa 문자열
+<<<<<<< HEAD
    @PostMapping(value = "/parent")     //p_NAME
     public ResponseEntity signUp(@RequestBody RegisterPFormDto registerPFormDto) {
         //Parent parent = Parent.createParent(registerPFormDto);
         //registerPService.saveParent(parent);
+=======
+    @PostMapping(value = "/parent")     //p_NAME
+    public RegisterPFormDto registerForm(RegisterPFormDto registerPFormDto) {
+        Parent parent = Parent.createParent(registerPFormDto);
+        parentService.saveParent(parent);
+>>>>>>> fe936ab4572fcdce4cd177c05708f8f4958a8169
         System.out.println("부모 회원가입 시도" + registerPFormDto);
         return parentService.findBypID(registerPFormDto.getPID()).isPresent()
                 ? ResponseEntity.badRequest().build()
@@ -42,7 +49,7 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/teacher")     //p_NAME
-    public RegisterTFormDto registerForm2(@RequestBody RegisterTFormDto registerTFormDto) {
+    public RegisterTFormDto registerForm2(RegisterTFormDto registerTFormDto) {
         Teacher teacher = Teacher.createTeacher(registerTFormDto);
         registerTService.saveTeacher(teacher);
         System.out.println("선생 회원가입 시도" + registerTFormDto);

@@ -32,7 +32,11 @@ public class Teacher {
     private String tPWD;
 
     @Column(name = "K_KID")
+<<<<<<< HEAD
     private String kKID;
+=======
+    private String kID;
+>>>>>>> fe936ab4572fcdce4cd177c05708f8f4958a8169
 
     public static Teacher createTeacher(RegisterTFormDto registerTFormDto){
         Teacher teacher = new Teacher();
