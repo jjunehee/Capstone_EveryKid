@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "657952631971",
-    "project_id": "people-6bda1",
-    "storage_bucket": "people-6bda1.appspot.com"
+    "project_number": "227584156065",
+    "firebase_url": "https://everykid-86be9-default-rtdb.firebaseio.com",
+    "project_id": "everykid-86be9",
+    "storage_bucket": "everykid-86be9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:657952631971:android:2b34a0423f944a71f92316",
+        "mobilesdk_app_id": "1:227584156065:android:0d0e741edf67c23de66be0",
         "android_client_info": {
           "package_name": "com.capstone.everykid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "657952631971-hf57knitsevlt96vucnpqavem8p28dm1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.capstone.everykid",
-            "certificate_hash": "bfc15ff1d975a5fadd6c826c43e38244a6bd0546"
-          }
-        },
-        {
-          "client_id": "657952631971-74raifnojt4tvoir462hdrqabg8ei84n.apps.googleusercontent.com",
+          "client_id": "227584156065-v3f83qoui9781o54o28ah27vntp6fno6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCke_-Qb-_uSuAXGAaFV3bj5w1X9eFGDcU"
+          "current_key": "AIzaSyA-0E10AGXK4OaA9UgdmfAMFFzDW9EYaVM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "657952631971-74raifnojt4tvoir462hdrqabg8ei84n.apps.googleusercontent.com",
+              "client_id": "227584156065-v3f83qoui9781o54o28ah27vntp6fno6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
