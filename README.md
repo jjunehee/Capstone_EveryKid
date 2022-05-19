@@ -198,8 +198,16 @@
   
   ### 05/18
   ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
+  - notificationSetting.java 구현
+  - firebase everykid 저장소로 통합
+  
+  ### 05/19
+  ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
+  - notificationClass.java 구현
+  - forground 알림 아이콘 변경
   
   ### ~ing
-  ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
+  ```[조준희] 안드로이드에서 등하원 사진 가져오기```
+  
 </div>
 </details>
