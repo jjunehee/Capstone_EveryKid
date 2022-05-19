@@ -8,12 +8,14 @@ import lombok.Setter;
 @Setter
 public class KindergartenDto {
 
+    private Long K_KID;
     private String K_ID;
     private String K_PHONE;
     private String K_ADDRESS;
     private String K_NAME;
 
-    public KindergartenDto(String k_ID, String k_PHONE, String k_ADDRESS, String k_NAME) {
+    public KindergartenDto(Long k_KID, String k_ID, String k_PHONE, String k_ADDRESS, String k_NAME) {
+        K_KID = k_KID;
         K_ID = k_ID;
         K_PHONE = k_PHONE;
         K_ADDRESS = k_ADDRESS;
@@ -23,7 +25,8 @@ public class KindergartenDto {
     @Override
     public String toString() {
         return "KindergartenDto{" +
-                "K_ID='" + K_ID + '\'' +
+                "K_KID=" + K_KID +
+                ", K_ID='" + K_ID + '\'' +
                 ", K_PHONE='" + K_PHONE + '\'' +
                 ", K_ADDRESS='" + K_ADDRESS + '\'' +
                 ", K_NAME='" + K_NAME + '\'' +
@@ -31,7 +34,7 @@ public class KindergartenDto {
     }
 
     public Kindergarten toEntity() {
-        return new Kindergarten(K_ID, K_PHONE, K_ADDRESS, K_NAME);
+        return new Kindergarten(K_KID, K_ID, K_PHONE, K_ADDRESS, K_NAME);
     }
 }
 
