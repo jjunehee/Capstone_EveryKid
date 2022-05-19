@@ -15,11 +15,12 @@ public class LoginService  {
     @Autowired
     private final ParentRepository parentRepository;
 
+/* 기존 로그인 방식
     public boolean login(Parent parent){
         Parent findParent = parentRepository.findParentBypID(parent.getPKID());
         if(findParent == null){
             return false;
         }
         else return true;
-    }
+    }*/
 }

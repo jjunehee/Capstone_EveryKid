@@ -15,19 +15,21 @@ public class AccountCreate2 extends AppCompatActivity {
 
     private EditText etphone, etusername,etemail;
     private Button btnregister;
-
+    CreateAccountItem createAccountItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account2);
+        createAccountItem = (CreateAccountItem)getApplicationContext();
 
 
         etusername = (EditText) findViewById(R.id.join_name);
         etphone = (EditText) findViewById(R.id.join_phone);
         etemail = (EditText) findViewById(R.id.join_email);
-        ((CreateAccountItem)getApplication() ).setName(etusername.getText().toString());
-        ((CreateAccountItem)getApplication() ).setPhone(etphone.getText().toString());
-        ((CreateAccountItem)getApplication() ).setEmail(etemail.getText().toString());
+        String name =etusername.getText().toString();
+        createAccountItem.setName(name);
+        createAccountItem.setPhone(etphone.getText().toString());
+        createAccountItem.setEmail(etemail.getText().toString());
 
         btnregister = (Button) findViewById(R.id.join_next2);
 

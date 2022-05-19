@@ -75,7 +75,7 @@ public class CommunityFragment extends Fragment {
         listView.setAdapter(adapter);
 
         lpb_buttonlist = (LakuePagingButton) view.findViewById(R.id.lpb_buttonlist);
-        btn = (FloatingActionButton) view.findViewById(R.id.btn_reg);
+        btn = (FloatingActionButton) view.findViewById(R.id.fab);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

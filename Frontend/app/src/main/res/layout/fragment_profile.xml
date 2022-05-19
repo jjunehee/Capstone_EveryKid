@@ -67,7 +67,7 @@
 
 <!--            프로필 확인 버튼-->
             <Button
-                android:id="@+id/profile_btn"
+                android:id="@+id/profileInfo_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -209,15 +209,15 @@
                     android:background="#FFFFFF"
                     android:paddingStart="10dp"
                     android:text="내가 쓴 게시글" />
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="로그아웃"
-                    android:paddingStart="10dp"
-                    android:gravity="start|center"
-                    android:id="@+id/profile_post"
-                    android:background="#FFFFFF"
-                    />
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:text="로그아웃"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:gravity="start|center"-->
+<!--                    android:id="@+id/profile_post"-->
+<!--                    android:background="#FFFFFF"-->
+<!--                    />-->
 
             </LinearLayout>
 

@@ -12,11 +12,17 @@ from firebase_admin import credentials
 from firebase_admin import storage
 from uuid import uuid4
 import schedule
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+from firebase_admin import messaging
+import datetime
 
-PROJECT_ID = "people-6bda1"
+PROJECT_ID = "everykid-86be9"
 
-cred = credentials.Certificate("/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/people-6bda1-firebase-adminsdk-3z19w-1c304b3e10.json") #(키 이름 ) 부분에 본인의 키이름을 적어주세요.
-default_app = firebase_admin.initialize_app(cred,{'storageBucket':f"{PROJECT_ID}.appspot.com"})
+cred = credentials.Certificate("/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/everykid-86be9-firebase-adminsdk-1xnck-d63d817d09.json") #(키 이름 ) 부분에 본인의 키이름을 적어주세요.
+default_app = firebase_admin.initialize_app(cred,{'storageBucket':f"{PROJECT_ID}.appspot.com",'databaseURL' : 'https://everykid-86be9-default-rtdb.firebaseio.com/'})
+
 #버킷은 바이너리 객체의 상위 컨테이너이다. 버킷은 Storage에서 데이터를 보관하는 기본 컨테이너이다.
 bucket = storage.bucket()#기본 버킷 사용
 
@@ -48,7 +54,37 @@ def firebase():
         cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + ' '+ nowDate + ' 하원' + '.jpg', img)
         fileUpload(str(id) + ' ' + nowDate + ' 하원' +'.jpg')
         
+def mesgSend(token,id):
+    registration_token = token
     
+   
+    message = messaging.Message (
+        notification=messaging.Notification(
+            title='알림 Test',
+            body='안녕하세요 ' +id+ '가 등원했어요!',
+            ),
+        android=messaging.AndroidConfig(
+            ttl=datetime.timedelta(seconds=3600),
+            priority='normal',
+            notification=messaging.AndroidNotification(
+                icon='stock_ticker_update',
+                color='#f45342'
+            ),
+        ),
+        apns=messaging.APNSConfig(
+            payload=messaging.APNSPayload(
+                aps=messaging.Aps(badge=42),
+            ),
+        ),
+        data={
+            
+        },
+        
+        token=registration_token,
+    )
+    
+    response = messaging.send(message)
+    print('Successfully sent message:', response)    
     
     
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -98,9 +134,14 @@ while True:
             nowDate = now.strftime('%Y-%m-%d')
             
             
+            
             count+=1
             if(count % 30 == 0 and confidence < 45 ):
                 firebase()
+                userInfo = db.reference('users')
+                for var in userInfo.get().values():
+                    if(var['name']==id):
+                        mesgSend(var['token'],id)
                 
                 #Check image capture
                 #cv2.imshow('image', img)

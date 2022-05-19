@@ -19,7 +19,6 @@ public class InfoActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_info);
 
-        //UI 객체생성
 //        txtText = (TextView)findViewById(R.id.txtText);
 
         //데이터 가져오기

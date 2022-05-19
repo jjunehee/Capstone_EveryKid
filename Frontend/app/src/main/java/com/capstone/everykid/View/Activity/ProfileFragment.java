@@ -28,7 +28,7 @@ public class ProfileFragment extends Fragment {
 
     TextView p_name;
     ImageView p_img,kinder_img;
-    Button info_btn;
+    Button info_btn, add_btn,profile_btn;
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -40,6 +40,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mList= new ArrayList<RecyclerItem>();
     }
 
     @Override
@@ -55,10 +56,32 @@ public class ProfileFragment extends Fragment {
         p_name=(TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름름
         kinder_img=view.findViewById(R.id.kinder_profile);
         info_btn=view.findViewById(R.id.kinder_btn);
+        profile_btn=view.findViewById(R.id.profileInfo_btn);
+        add_btn=view.findViewById(R.id.profile_kidadd_btn);
+
+        //프로필 정보 확인 버튼
+        profile_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SettingActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+//        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+//        자녀 추가 버튼
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChildAddActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,10 +101,8 @@ public class ProfileFragment extends Fragment {
     }
     public void addItem(Drawable icon, String title){
         RecyclerItem item = new RecyclerItem();
-
         item.setIcon(icon);
         item.setTitle(title);
         mList.add(item);
     }
-
 }

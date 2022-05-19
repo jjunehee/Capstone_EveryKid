@@ -12,11 +12,21 @@ public interface RegisterInterface
 
     @FormUrlEncoded
     @POST("/register/parent")
-    Call<String> getUserRegist(
-            @Field("p_ID") String id,
-            @Field("p_PHONE") String phone,
-            @Field("p_NAME") String username,
-            @Field("p_PWD") String password,
-            @Field("p_EMAIL") String email
+    Call<String> getParentRegist(
+            @Field("PID") String id,
+            @Field("PPHONE") String phone,
+            @Field("PNAME") String username,
+            @Field("PPWD") String password,
+            @Field("PEMAIL") String email
     );
+
+    @FormUrlEncoded
+    @POST("/register/teacher")
+    Call<String> getTeacherRegist(
+            @Field("T_ID") String id,
+            @Field("T_PHONE") String phone,
+            @Field("T_NAME") String username,
+            @Field("T_PWD") String password,
+            @Field("T_EMAIL") String email
+   );
 }

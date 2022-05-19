@@ -31,18 +31,18 @@ public class Teacher {
     @Column(name = "T_PWD")
     private String tPWD;
 
-    @Column(name = "K_ID")
-    private String kID;
+    @Column(name = "K_KID")
+    private String kKID;
 
     public static Teacher createTeacher(RegisterTFormDto registerTFormDto){
         Teacher teacher = new Teacher();
-        teacher.setTNAME(registerTFormDto.getT_NAME());
-        teacher.setTPHONE(registerTFormDto.getT_PHONE());
-        teacher.setTEMAIL(registerTFormDto.getT_EMAIL());
-        teacher.setTID(registerTFormDto.getT_ID());
+        teacher.setTNAME(registerTFormDto.getTNAME());
+        teacher.setTPHONE(registerTFormDto.getTPHONE());
+        teacher.setTEMAIL(registerTFormDto.getTEMAIL());
+        teacher.setTID(registerTFormDto.getTID());
         //비밀번호 암호화
-        teacher.setTPWD(registerTFormDto.getT_PWD());
-        teacher.setKID(registerTFormDto.getK_ID());
+        teacher.setTPWD(registerTFormDto.getTPWD());
+        teacher.setKKID(registerTFormDto.getKKID());
         //parent.setPALIAS(parentFormDto.getP_ALIAS());
         //parent.setCNAME(parentFormDto.getC_NAME());
         //parent.setCAGE(parentFormDto.getC_AGE());

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    tools:context=".View.Activity.NoticeActivity">
+
+    <!-- 타이틀바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/main_yellow"
+        android:padding="4dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="공지사항"
+            android:textSize="18dp" />
+    </LinearLayout>
+    <!-- 타이틀바 end -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:id="@+id/txt_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공지사항 내용"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="9dp">
+        <Button
+            android:text="확인"
+            android:textSize="13dp"
+            android:background="@drawable/round_background_2"
+            android:textColor="#000000"
+            android:padding="3dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="mOnClose"/>
+    </LinearLayout>
+
+</LinearLayout>

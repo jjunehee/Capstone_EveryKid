@@ -1,5 +1,5 @@
 package com.aaop.everykid.dto;
-//회원가입 폼 dto
+//부모 회원가입 폼 dto
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,19 +9,19 @@ import lombok.ToString;
 @ToString
 public class RegisterPFormDto {
 
-    private String P_ID;
+    private String pID;
 
-    private String P_NAME;
+    private String pNAME;
 
-    private String P_PWD;
+    private String pPWD;
 
-    private String P_PHONE;
+    private String pPHONE;
 
-    private String K_ID;
+    private String kKID;
 
-    private String P_EMAIL;
+    private String pEMAIL;
 
-    private String P_ALIAS;
+    private String pALIAS;
 
     //private String C_NAME;
 

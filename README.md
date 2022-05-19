@@ -71,6 +71,36 @@
 - AccountCreate.java, AccountCreate2.java, AccountCreate3.java, AccountCreate4.java 코드 수정
 - Globals.java, AndroidManifest.xml  전역변수 추가
 - create_account2.xml, create_account3.xml, create_account4.xml 레이아웃 및 아이디 수정
+
+### 05/04
+```[노수진] 프로필화면 ```
+- ProfileFragment.xml, fragment_profile.java 수정   
+
+### 05/11
+```[최희정] 회원가입, 데이터베이스```
+- Spring Boot - mysql - Android Studio 서버 통신 성공
+- 학부모 회원가입 정상 실행 확인(+레이아웃 수정해서 모든 값 받을 수 있게 수정 필요)
+- entity.Teacher.java 내의 컬럼명 K_ID -> K_KID 수정
+  
+### 05/16
+```[노수진] 홈화면, 회원가입, 아이등록화면 ```
+- AccountCreate.java, SignupActivity.java, activity_signup.xml, RegisterInterface.java 회원가입: 회원가입시 선생님과 학부모 구별하게 수정(선생님 회원가입시 데이터베이스 컬럼 오류남)
+- HomeFragment.java, fragment_home.xml 홈화면: 학사일정 달력, 공지사항 레이아웃 추가 
+- notice_item.xml, NoticeItemAdapter.java, RecyclerItem.java 홈화면: 공지사항 제목 리싸이클러뷰 추가, 수정
+- ScheduleActivity.java, activity_schedule.xml 달력: 특정 날짜 클릭 시 그 날짜의 학사일정 보여주는 팝업창 
+- activity_child_add.xml, ChildAddActivity.java 아이등록화면: 갤러리에서 사진등록가능 
+ 
+### 05/17
+```[최희정] 선생님 회원가입```
+- 선생님 회원가입 오류 수정, 정상 실행 확인(+레이아웃 수정해서 모든 값 받을 수 있게 수정 필요, 현재 t_name, t_phone, t_email, t_id, t_pwd만 insert됨)
+ <img src="https://user-images.githubusercontent.com/83461991/168654330-b257de6f-6914-4626-991e-02cf475b9d68.png" width="150"/>
+ <img src="https://user-images.githubusercontent.com/83461991/168654770-d9441c22-9978-41d9-905c-36bd15d17e37.png" width="400"/>
+  
+  
+```[노수진] 공지사항 글쓰기, 글 확인 ```
+- 공지사항 글쓰기 화면, 글 확인 화면 생성
+
+
   
  </div>
 </details>
@@ -150,13 +180,26 @@
   ### 05/04
   ```[조준희] 원인을 알 수없는 에러로 라즈베리파이 초기화 진행```
   - 복원 완료
+  
+  ### 05/12
+  ```[조준희] 안드로이드 부분 FCM 연동 및 설정페이지 완료 ```
+  - 안드로이드에서 앱 토큰을 Firebase Database로 보내기 완료
+  - 앞으로 라즈베리파이에서 해당 Database에 접근해서 사용자별 Token값을 가져올 예정
+  <img width="20%" src="https://user-images.githubusercontent.com/83155528/168300733-c461ce30-dcde-407b-9641-f210c5f1b055.png"/>
+  <img width="20%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
+  <img width="80%" src="https://user-images.githubusercontent.com/83155528/168300453-7772b1e5-ebfa-4621-ade2-b70e5a647b9e.png"/>
+  
+  ### 05/16
+  ```[조준희] 라즈베리파이로 Token 가져오고, 안드로이드 기기로 푸쉬알림 보내기```
+  - Firebase Databbase로 부터 알림설정 허용한 기기들의 token 정보를 가져오고, 해당 기기로 푸쉬 알림 보내기 완료 ( notification.py )
+  
+  <img src="https://user-images.githubusercontent.com/83155528/168578247-743822da-2f8a-4fdd-b115-966cc2085c3c.gif" width="500" height="490">
+  <img src="https://user-images.githubusercontent.com/83155528/168578280-5ac2cdfb-d2a0-43fa-bfde-aa07afa1aa7f.gif" width="300" height="490">
+  
+  ### 05/18
+  ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
+  
   ### ~ing
-  ```[조준희] 안드로이드 FCM 연동 테스트 완료 ```
-  - 본 프로젝트에 적용예정( 채팅과 같은 firebase 계정으로 적용해야할듯함 )
-  <img width="15%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
-  
-  
-   
-  
+  ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
 </div>
 </details>
