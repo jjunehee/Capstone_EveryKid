@@ -10,42 +10,53 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:text="ㅁ월 ㅁ일 ㅁ요일"
-        android:textSize="24sp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_attend"
-        android:layout_width="wrap_content"
+        android:textSize="18dp"
+        android:padding="8dp"
+        android:layout_margin="8dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_round"
-        android:backgroundTint="#A3C398"
-        android:paddingLeft="16dp"
-        android:paddingTop="8dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="8dp"
-        android:text="등원"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:layout_marginRight="15dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+            <androidx.appcompat.widget.AppCompatButton
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_round"
-        android:backgroundTint="#CA8B8B"
-        android:paddingLeft="16dp"
-        android:paddingTop="8dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="8dp"
-        android:text="하원"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+                android:id="@+id/btn_attend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="#A3C398"
+                android:paddingLeft="6dp" android:paddingTop="3dp" android:paddingRight="6dp" android:paddingBottom="3dp"
+                android:text="등원"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/btn_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="#CA8B8B"
+                android:paddingLeft="6dp" android:paddingTop="3dp" android:paddingRight="6dp" android:paddingBottom="3dp"
+                android:text="하원"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
 
 
 </LinearLayout>
