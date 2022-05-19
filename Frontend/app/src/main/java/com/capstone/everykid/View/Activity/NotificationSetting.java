@@ -74,7 +74,9 @@ public class NotificationSetting extends AppCompatActivity {
             btSubscribe.setText("해지합니다.");
         }
 
-        Query myQuery = myRef.orderByChild("userId").equalTo(userId);
+        String userName = "Junhee";
+
+        Query myQuery = myRef.orderByChild("name").equalTo(userName);
         myQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -168,7 +170,7 @@ public class NotificationSetting extends AppCompatActivity {
     //삭제
     private void deleteUser(final String token){
         //데이터베이스에서 삭제하는 것으로 처리하자.
-        Query myQuery = myRef.orderByChild("name").equalTo("junhee");
+        Query myQuery = myRef.orderByChild("token").equalTo(token);
         myQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -176,7 +178,7 @@ public class NotificationSetting extends AppCompatActivity {
                     snapshot.getRef().removeValue();
                     Toast.makeText(getApplicationContext(), "삭제완료!", Toast.LENGTH_SHORT).show();
                     if(token!=null) {
-                        tvResult.setText(token.substring(0, 100));
+                        tvResult.setText("알림이 비활성화 되었습니다.");
                     }
                 }
             }
