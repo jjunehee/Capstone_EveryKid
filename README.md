@@ -111,6 +111,7 @@
 <details>
  <summary> Backend </summary>
  <div markdown="1">
+  
   ### 05/20
 ```[박경주] 게시판, DB컬럼 수정```
 - backend Dto, Entity 클래스 변수명 db에 맞게 변경
