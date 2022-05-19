@@ -52,7 +52,6 @@ public class RegisterController {
 
     @PostMapping(value = "/login")     //p_NAME
     public ResponseEntity<TokenResponseDto> signIn( RegisterPFormDto registerPFormDto) throws Exception {
-
         return ResponseEntity.ok().body(parentService.signIn(registerPFormDto));
     }
 
@@ -61,5 +60,3 @@ public class RegisterController {
         return ResponseEntity.ok().body(parentService.findUsers());
     }
 }
-
-
