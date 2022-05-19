@@ -111,7 +111,18 @@
 <details>
  <summary> Backend </summary>
  <div markdown="1">
-  
+  ### 05/20
+```[박경주] 게시판, DB컬럼 수정```
+- backend Dto, Entity 클래스 변수명 db에 맞게 변경
+- DB kindergarten table에 K_ID 추가
+```create TABLE KINDERGARTEN (
+K_KID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+K_ID varchar(12) NOT NULL unique,
+K_PHONE VARCHAR(13),
+K_ADDRESS VARCHAR(80),
+K_NAME VARCHAR(20)
+);```
+- 게시판 등록 기능 복원
 </div>
 </details>
 
