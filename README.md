@@ -124,6 +124,14 @@ K_ADDRESS VARCHAR(80),
 K_NAME VARCHAR(20)
 );
 - 게시판 등록 기능 복원
+  
+  ### 05/21
+```박경주 유치원 select 관련 기능 
+```[Android]```
+- 유치원 선택시 서버 DB에 유치원 insert하고 KKID 받아오도록 selectKindergartenAdapter 수정
+
+```[Spring]```
+- kindergarten 관련한 Service, Repository, Controller 작성
 </div>
 </details>
 
