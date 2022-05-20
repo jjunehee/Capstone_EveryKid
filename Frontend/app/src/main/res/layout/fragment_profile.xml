@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.Activity.ProfileFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +32,6 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/round_background"
-
                     android:src="@drawable/img" />
 
                 <LinearLayout
@@ -178,19 +178,19 @@
                 android:background="@drawable/round_background_2"
                 android:orientation="horizontal">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp">
+<!--                <FrameLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="5dp">-->
 
-                    <ImageView
-                        android:id="@+id/kinder_profile"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/round_background"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/kinderprofile"/>
-                </FrameLayout>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/kinder_profile"-->
+<!--                        android:layout_width="80dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:background="@drawable/round_background"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@drawable/kinderprofile"/>-->
+<!--                </FrameLayout>-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
