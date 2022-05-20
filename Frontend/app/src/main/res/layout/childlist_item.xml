@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:id="@+id/kid_profile"
+            android:id="@+id/kidprofile_img"
             android:scaleType="centerCrop"
             android:background="@drawable/round_background" />
     </FrameLayout>

@@ -196,8 +196,10 @@
   <img src="https://user-images.githubusercontent.com/83155528/168578247-743822da-2f8a-4fdd-b115-966cc2085c3c.gif" width="500" height="490">
   <img src="https://user-images.githubusercontent.com/83155528/168578280-5ac2cdfb-d2a0-43fa-bfde-aa07afa1aa7f.gif" width="300" height="490">
   
-  ### ~ing
+  ### 05/18
   ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
   
+  ### ~ing
+  ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
 </div>
 </details>
