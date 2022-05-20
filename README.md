@@ -218,8 +218,13 @@ K_NAME VARCHAR(20)
   - notificationClass.java 구현
   - forground 알림 아이콘 변경
   
-  ### ~ing
+  ### 05/20
   ```[조준희] 안드로이드에서 등하원 사진 가져오기```
+  - Firestorage image_store 폴더에 저장된 등하원 캡쳐 이미지들 중에 해당 이름,날짜,등/하원 이미지를 안드로이드에서 조회가능하도록 구현  
+  (LoadActivity.java, activity_imgload.xml)
+  <img src="https://user-images.githubusercontent.com/83155528/169556047-42055067-e30c-4e02-a3a5-41cdc18a2a5f.png" width="300" height="490">
+  
+
   
 </div>
 </details>
