@@ -8,18 +8,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BoardRepository extends JpaRepository<Board, Integer> {
+public interface BoardRepository extends JpaRepository<Board, Long> {
 
-    Page<Board> findBykID(String id, Pageable pageable);
+    Page<Board> findByKKID(Long id, Pageable pageable);
 
-    Board findBybID(int id);
+    Board findByBKID(int id);
 
-    @Query(value="select * from everykid.board where K_ID = ?2 AND " +
+    @Query(value="select * from everykid.board where K_KID = ?2 AND " +
             "(P_ID LIKE CONCAT('%', ?1, '%')" +
             "OR T_ID LIKE CONCAT('%', ?1, '%')" +
             "OR CONTENTS LIKE CONCAT('%', ?1, '%'))", nativeQuery = true)
     Page<Board> searchBoard(String key, String kID, Pageable pageable);
 
-    @Query(value="select ifnull(max(B_ID), 0) from everykid.board", nativeQuery = true)
-    int maxBID();
+    @Query(value="select ifnull(max(B_KID), 0) from everykid.board", nativeQuery = true)
+    int maxBKID();
 }

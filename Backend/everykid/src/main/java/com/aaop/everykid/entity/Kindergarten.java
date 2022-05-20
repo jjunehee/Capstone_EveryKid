@@ -1,12 +1,17 @@
 package com.aaop.everykid.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Kindergarten {
 
     @Id
+    @GeneratedValue
+    @Column(name = "K_KID")
+    private Long KKID;
+
     @Column(name = "K_ID")
     private String kID;
 
@@ -19,7 +24,8 @@ public class Kindergarten {
     @Column(name = "K_NAME")
     private String kNAME;
 
-    public Kindergarten(String kID, String kPHONE, String kADDRESS, String kNAME) {
+    public Kindergarten(Long KKID, String kID, String kPHONE, String kADDRESS, String kNAME) {
+        this.KKID = KKID;
         this.kID = kID;
         this.kPHONE = kPHONE;
         this.kADDRESS = kADDRESS;
@@ -33,7 +39,8 @@ public class Kindergarten {
     @Override
     public String toString() {
         return "Kindergarten{" +
-                "kID='" + kID + '\'' +
+                "KKID='" + KKID + '\'' +
+                ", kID='" + kID + '\'' +
                 ", kPHONE='" + kPHONE + '\'' +
                 ", kADDRESS='" + kADDRESS + '\'' +
                 ", kNAME='" + kNAME + '\'' +
