@@ -10,6 +10,8 @@ public class CreateAccountItem extends Application {
     //private String K_id;
     private String Id;
     private String Pwd;
+    private String Alias;
+    private String Kindergarten;
 
 
     @Override
@@ -20,6 +22,8 @@ public class CreateAccountItem extends Application {
         //K_id=null;
         Id=null;
         Pwd=null;
+        Alias=null;
+        Kindergarten=null;
         super.onCreate();
     }
 
@@ -34,6 +38,8 @@ public class CreateAccountItem extends Application {
     //public void setK_id(String k_id){ this.K_id = k_id; }
     public void setId(String id){  this.Id = id; }
     public void setPwd(String pwd){ this.Pwd = pwd; }
+    public void setAlias(String alias){this.Alias = alias;}
+    public void setKindergarten(String kindergarten){this.Kindergarten = kindergarten;}
 
 
 
@@ -43,4 +49,6 @@ public class CreateAccountItem extends Application {
     //public String getK_id(){ return K_id; }
     public String getId(){  return Id; }
     public String getPwd(){ return Pwd; }
+    public String getAlias(){return Alias;}
+    public String getKindergarten(){return Kindergarten;}
 }

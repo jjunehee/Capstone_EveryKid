@@ -1,6 +1,8 @@
 package com.capstone.everykid.View.Activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,10 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.capstone.everykid.PicActivity;
 import com.capstone.everykid.R;
 
 import com.capstone.everykid.Model.ListItem;
 import com.capstone.everykid.View.Adapter.ListItemAdapter;
+
+import java.io.ByteArrayOutputStream;
 
 public class ListFragment extends Fragment {
     private View view;
@@ -60,4 +66,5 @@ public class ListFragment extends Fragment {
 
         return view;
     }
+
 }
