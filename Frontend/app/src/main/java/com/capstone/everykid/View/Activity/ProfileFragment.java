@@ -58,14 +58,14 @@ public class ProfileFragment extends Fragment {
         p_img = (ImageView)view.findViewById(R.id.profile_img); //로그인유저의 프로필사진
         child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
         p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름름
-        kinder_img = (ImageView)view.findViewById(R.id.kinder_profile);
+
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
         //프로필 사진 배경에 맞게 자르기
         p_img.setClipToOutline(true);
         child_img.setClipToOutline(true);
-        kinder_img.setClipToOutline(true);
+
         //프로필 정보 확인 버튼
         profile_btn.setOnClickListener(new View.OnClickListener() {
             @Override

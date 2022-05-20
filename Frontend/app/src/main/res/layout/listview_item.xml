@@ -23,7 +23,6 @@
             android:orientation="horizontal"
             android:layout_gravity="end">
             <androidx.appcompat.widget.AppCompatButton
-
                 android:id="@+id/btn_attend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
