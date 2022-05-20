@@ -26,10 +26,10 @@ public class ProfileFragment extends Fragment {
 //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-
-    TextView p_name;
-    ImageView p_img, child_img, kinder_img;
-    Button info_btn, add_btn, profile_btn;
+      TextView p_name;
+      View view;
+      ImageView p_img, child_img, kinder_img;
+      Button info_btn, add_btn, profile_btn;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -50,25 +50,27 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
 
 //        ActionBar bar =getActivity().getActionBar();
 //        bar.setTitle("프로필");
 
-        p_img = (ImageView) view.findViewById(R.id.profile_img); //로그인유저의 프로필사진
-        child_img=(ImageView) view.findViewById(R.id.kidprofile_img);
-        p_name = (TextView) view.findViewById(R.id.profile_name); //로그인 유저의 이름름
-        kinder_img = view.findViewById(R.id.kinder_profile);
+        p_img = (ImageView)view.findViewById(R.id.profile_img); //로그인유저의 프로필사진
+        child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
+        p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름름
+        kinder_img = (ImageView)view.findViewById(R.id.kinder_profile);
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
-
+        //프로필 사진 배경에 맞게 자르기
+        p_img.setClipToOutline(true);
+        child_img.setClipToOutline(true);
+        kinder_img.setClipToOutline(true);
         //프로필 정보 확인 버튼
         profile_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SettingActivity.class);
-
                 startActivity(intent);
             }
         });
@@ -89,10 +91,11 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        //프로필 사진 배경에 맞게 자르기
-        p_img.setClipToOutline(true);
-        child_img.setClipToOutline(true);
-        kinder_img.setClipToOutline(true);
+        return view;
+    }
+
+}
+
 
         // 부모님일 경우 자녀 정보 리싸이클러뷰
 //        mRecyclerView = view.findViewById(R.id.recycler1);
@@ -111,7 +114,3 @@ public class ProfileFragment extends Fragment {
 //        item.setTitle(title);
 //        mList.add(item);
 //    }
-        return view;
-    }
-
-}

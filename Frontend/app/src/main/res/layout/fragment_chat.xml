@@ -30,7 +30,6 @@
             android:background="@drawable/round_background"
             android:maxWidth="200dp"
             android:maxHeight="200dp"
-            android:onClick="onClick"
             android:src="@drawable/profile" />
 
         <TextView
