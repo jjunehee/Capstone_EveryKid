@@ -113,7 +113,7 @@
  <div markdown="1">
   
   ### 05/20
-```[박경주] 게시판, DB컬럼 수정```
+  ```[박경주] 게시판, DB컬럼 수정```
 - backend Dto, Entity 클래스 변수명 db에 맞게 변경
 - DB kindergarten table에 K_ID 추가
 create TABLE KINDERGARTEN (
@@ -126,7 +126,7 @@ K_NAME VARCHAR(20)
 - 게시판 등록 기능 복원
   
   ### 05/21
-```박경주 유치원 select 관련 기능 
+```박경주 유치원 select 관련 기능```
 ```[Android]```
 - 유치원 선택시 서버 DB에 유치원 insert하고 KKID 받아오도록 selectKindergartenAdapter 수정
 
