@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 
 public class Board {
-    @SerializedName("bID")
-    private int B_ID;
+    @SerializedName("BKID")
+    private Long BKID;
 
-    @SerializedName("kID")
-    private String K_ID;
+    @SerializedName("KKID")
+    private Long KKID;
 
     @SerializedName("tID")
     private String T_ID;
@@ -29,22 +29,22 @@ public class Board {
     @SerializedName("HITS")
     private int HITS;
 
-    public Board(int b_ID, String k_ID, String t_ID, String p_ID, Date WRITE_DATE, String WRITE_SUBJECT, String contents, int HITS) {
-        B_ID = b_ID;
-        K_ID = k_ID;
+    public Board(Long BKID, Long KKID, String t_ID, String p_ID, Date WRITE_DATE, String WRITE_SUBJECT, String CONTENTS, int HITS) {
+        this.BKID = BKID;
+        this.KKID = KKID;
         T_ID = t_ID;
         P_ID = p_ID;
         this.WRITE_DATE = WRITE_DATE;
         this.WRITE_SUBJECT = WRITE_SUBJECT;
-        this.CONTENTS = contents;
+        this.CONTENTS = CONTENTS;
         this.HITS = HITS;
     }
 
     @Override
     public String toString() {
-        return "BoardDto{" +
-                "B_ID=" + B_ID +
-                ", K_ID='" + K_ID + '\'' +
+        return "Board{" +
+                "BKID=" + BKID +
+                ", KKID=" + KKID +
                 ", T_ID='" + T_ID + '\'' +
                 ", P_ID='" + P_ID + '\'' +
                 ", WRITE_DATE=" + WRITE_DATE +
@@ -54,20 +54,20 @@ public class Board {
                 '}';
     }
 
-    public int getB_ID() {
-        return B_ID;
+    public Long getBKID() {
+        return BKID;
     }
 
-    public void setB_ID(int b_ID) {
-        B_ID = b_ID;
+    public void setBKID(Long BKID) {
+        this.BKID = BKID;
     }
 
-    public String getK_ID() {
-        return K_ID;
+    public Long getKKID() {
+        return KKID;
     }
 
-    public void setK_ID(String k_ID) {
-        K_ID = k_ID;
+    public void setKKID(Long KKID) {
+        this.KKID = KKID;
     }
 
     public String getT_ID() {

@@ -20,8 +20,8 @@ public class BoardService {
     BoardRepository boardRepository;
 
     @Transactional
-    public Page<Board> getBoardList(String kID, Pageable pageable) {
-        return boardRepository.findBykID(kID, pageable);
+    public Page<Board> getBoardList(Long kID, Pageable pageable) {
+        return boardRepository.findByKKID(kID, pageable);
     }
 
     @Transactional
@@ -31,12 +31,12 @@ public class BoardService {
 
     @Transactional
     public void update(int b_ID, String contents) { //수정완료 눌렀을 때 실행
-        Board board = boardRepository.findBybID(b_ID);
+        Board board = boardRepository.findByBKID(b_ID);
         board.modifyContents(contents); //수정된 content
     }
 
     @Transactional
-    public int getMaxBID() {
-        return boardRepository.maxBID();
+    public int getMaxBKID() {
+        return boardRepository.maxBKID();
     }
 }

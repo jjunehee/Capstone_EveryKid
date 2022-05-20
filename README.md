@@ -112,6 +112,18 @@
  <summary> Backend </summary>
  <div markdown="1">
   
+  ### 05/20
+```[박경주] 게시판, DB컬럼 수정```
+- backend Dto, Entity 클래스 변수명 db에 맞게 변경
+- DB kindergarten table에 K_ID 추가
+create TABLE KINDERGARTEN (
+K_KID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+K_ID varchar(12) NOT NULL unique,
+K_PHONE VARCHAR(13),
+K_ADDRESS VARCHAR(80),
+K_NAME VARCHAR(20)
+);
+- 게시판 등록 기능 복원
 </div>
 </details>
 
@@ -198,8 +210,21 @@
   
   ### 05/18
   ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
+  - notificationSetting.java 구현
+  - firebase everykid 저장소로 통합
   
-  ### ~ing
+  ### 05/19
   ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
+  - notificationClass.java 구현
+  - forground 알림 아이콘 변경
+  
+  ### 05/20
+  ```[조준희] 안드로이드에서 등하원 사진 가져오기```
+  - Firestorage image_store 폴더에 저장된 등하원 캡쳐 이미지들 중에 해당 이름,날짜,등/하원 이미지를 안드로이드에서 조회가능하도록 구현  
+  (LoadActivity.java, activity_imgload.xml)
+  <img src="https://user-images.githubusercontent.com/83155528/169556047-42055067-e30c-4e02-a3a5-41cdc18a2a5f.png" width="300" height="490">
+  
+
+  
 </div>
 </details>

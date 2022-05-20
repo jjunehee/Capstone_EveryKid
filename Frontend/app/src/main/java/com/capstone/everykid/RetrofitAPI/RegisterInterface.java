@@ -17,7 +17,8 @@ public interface RegisterInterface
             @Field("PPHONE") String phone,
             @Field("PNAME") String username,
             @Field("PPWD") String password,
-            @Field("PEMAIL") String email
+            @Field("PEMAIL") String email,
+            @Field("PALIAS") String alias
     );
 
     @FormUrlEncoded

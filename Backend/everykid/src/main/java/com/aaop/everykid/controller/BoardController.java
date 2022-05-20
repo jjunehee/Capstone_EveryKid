@@ -29,8 +29,8 @@ public class BoardController {
 
     // 유저가 소속된 유치원의 글들을 불러옴
     @RequestMapping("/board/{kID}")
-    public String getList(@PageableDefault(size = 10, sort = "bID", direction = Sort.Direction.ASC) Pageable pageable,
-                          @PathVariable("kID") String kID) {
+    public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.ASC) Pageable pageable,
+                          @PathVariable("kID") Long kID) {
 
         Page<Board> board =  boardService.getBoardList(kID, pageable);
 
@@ -51,13 +51,13 @@ public class BoardController {
     }
 
     @RequestMapping ("/write/{kID}/{tID}/{pID}/{writeSUBJECT}/{contents}")
-    public Boolean writeContent(@PathVariable("kID") String kID, @PathVariable("tID") String tID, @PathVariable("pID") String pID,
+    public Boolean writeContent(@PathVariable("kID") Long kID, @PathVariable("tID") String tID, @PathVariable("pID") String pID,
                                 @PathVariable("writeSUBJECT") String writeSUBJECT, @PathVariable("contents") String contents) {
 
         BoardDto boardDto = null;
         System.out.println("111");
         if(tID.equals("null")) {
-            boardDto = new BoardDto(boardService.getMaxBID() + 1, kID, null, pID, null, writeSUBJECT, contents, 0);
+            boardDto = new BoardDto(null, kID, null, pID, null, writeSUBJECT, contents, 0);
         }
         System.out.println(boardDto);
 
@@ -72,11 +72,11 @@ public class BoardController {
         return true;
     }
 
-    //글삭제(아무나 삭제하지 못하도록 수정)
+    //글삭제
     @RequestMapping("/delete")
     public String deleteContent(int b_ID) {
 
-        Board board = boardRepository.findBybID(b_ID);
+        Board board = boardRepository.findByBKID(b_ID);
 
         boardRepository.delete(board);
 
@@ -93,7 +93,7 @@ public class BoardController {
     }
 
     @RequestMapping("/search/{kID}/{key}")
-    public String searchContent(@PageableDefault(size = 10, sort = "b_ID", direction = Sort.Direction.ASC) Pageable pageable,
+    public String searchContent(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.ASC) Pageable pageable,
                                 @PathVariable("key") String key,@PathVariable("kID") String kID) {
 
         if(key.length() < 2)
