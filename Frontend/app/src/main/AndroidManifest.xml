@@ -32,6 +32,9 @@
             android:name=".ProfileInfoActivity"
             android:exported="false" />
         <activity
+            android:name=".View.Activity.LoadActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.Activity.NoticeActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Dialog" />
