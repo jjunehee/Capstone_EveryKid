@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //임시
-                Intent intent = new Intent(MainActivity.this, MainParent.class);
+                Intent intent = new Intent(MainActivity.this, findKindergarten.class);
                 startActivity(intent);
                 login();
             }

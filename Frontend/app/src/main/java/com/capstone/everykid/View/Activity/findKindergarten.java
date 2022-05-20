@@ -1,5 +1,6 @@
 package com.capstone.everykid.View.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -118,7 +119,11 @@ public class findKindergarten extends AppCompatActivity {
                         System.out.println(call.request());
                         System.out.println("받아오기 완료");
                         kindergartenList = response.body().getItems();
-
+                        Intent intent = new Intent(getApplicationContext(), selectKindergarten.class);
+                        ArrayList<ItemClass> list = new ArrayList<ItemClass>();
+                        list.addAll(kindergartenList);
+                        intent.putExtra("list", list);
+                        startActivity(intent);
                     }
 
                     @Override

@@ -88,6 +88,12 @@
             android:name=".View.Activity.MainParent"
             android:exported="true" />
         <activity
+            android:name=".View.Activity.findKindergarten"
+            android:exported="true" />
+        <activity
+            android:name=".View.Activity.selectKindergarten"
+            android:exported="true" />
+        <activity
             android:name=".View.Activity.AccountCreate"
             android:exported="true" />
         <service android:name=".Firebase.FCM"
