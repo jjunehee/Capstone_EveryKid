@@ -29,5 +29,5 @@ public interface RegisterInterface
             @Field("T_NAME") String username,
             @Field("T_PWD") String password,
             @Field("T_EMAIL") String email
-   );
+    );
 }
