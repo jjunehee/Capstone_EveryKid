@@ -77,6 +77,7 @@ public class ParentService {
                     .pALIAS(parent.getPALIAS())
                     .pPHONE(parent.getPPHONE())
                     .pID(parent.getPID())
+                    .PKID(parent.getPKID())
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());

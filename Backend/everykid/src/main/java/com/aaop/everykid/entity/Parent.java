@@ -40,6 +40,7 @@ public class Parent {
 
     @Column(name="K_KID")
     private String kKID;
+
     //@Column(name="T_ID")
     //private String tID;
 
@@ -72,7 +73,8 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+        this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;
         this.pNAME = pNAME;
@@ -88,5 +90,4 @@ public class Parent {
         child.setCAGE(registerCFormDto.getCAGE());
         return child;
     }
-
 }
