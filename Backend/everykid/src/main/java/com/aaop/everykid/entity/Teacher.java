@@ -15,6 +15,7 @@ import lombok.ToString;
 @ToString
 public class Teacher {
 
+
     @Column(name = "T_NAME")
     private String tNAME;
 
