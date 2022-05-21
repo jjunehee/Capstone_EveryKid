@@ -237,6 +237,12 @@ K_NAME VARCHAR(20)
   (LoadActivity.java, activity_imgload.xml)
   <img src="https://user-images.githubusercontent.com/83155528/169556047-42055067-e30c-4e02-a3a5-41cdc18a2a5f.png" width="300" height="490">
   
+  ### 05/21
+  ```[조준희] 이름,날짜,등/하원에 따른 사진 가져오기```
+  - getName, getDate, getTime 변수를 통해 Firebase에서 가져오는 사진 구별화. (LoadActivity.java)
+  
+  ### ~ing
+  ```[조준희] 날짜를 현재기준 일주일전까지만 리스트뷰를 자동으로 생성```
 
   
 </div>
