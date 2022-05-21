@@ -49,9 +49,9 @@ public class ListFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_list, container, false);
         listView=view.findViewById(R.id.list);
         adapter = new ListItemAdapter();
-        adapter.addItem(new ListItem("4월 20일 수요일")); //임시
-        adapter.addItem(new ListItem("4월 21일 목요일"));
-        adapter.addItem(new ListItem("4월 22일 금요일"));
+        adapter.addItem(new ListItem("2022-05-18")); //임시
+        adapter.addItem(new ListItem("2022-05-19"));
+        adapter.addItem(new ListItem("2022-05-20"));
         listView.setAdapter(adapter);
 
         notiBtn = (Button) view.findViewById(R.id.notificationSetting);

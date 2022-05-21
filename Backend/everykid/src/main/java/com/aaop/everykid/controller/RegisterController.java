@@ -33,7 +33,7 @@ public class RegisterController {
     //jpa 문자열
 
     @PostMapping(value = "/parent")     //p_NAME
-    public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
+    public ResponseEntity signUp(@RequestBody RegisterPFormDto registerPFormDto) {
         //Parent parent = Parent.createParent(registerPFormDto);
         //registerPService.saveParent(parent);
         System.out.println("부모 회원가입 시도" + registerPFormDto);
@@ -43,15 +43,14 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/teacher")     //p_NAME
-    public RegisterTFormDto registerForm2(RegisterTFormDto registerTFormDto) {
+    public RegisterTFormDto registerForm2(@RequestBody RegisterTFormDto registerTFormDto) {
         Teacher teacher = Teacher.createTeacher(registerTFormDto);
         registerTService.saveTeacher(teacher);
         System.out.println("선생 회원가입 시도" + registerTFormDto);
         return registerTFormDto;
     }
-
     @PostMapping(value = "/login")     //p_NAME
-    public ResponseEntity<TokenResponseDto> signIn( RegisterPFormDto registerPFormDto) throws Exception {
+    public ResponseEntity<TokenResponseDto> signIn(@RequestBody RegisterPFormDto registerPFormDto) throws Exception {
         return ResponseEntity.ok().body(parentService.signIn(registerPFormDto));
     }
 
@@ -59,4 +58,13 @@ public class RegisterController {
     public ResponseEntity<List<Parent>> findUser() {
         return ResponseEntity.ok().body(parentService.findUsers());
     }
-}
+
+    @PostMapping(value="/child")
+    public RegisterCFormDto registerChild(@RequestBody RegisterCFormDto registerCFormDto){
+        Parent child = Parent.createChild(registerCFormDto);
+        registerPService.saveParent(child);
+        System.out.println("아이등록" + registerCFormDto);
+        return registerCFormDto;
+        }
+    }
+

@@ -11,11 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.capstone.everykid.Model.ListItem;
 import com.capstone.everykid.PicActivity;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Activity.ListFragment;
+import com.capstone.everykid.View.Activity.LoadActivity;
 import com.capstone.everykid.View.Activity.SignupActivity;
 
 import java.io.ByteArrayOutputStream;
@@ -53,31 +55,28 @@ public class ListItemAdapter extends BaseAdapter{
         TextView Date =  convertView.findViewById(R.id.date);
         Date.setText(listItem.getDate());
 
-
 //        등원버튼
         Button btn1 =(Button)convertView.findViewById(R.id.btn_attend);
                 btn1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent i = new Intent(context, PicActivity.class);
-//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                i.putExtra("attendimage", byteArray);
-                context.startActivity(i);
+                Intent intent = new Intent(context, LoadActivity.class);
+                //TODO putText name,Date,등원
+                intent.putExtra("name", "Junhee");
+                intent.putExtra("date", listItem.getDate());
+                intent.putExtra("time","등원");
+                context.startActivity(intent);
             }
         });
 //         하원버튼
         Button btn2 =(Button)convertView.findViewById(R.id.btn_exit);
         btn2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent i = new Intent(context, PicActivity.class);
-//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                i.putExtra("attendimage", byteArray);
-                context.startActivity(i);
+                Intent intent = new Intent(context, LoadActivity.class);
+                //TODO putText name,Date,하원
+                intent.putExtra("name", "Junhee");
+                intent.putExtra("date", listItem.getDate());
+                intent.putExtra("time","하원");
+                context.startActivity(intent);
             }
         });
 

@@ -1,4 +1,5 @@
 package com.aaop.everykid.entity;
+import com.aaop.everykid.dto.RegisterCFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
 
 import javax.persistence.*;
@@ -40,18 +41,17 @@ public class Parent {
     @Column(name="K_KID")
     private String kKID;
 
-
     //@Column(name="T_ID")
     //private String tID;
 
     //@Enumerated(EnumType.STRING)
     //private Role role;
 
-    //@Column(name="C_NAME")
-    //private String cNAME;
+    @Column(name="C_NAME")
+    private String cNAME;
 
-    //@Column(name="C_AGE")
-    //private String cAGE;
+    @Column(name="C_AGE")
+    private Integer cAGE;
 
     //@Column(name="C_STATUS")
     //private boolean cSTATUS;
@@ -73,7 +73,8 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+        this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;
         this.pNAME = pNAME;
@@ -82,4 +83,11 @@ public class Parent {
         this.pALIAS = pALIAS;
     }
 
+    public static Parent createChild(RegisterCFormDto registerCFormDto){
+        Parent child = new Parent();
+        child.setPKID(registerCFormDto.getPKID());
+        child.setCNAME(registerCFormDto.getCNAME());
+        child.setCAGE(registerCFormDto.getCAGE());
+        return child;
+    }
 }
