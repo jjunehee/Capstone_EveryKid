@@ -119,11 +119,23 @@ public class findKindergarten extends AppCompatActivity {
                         System.out.println(call.request());
                         System.out.println("받아오기 완료");
                         kindergartenList = response.body().getItems();
-                        Intent intent = new Intent(getApplicationContext(), selectKindergarten.class);
+                        Intent intent = getIntent();
+                        Intent intent1 = new Intent(getApplicationContext(), selectKindergarten.class);
                         ArrayList<ItemClass> list = new ArrayList<ItemClass>();
                         list.addAll(kindergartenList);
-                        intent.putExtra("list", list);
-                        startActivity(intent);
+                        intent1.putExtra("list", list);
+                        intent1.putExtra("User", intent.getExtras().getString("User"));
+//                        System.out.println(intent.getExtras().getString("User"));
+//                        System.out.println(intent.getExtras().getString("etid"));
+//                        System.out.println(intent.getExtras().getString("etpassword"));
+                        intent1.putExtra("etid", intent.getExtras().getString("etid"));
+                        intent1.putExtra("etphone", intent.getExtras().getString("etphone"));
+                        intent1.putExtra("etusername", intent.getExtras().getString("etusername"));
+                        intent1.putExtra("etpassword", intent.getExtras().getString("etpassword"));
+                        intent1.putExtra("etemail", intent.getExtras().getString("etemail"));
+                        intent1.putExtra("ealias", intent.getExtras().getString("ealias"));
+                        intent1.putExtra("ekindergarten", intent.getExtras().getString("ekindergarten"));
+                        startActivity(intent1);
                     }
 
                     @Override

@@ -32,6 +32,7 @@ public class selectKindergarten extends AppCompatActivity {
     private ListView listView;
     private selectKindergartenAdapter adapter;
     private ArrayList<ItemClass> kgList;
+    public static Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class selectKindergarten extends AppCompatActivity {
         adapter = new selectKindergartenAdapter();
         listView.setAdapter(adapter);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         kgList = (ArrayList<ItemClass>) intent.getSerializableExtra("list");
 
         getKindergartenList();

@@ -1,6 +1,8 @@
 package com.capstone.everykid.View.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 import com.capstone.everykid.Model.ItemClass;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
+import com.capstone.everykid.View.Activity.SignupActivity;
+import com.capstone.everykid.View.Activity.selectKindergarten;
 
 import java.util.ArrayList;
 
@@ -80,6 +84,19 @@ public class selectKindergartenAdapter extends BaseAdapter {
                             Long result = response.body();
                             System.out.println(result);
                             System.out.println("통신 완료");
+                            Intent intent = selectKindergarten.intent;
+                            Intent intent1 = new Intent(context, SignupActivity.class);
+                            intent1.putExtra("User", intent.getExtras().getString("User"));
+                            intent1.putExtra("etid", intent.getExtras().getString("etid"));
+                            intent1.putExtra("etphone", intent.getExtras().getString("etphone"));
+                            intent1.putExtra("etusername", intent.getExtras().getString("etusername"));
+                            intent1.putExtra("etpassword", intent.getExtras().getString("etpassword"));
+                            intent1.putExtra("etemail", intent.getExtras().getString("etemail"));
+                            intent1.putExtra("ealias", intent.getExtras().getString("ealias"));
+                            intent1.putExtra("ekindergarten", title.getText().toString());
+                            intent1.putExtra("kkid", result);
+                            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            context.startActivity(intent1);
                             //data 에서 필요한 내용 꺼내 쓰기
                         } else {
                             //통신이 실패한 경우
