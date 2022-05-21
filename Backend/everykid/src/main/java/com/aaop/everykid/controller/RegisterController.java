@@ -33,7 +33,7 @@ public class RegisterController {
     //jpa 문자열
 
     @PostMapping(value = "/parent")     //p_NAME
-    public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
+    public ResponseEntity signUp(@RequestBody RegisterPFormDto registerPFormDto) {
         //Parent parent = Parent.createParent(registerPFormDto);
         //registerPService.saveParent(parent);
         System.out.println("부모 회원가입 시도" + registerPFormDto);
@@ -50,7 +50,7 @@ public class RegisterController {
         return registerTFormDto;
     }
     @PostMapping(value = "/login")     //p_NAME
-    public ResponseEntity<TokenResponseDto> signIn( RegisterPFormDto registerPFormDto) throws Exception {
+    public ResponseEntity<TokenResponseDto> signIn(@RequestBody RegisterPFormDto registerPFormDto) throws Exception {
         return ResponseEntity.ok().body(parentService.signIn(registerPFormDto));
     }
 
