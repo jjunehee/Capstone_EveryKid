@@ -1,6 +1,7 @@
 package com.capstone.everykid.View.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.capstone.everykid.Model.Board;
 import com.capstone.everykid.R;
+import com.capstone.everykid.View.Activity.CommunityFragment;
+import com.capstone.everykid.View.Activity.MainActivity;
 
 import java.util.ArrayList;
 
@@ -44,10 +47,24 @@ public class CommunityFragmentAdapter extends BaseAdapter {
 
         }
         //화면에 보여질 데이터 참조
-        TextView title =  convertView.findViewById(R.id.title_cm);
+        TextView titleView =  convertView.findViewById(R.id.title_cm);
+        TextView idView =  convertView.findViewById(R.id.id_cm);
+        TextView dateView =  convertView.findViewById(R.id.date_cm);
 
         //데이터를 set해줌
-        title.setText(board.getWRITE_SUBJECT());
+        titleView.setText(board.getWRITE_SUBJECT());
+        String id = (board.getP_ID() == null) ? board.getT_ID() : board.getP_ID();
+        idView.setText(id);
+        dateView.setText("2000-10-10");
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(context, ShowPageActivity.class);
+                //intent.putExtra("board", board);
+
+            }
+        });
 
         return convertView;
     }

@@ -6,7 +6,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -70,12 +69,12 @@ public class CommunityFragment extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_community, container, false);
-        listView = view.findViewById(R.id.cmListView);
+        listView = view.findViewById(R.id.kg_list);
         adapter = new CommunityFragmentAdapter();
         listView.setAdapter(adapter);
 
         lpb_buttonlist = (LakuePagingButton) view.findViewById(R.id.lpb_buttonlist);
-        btn = (FloatingActionButton) view.findViewById(R.id.fab);
+        btn = (FloatingActionButton) view.findViewById(R.id.btn_reg);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

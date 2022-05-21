@@ -112,6 +112,27 @@
  <summary> Backend </summary>
  <div markdown="1">
   
+### 05/20
+  ```[박경주] 게시판, DB컬럼 수정```
+- backend Dto, Entity 클래스 변수명 db에 맞게 변경
+- DB kindergarten table에 K_ID 추가
+create TABLE KINDERGARTEN (
+K_KID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+K_ID varchar(12) NOT NULL unique,
+K_PHONE VARCHAR(13),
+K_ADDRESS VARCHAR(80),
+K_NAME VARCHAR(20)
+);
+- 게시판 등록 기능 복원
+  
+### 05/21
+```박경주 유치원 select 관련 기능```
+  
+```[Android]```
+- 유치원 선택시 서버 DB에 유치원 insert하고 KKID 받아오도록 selectKindergartenAdapter 수정
+
+```[Spring]```
+- kindergarten 관련한 Service, Repository, Controller 작성
 </div>
 </details>
 
@@ -189,13 +210,30 @@
   <img width="20%" src="https://user-images.githubusercontent.com/83155528/167659290-91715664-bc86-4089-ba2f-a7018a397392.png"/>
   <img width="80%" src="https://user-images.githubusercontent.com/83155528/168300453-7772b1e5-ebfa-4621-ade2-b70e5a647b9e.png"/>
   
-  ### ~ing
+  ### 05/16
   ```[조준희] 라즈베리파이로 Token 가져오고, 안드로이드 기기로 푸쉬알림 보내기```
   - Firebase Databbase로 부터 알림설정 허용한 기기들의 token 정보를 가져오고, 해당 기기로 푸쉬 알림 보내기 완료 ( notification.py )
   
   <img src="https://user-images.githubusercontent.com/83155528/168578247-743822da-2f8a-4fdd-b115-966cc2085c3c.gif" width="500" height="490">
   <img src="https://user-images.githubusercontent.com/83155528/168578280-5ac2cdfb-d2a0-43fa-bfde-aa07afa1aa7f.gif" width="300" height="490">
   
+  ### 05/18
+  ```[조준희] 개별 알림 구현, firebase Realtime DB 통합(everykid)```
+  - notificationSetting.java 구현
+  - firebase everykid 저장소로 통합
+  
+  ### 05/19
+  ```[조준희] 앱안에서도 푸쉬알림 받을 수 있도록 구현```
+  - notificationClass.java 구현
+  - forground 알림 아이콘 변경
+  
+  ### 05/20
+  ```[조준희] 안드로이드에서 등하원 사진 가져오기```
+  - Firestorage image_store 폴더에 저장된 등하원 캡쳐 이미지들 중에 해당 이름,날짜,등/하원 이미지를 안드로이드에서 조회가능하도록 구현  
+  (LoadActivity.java, activity_imgload.xml)
+  <img src="https://user-images.githubusercontent.com/83155528/169556047-42055067-e30c-4e02-a3a5-41cdc18a2a5f.png" width="300" height="490">
+  
+
   
 </div>
 </details>

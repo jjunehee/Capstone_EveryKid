@@ -30,9 +30,9 @@ public class SignupActivity extends AppCompatActivity
 {
     public final String TAG = "SignupActivity";
 
-    private EditText etid, etphone, etusername, etpassword, etemail;
+    private EditText etid, etphone, etusername, etpassword, etemail, ealias, ekindergarten;
     private TextView text;
-    private Button btnregister;
+    private Button btnregister, btnduplicateCheck, btnkindergarten;
     private PreferenceHelper preferenceHelper;
     private String accountUser;
     private Intent intent;
@@ -55,8 +55,12 @@ public class SignupActivity extends AppCompatActivity
         etusername = (EditText) findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
+        ealias = (EditText) findViewById(R.id.alias);
+        ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
         btnregister = (Button) findViewById(R.id.button4);
+        btnduplicateCheck = (Button) findViewById(R.id.duplicateCheck_btn);
+        btnkindergarten = (Button) findViewById(R.id.kindergarten_btn);
 
 
         btnregister.setOnClickListener(new View.OnClickListener()
@@ -79,6 +83,8 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
+        final String alias = ealias.getText().toString();
+        final String kindergarten = ekindergarten.getText().toString();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -86,7 +92,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, alias);
         call.enqueue(new Callback<String>()
         {
             @Override

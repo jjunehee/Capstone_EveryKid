@@ -1,18 +1,27 @@
 package com.capstone.everykid.View.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.capstone.everykid.Model.ListItem;
+import com.capstone.everykid.PicActivity;
 import com.capstone.everykid.R;
+import com.capstone.everykid.View.Activity.ListFragment;
+import com.capstone.everykid.View.Activity.SignupActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
-public class ListItemAdapter extends BaseAdapter {
+public class ListItemAdapter extends BaseAdapter{
    ArrayList<ListItem> items = new ArrayList<ListItem>();
    Context context;
 
@@ -40,13 +49,38 @@ public class ListItemAdapter extends BaseAdapter {
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView=inflater.inflate(R.layout.listview_item,parent,false);
-
         }
-        //화면에 보여질 데이터 참조
         TextView Date =  convertView.findViewById(R.id.date);
-
-        //데이터를 set해줌
         Date.setText(listItem.getDate());
+
+
+//        등원버튼
+        Button btn1 =(Button)convertView.findViewById(R.id.btn_attend);
+                btn1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(context, PicActivity.class);
+//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                i.putExtra("attendimage", byteArray);
+                context.startActivity(i);
+            }
+        });
+//         하원버튼
+        Button btn2 =(Button)convertView.findViewById(R.id.btn_exit);
+        btn2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(context, PicActivity.class);
+//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                i.putExtra("attendimage", byteArray);
+                context.startActivity(i);
+            }
+        });
+
 
         return convertView;
     }
