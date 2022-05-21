@@ -130,9 +130,13 @@ K_NAME VARCHAR(20)
   
 ```[Android]```
 - 유치원 선택시 서버 DB에 유치원 insert하고 KKID 받아오도록 selectKindergartenAdapter 수정
+- 회원가입시 유치원 목록 받아오는 Activity연결
+- SignupActivity에 Long Type 변수 kkid 추가
 
 ```[Spring]```
 - kindergarten 관련한 Service, Repository, Controller 작성
+  
+
 </div>
 </details>
 
