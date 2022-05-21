@@ -72,6 +72,11 @@ public class ParentService {
             return TokenResponseDto.builder()
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
+                    .pNAME(registerPFormDto.getPNAME())
+                    .pEMAIL(registerPFormDto.getPNAME())
+                    .pPHONE(registerPFormDto.getPNAME())
+                    .pALIAS(registerPFormDto.getPNAME())
+                    .kKID(registerPFormDto.getPNAME())
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
