@@ -112,8 +112,8 @@
  <summary> Backend </summary>
  <div markdown="1">
   
-  ### 05/20
-```[박경주] 게시판, DB컬럼 수정```
+### 05/20
+  ```[박경주] 게시판, DB컬럼 수정```
 - backend Dto, Entity 클래스 변수명 db에 맞게 변경
 - DB kindergarten table에 K_ID 추가
 create TABLE KINDERGARTEN (
@@ -124,6 +124,19 @@ K_ADDRESS VARCHAR(80),
 K_NAME VARCHAR(20)
 );
 - 게시판 등록 기능 복원
+  
+### 05/21
+```박경주 유치원 select 관련 기능```
+  
+```[Android]```
+- 유치원 선택시 서버 DB에 유치원 insert하고 KKID 받아오도록 selectKindergartenAdapter 수정
+- 회원가입시 유치원 목록 받아오는 Activity연결
+- SignupActivity에 Long Type 변수 kkid 추가
+
+```[Spring]```
+- kindergarten 관련한 Service, Repository, Controller 작성
+  
+
 </div>
 </details>
 
@@ -224,6 +237,12 @@ K_NAME VARCHAR(20)
   (LoadActivity.java, activity_imgload.xml)
   <img src="https://user-images.githubusercontent.com/83155528/169556047-42055067-e30c-4e02-a3a5-41cdc18a2a5f.png" width="300" height="490">
   
+  ### 05/21
+  ```[조준희] 이름,날짜,등/하원에 따른 사진 가져오기```
+  - getName, getDate, getTime 변수를 통해 Firebase에서 가져오는 사진 구별화. (LoadActivity.java)
+  
+  ### ~ing
+  ```[조준희] 날짜를 현재기준 일주일전까지만 리스트뷰를 자동으로 생성```
 
   
 </div>

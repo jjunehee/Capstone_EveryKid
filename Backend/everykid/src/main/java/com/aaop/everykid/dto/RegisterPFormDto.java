@@ -23,8 +23,9 @@ public class RegisterPFormDto {
 
     private String pALIAS;
 
-    //private String C_NAME;
+    private String C_NAME;
 
-    //private String C_AGE;
+    private String C_AGE;
 
+    private String C_IMG;
 }

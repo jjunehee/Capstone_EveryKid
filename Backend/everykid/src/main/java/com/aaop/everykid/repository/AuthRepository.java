@@ -11,7 +11,3 @@ public interface AuthRepository extends JpaRepository<Auth, Long> {
 
     Optional<Auth> findByParentPKID(Long PKID);
 }
-
-
-
-//Optional<Auth> findBypKID(Long PKID);

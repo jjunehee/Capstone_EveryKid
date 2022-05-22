@@ -67,11 +67,17 @@ public class ParentService {
         String accessToken = "";
         String refreshToken = auth.getRefreshToken();
 
+
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
             return TokenResponseDto.builder()
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
+                    .pNAME(parent.getPNAME())
+                    .pALIAS(parent.getPALIAS())
+                    .pPHONE(parent.getPPHONE())
+                    .pID(parent.getPID())
+                    .PKID(parent.getPKID())
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());

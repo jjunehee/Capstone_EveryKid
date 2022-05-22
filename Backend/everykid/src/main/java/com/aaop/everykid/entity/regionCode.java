@@ -7,20 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="regioncode")
+@Table(name="arcode")
 public class regionCode {
 
-    @Column(name = "시도명")
+    @Column(name = "stname")
     String siDoName;
 
-    @Column(name = "시도코드")
+    @Column(name = "stcode")
     String siDoCode;
 
-    @Column(name = "시군구명")
+    @Column(name = "arname")
     String siGunGuName;
 
     @Id
-    @Column(name = "시군구코드")
+    @Column(name = "arcode")
     String siGunGuCode;
 
     public regionCode(String siDoName, String siDoCode, String siGunGuName, String siGunGuCode) {

@@ -1,53 +1,60 @@
 package com.aaop.everykid.entity;
+import com.aaop.everykid.dto.RegisterCFormDto;
 import com.aaop.everykid.dto.RegisterTFormDto;
 
 import javax.persistence.*;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
 @Entity
 @Table(name="Teacher")
-@Getter
-@Setter
+@Getter @Setter
 @ToString
+@RequiredArgsConstructor
 public class Teacher {
 
-    @Column(name = "T_NAME")
+
+    @Column(name="T_NAME")
     private String tNAME;
 
-    @Column(name = "T_PHONE")
+    @Column(name="T_PHONE")
     private String tPHONE;
 
-    @Column(name = "T_EMAIL")
+    @Column(name="T_EMAIL")
     private String tEMAIL;
 
     @Id
-    @Column(name = "T_ID")
-    private String tID;
+    @Column(name="T_KID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long TKID;
 
-    @Column(name = "T_PWD")
+    @Column(name="T_PWD")
     private String tPWD;
 
-    @Column(name = "K_KID")
+    @Column(name="T_ID")
+    private String tID;
+
+    @Column(name="T_ALIAS")
+    private String tALIAS;
+
+    @Column(name="K_KID")
     private String kKID;
 
-    public static Teacher createTeacher(RegisterTFormDto registerTFormDto){
-        Teacher teacher = new Teacher();
-        teacher.setTNAME(registerTFormDto.getTNAME());
-        teacher.setTPHONE(registerTFormDto.getTPHONE());
-        teacher.setTEMAIL(registerTFormDto.getTEMAIL());
-        teacher.setTID(registerTFormDto.getTID());
-        //비밀번호 암호화
-        teacher.setTPWD(registerTFormDto.getTPWD());
-        teacher.setKKID(registerTFormDto.getKKID());
-        //parent.setPALIAS(parentFormDto.getP_ALIAS());
-        //parent.setCNAME(parentFormDto.getC_NAME());
-        //parent.setCAGE(parentFormDto.getC_AGE());
-        //parent.setRole(Role.PARENT);
+    //@Column(name="T_ID")
+    //private String tID;
 
-        return teacher;
+    //@Enumerated(EnumType.STRING)
+    //private Role role;
+
+    @Builder
+    public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL ,String tALIAS) {
+        this.TKID = TKID;
+        this.tID = tID;
+        this.tPWD = tPWD;
+        this.tNAME = tNAME;
+        this.tPHONE = tPHONE;
+        this.tEMAIL = tEMAIL;
+        this.tALIAS = tALIAS;
     }
 }

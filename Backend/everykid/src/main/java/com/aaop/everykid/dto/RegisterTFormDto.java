@@ -21,10 +21,6 @@ public class RegisterTFormDto {
 
     private String kKID;
 
-    private String pALIAS;
-
-    //private String C_NAME;
-
-    //private String C_AGE;
+    private String tALIAS;
 
 }

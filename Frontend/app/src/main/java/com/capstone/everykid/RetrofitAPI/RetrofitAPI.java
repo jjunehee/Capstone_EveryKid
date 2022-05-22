@@ -32,4 +32,7 @@ public interface RetrofitAPI {
 
     @GET("/mediate/rest/cpmsapi021/cpmsapi021/request")
     Call<Kindergarten> getKindergartenInfo(@Query("key") String key, @Query("arcode") String arcode);
+
+    @GET("kindergarten/find/{KID}/{KPHONE}/{KADDRESS}/{KNAME}")
+    Call<Long> selectKindergarten(@Path("KID") String KID, @Path("KPHONE") String KPHONE, @Path("KADDRESS") String KADDRESS, @Path("KNAME") String KNAME);
 }

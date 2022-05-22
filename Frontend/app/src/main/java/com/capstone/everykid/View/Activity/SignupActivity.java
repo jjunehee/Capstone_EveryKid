@@ -36,6 +36,8 @@ public class SignupActivity extends AppCompatActivity
     private PreferenceHelper preferenceHelper;
     private String accountUser;
     private Intent intent;
+    private Long kkid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,6 +59,15 @@ public class SignupActivity extends AppCompatActivity
         etemail = (EditText) findViewById(R.id.email);
         ealias = (EditText) findViewById(R.id.alias);
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
+        etid.setText(intent.getExtras().getString("etid"));
+        etphone.setText(intent.getExtras().getString("etphone"));
+        etusername.setText(intent.getExtras().getString("etusername"));
+        etpassword.setText(intent.getExtras().getString("etpassword"));
+        etemail.setText(intent.getExtras().getString("etemail"));
+        ealias.setText(intent.getExtras().getString("ealias"));
+        ekindergarten.setText(intent.getExtras().getString("ekindergarten"));
+        kkid = intent.getExtras().getLong("kkid");
+        System.out.println(kkid);
 
         btnregister = (Button) findViewById(R.id.button4);
         btnduplicateCheck = (Button) findViewById(R.id.duplicateCheck_btn);
@@ -73,6 +84,22 @@ public class SignupActivity extends AppCompatActivity
                 }else if(accountUser.equals("Teacher")){
                     registerTeacher();
                 }
+            }
+        });
+
+        btnkindergarten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), findKindergarten.class);
+                intent.putExtra("User", accountUser);
+                intent.putExtra("etid", etid.getText().toString());
+                intent.putExtra("etphone", etphone.getText().toString());
+                intent.putExtra("etusername", etusername.getText().toString());
+                intent.putExtra("etpassword", etpassword.getText().toString());
+                intent.putExtra("etemail", etemail.getText().toString());
+                intent.putExtra("ealias", ealias.getText().toString());
+                intent.putExtra("ekindergarten", ekindergarten.getText().toString());
+                startActivity(intent);
             }
         });
     }
@@ -101,7 +128,6 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
-
                     String jsonResponse = response.body();
                     try
                     {
@@ -147,6 +173,7 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
+                    Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
 
                     String jsonResponse = response.body();
                     try
@@ -175,7 +202,6 @@ public class SignupActivity extends AppCompatActivity
         if (jsonObject.optString("status").equals("true"))
         {
             saveInfo(response);
-            Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
         }
         else
         {

@@ -4,19 +4,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.bumptech.glide.Glide;
 import com.capstone.everykid.Model.ListItem;
 import com.capstone.everykid.PicActivity;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Activity.ListFragment;
+import com.capstone.everykid.View.Activity.LoadActivity;
 import com.capstone.everykid.View.Activity.SignupActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -24,6 +35,8 @@ import java.util.ArrayList;
 public class ListItemAdapter extends BaseAdapter{
    ArrayList<ListItem> items = new ArrayList<ListItem>();
    Context context;
+
+
 
     @Override
     public int getCount() {
@@ -53,31 +66,26 @@ public class ListItemAdapter extends BaseAdapter{
         TextView Date =  convertView.findViewById(R.id.date);
         Date.setText(listItem.getDate());
 
-
 //        등원버튼
         Button btn1 =(Button)convertView.findViewById(R.id.btn_attend);
                 btn1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent i = new Intent(context, PicActivity.class);
-//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                i.putExtra("attendimage", byteArray);
-                context.startActivity(i);
+                Intent intent = new Intent(context, LoadActivity.class);
+                intent.putExtra("name", "Junhee");
+                intent.putExtra("date", listItem.getDate());
+                intent.putExtra("time","등원");
+                context.startActivity(intent);
             }
         });
 //         하원버튼
         Button btn2 =(Button)convertView.findViewById(R.id.btn_exit);
         btn2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent i = new Intent(context, PicActivity.class);
-//                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.kidprofile);
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//                byte[] byteArray = stream.toByteArray();
-//                i.putExtra("attendimage", byteArray);
-                context.startActivity(i);
+                Intent intent = new Intent(context, LoadActivity.class);
+                intent.putExtra("name", "Junhee");
+                intent.putExtra("date", listItem.getDate());
+                intent.putExtra("time","하원");
+                context.startActivity(intent);
             }
         });
 

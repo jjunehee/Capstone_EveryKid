@@ -2,6 +2,7 @@ package com.aaop.everykid.Jwt;
 
 
 import com.aaop.everykid.entity.Parent;
+import com.aaop.everykid.entity.Teacher;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
