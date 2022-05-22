@@ -16,26 +16,26 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @Service
-public class TokenUtils {
+public class TokenUtils2 {
 
     private final String SECRET_KEY = "secretKey";
     private final String REFRESH_KEY = "refreshKey";
-    private final String DATA_KEY = "PID";
+    private final String DATA_KEY = "KID";
 
-    public String generateJwtToken(Parent parent) {
+    public String generateJwtToken(Teacher teacher) {
         return Jwts.builder()
-                .setSubject(parent.getPID())
+                .setSubject(teacher.getTID())
                 .setHeader(createHeader())
-                .setClaims(createClaims(parent))
+                .setClaims(createClaims(teacher))
                 .setExpiration(createExpireDate(1000 * 60 * 5))
                 .signWith(SignatureAlgorithm.HS256, createSigningKey(SECRET_KEY))
                 .compact();
     }
-    public String saveRefreshToken(Parent parent) {
+    public String saveRefreshToken(Teacher teacher) {
         return Jwts.builder()
-                .setSubject(parent.getPID())
+                .setSubject(teacher.getTID())
                 .setHeader(createHeader())
-                .setClaims(createClaims(parent))
+                .setClaims(createClaims(teacher))
                 .setExpiration(createExpireDate(1000 * 60 * 10))
                 .signWith(SignatureAlgorithm.HS256, createSigningKey(REFRESH_KEY))
                 .compact();
@@ -46,7 +46,7 @@ public class TokenUtils {
         try {
             Claims accessClaims = getClaimsFormToken(token);
             System.out.println("Access expireTime: " + accessClaims.getExpiration());
-            System.out.println("Access pID: " + accessClaims.get("pID"));
+            System.out.println("Access tID: " + accessClaims.get("tID"));
             return true;
         } catch (ExpiredJwtException exception) {
             System.out.println("Token Expired PID : " + exception.getClaims().getSubject());
@@ -63,10 +63,10 @@ public class TokenUtils {
         try {
             Claims accessClaims = getClaimsToken(token);
             System.out.println("Access expireTime: " + accessClaims.getExpiration());
-            System.out.println("Access PID: " + accessClaims.get("userId"));
+            System.out.println("Access tID: " + accessClaims.get("userId"));
             return true;
         } catch (ExpiredJwtException exception) {
-            System.out.println("Token Expired PID : " + exception.getClaims().getSubject());
+            System.out.println("Token Expired tID : " + exception.getClaims().getSubject());
             return false;
         } catch (JwtException exception) {
             System.out.println("Token Tampered");
@@ -91,9 +91,9 @@ public class TokenUtils {
         return header;
     }
 
-    private Map<String, Object> createClaims(Parent parent) {
+    private Map<String, Object> createClaims(Teacher teacher) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put(DATA_KEY, parent.getPID());
+        claims.put(DATA_KEY, teacher.getTID());
         return claims;
     }
 

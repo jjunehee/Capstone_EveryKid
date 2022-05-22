@@ -1,13 +1,15 @@
 package com.aaop.everykid.dto;
-//부모 회원가입 폼 dto
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @ToString
-public class LoginFormDto {
-    private String pID;
-    private String pPWD;
+public class TeacherLoginDto {
+
+    private String tID;
+
+    private String tPWD;
 }

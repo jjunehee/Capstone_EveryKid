@@ -2,6 +2,7 @@ package com.aaop.everykid.service;
 
 
 import com.aaop.everykid.Jwt.TokenUtils;
+import com.aaop.everykid.dto.LoginFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
 import com.aaop.everykid.entity.Auth;
 import com.aaop.everykid.entity.Parent;
@@ -52,16 +53,16 @@ public class ParentService {
     }
 
     @Transactional
-    public TokenResponseDto signIn(RegisterPFormDto registerPFormDto) throws Exception {
+    public TokenResponseDto signIn(LoginFormDto loginFormDto) throws Exception {
         Parent parent =
                 parentRepository
-                        .findBypID(registerPFormDto.getPID())
+                        .findBypID(loginFormDto.getPID())
                         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
         Auth auth =
                 authRepository
                         .findByParentPKID(parent.getPKID())
                         .orElseThrow(()-> new IllegalArgumentException("Token 이 존재하지 않습니다."));
-        if (!passwordEncoder.matches(registerPFormDto.getPPWD(), parent.getPPWD())) {
+        if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
         String accessToken = "";
@@ -78,6 +79,7 @@ public class ParentService {
                     .pPHONE(parent.getPPHONE())
                     .pID(parent.getPID())
                     .PKID(parent.getPKID())
+                    .status(200)
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
