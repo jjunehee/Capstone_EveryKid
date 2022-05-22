@@ -128,7 +128,6 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
-
                     String jsonResponse = response.body();
                     try
                     {
@@ -174,6 +173,7 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
+                    Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
 
                     String jsonResponse = response.body();
                     try
@@ -202,7 +202,6 @@ public class SignupActivity extends AppCompatActivity
         if (jsonObject.optString("status").equals("true"))
         {
             saveInfo(response);
-            Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
         }
         else
         {

@@ -19,10 +19,15 @@ public class LoadActivity extends AppCompatActivity {
 
     ImageView load;
 
-    String name="Junhee";
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imgload);
+        String getName = getIntent().getStringExtra("name");
+        String getDate = getIntent().getStringExtra("date");
+        String getTime = getIntent().getStringExtra("time");
+
         load=(ImageView) findViewById(R.id.loadimg);
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();
@@ -30,7 +35,7 @@ public class LoadActivity extends AppCompatActivity {
         if(pathReference == null) {
             Toast.makeText(LoadActivity.this, "저장소에 사진이 없습니다.",Toast.LENGTH_SHORT).show();
         } else {
-            StorageReference submitProfile = storageReference.child("image_store/" + name + " 2022-05-18 하원.jpg");
+            StorageReference submitProfile = storageReference.child("image_store/" + getName + " " + getDate + " " + getTime + ".jpg");
             submitProfile.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
