@@ -28,10 +28,10 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     }
 
 
-    public String getResultCode() {
+    public String getStatus() {
         return resultCode;
     }
-    public void setResultCode(String resultCode) {
+    public void setStatus(String resultCode) {
         this.resultCode = resultCode;
     }
 

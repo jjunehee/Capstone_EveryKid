@@ -127,18 +127,10 @@ public class MainActivity extends AppCompatActivity {
                     //response.body()를 result에 저장
                     LoginResponse result = response.body();
 
-                    //받은 코드 저장
-                    String resultCode = result.getResultCode();
-
                     //받은 토큰 저장
                     String token = result.getToken();
 
-                    String success = "200"; //로그인 성공
-                    String errorId = "300"; //아이디 일치x
-                    String errorPw = "400"; //비밀번호 일치x
-
-
-                    if (resultCode.equals(success)) {
+                    if (result.getStatus().equals("200")) {
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -155,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         MainActivity.this.finish();
 
-                    } else if (resultCode.equals(errorId)) {
+                    } else if (result.getStatus().equals("300")) {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("알림")
@@ -166,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
 
-                    } else if (resultCode.equals(errorPw)) {
+                    } else if (result.getStatus().equals("400")) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("알림")
                                 .setMessage("비밀번호가 일치하지 않습니다.\n 고객" +

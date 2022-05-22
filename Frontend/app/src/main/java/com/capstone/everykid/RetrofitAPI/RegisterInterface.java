@@ -19,10 +19,6 @@ public interface RegisterInterface
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
             @Field("PALIAS") String alias
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a44d88c72d4e6ef1bc6a8cac541b3520550e90e
     );
 
     @FormUrlEncoded
