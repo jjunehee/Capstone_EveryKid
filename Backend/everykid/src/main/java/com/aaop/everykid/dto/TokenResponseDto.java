@@ -19,4 +19,5 @@ public class TokenResponseDto {
     private String C_NAME;
     private String C_AGE;
     private String C_IMG;
+    private int status;
 }

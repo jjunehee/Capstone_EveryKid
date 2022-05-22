@@ -3,10 +3,10 @@ package com.capstone.everykid.Model;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginRequest { //서버에 보낼 데이터
-    @SerializedName("pID")
+    @SerializedName("pid")
     public String inputId;
 
-    @SerializedName("pPWD")
+    @SerializedName("ppwd")
     public String inputPw;
 
     public String getInputId() {
