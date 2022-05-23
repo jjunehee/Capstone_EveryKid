@@ -71,24 +71,24 @@ public class MainActivity extends AppCompatActivity {
                 String id = userID.getText().toString();
                 String pw = userPW.getText().toString();
 
-                if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("알림")
-                            .setMessage("로그인 정보를 입력바랍니다.")
-                            .setPositiveButton("확인", null)
-                            .create()
-                            .show();
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-
-                } else {
-                    //로그인 통신
+                Intent intent = new Intent(MainActivity.this, MainParent.class);
+                intent.putExtra("userId", userId);
+                startActivity(intent);
+//                if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
+//
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                    builder.setTitle("알림")
+//                            .setMessage("로그인 정보를 입력바랍니다.")
+//                            .setPositiveButton("확인", null)
+//                            .create()
+//                            .show();
+//                    AlertDialog alertDialog = builder.create();
+//                    alertDialog.show();
+//
+//                } else {
+//                    //로그인 통신
 //                    login();
-                    Intent intent = new Intent(MainActivity.this, MainParent.class);
-                    //intent.putExtra("userId", userId);
-                    startActivity(intent);
-                }
+//                }
 
 //                // 자동 로그인 데이터 저장
 //                SharedPreferences auto = getSharedPreferences("autoLogin", MainActivity.MODE_PRIVATE);
