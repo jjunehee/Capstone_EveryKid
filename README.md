@@ -248,6 +248,13 @@ K_NAME VARCHAR(20)
   - ListFragment에서 이미지 조회 미리하고, 조회된 날짜에 대해서 버튼을 밝은 초록색으로 바꾸려고하는데, 이미지 조회여부 처리가 잘 해결 되지않음. (~ing)
   <img src="https://user-images.githubusercontent.com/83155528/169707294-51d5ca7b-4701-4f79-8ffd-66e648c693f7.gif" width="300" height="490">
 
+  ### 05/23
+  ```[조준희] 03.faceDetection.py, FCM.java```
+  - [안드로이드] 알림 title 변경, 알림 클릭 시 이벤트 처리
+  - [라즈베리파이] 등/하원 알림 구분화, 캡쳐 주기 변경
+  
+  ### ~ing
+  ```[조준희] 라즈베리파이 사용성 측면에서 자동화 연구```
 
   
   
