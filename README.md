@@ -140,15 +140,18 @@ K_NAME VARCHAR(20)
 ```[박경주] 게시판 기능 보완```
   
 ```[Android]```
+  
 -게시판 activity_post.xml 연결
 -MainParent NavigationSelect 수정 -> 게시글 등록 후 community fragment로 이동
 -날짜, 조회수 제대로 출력되게 수정
 
 ```[database]```
+  
 -board테이블 WRITE_DATE 컬럼 형식 변경 ->
 alter table board modify WRITE_DATE datetime;
 
 ```[spring]```
+  
 -BoardController 매핑관련해서 url 수정
   
 </div>
