@@ -84,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     //로그인 통신
-                    login();
+//                    login();
+                    Intent intent = new Intent(MainActivity.this, MainParent.class);
+                    //intent.putExtra("userId", userId);
+                    startActivity(intent);
                 }
 
 //                // 자동 로그인 데이터 저장

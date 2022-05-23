@@ -12,12 +12,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 @RestController
 @RequestMapping("/board")
@@ -29,7 +27,7 @@ public class BoardController {
 
     // 유저가 소속된 유치원의 글들을 불러옴
     @RequestMapping("/board/{kID}")
-    public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.ASC) Pageable pageable,
+    public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.DESC) Pageable pageable,
                           @PathVariable("kID") Long kID) {
 
         Page<Board> board =  boardService.getBoardList(kID, pageable);
@@ -55,9 +53,11 @@ public class BoardController {
                                 @PathVariable("writeSUBJECT") String writeSUBJECT, @PathVariable("contents") String contents) {
 
         BoardDto boardDto = null;
-        System.out.println("111");
+        Date date = new Date();
         if(tID.equals("null")) {
-            boardDto = new BoardDto(null, kID, null, pID, null, writeSUBJECT, contents, 0);
+            boardDto = new BoardDto(null, kID, null, pID, date, writeSUBJECT, contents, 0);
+        } else {
+            boardDto = new BoardDto(null, kID, tID, null, date, writeSUBJECT, contents, 0);
         }
         System.out.println(boardDto);
 
@@ -74,32 +74,33 @@ public class BoardController {
 
     //글삭제
     @RequestMapping("/delete")
-    public String deleteContent(int b_ID) {
+    public String deleteContent(Long bKID) {
 
-        Board board = boardRepository.findByBKID(b_ID);
+        Board board = boardRepository.findByBKID(bKID);
 
         boardRepository.delete(board);
 
         return "";
     }
 
-    //수정 완료(아무나 수정하지 못하도록 수정)
     @RequestMapping("/modify")
-    public String updateContent(int b_ID, String contents) {
+    public String updateContent(Long bKID, String contents) {
 
-        boardService.update(b_ID, contents);
+        boardService.update(bKID, contents);
 
         return "";
     }
 
-    @RequestMapping("/search/{kID}/{key}")
-    public String searchContent(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.ASC) Pageable pageable,
-                                @PathVariable("key") String key,@PathVariable("kID") String kID) {
+    @RequestMapping("/search/{kID}")
+    public String searchContent(@PageableDefault(size = 10, sort = "B_KID", direction = Sort.Direction.DESC) Pageable pageable,
+                                @RequestParam("key") String key,@PathVariable("kID") Long kID) {
 
-        if(key.length() < 2)
+        if(key.length() < 2 && key.length() > 0 )
             return "";
 
-        Page<Board> board = boardService.getSearchList(key, kID, pageable);
+        Page<Board> board;
+        System.out.println("+++" + key.length() + "+++" + key + "+++");
+        board = boardService.getSearchList(key, kID, pageable);
 
         System.out.println(board.getTotalElements());
         System.out.println(board.getTotalPages());
@@ -109,10 +110,19 @@ public class BoardController {
 
         BoardList boardList = new BoardList(board.getContent(), (int)board.getTotalElements(), board.getSize(), board.getNumber(), board.getTotalPages());
 
-        Gson gson = new GsonBuilder().setDateFormat("MM, dd, yyyy HH:mm:ss a").create();
+        Gson gson = new GsonBuilder().setDateFormat("MMM dd, yyyy HH:mm:ss a").create();
         String jsonString = gson.toJson(boardList);
         System.out.println(jsonString);
 
         return jsonString;
+    }
+
+    @RequestMapping("/select/{bKID}")
+    public void selectBoard(@PathVariable("bKID") Long bKID) {
+
+        System.out.println(bKID);
+        boardService.updateHITS(bKID);
+
+        return;
     }
 }

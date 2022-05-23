@@ -101,6 +101,9 @@
         <activity
             android:name=".View.Activity.AccountCreate"
             android:exported="true" />
+        <activity
+            android:name=".View.Activity.PostActivity"
+            android:exported="true" />
 
         <service
             android:name=".Firebase.FCM"
