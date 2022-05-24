@@ -136,7 +136,21 @@ K_NAME VARCHAR(20)
 ```[Spring]```
 - kindergarten 관련한 Service, Repository, Controller 작성
   
+### 05/23
+```[박경주] 게시판 기능 보완```
+  
+```[Android]```
+- 게시판 activity_post.xml 연결
+- MainParent NavigationSelect 수정 -> 게시글 등록 후 community fragment로 이동
+- 날짜, 조회수 제대로 출력되게 수정
 
+```[database]```
+- board테이블 WRITE_DATE 컬럼 형식 변경 ->
+alter table board modify WRITE_DATE datetime;
+
+```[spring]```
+- BoardController 매핑관련해서 url 수정
+  
 </div>
 </details>
 
@@ -241,9 +255,23 @@ K_NAME VARCHAR(20)
   ```[조준희] 이름,날짜,등/하원에 따른 사진 가져오기```
   - getName, getDate, getTime 변수를 통해 Firebase에서 가져오는 사진 구별화. (LoadActivity.java)
   
-  ### ~ing
-  ```[조준희] 날짜를 현재기준 일주일전까지만 리스트뷰를 자동으로 생성```
+  ### 05/22
+  ```[조준희] ListFragment, LoadActivity 90%```
+  - 현재 시점부터 일주일전까지 등하원 리스트 조회가능
+  - 조회할때 로딩화면, 조회된 이미지 처리 및 예외 처리
+  - ListFragment에서 이미지 조회 미리하고, 조회된 날짜에 대해서 버튼을 밝은 초록색으로 바꾸려고하는데, 이미지 조회여부 처리가 잘 해결 되지않음. (~ing)
+  <img src="https://user-images.githubusercontent.com/83155528/169707294-51d5ca7b-4701-4f79-8ffd-66e648c693f7.gif" width="300" height="490">
 
+  ### 05/23
+  ```[조준희] 03.faceDetection.py, FCM.java```
+  - [안드로이드] 알림 title 변경, 알림 클릭 시 이벤트 처리
+  - [라즈베리파이] 등/하원 알림 구분화, 캡쳐 주기 변경
+  
+  ### ~ing
+  - [조준희] 라즈베리파이 사용성 측면에서 자동화 연구
+
+  
+  
   
 </div>
 </details>

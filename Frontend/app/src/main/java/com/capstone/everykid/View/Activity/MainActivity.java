@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 String id = userID.getText().toString();
                 String pw = userPW.getText().toString();
 
+
                 if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
