@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.LoginRequest;
 import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.R;
@@ -30,6 +31,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.capstone.everykid.Model.G;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText userID, userPW;
@@ -38,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
     private RetrofitClient retrofitClient;
     private com.capstone.everykid.RetrofitAPI.initMyApi initMyApi;
 
+    CreateAccountItem createAccountItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        createAccountItem = (CreateAccountItem)getApplicationContext();
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
@@ -49,12 +55,8 @@ public class MainActivity extends AppCompatActivity {
         createBtn = (Button) findViewById(R.id.button2);
 
         if (!getPreferenceString("autoLoginId").equals("") && !getPreferenceString("autoLoginPw").equals("")) {
-            checkAutoLogin(getPreferenceString("autoLoginId"));
+          //  checkAutoLogin(getPreferenceString("autoLoginId"));
         }
-
-//        auto = getSharedPreferences("autoLogin", MainActivity.MODE_PRIVATE);
-//        userId = auto.getString("userID", null);
-//        userPwd = auto.getString("userPWD", null);
 
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,18 +89,6 @@ public class MainActivity extends AppCompatActivity {
                     login();
                 }
 
-//                // 자동 로그인 데이터 저장
-//                SharedPreferences auto = getSharedPreferences("autoLogin", MainActivity.MODE_PRIVATE);
-//                SharedPreferences.Editor autoLoginEdit = auto.edit();
-//                autoLoginEdit.putString("userID", userID.getText().toString());
-//                autoLoginEdit.putString("userPWD", userPW.getText().toString());
-//                autoLoginEdit.commit();
-
-
-//                임시
-//                Intent intent = new Intent(MainActivity.this, MainParent.class);
-//                startActivity(intent);
-
             }
         });
     }
@@ -130,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     //받은 토큰 저장
                     String token = result.getToken();
 
-                    if (result.getStatus().equals("200")) {
+                    if (result.getStatus().equals(0)) {
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -140,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
+                        String name =result.getPname().toString();
+                        createAccountItem.setName(name);
+
 
                         Toast.makeText(MainActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, MainParent.class);
@@ -147,22 +140,21 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         MainActivity.this.finish();
 
-                    } else if (result.getStatus().equals("300")) {
+                    } else if (result.getStatus().equals(300)) {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("알림")
-                                .setMessage("아이디가 존재하지 않습니다.\n 고객센터에 문의바랍니다.")
+                                .setMessage("아이디가 존재하지 않습니다.")
                                 .setPositiveButton("확인", null)
                                 .create()
                                 .show();
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
 
-                    } else if (result.getStatus().equals("400")) {
+                    } else if (result.getStatus().equals(400)) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("알림")
-                                .setMessage("비밀번호가 일치하지 않습니다.\n 고객" +
-                                        "센터에 문의바랍니다.")
+                                .setMessage("비밀번호가 일치하지 않습니다.")
                                 .setPositiveButton("확인", null)
                                 .create()
                                 .show();
@@ -170,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("알림")
-                                .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
+                                .setMessage("예기치 못한 오류가 발생하였습니다.")
                                 .setPositiveButton("확인", null)
                                 .create()
                                 .show();
