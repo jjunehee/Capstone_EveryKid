@@ -13,21 +13,22 @@ public interface RegisterInterface
     @FormUrlEncoded
     @POST("/register/parent")
     Call<String> getParentRegist(
-            @Field("PID") String id,
-            @Field("PPHONE") String phone,
-            @Field("PNAME") String username,
-            @Field("PPWD") String password,
-            @Field("PEMAIL") String email,
-            @Field("PALIAS") String alias
+            @Field("pid") String id,
+            @Field("pphone") String phone,
+            @Field("pname") String username,
+            @Field("ppwd") String password,
+            @Field("pemail") String email,
+            @Field("palias") String alias,
+            @Field("kkid") String kid
     );
 
     @FormUrlEncoded
     @POST("/register/teacher")
     Call<String> getTeacherRegist(
-            @Field("T_ID") String id,
-            @Field("T_PHONE") String phone,
-            @Field("T_NAME") String username,
-            @Field("T_PWD") String password,
-            @Field("T_EMAIL") String email
+            @Field("tid") String id,
+            @Field("tphone") String phone,
+            @Field("tname") String username,
+            @Field("tpwd") String password,
+            @Field("temail") String email
     );
 }
