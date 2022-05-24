@@ -45,6 +45,7 @@ public class LoadActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
+                    load.setImageResource(R.drawable.exit);
 
                 }
             });

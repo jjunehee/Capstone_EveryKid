@@ -64,6 +64,20 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        StorageReference submitProfile = storageReference.child("image_store/" + mYear + "-" + Month + "-" + Day + ".jpg");
+        submitProfile.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+
+            }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_list, container, false);
         listView=view.findViewById(R.id.list);
