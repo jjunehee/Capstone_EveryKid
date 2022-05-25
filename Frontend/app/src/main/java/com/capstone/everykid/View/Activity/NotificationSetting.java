@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.FcmUser;
 import com.capstone.everykid.R;
 import com.google.firebase.database.DataSnapshot;
@@ -55,7 +54,6 @@ public class NotificationSetting extends AppCompatActivity {
         etName = (EditText) findViewById(R.id.et_name);
         etEmail = (EditText) findViewById(R.id.et_email);
 
-
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(task -> {
                     if (!task.isSuccessful()) {
@@ -76,7 +74,7 @@ public class NotificationSetting extends AppCompatActivity {
             btSubscribe.setText("해지합니다.");
         }
 
-        String userName = CreateAccountItem.getProcessName();
+        String userName = "Junhee";
 
         Query myQuery = myRef.orderByChild("name").equalTo(userName);
         myQuery.addValueEventListener(new ValueEventListener() {

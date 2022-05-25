@@ -1,139 +1,271 @@
+<<<<<<< HEAD:Backend/everykid/.idea/workspace.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="497780ef-1d95-4028-ab7e-d7fbba974c4b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../everykid clone/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../everykid clone/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../everykid clone/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../everykid clone/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../everykid clone/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6092a9b-18b8-4b33-bdb6-bc42640ce2c9/entities/entities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6092a9b-18b8-4b33-bdb6-bc42640ce2c9/entities/entities.dat.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6092a9b-18b8-4b33-bdb6-bc42640ce2c9/entities/entities.dat_i.len" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6092a9b-18b8-4b33-bdb6-bc42640ce2c9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqlDataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/index.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/parent/parentForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/searchForm.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/EverykidApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/Jwt/JwtTokenInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/Jwt/TokenUtils2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/config/SpringSecurity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/constant/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/controller/BoardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/controller/KindergartenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/controller/regionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/BoardDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/ChildrenFormDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/KindergartenDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/ParentLoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/RegisterCFormDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/RegisterPFormDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/TeacherLoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/TokenResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/TokenResponseDto2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/dto/regionCodeDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/entity/Auth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/entity/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/entity/BoardList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/entity/Kindergarten.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/entity/regionCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/AuthRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/AuthRepository2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/BoardRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/ChildRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/KindergartenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/ParentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/TeacherRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/repository/regionCodeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/BoardService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/KindergartenService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/RegisterPService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/RegisterTService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaop/everykid/service/regionCodeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parent/parentForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/searchForm.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aaop/everykid/EverykidApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/LoadActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/LoadActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NotificationSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NotificationSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_imgload.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_imgload.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_notification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="everykid" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="29eMaiNUVtS2zEOkm0UwV9acErH" />
+  <component name="ProjectId" id="27Pe5SJCNuotjGfAUjPVOsOb1ys" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/jjunehee/AndroidStudioProjects/Capstone_EveryKid/Backend/everykid",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 파생 언어" value="MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../everykid clone" />
+    <property name="project.structure.last.edited" value="모듈" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+  </component>
+  <component name="RunManager">
+    <configuration name="EverykidApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="everykid.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aaop.everykid.EverykidApplication" />
+      <option name="DEBUG_MODE" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="497780ef-1d95-4028-ab7e-d7fbba974c4b" name="Changes" comment="" />
-      <created>1653469163357</created>
+      <changelist id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
+      <created>1649225969211</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653469163357</updated>
+      <updated>1649225969211</updated>
+      <workItem from="1649225971315" duration="2010000" />
+      <workItem from="1649236354680" duration="676000" />
+      <workItem from="1649244178557" duration="238000" />
+      <workItem from="1649244461270" duration="32000" />
+      <workItem from="1649244713460" duration="1977000" />
+      <workItem from="1649381983556" duration="65000" />
+      <workItem from="1649435781140" duration="932000" />
+      <workItem from="1649468964659" duration="1849000" />
+      <workItem from="1649471480591" duration="12496000" />
+      <workItem from="1649597949209" duration="33836000" />
+      <workItem from="1649471388867" duration="523000" />
+      <workItem from="1649515345020" duration="581000" />
+      <workItem from="1649518502196" duration="290000" />
+      <workItem from="1649655305747" duration="1732000" />
+      <workItem from="1649809036392" duration="5341000" />
+      <workItem from="1649840381229" duration="5060000" />
+      <workItem from="1650024438014" duration="259000" />
+      <workItem from="1650024735311" duration="575000" />
+      <workItem from="1650074794646" duration="2153000" />
+      <workItem from="1650083140732" duration="1975000" />
+      <workItem from="1650087791674" duration="2406000" />
+      <workItem from="1650116688834" duration="34000" />
+      <workItem from="1650119604025" duration="23000" />
+      <workItem from="1650119703155" duration="73000" />
+      <workItem from="1650137384968" duration="1202000" />
+      <workItem from="1650175076554" duration="248000" />
+      <workItem from="1650175350005" duration="596000" />
+      <workItem from="1650348197030" duration="688000" />
+      <workItem from="1650432053896" duration="3610000" />
+      <workItem from="1650439600055" duration="3803000" />
+      <workItem from="1650447009558" duration="9528000" />
+      <workItem from="1650471564204" duration="192000" />
+      <workItem from="1650471794067" duration="4411000" />
+      <workItem from="1650509393290" duration="51000" />
+      <workItem from="1650547394653" duration="2268000" />
+      <workItem from="1650681654755" duration="8149000" />
+      <workItem from="1650734779831" duration="33000" />
+      <workItem from="1650734867461" duration="130000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="everykid" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27Pe5SJCNuotjGfAUjPVOsOb1ys" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 파생 언어" value="MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="project.structure.last.edited" value="모듈" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\everykid\src\main\resources\templates" />
+      <recent name="C:\Users\user\IdeaProjects\everykid\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aaop.everykid.controller" />
+      <recent name="com.aaop.everykid.service" />
+      <recent name="com.aaop.everykid.config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EverykidApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="everykid.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aaop.everykid.EverykidApplication" />
+      <option name="DEBUG_MODE" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
+      <created>1649225969211</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649225969211</updated>
+      <workItem from="1649225971315" duration="2010000" />
+      <workItem from="1649236354680" duration="676000" />
+      <workItem from="1649244178557" duration="238000" />
+      <workItem from="1649244461270" duration="32000" />
+      <workItem from="1649244713460" duration="1977000" />
+      <workItem from="1649381983556" duration="65000" />
+      <workItem from="1649435781140" duration="932000" />
+      <workItem from="1649468964659" duration="1849000" />
+      <workItem from="1649471480591" duration="12496000" />
+      <workItem from="1649597949209" duration="51816000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+>>>>>>> b1005988be15d44d4982750d142aa5d96d91e646:Backend/everykid clone/.idea/workspace.xml
 </project>
