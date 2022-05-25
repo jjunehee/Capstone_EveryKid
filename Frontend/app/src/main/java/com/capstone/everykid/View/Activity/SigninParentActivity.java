@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +24,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.capstone.everykid.View.Activity.MainParent;
-import com.capstone.everykid.View.Activity.SignupActivity;
+import com.capstone.everykid.R;
+import com.capstone.everykid.RetrofitClient;
 
 public class SigninParentActivity extends AppCompatActivity {
 
@@ -33,7 +33,7 @@ public class SigninParentActivity extends AppCompatActivity {
     Button signinBtn, createBtn;
     String userId, userPwd;
     private RetrofitClient retrofitClient;
-    private com.capstone.everykid.RetrofitAPI.initMyApi initMyApi;
+    private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
 
     CreateAccountItem createAccountItem;
 
@@ -98,10 +98,10 @@ public class SigninParentActivity extends AppCompatActivity {
 
         //retrofit 생성
         retrofitClient = RetrofitClient.getInstance();
-        initMyApi = RetrofitClient.getRetrofitInterface();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
         //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음
-        initMyApi.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
+        RetrofitAPI.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
@@ -116,7 +116,7 @@ public class SigninParentActivity extends AppCompatActivity {
                     //받은 토큰 저장
                     String token = result.getToken();
 
-                    if (result.getStatus().equals(0)) {
+                    if (result.getStatus().equals(200)) {
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -130,13 +130,14 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.setName(name);
 
 
-                        Toast.makeText(SigninParentActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
                         SigninParentActivity.this.finish();
 
-                    }else if(result.getStatus().equals(200)) {
+                    } else if(result.getStatus().equals(0)) {
+
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -146,7 +147,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-                        String name =result.getPname().toString();
+
+                        String name =result.getPname();
                         createAccountItem.setName(name);
 
 
@@ -155,8 +157,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         intent.putExtra("userId", userId);
                         startActivity(intent);
                         SigninParentActivity.this.finish();
-
-                    } else if (result.getStatus().equals(300)) {
+                    }else if (result.getStatus().equals(300)) {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                         builder.setTitle("알림")
@@ -198,6 +199,10 @@ public class SigninParentActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+
+
+
     }
 
     //데이터를 내부 저장소에 저장하기

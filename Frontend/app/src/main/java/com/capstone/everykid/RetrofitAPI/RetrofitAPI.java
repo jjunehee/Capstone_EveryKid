@@ -3,12 +3,17 @@ package com.capstone.everykid.RetrofitAPI;
 import com.capstone.everykid.Model.BoardList;
 import com.capstone.everykid.Model.ItemClass;
 import com.capstone.everykid.Model.Kindergarten;
+import com.capstone.everykid.Model.LoginRequest;
+import com.capstone.everykid.Model.LoginRequestTeacher;
+import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.Model.regionCode;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -38,4 +43,13 @@ Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Qu
 
     @GET("/board/select/{bKID}")
     Call<Void> selectBoard(@Path("bKID") Long kID);
+
+    @POST("/register/login")
+    Call<LoginResponse> getLoginResponse(
+            @Body LoginRequest loginRequest
+    );
+    @POST("/register/login2")
+    Call<LoginResponse> getLogin2Response(
+            @Body LoginRequestTeacher loginRequestTeacher
+    );
 }

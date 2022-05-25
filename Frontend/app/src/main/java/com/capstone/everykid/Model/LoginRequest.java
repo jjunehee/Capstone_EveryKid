@@ -4,29 +4,29 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginRequest { //서버에 보낼 데이터
     @SerializedName("pid")
-    public String inputId;
+    public String ParentId;
 
     @SerializedName("ppwd")
-    public String inputPw;
+    public String ParentPw;
 
-    public String getInputId() {
-        return inputId;
+    public String getParentId() {
+        return ParentId;
     }
 
-    public String getInputPw() {
-        return inputPw;
+    public String getParentPw() {
+        return ParentPw;
     }
 
-    public void setInputId(String inputId) {
-        this.inputId = inputId;
+    public void setParentId(String inputId) {
+        this.ParentId = inputId;
     }
 
-    public void setInputPw(String inputPw) {
-        this.inputPw = inputPw;
+    public void setParentPw(String inputPw) {
+        this.ParentPw = inputPw;
     }
 
     public LoginRequest(String inputId, String inputPw) {
-        this.inputId = inputId;
-        this.inputPw = inputPw;
+        this.ParentId = inputId;
+        this.ParentPw = inputPw;
     }
 }

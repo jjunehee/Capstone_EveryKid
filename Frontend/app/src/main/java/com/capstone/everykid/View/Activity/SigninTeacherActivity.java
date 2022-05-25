@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,14 +18,15 @@ import android.widget.Toast;
 
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.LoginRequest;
+import com.capstone.everykid.Model.LoginRequestTeacher;
 import com.capstone.everykid.Model.LoginResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.capstone.everykid.View.Activity.MainParent;
-import com.capstone.everykid.View.Activity.SignupActivity;
+import com.capstone.everykid.R;
+import com.capstone.everykid.RetrofitClient;
 
 public class SigninTeacherActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
     Button signinBtn, createBtn;
     String userId, userPwd;
     private RetrofitClient retrofitClient;
-    private com.capstone.everykid.RetrofitAPI.initMyApi initMyApi;
+    private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
 
     CreateAccountItem createAccountItem;
 
@@ -94,14 +95,14 @@ public class SigninTeacherActivity extends AppCompatActivity {
         String userPassword = userPW.getText().toString().trim();
 
         //loginRequest에 사용자가 입력한 id와 pw를 저장
-        LoginRequest loginRequest = new LoginRequest(userId, userPassword);
+        LoginRequestTeacher loginRequestTeacher = new LoginRequestTeacher(userId, userPassword);
 
         //retrofit 생성
         retrofitClient = RetrofitClient.getInstance();
-        initMyApi = RetrofitClient.getRetrofitInterface();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
-        //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음
-        initMyApi.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
+        //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음: 선생님 로그인
+        RetrofitAPI.getLogin2Response(loginRequestTeacher).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 

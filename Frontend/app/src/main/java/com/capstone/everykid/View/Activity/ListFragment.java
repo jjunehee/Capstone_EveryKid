@@ -1,8 +1,6 @@
 package com.capstone.everykid.View.Activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,10 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.capstone.everykid.PicActivity;
 import com.capstone.everykid.R;
 
 import com.capstone.everykid.Model.ListItem;
@@ -27,7 +22,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 
 public class ListFragment extends Fragment {

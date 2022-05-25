@@ -1,7 +1,5 @@
 package com.capstone.everykid.Model;
 
-
-
 import com.tickaroo.tikxml.annotation.Element;
 import com.tickaroo.tikxml.annotation.Xml;
 

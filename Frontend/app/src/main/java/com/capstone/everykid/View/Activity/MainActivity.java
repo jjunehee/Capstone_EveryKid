@@ -9,9 +9,6 @@ import android.widget.Button;
 
 import com.capstone.everykid.R;
 
-import com.capstone.everykid.SigninParentActivity;
-import com.capstone.everykid.SigninTeacherActivity;
-
 public class MainActivity extends AppCompatActivity {
     Button teacher_btn;
     Button parent_btn;

@@ -15,9 +15,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.capstone.everykid.Model.BoardList;
 import com.capstone.everykid.R;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
+import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
+import com.capstone.everykid.RetrofitClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +43,8 @@ public class SignupActivity extends AppCompatActivity
     private String accountUser;
     private Intent intent;
     private Long kkid;
+    private RetrofitClient retrofitClient;
+    private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
 
 
     @Override
@@ -49,6 +54,10 @@ public class SignupActivity extends AppCompatActivity
         setContentView(R.layout.activity_signup);
         intent = getIntent();
         accountUser= intent.getExtras().getString("User"); //회원가입하는 사용자가 선생님인지 학부모인지
+
+        retrofitClient = RetrofitClient.getInstance();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
+
 
         //학부모 회원가입인지 선생님 회원가입인지 임시로 띄워둠
         text=findViewById(R.id.textView6);
@@ -107,6 +116,8 @@ public class SignupActivity extends AppCompatActivity
             }
         });
     }
+
+//    학부모의 회원가입
     private void registerParent()
     {
         final String id = etid.getText().toString();
