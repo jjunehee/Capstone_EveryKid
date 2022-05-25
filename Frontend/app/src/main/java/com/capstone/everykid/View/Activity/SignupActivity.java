@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.capstone.everykid.Model.BoardList;
+import com.capstone.everykid.Model.G;
 import com.capstone.everykid.R;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
@@ -40,7 +41,7 @@ public class SignupActivity extends AppCompatActivity
     private TextView text;
     private Button btnregister, btnduplicateCheck, btnkindergarten;
     private PreferenceHelper preferenceHelper;
-    private String accountUser;
+    private String accountUser,kindergartenID;
     private Intent intent;
     private Long kkid;
     private RetrofitClient retrofitClient;
@@ -67,11 +68,12 @@ public class SignupActivity extends AppCompatActivity
 
         etid = (EditText) findViewById(R.id.id);
         etphone = (EditText) findViewById(R.id.phone);
-        etusername = (EditText) findViewById(R.id.name);
+        etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
         ealias = (EditText) findViewById(R.id.alias);
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
+
         etid.setText(intent.getExtras().getString("etid"));
         etphone.setText(intent.getExtras().getString("etphone"));
         etusername.setText(intent.getExtras().getString("etusername"));
@@ -80,7 +82,8 @@ public class SignupActivity extends AppCompatActivity
         ealias.setText(intent.getExtras().getString("ealias"));
         ekindergarten.setText(intent.getExtras().getString("ekindergarten"));
         kkid = intent.getExtras().getLong("kkid");
-        System.out.println(kkid);
+        kindergartenID=Long.toString(kkid);
+        System.out.println(kindergartenID);
 
         btnregister = (Button) findViewById(R.id.button4);
         btnduplicateCheck = (Button) findViewById(R.id.duplicateCheck_btn);
@@ -126,7 +129,9 @@ public class SignupActivity extends AppCompatActivity
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
         final String alias = ealias.getText().toString();
-        final String kindergarten = ekindergarten.getText().toString();
+        final Integer kindergarten = Integer.parseInt(kindergartenID);
+
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)

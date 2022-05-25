@@ -19,7 +19,7 @@ public interface RegisterInterface
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
             @Field("PALIAS") String alias,
-            @Field("KKID") String kindergarten
+            @Field("KKID") Integer kindergarten
     );
 
     @FormUrlEncoded

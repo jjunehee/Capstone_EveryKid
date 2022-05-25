@@ -28,7 +28,6 @@ public class ChildAddActivity extends AppCompatActivity {
 
         age = (EditText) findViewById(R.id.addchildAge_et);
 
-
     }
 
     //사진 등록 버튼
