@@ -2,6 +2,8 @@ package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+
+import android.content.Intent;
 import android.view.MenuItem;
 
 import com.capstone.everykid.R;
@@ -15,11 +17,18 @@ public class MainParent extends AppCompatActivity {
     ListFragment listFragment;
     ProfileFragment profileFragment;
     CommunityFragment communityFragment;
+    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_main);
+        Intent intent = getIntent();
+        try {
+            flag = intent.getExtras().getInt("cmFlag");
+        } catch(NullPointerException e) {
+
+        }
 
         homeFragment=new HomeFragment();
         chatFragment=new ChatFragment();
@@ -27,10 +36,16 @@ public class MainParent extends AppCompatActivity {
         profileFragment=new ProfileFragment();
         communityFragment=new CommunityFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
-
         NavigationBarView navigationBarView = findViewById(R.id.bottom_navigationview);
-        navigationBarView.setSelectedItemId(R.id.home);
+        if(flag == 1) {//게시글을 등록하고 온 경우
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers, communityFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.community);
+            flag = 0;
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.home);
+        }
+
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

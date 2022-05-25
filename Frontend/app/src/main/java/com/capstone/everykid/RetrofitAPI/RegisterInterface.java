@@ -18,16 +18,17 @@ public interface RegisterInterface
             @Field("PNAME") String username,
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
-            @Field("PALIAS") String alias
+            @Field("PALIAS") String alias,
+            @Field("KKID") String kindergarten
     );
 
     @FormUrlEncoded
     @POST("/register/teacher")
     Call<String> getTeacherRegist(
-            @Field("T_ID") String id,
-            @Field("T_PHONE") String phone,
-            @Field("T_NAME") String username,
-            @Field("T_PWD") String password,
-            @Field("T_EMAIL") String email
+            @Field("tid") String id,
+            @Field("tphone") String phone,
+            @Field("tname") String username,
+            @Field("tpwd") String password,
+            @Field("temail") String email
     );
 }
