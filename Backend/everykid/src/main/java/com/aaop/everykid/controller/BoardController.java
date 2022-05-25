@@ -12,11 +12,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import java.text.SimpleDateFormat;
 @RestController
 @RequestMapping("/board")
 public class BoardController {
@@ -27,6 +30,7 @@ public class BoardController {
 
     // 유저가 소속된 유치원의 글들을 불러옴
     @RequestMapping("/board/{kID}")
+
     public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.DESC) Pageable pageable,
                           @PathVariable("kID") Long kID) {
 
@@ -58,6 +62,7 @@ public class BoardController {
             boardDto = new BoardDto(null, kID, null, pID, date, writeSUBJECT, contents, 0);
         } else {
             boardDto = new BoardDto(null, kID, tID, null, date, writeSUBJECT, contents, 0);
+
         }
         System.out.println(boardDto);
 
@@ -74,6 +79,7 @@ public class BoardController {
 
     //글삭제
     @RequestMapping("/delete")
+
     public String deleteContent(Long bKID) {
 
         Board board = boardRepository.findByBKID(bKID);
@@ -90,6 +96,7 @@ public class BoardController {
 
         return "";
     }
+
 
     @RequestMapping("/search/{kID}")
     public String searchContent(@PageableDefault(size = 10, sort = "B_KID", direction = Sort.Direction.DESC) Pageable pageable,

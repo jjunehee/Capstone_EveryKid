@@ -5,6 +5,7 @@ import com.aaop.everykid.dto.RegisterPFormDto;
 import javax.persistence.*;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
@@ -35,12 +36,14 @@ public class Parent {
     @Column(name="P_ID")
     private String pID;
 
-    @Column(name="P_ALIAS")
-    private String pALIAS;
-
     @Column(name="K_KID")
     private String kKID;
 
+    @Column(name="C_IMG",length = 200)
+    private String cIMG;
+
+    @Transient
+    private MultipartFile picture;
     //@Column(name="T_ID")
     //private String tID;
 
@@ -73,14 +76,13 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL ,String pALIAS) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL) {
         this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;
         this.pNAME = pNAME;
         this.pPHONE = pPHONE;
         this.pEMAIL = pEMAIL;
-        this.pALIAS = pALIAS;
     }
 
     public static Parent createChild(RegisterCFormDto registerCFormDto){

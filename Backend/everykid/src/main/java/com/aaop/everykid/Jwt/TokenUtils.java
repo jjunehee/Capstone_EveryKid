@@ -27,7 +27,8 @@ public class TokenUtils {
                 .setSubject(parent.getPID())
                 .setHeader(createHeader())
                 .setClaims(createClaims(parent))
-                .setExpiration(createExpireDate(1000 * 60 * 5))
+ //               .setExpiration(createExpireDate(1000 * 60 * 5))
+                .setExpiration(createExpireDate(1000 * 60 * 60 * 12))
                 .signWith(SignatureAlgorithm.HS256, createSigningKey(SECRET_KEY))
                 .compact();
     }
@@ -36,7 +37,8 @@ public class TokenUtils {
                 .setSubject(parent.getPID())
                 .setHeader(createHeader())
                 .setClaims(createClaims(parent))
-                .setExpiration(createExpireDate(1000 * 60 * 10))
+                //.setExpiration(createExpireDate(1000 * 60 * 10))
+                .setExpiration(createExpireDate(1000 * 60 * 60 * 12))
                 .signWith(SignatureAlgorithm.HS256, createSigningKey(REFRESH_KEY))
                 .compact();
     }

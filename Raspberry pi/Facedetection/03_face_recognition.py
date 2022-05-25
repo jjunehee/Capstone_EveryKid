@@ -54,13 +54,13 @@ def firebase():
         cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + ' '+ nowDate + ' 하원' + '.jpg', img)
         fileUpload(str(id) + ' ' + nowDate + ' 하원' +'.jpg')
         
-def mesgSend1(token,id):
+def mesgSend(token,id):
     registration_token = token
     
    
     message = messaging.Message (
         notification=messaging.Notification(
-            title='EveryKid알림',
+            title='알림 Test',
             body='안녕하세요 ' +id+ '가 등원했어요!',
             ),
         android=messaging.AndroidConfig(
@@ -84,39 +84,7 @@ def mesgSend1(token,id):
     )
     
     response = messaging.send(message)
-    print('Successfully sent message:', response)
-    
-def mesgSend2(token,id):
-    registration_token = token
-    
-   
-    message = messaging.Message (
-        notification=messaging.Notification(
-            title='EveryKid알림',
-            body='안녕하세요 ' +id+ '가 하원했어요!',
-            ),
-        android=messaging.AndroidConfig(
-            ttl=datetime.timedelta(seconds=3600),
-            priority='normal',
-            notification=messaging.AndroidNotification(
-                icon='stock_ticker_update',
-                color='#f45342'
-            ),
-        ),
-        apns=messaging.APNSConfig(
-            payload=messaging.APNSPayload(
-                aps=messaging.Aps(badge=42),
-            ),
-        ),
-        data={
-            
-        },
-        
-        token=registration_token,
-    )
-    
-    response = messaging.send(message)
-    print('Successfully sent message:', response)  
+    print('Successfully sent message:', response)    
     
     
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -168,15 +136,13 @@ while True:
             
             
             count+=1
-            if(count % 50 == 0 and confidence < 45 ):
+            if(count % 30 == 0 and confidence < 45 ):
                 firebase()
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():
                     if(var['name']==id):
-                        if(now.hour < 12):
-                            mesgSend1(var['token'],id)
-                        else:
-                            mesgSend2(var['token'],id)
+                        mesgSend(var['token'],id)
+                
                 #Check image capture
                 #cv2.imshow('image', img)
     
