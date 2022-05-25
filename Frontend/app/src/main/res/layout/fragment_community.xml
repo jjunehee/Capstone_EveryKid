@@ -15,8 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="검색" />
+            android:hint="검색"
+            android:inputType="textPersonName" />
 
         <ListView
             android:id="@+id/kg_list"

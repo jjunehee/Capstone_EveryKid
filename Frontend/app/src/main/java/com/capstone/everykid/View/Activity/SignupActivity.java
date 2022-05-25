@@ -97,8 +97,12 @@ public class SignupActivity extends AppCompatActivity
             {
                 if(accountUser.equals("Parent")){
                     registerParent();
+                    Intent intent = new Intent(getApplicationContext(), SigninParentActivity.class);
+                    startActivity(intent);
                 }else if(accountUser.equals("Teacher")){
                     registerTeacher();
+                    Intent intent = new Intent(getApplicationContext(), SigninTeacherActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -128,11 +132,8 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
-<<<<<<< HEAD
-        final String alias = ealias.getText().toString();
-        final Integer kindergarten = Integer.parseInt(kindergartenID);
-=======
->>>>>>> fc78261984e1a788d16f6c4e3e66efbc84a4824b
+        final String kindergarten = kindergartenID;
+
 
 
 
@@ -142,7 +143,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergartenID);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -156,8 +157,6 @@ public class SignupActivity extends AppCompatActivity
                     try
                     {
                         parseRegData(jsonResponse);
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
                     }
                     catch (JSONException e)
                     {
@@ -171,6 +170,7 @@ public class SignupActivity extends AppCompatActivity
             public void onFailure(@NonNull Call<String> call, @NonNull Throwable t)
             {
                 Log.e(TAG, "에러 = " + t.getMessage());
+                Toast.makeText(SignupActivity.this, "회원가입 실패", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -46,16 +46,15 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/img"
                     android:background="@drawable/round_background"
-                    android:onClick="onClick"/>
+                    android:onClick="OpenPhoto"/>
 
                 <Button
-                    android:id="@+id/UploadUserPicture_btn"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@color/button_yellow"
                     android:text="사진 선택"
-                    android:onClick="onClick"
+                    android:onClick="OpenPhoto"
                     android:textSize="15dp"/>
 
             </LinearLayout>

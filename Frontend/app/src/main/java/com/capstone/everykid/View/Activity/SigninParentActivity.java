@@ -42,10 +42,6 @@ public class SigninParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_parent);
-<<<<<<< HEAD
-        
-=======
->>>>>>> fc78261984e1a788d16f6c4e3e66efbc84a4824b
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
@@ -130,11 +126,13 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginPw", userPassword);
 
                         String name =result.getPname();
-                        createAccountItem.Name=name;
-                        String email =result.getPemail();
-                        createAccountItem.Email=email;
+                        createAccountItem.Name=result.getPname();
+
+                        createAccountItem.Email=result.getPemail();
+
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
+
                         String id =result.getPid();
                         createAccountItem.Id=id;
 
