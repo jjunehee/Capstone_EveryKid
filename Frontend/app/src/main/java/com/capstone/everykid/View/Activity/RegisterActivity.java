@@ -61,10 +61,12 @@ public class RegisterActivity extends AppCompatActivity {
                             System.out.println("통신 완료");
                             Toast.makeText(getApplicationContext(),"게시글 업로드 완료",Toast.LENGTH_SHORT).show();
 
-                            //MainParent로 가는 intent, MainTheacher로 가는 intent 하나씩 생성
-                            Intent intent = new Intent(RegisterActivity.this, MainParent.class);
-                            intent.putExtra("cmFlag", 1);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            CommunityFragment fragment = new CommunityFragment();
+//                            supportFragmentManager()
+//                                    .beginTransaction()
+//                                    .replace(R.id.framelayout, fragment_main)
+//                                    .commit()
+                            Intent intent = new Intent(RegisterActivity.this, CommunityFragment.class);
                             startActivity(intent);
                             //data 에서 필요한 내용 꺼내 쓰기
                         } else {

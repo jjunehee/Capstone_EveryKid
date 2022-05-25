@@ -1,6 +1,6 @@
 package com.capstone.everykid;
 
-import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
+import com.capstone.everykid.RetrofitAPI.initMyApi;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static RetrofitClient instance = null;
-    private static com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
+    private static com.capstone.everykid.RetrofitAPI.initMyApi initMyApi;
     //사용하고 있는 서버 BASE 주소
     private static String baseUrl = "http://10.0.2.2:8080/";
 
@@ -30,7 +30,7 @@ public class RetrofitClient {
                 .client(client) //로그 기능 추가
                 .build();
 
-        RetrofitAPI = retrofit.create(RetrofitAPI.class);
+        initMyApi = retrofit.create(initMyApi.class);
     }
 
     public static RetrofitClient getInstance() {
@@ -40,7 +40,7 @@ public class RetrofitClient {
         return instance;
     }
 
-    public static com.capstone.everykid.RetrofitAPI.RetrofitAPI getRetrofitInterface() {
-        return RetrofitAPI;
+    public static initMyApi getRetrofitInterface() {
+        return initMyApi;
     }
 }

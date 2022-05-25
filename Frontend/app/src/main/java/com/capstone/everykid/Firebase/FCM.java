@@ -20,10 +20,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.capstone.everykid.R;
-import com.capstone.everykid.View.Activity.ListFragment;
-import com.capstone.everykid.View.Activity.LoadActivity;
 import com.capstone.everykid.View.Activity.MainActivity;
-import com.capstone.everykid.View.Activity.MainParent;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -56,7 +53,7 @@ public class FCM extends FirebaseMessagingService {
 //        });
 //    }
     private void sendNotification(String messageTitle,String messageBody) {
-        Intent intent = new Intent(this, MainParent.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);

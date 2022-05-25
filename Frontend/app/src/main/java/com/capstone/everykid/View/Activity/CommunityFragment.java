@@ -91,7 +91,6 @@ public class CommunityFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if(keyCode == KeyEvent.KEYCODE_ENTER) {
                     getBoardList(0, 2, search.getText().toString());
-                    System.out.println("111");
                     return true;
                 }
 
@@ -103,13 +102,12 @@ public class CommunityFragment extends Fragment {
     }
 
     public void getBoardList(int page, int whichMethod, String key) { //key는 searchBoard에서 사용
-        if(whichMethod == 1) {
-            call = retrofitAPI.listBoard(Long.valueOf(1), page); //kID 사용자의 kID로 바꿔주기
-        } else if(whichMethod == 2) {
-            call = retrofitAPI.searchBoard(Long.valueOf(1), key, page);
-        }
+        if(whichMethod == 1)
+            call = retrofitAPI.listBoard("1", page); //kID 사용자의 kID로 바꿔주기
+        else if(whichMethod == 2)
+            call = retrofitAPI.searchBoard("1", key, page);
 
-        String finalKey = key;
+
         call.enqueue(new Callback<BoardList>() {
             @Override
             public void onResponse(Call<BoardList> call, Response<BoardList> response) {
@@ -138,14 +136,14 @@ public class CommunityFragment extends Fragment {
                         public void onPageBefore(int now_page) {
                             //prev 버튼을 클릭하면 버튼이 재설정되고 버튼이 그려집니다.
                             lpb_buttonlist.addBottomPageButton(boardList.getTotalPage(), now_page);
-                            getBoardList(now_page - 1, whichMethod, finalKey);
+                            getBoardList(now_page - 1, whichMethod, key);
                             //해당 페이지에 대한 소스 코드 작성
                         }
 
                         @Override
                         public void onPageCenter(int now_page) {
                             //Write source code for there page
-                            getBoardList(now_page - 1, whichMethod, finalKey); //0페이지가 첫 페이지이므로 -1
+                            getBoardList(now_page - 1, whichMethod, key); //0페이지가 첫 페이지이므로 -1
                         }
 
                         //NextButton Click
@@ -153,7 +151,7 @@ public class CommunityFragment extends Fragment {
                         public void onPageNext(int now_page) {
                             //next 버튼을 클릭하면 버튼이 재설정되고 버튼이 그려집니다.
                             lpb_buttonlist.addBottomPageButton(boardList.getTotalPage(), now_page);
-                            getBoardList(now_page - 1, whichMethod, finalKey);
+                            getBoardList(now_page - 1, whichMethod, key);
                             //해당 페이지에 대한 소스 코드 작성
                         }
                     });
