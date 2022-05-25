@@ -15,7 +15,7 @@ public class AccountCreate3 extends AppCompatActivity {
 
     private EditText k_id;
     private Button search_btn, next_btn;
-    CreateAccountItem createAccountItem = (CreateAccountItem)getApplicationContext();
+    CreateAccountItem createAccountItem ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
