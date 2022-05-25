@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 public class SettingActivity extends AppCompatActivity {
     EditText name, email, phone, id;
+    CreateAccountItem createAccountItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,11 @@ public class SettingActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.userEmail_et);
         phone = (EditText) findViewById(R.id.userPhone_et);
         id = (EditText) findViewById(R.id.userId_et);
+
+        name.setText(createAccountItem.Name);
+        email.setText(createAccountItem.Email);
+        phone.setText(createAccountItem.Phone);
+        id.setText(createAccountItem.Id);
 
 
     }

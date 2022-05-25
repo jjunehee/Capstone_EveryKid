@@ -34,7 +34,6 @@ public class SigninParentActivity extends AppCompatActivity {
     String userId, userPwd;
     private RetrofitClient retrofitClient;
     private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
-
     CreateAccountItem createAccountItem;
 
     @Override
@@ -66,7 +65,6 @@ public class SigninParentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String id = userID.getText().toString();
                 String pw = userPW.getText().toString();
-
 
                 if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
 
