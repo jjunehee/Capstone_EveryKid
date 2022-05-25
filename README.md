@@ -99,7 +99,15 @@
   
 ```[노수진] 공지사항 글쓰기, 글 확인 ```
 - 공지사항 글쓰기 화면, 글 확인 화면 생성
+  
+### 05/22
+```[노수진] 로그인```
+- MainActivity, initMyApi, LoginRequest, LoginResponse, RetrofitClient 자바파일 추가
 
+### 05/24
+```[노수진] 로그인```
+- MainActivity에서 선생님 학부모 선택하고 로그인 하는것으로 나눔
+- SigninParentActivity.java, SigninTeacherActivity.java 생성
 
   
  </div>
