@@ -118,7 +118,7 @@ public class SignupActivity extends AppCompatActivity
         });
     }
 
-//    학부모의 회원가입
+    //    학부모의 회원가입
     private void registerParent()
     {
         final String id = etid.getText().toString();
@@ -126,8 +126,6 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
-        final String alias = ealias.getText().toString();
-        final String kindergarten = kindergartenID;
 
 
 
@@ -137,7 +135,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email, alias, kindergarten);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergartenID);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -146,6 +144,7 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
+                    Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                     String jsonResponse = response.body();
                     try
                     {

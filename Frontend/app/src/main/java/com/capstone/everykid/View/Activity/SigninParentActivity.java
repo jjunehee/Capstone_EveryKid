@@ -41,7 +41,6 @@ public class SigninParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_parent);
-        createAccountItem = (CreateAccountItem)getApplicationContext();
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
@@ -126,10 +125,14 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-
                         String name =result.getPname();
-                        createAccountItem.setName(name);
-
+                        createAccountItem.Name=name;
+                        String email =result.getPemail();
+                        createAccountItem.Email=email;
+                        String phone =result.getPphone();
+                        createAccountItem.Phone=phone;
+                        String id =result.getPid();
+                        createAccountItem.Id=id;
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
@@ -148,10 +151,14 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-
                         String name =result.getPname();
-                        createAccountItem.setName(name);
-
+                        createAccountItem.Name=name;
+                        String email =result.getPemail();
+                        createAccountItem.Email=email;
+                        String phone =result.getPphone();
+                        createAccountItem.Phone=phone;
+                        String id =result.getPid();
+                        createAccountItem.Id=id;
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
@@ -184,7 +191,6 @@ public class SigninParentActivity extends AppCompatActivity {
                                 .setPositiveButton("확인", null)
                                 .create()
                                 .show();
-
                     }
                 }
             }
@@ -200,10 +206,6 @@ public class SigninParentActivity extends AppCompatActivity {
                         .show();
             }
         });
-
-
-
-
     }
 
     //데이터를 내부 저장소에 저장하기
@@ -219,7 +221,6 @@ public class SigninParentActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("DATA_STORE", MODE_PRIVATE);
         return pref.getString(key, "");
     }
-
 
     //키보드 숨기기
     private void hideKeyboard() {

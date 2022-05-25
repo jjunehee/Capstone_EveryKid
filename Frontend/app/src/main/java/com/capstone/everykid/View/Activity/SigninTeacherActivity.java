@@ -42,7 +42,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_teacher);
-        createAccountItem = (CreateAccountItem)getApplicationContext();
+
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
@@ -128,7 +128,6 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         setPreference("autoLoginPw", userPassword);
 
                         String name =result.getPname().toString();
-                        createAccountItem.setName(name);
 
 
                         Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
@@ -148,7 +147,6 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         setPreference("autoLoginPw", userPassword);
 
                         String name =result.getPname().toString();
-                        createAccountItem.setName(name);
 
 
                         Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
