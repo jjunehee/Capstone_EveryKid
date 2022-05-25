@@ -132,7 +132,10 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
+<<<<<<< HEAD
         final String kindergarten = kindergartenID;
+=======
+>>>>>>> f844e329bd76aef55f1768149537310d3405a8d0
 
 
 
