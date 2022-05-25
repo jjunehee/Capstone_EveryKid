@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
       View view;
       ImageView p_img, child_img, kinder_img;
       Button info_btn, add_btn, profile_btn;
-
+      CreateAccountItem createAccountItem;
       LoginResponse loginResponse;
     public ProfileFragment() {
         // Required empty public constructor
@@ -58,7 +58,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_profile, container, false);
-        CreateAccountItem createAccountItem = (CreateAccountItem) getActivity().getApplicationContext();
+
 
 //        ActionBar bar =getActivity().getActionBar();
 //        bar.setTitle("프로필");
@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
         child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
         p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름
 
-        p_name.setText(createAccountItem.getName());
+        p_name.setText(createAccountItem.Name);
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
