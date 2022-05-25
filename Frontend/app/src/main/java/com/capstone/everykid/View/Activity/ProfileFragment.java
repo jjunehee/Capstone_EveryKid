@@ -65,7 +65,7 @@ public class ProfileFragment extends Fragment {
 
         p_img = (ImageView)view.findViewById(R.id.profile_img); //로그인유저의 프로필사진
         child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
-        p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름름
+        p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름
 
         p_name.setText(createAccountItem.Name);
 

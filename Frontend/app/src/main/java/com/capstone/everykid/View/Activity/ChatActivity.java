@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.G;
 import com.capstone.everykid.Model.MessageItem;
 import com.capstone.everykid.R;
@@ -28,6 +30,7 @@ public class ChatActivity extends AppCompatActivity {
 
     EditText et;
     ListView listView;
+    TextView p_name;
 
     ArrayList<MessageItem> messageItems=new ArrayList<>();
     ChatAdapter adapter;
@@ -43,8 +46,9 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
         //제목줄 제목글시를 닉네임으로(또는 채팅방) 현재 닉네임이 없어서 채팅 실행 불가 학부모 계정 생성 후 테스트 해야함
-        getSupportActionBar().setTitle(G.nickName);
+//        getSupportActionBar().setTitle(G.nickName);
 
         et=findViewById(R.id.et);
         listView=findViewById(R.id.listview);

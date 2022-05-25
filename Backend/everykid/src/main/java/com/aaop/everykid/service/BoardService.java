@@ -25,34 +25,23 @@ public class BoardService {
     }
 
     @Transactional
-<<<<<<< HEAD
-    public Page<Board> getSearchList(String key, String kID, Pageable pageable) {
-=======
     public Page<Board> getSearchList(String key, Long kID, Pageable pageable) {
->>>>>>> parent of ec69cd4 (수정)
         return boardRepository.searchBoard(key, kID, pageable);
     }
 
     @Transactional
-<<<<<<< HEAD
-    public void update(int b_ID, String contents) { //수정완료 눌렀을 때 실행
-=======
     public void update(Long b_ID, String contents) { //수정완료 눌렀을 때 실행
->>>>>>> parent of ec69cd4 (수정)
         Board board = boardRepository.findByBKID(b_ID);
         board.modifyContents(contents); //수정된 content
     }
 
     @Transactional
-<<<<<<< HEAD
-=======
     public void updateHITS(Long bKID) {
         Board board = boardRepository.findByBKID(bKID);
         board.plusHITS();
     }
 
     @Transactional
->>>>>>> parent of ec69cd4 (수정)
     public int getMaxBKID() {
         return boardRepository.maxBKID();
     }

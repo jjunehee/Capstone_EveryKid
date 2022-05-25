@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.capstone.everykid.Model.BoardList;
+import com.capstone.everykid.Model.G;
 import com.capstone.everykid.R;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
@@ -67,11 +68,12 @@ public class SignupActivity extends AppCompatActivity
 
         etid = (EditText) findViewById(R.id.id);
         etphone = (EditText) findViewById(R.id.phone);
-        etusername = (EditText) findViewById(R.id.name);
+        etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
         ealias = (EditText) findViewById(R.id.alias);
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
+
         etid.setText(intent.getExtras().getString("etid"));
         etphone.setText(intent.getExtras().getString("etphone"));
         etusername.setText(intent.getExtras().getString("etusername"));
@@ -126,6 +128,11 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
+<<<<<<< HEAD
+        final String alias = ealias.getText().toString();
+        final Integer kindergarten = Integer.parseInt(kindergartenID);
+=======
+>>>>>>> fc78261984e1a788d16f6c4e3e66efbc84a4824b
 
 
 
