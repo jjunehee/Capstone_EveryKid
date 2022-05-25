@@ -9,6 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="date"
+            android:textAlignment="center"
+            android:layout_marginTop="50dp"
+            android:textSize="25dp"
+            android:textColor="@color/black">
+        </TextView>
         <ImageView
             android:id="@+id/loadimg"
             android:layout_width="400dp"
