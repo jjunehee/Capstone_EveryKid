@@ -12,9 +12,8 @@
         <EditText
             android:id="@+id/searchBoard"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="검색" />
@@ -22,9 +21,7 @@
         <ListView
             android:id="@+id/kg_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            />
+            android:layout_height="match_parent" />
 
         <com.lakue.pagingbutton.LakuePagingButton
             android:id="@+id/lpb_buttonlist"

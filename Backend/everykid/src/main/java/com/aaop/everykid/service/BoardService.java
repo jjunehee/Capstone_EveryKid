@@ -25,14 +25,20 @@ public class BoardService {
     }
 
     @Transactional
-    public Page<Board> getSearchList(String key, String kID, Pageable pageable) {
+    public Page<Board> getSearchList(String key, Long kID, Pageable pageable) {
         return boardRepository.searchBoard(key, kID, pageable);
     }
 
     @Transactional
-    public void update(int b_ID, String contents) { //수정완료 눌렀을 때 실행
+    public void update(Long b_ID, String contents) { //수정완료 눌렀을 때 실행
         Board board = boardRepository.findByBKID(b_ID);
         board.modifyContents(contents); //수정된 content
+    }
+
+    @Transactional
+    public void updateHITS(Long bKID) {
+        Board board = boardRepository.findByBKID(bKID);
+        board.plusHITS();
     }
 
     @Transactional
