@@ -2,7 +2,7 @@ package com.aaop.everykid.service;
 
 
 import com.aaop.everykid.Jwt.TokenUtils;
-import com.aaop.everykid.dto.LoginFormDto;
+import com.aaop.everykid.dto.LoginPFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
 import com.aaop.everykid.entity.Auth;
 import com.aaop.everykid.entity.Parent;
@@ -40,7 +40,6 @@ public class ParentService {
                                 .pNAME(registerPFormDto.getPNAME())
                                 .pEMAIL(registerPFormDto.getPEMAIL())
                                 .pPHONE(registerPFormDto.getPPHONE())
-                                .pALIAS(registerPFormDto.getPALIAS())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(parent);
@@ -53,7 +52,7 @@ public class ParentService {
     }
 
     @Transactional
-    public TokenResponseDto signIn(LoginFormDto loginFormDto) throws Exception {
+    public TokenResponseDto signIn(LoginPFormDto loginFormDto) throws Exception {
         Parent parent =
                 parentRepository
                         .findBypID(loginFormDto.getPID())
@@ -75,7 +74,6 @@ public class ParentService {
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
                     .pNAME(parent.getPNAME())
-                    .pALIAS(parent.getPALIAS())
                     .pPHONE(parent.getPPHONE())
                     .pID(parent.getPID())
                     .PKID(parent.getPKID())
@@ -89,6 +87,7 @@ public class ParentService {
 
         return TokenResponseDto.builder().ACCESS_TOKEN(accessToken).REFRESH_TOKEN(refreshToken).build();
     }
+
 
     public List<Parent> findUsers() {
         return parentRepository.findAll();

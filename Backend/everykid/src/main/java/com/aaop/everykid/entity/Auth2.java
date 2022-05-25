@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Getter
 @RequiredArgsConstructor
-@Table(name = "auth")
+@Table(name = "auth2")
 @Entity
 public class Auth2 {
 

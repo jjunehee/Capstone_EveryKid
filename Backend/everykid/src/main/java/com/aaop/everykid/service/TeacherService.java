@@ -1,19 +1,14 @@
 package com.aaop.everykid.service;
 
 
-import com.aaop.everykid.Jwt.TokenUtils;
 import com.aaop.everykid.Jwt.TokenUtils2;
-import com.aaop.everykid.dto.RegisterPFormDto;
+import com.aaop.everykid.dto.LoginPFormDto;
+import com.aaop.everykid.dto.LoginTFormDto;
 import com.aaop.everykid.dto.RegisterTFormDto;
-import com.aaop.everykid.dto.TokenResponseDto;
 import com.aaop.everykid.dto.TokenResponseDto2;
-import com.aaop.everykid.entity.Auth;
 import com.aaop.everykid.entity.Auth2;
-import com.aaop.everykid.entity.Parent;
 import com.aaop.everykid.entity.Teacher;
-import com.aaop.everykid.repository.AuthRepository;
 import com.aaop.everykid.repository.AuthRepository2;
-import com.aaop.everykid.repository.ParentRepository;
 import com.aaop.everykid.repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -46,7 +41,6 @@ public class TeacherService {
                                 .tNAME(registerTFormDto.getTNAME())
                                 .tEMAIL(registerTFormDto.getTEMAIL())
                                 .tPHONE(registerTFormDto.getTPHONE())
-                                .tALIAS(registerTFormDto.getTALIAS())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(teacher);
@@ -59,16 +53,16 @@ public class TeacherService {
     }
 
     @Transactional
-    public TokenResponseDto2 signIn(RegisterTFormDto registerTFormDto) throws Exception {
+    public TokenResponseDto2 signIn2(LoginTFormDto loginFormDto) throws Exception {
         Teacher teacher =
                 teacherRepository
-                        .findBytID(registerTFormDto.getTID())
+                        .findBytID(loginFormDto.getTID())
                         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
         Auth2 auth2 =
                 authRepository
                         .findByTeacherTKID(teacher.getTKID())
                         .orElseThrow(()-> new IllegalArgumentException("Token 이 존재하지 않습니다."));
-        if (!passwordEncoder.matches(registerTFormDto.getTPWD(), teacher.getTPWD())) {
+        if (!passwordEncoder.matches(loginFormDto.getTPWD(), teacher.getTPWD())) {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
         String accessToken = "";
@@ -81,7 +75,7 @@ public class TeacherService {
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth2.getRefreshToken())
                     .tNAME(teacher.getTNAME())
-                    .tALIAS(teacher.getTALIAS())
+                //    .tALIAS(teacher.getTALIAS())
                     .tPHONE(teacher.getTPHONE())
                     .tID(teacher.getTID())
                     .TKID(teacher.getTKID())

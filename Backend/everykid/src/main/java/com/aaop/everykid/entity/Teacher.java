@@ -35,8 +35,8 @@ public class Teacher {
     @Column(name="T_ID")
     private String tID;
 
-    @Column(name="T_ALIAS")
-    private String tALIAS;
+ //   @Column(name="T_ALIAS")
+  //  private String tALIAS;
 
     @Column(name="K_KID")
     private String kKID;
@@ -48,13 +48,13 @@ public class Teacher {
     //private Role role;
 
     @Builder
-    public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL ,String tALIAS) {
+    public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL) {
         this.TKID = TKID;
         this.tID = tID;
         this.tPWD = tPWD;
         this.tNAME = tNAME;
         this.tPHONE = tPHONE;
         this.tEMAIL = tEMAIL;
-        this.tALIAS = tALIAS;
+       // this.tALIAS = tALIAS;
     }
 }
