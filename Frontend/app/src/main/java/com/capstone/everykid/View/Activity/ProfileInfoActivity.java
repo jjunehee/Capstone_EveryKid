@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import com.capstone.everykid.R;
 
 public class ProfileInfoActivity extends AppCompatActivity {
     private Intent intent;

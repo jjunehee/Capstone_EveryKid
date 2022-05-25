@@ -29,7 +29,6 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.refresh_token = refresh_token;
     }
 
-
     @SerializedName("c_AGE")
     public String c_age;
     public String getC_age() {

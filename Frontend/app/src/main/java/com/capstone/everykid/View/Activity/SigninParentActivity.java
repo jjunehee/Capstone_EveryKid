@@ -1,4 +1,4 @@
-package com.capstone.everykid;
+package com.capstone.everykid.View.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,29 +24,29 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.capstone.everykid.View.Activity.MainParent;
-import com.capstone.everykid.View.Activity.SignupActivity;
+import com.capstone.everykid.R;
+import com.capstone.everykid.RetrofitClient;
 
-public class SigninTeacherActivity extends AppCompatActivity {
+public class SigninParentActivity extends AppCompatActivity {
 
     EditText userID, userPW;
     Button signinBtn, createBtn;
     String userId, userPwd;
     private RetrofitClient retrofitClient;
-    private com.capstone.everykid.RetrofitAPI.initMyApi initMyApi;
+    private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
 
     CreateAccountItem createAccountItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin_teacher);
+        setContentView(R.layout.activity_signin_parent);
         createAccountItem = (CreateAccountItem)getApplicationContext();
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
-        signinBtn = (Button) findViewById(R.id.signinteacher_btn);
-        createBtn = (Button) findViewById(R.id.signupteacher_btn);
+        signinBtn = (Button) findViewById(R.id.signinparent_btn);
+        createBtn = (Button) findViewById(R.id.signupparent_btn);
 
         if (!getPreferenceString("autoLoginId").equals("") && !getPreferenceString("autoLoginPw").equals("")) {
             //  checkAutoLogin(getPreferenceString("autoLoginId"));
@@ -55,8 +55,8 @@ public class SigninTeacherActivity extends AppCompatActivity {
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SigninTeacherActivity.this, SignupActivity.class);
-                intent.putExtra("User", "Teacher");
+                Intent intent = new Intent(SigninParentActivity.this, SignupActivity.class);
+                intent.putExtra("User", "Parent");
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
 
                 if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                     builder.setTitle("알림")
                             .setMessage("로그인 정보를 입력바랍니다.")
                             .setPositiveButton("확인", null)
@@ -98,10 +98,10 @@ public class SigninTeacherActivity extends AppCompatActivity {
 
         //retrofit 생성
         retrofitClient = RetrofitClient.getInstance();
-        initMyApi = RetrofitClient.getRetrofitInterface();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
         //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음
-        initMyApi.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
+        RetrofitAPI.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
@@ -116,7 +116,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     //받은 토큰 저장
                     String token = result.getToken();
 
-                    if (result.getStatus().equals(0)) {
+                    if (result.getStatus().equals(200)) {
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -126,17 +126,19 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-                        String name =result.getPname().toString();
+
+                        String name =result.getPname();
                         createAccountItem.setName(name);
 
 
-                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+                        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
-                        SigninTeacherActivity.this.finish();
+                        SigninParentActivity.this.finish();
 
-                    }else if(result.getStatus().equals(200)) {
+                    } else if(result.getStatus().equals(0)) {
+
                         String userId = userID.getText().toString();
                         String userPassword = userPW.getText().toString();
 
@@ -146,19 +148,19 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-                        String name =result.getPname().toString();
+
+                        String name =result.getPname();
                         createAccountItem.setName(name);
 
 
-                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+                        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
-                        SigninTeacherActivity.this.finish();
+                        SigninParentActivity.this.finish();
+                    }else if (result.getStatus().equals(300)) {
 
-                    } else if (result.getStatus().equals(300)) {
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                         builder.setTitle("알림")
                                 .setMessage("아이디가 존재하지 않습니다.")
                                 .setPositiveButton("확인", null)
@@ -168,7 +170,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         alertDialog.show();
 
                     } else if (result.getStatus().equals(400)) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                         builder.setTitle("알림")
                                 .setMessage("비밀번호가 일치하지 않습니다.")
                                 .setPositiveButton("확인", null)
@@ -176,7 +178,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                                 .show();
                     } else {
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                         builder.setTitle("알림")
                                 .setMessage("예기치 못한 오류가 발생하였습니다.")
                                 .setPositiveButton("확인", null)
@@ -190,7 +192,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
             //통신 실패
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
                 builder.setTitle("알림")
                         .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
                         .setPositiveButton("확인", null)
@@ -198,6 +200,10 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+
+
+
     }
 
     //데이터를 내부 저장소에 저장하기
