@@ -63,5 +63,10 @@ public class Board {
     public void modifyContents(String contents) {
         this.contents = contents;
     }
+
+    public void plusHITS() {
+        System.out.println(this.HITS);
+        this.HITS = ++HITS;
+        System.out.println(this.HITS);}
 }
 

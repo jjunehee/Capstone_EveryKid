@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -36,9 +36,19 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="8dp"
-            android:layout_weight="1"
             android:text="제목"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/HITS_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="8dp"
+            android:text="제목"
+            android:textSize="16sp" />
+
     </LinearLayout>
 
 

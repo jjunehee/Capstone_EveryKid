@@ -13,24 +13,24 @@ public class CreateAccountItem extends Application {
     private String Alias;
     private String Kindergarten;
 
+//
+//    @Override
+//    public void onCreate() {
+//        Name=null;
+//        Phone = null;
+//        Email = null;
+//        //K_id=null;
+//        Id=null;
+//        Pwd=null;
+//        Alias=null;
+//        Kindergarten=null;
+//        super.onCreate();
+//    }
 
-    @Override
-    public void onCreate() {
-        Name=null;
-        Phone = null;
-        Email = null;
-        //K_id=null;
-        Id=null;
-        Pwd=null;
-        Alias=null;
-        Kindergarten=null;
-        super.onCreate();
-    }
-
-    @Override
-    public void onTerminate(){
-        super.onTerminate();
-    }
+//    @Override
+//    public void onTerminate(){
+//        super.onTerminate();
+//    }
 
     public void setName(String name){  this.Name = name; }
     public void setPhone(String number){ this.Phone = number; }

@@ -28,6 +28,18 @@
         android:theme="@style/Theme.EveryKid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SigninTeacherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SigninParentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherSigninActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ParentSigninActivity"
+            android:exported="false" />
+        <activity
             android:name=".PicActivity"
             android:exported="false" />
         <activity
@@ -100,6 +112,9 @@
             android:exported="true" />
         <activity
             android:name=".View.Activity.AccountCreate"
+            android:exported="true" />
+        <activity
+            android:name=".View.Activity.PostActivity"
             android:exported="true" />
 
         <service

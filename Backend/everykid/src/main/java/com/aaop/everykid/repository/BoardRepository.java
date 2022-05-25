@@ -12,13 +12,13 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
     Page<Board> findByKKID(Long id, Pageable pageable);
 
-    Board findByBKID(int id);
+    Board findByBKID(Long id);
 
     @Query(value="select * from everykid.board where K_KID = ?2 AND " +
             "(P_ID LIKE CONCAT('%', ?1, '%')" +
             "OR T_ID LIKE CONCAT('%', ?1, '%')" +
             "OR CONTENTS LIKE CONCAT('%', ?1, '%'))", nativeQuery = true)
-    Page<Board> searchBoard(String key, String kID, Pageable pageable);
+    Page<Board> searchBoard(String key, Long kID, Pageable pageable);
 
     @Query(value="select ifnull(max(B_KID), 0) from everykid.board", nativeQuery = true)
     int maxBKID();
