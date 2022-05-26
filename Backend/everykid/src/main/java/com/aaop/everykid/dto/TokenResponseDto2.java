@@ -13,7 +13,5 @@ public class TokenResponseDto2 {
     private String tID;
     private String tNAME;
     private String tPHONE;
-    private String tKID;
     private String tEMAIL;
-    private String tALIAS;
 }

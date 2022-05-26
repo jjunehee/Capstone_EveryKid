@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ChildrenFormDto {
+public class ChildFormDto {
     private String C_IMG;
     private String C_NAME;
     private int C_AGE;

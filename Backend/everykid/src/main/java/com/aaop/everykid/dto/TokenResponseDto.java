@@ -14,6 +14,7 @@ public class TokenResponseDto {
     private String pNAME;
     private String pPHONE;
     private String kKID;
+    private String kNAME;
     private String pEMAIL;
     private String pALIAS;
     private String C_NAME;
