@@ -19,10 +19,6 @@ public interface RegisterInterface
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
             @Field("KKID") String kindergarten
-<<<<<<< HEAD
-
-=======
->>>>>>> f844e329bd76aef55f1768149537310d3405a8d0
     );
 
     @FormUrlEncoded

@@ -37,11 +37,8 @@ public class RegisterController {
 
     @PostMapping(value = "/parent")     //p_NAME
     public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
-<<<<<<< HEAD
-=======
         //Parent parent = Parent.createParent(registerPFormDto);
         //registerPService.saveParent(parent);
->>>>>>> f844e329bd76aef55f1768149537310d3405a8d0
         System.out.println("부모 회원가입 시도" + registerPFormDto);
         return parentService.findBypID(registerPFormDto.getPID()).isPresent()
                 ? ResponseEntity.badRequest().build()
@@ -57,11 +54,7 @@ public class RegisterController {
     }*/
 
     @PostMapping(value = "/teacher")     //p_NAME
-<<<<<<< HEAD
-    public ResponseEntity signUp2(RegisterTFormDto registerTFormDto) {
-=======
     public ResponseEntity signUp2( RegisterTFormDto registerTFormDto) {
->>>>>>> f844e329bd76aef55f1768149537310d3405a8d0
         System.out.println("선생 회원가입 시도" + registerTFormDto);
         return teacherService.findBytID(registerTFormDto.getTID()).isPresent()
                 ? ResponseEntity.badRequest().build()

@@ -42,10 +42,7 @@ public class SigninParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_parent);
-<<<<<<< HEAD
-=======
 
->>>>>>> f844e329bd76aef55f1768149537310d3405a8d0
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);

@@ -40,6 +40,7 @@ public class ParentService {
                                 .pNAME(registerPFormDto.getPNAME())
                                 .pEMAIL(registerPFormDto.getPEMAIL())
                                 .pPHONE(registerPFormDto.getPPHONE())
+                                .kKID(registerPFormDto.getKKID())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(parent);
