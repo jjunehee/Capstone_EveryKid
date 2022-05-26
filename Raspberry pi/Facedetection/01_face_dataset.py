@@ -1,5 +1,16 @@
 import cv2
 import os
+import RPi.GPIO as GPIO
+import time
+
+buzzer = 18
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(buzzer, GPIO.OUT)
+GPIO.setwarnings(False)
+
+pwm = GPIO.PWM(buzzer, 1.0)
+pwm.start(50.0)
+
 
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video width
@@ -26,9 +37,17 @@ while(True):
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == 27:
         break
-    elif count >= 30: # Take 30 face sample and stop video
-         break
+    elif count >= 30:
+        pwm.ChangeFrequency(262)
+        time.sleep(0.7)
+        pwm.ChangeFrequency(294)
+        time.sleep(0.7)
+        pwm.ChangeFrequency(330)
+        time.sleep(0.7)# Take 30 face sample and stop video
+        break
 # Do a bit of cleanup
+pwm.stop()
+GPIO.cleanup()
 print("\n [INFO] Exiting Program and cleanup stuff")
 cam.release()
 cv2.destroyAllWindows()
