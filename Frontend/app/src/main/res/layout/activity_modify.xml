@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:padding="16dp"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,47 +16,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                    android:id="@+id/title_tv"
-                    android:padding="16dp"
-                    android:background="#eeeeee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="제목입니다."
-                    />
-
-
-                <TextView
-                    android:id="@+id/date_tv"
-                    android:padding="16dp"
-                    android:background="#eeeeee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="작성일입니다."
-                    />
+            <EditText
+                android:id="@+id/title_tv"
+                android:padding="16dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="제목입니다."
+                android:layout_marginBottom="10dp"/>
 
 
-                <TextView
-                    android:id="@+id/writer_tv"
-                    android:padding="16dp"
-                    android:background="#eeeeee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="작성자입니다."
-                    />
-
-
-            <TextView
+            <EditText
                 android:id="@+id/content_tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#eeeeee"
                 android:padding="16dp"
                 android:text="내용입니다." />
-
 
         </LinearLayout>
     </ScrollView>
@@ -69,20 +46,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="확인"
+            android:text="취소"
             android:textColor="@color/white"
             android:background="@drawable/round_background_2"
-            android:onClick="ok" />
+            android:onClick="cancel" />
         <Button
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="수정"
+            android:text="확인"
             android:textColor="@color/white"
             android:background="@drawable/round_background_2"
-            android:onClick="update"
-            android:visibility="gone"/>
+            android:onClick="ok"
+           />
     </LinearLayout>
 
 

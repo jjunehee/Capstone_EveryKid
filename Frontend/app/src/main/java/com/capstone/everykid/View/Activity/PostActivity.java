@@ -2,11 +2,13 @@ package com.capstone.everykid.View.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.capstone.everykid.Model.Board;
+import com.capstone.everykid.ModifyActivity;
 import com.capstone.everykid.R;
 
 public class PostActivity  extends AppCompatActivity {
@@ -27,5 +29,17 @@ public class PostActivity  extends AppCompatActivity {
         //dateView.setText(board.getWRITE_DATE().toString());
         writerView.setText((board.getT_ID() == null) ? board.getP_ID() : board.getT_ID());
         contentView.setText(board.getCONTENTS());
+    }
+    //확인버튼
+    public void ok(View v){
+       finish();
+
+    }
+    //수정버튼
+    public void update(View v){
+        //글쓴이라면 버튼 보이게하고
+        Intent intent = new Intent(this, ModifyActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

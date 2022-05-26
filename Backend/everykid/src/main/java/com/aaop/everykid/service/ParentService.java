@@ -10,7 +10,6 @@ import com.aaop.everykid.dto.TokenResponseDto;
 import com.aaop.everykid.repository.AuthRepository;
 import com.aaop.everykid.repository.ParentRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,6 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ParentService {
-
     private final ParentRepository parentRepository;
     private final TokenUtils tokenUtils;
     private final AuthRepository authRepository;
@@ -42,6 +40,7 @@ public class ParentService {
                                 .pNAME(registerPFormDto.getPNAME())
                                 .pEMAIL(registerPFormDto.getPEMAIL())
                                 .pPHONE(registerPFormDto.getPPHONE())
+                                .kKID(registerPFormDto.getKKID())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(parent);

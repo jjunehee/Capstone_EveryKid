@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.capstone.everykid.Model.BoardList;
+import com.capstone.everykid.Model.G;
 import com.capstone.everykid.R;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
@@ -67,11 +68,12 @@ public class SignupActivity extends AppCompatActivity
 
         etid = (EditText) findViewById(R.id.id);
         etphone = (EditText) findViewById(R.id.phone);
-        etusername = (EditText) findViewById(R.id.name);
+        etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
         ealias = (EditText) findViewById(R.id.alias);
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
+
         etid.setText(intent.getExtras().getString("etid"));
         etphone.setText(intent.getExtras().getString("etphone"));
         etusername.setText(intent.getExtras().getString("etusername"));
@@ -95,8 +97,12 @@ public class SignupActivity extends AppCompatActivity
             {
                 if(accountUser.equals("Parent")){
                     registerParent();
+                    Intent intent = new Intent(getApplicationContext(), SigninParentActivity.class);
+                    startActivity(intent);
                 }else if(accountUser.equals("Teacher")){
                     registerTeacher();
+                    Intent intent = new Intent(getApplicationContext(), SigninTeacherActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -118,7 +124,7 @@ public class SignupActivity extends AppCompatActivity
         });
     }
 
-//    학부모의 회원가입
+    //    학부모의 회원가입
     private void registerParent()
     {
         final String id = etid.getText().toString();
@@ -126,8 +132,9 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
-        final String alias = ealias.getText().toString();
         final String kindergarten = kindergartenID;
+
+
 
 
 
@@ -137,7 +144,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email, alias, kindergarten);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -146,12 +153,11 @@ public class SignupActivity extends AppCompatActivity
                 if (response.isSuccessful() && response.body() != null)
                 {
                     Log.e("onSuccess", response.body());
+                    Toast.makeText(SignupActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                     String jsonResponse = response.body();
                     try
                     {
                         parseRegData(jsonResponse);
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
                     }
                     catch (JSONException e)
                     {
@@ -165,6 +171,7 @@ public class SignupActivity extends AppCompatActivity
             public void onFailure(@NonNull Call<String> call, @NonNull Throwable t)
             {
                 Log.e(TAG, "에러 = " + t.getMessage());
+                Toast.makeText(SignupActivity.this, "회원가입 실패", Toast.LENGTH_SHORT).show();
             }
         });
     }

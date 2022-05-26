@@ -18,7 +18,6 @@ public interface RegisterInterface
             @Field("PNAME") String username,
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
-            @Field("PALIAS") String alias,
             @Field("KKID") String kindergarten
     );
 

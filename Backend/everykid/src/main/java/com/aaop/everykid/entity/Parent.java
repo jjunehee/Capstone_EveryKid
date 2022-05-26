@@ -74,13 +74,14 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL, String kKID) {
         this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;
         this.pNAME = pNAME;
         this.pPHONE = pPHONE;
         this.pEMAIL = pEMAIL;
+        this.kKID=kKID;
     }
 /*
     public static Parent createChild(RegisterCFormDto registerCFormDto){
