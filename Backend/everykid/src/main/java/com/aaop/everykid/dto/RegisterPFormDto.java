@@ -12,7 +12,7 @@ public class RegisterPFormDto {
     private String pNAME;
     private String pPWD;
     private String pPHONE;
-    private String kKID;
+    private Long kKID;
     private String pEMAIL;
     private String pALIAS;
     private String C_NAME;

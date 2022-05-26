@@ -37,8 +37,7 @@ public class Parent {
     private String pID;
 
     @Column(name="K_KID")
-    private String kKID;
-
+    private Long kKID;
 
     @Column(name="C_NAME")
     private String cNAME;
@@ -74,7 +73,7 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL, String kKID) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL, Long kKID) {
         this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;

@@ -1,4 +1,7 @@
 package com.aaop.everykid.entity;
+import lombok.Builder;
+import lombok.RequiredArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +24,7 @@ public class Kindergarten {
     @Column(name = "K_NAME")
     private String KNAME;
 
+    @Builder
     public Kindergarten(Long KKID, String KID, String KPHONE, String KADDRESS, String KNAME) {
         this.KKID = KKID;
         this.KID = KID;
@@ -83,4 +87,6 @@ public class Kindergarten {
     public void setKNAME(String KNAME) {
         this.KNAME = KNAME;
     }
+
+
 }
