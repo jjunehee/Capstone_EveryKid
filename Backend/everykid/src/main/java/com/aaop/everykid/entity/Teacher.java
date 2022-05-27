@@ -41,6 +41,7 @@ public class Teacher {
     @Column(name="K_KID")
     private String kKID;
 
+
     //@Column(name="T_ID")
     //private String tID;
 

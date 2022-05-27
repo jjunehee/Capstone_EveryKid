@@ -17,6 +17,11 @@ from firebase_admin import credentials
 from firebase_admin import db
 from firebase_admin import messaging
 import datetime
+import RPi.GPIO as GPIO
+import time
+
+
+
 
 PROJECT_ID = "everykid-86be9"
 
@@ -168,7 +173,7 @@ while True:
             
             
             count+=1
-            if(count % 50 == 0 and confidence < 45 ):
+            if(count % 45 == 0 and confidence < 45 ):
                 firebase()
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():
@@ -177,12 +182,25 @@ while True:
                             mesgSend1(var['token'],id)
                         else:
                             mesgSend2(var['token'],id)
-                #Check image capture
-                #cv2.imshow('image', img)
-    
+                        buzzer = 18
+                        GPIO.setmode(GPIO.BCM)
+                        GPIO.setup(buzzer, GPIO.OUT)
+                        GPIO.setwarnings(False)
+                        pwm = GPIO.PWM(buzzer, 1.0)
+                        pwm.start(50.0)
+                        pwm.ChangeFrequency(262)
+                        time.sleep(0.7)
+                        pwm.ChangeFrequency(294)
+                        time.sleep(0.7)
+                        pwm.ChangeFrequency(330)
+                        time.sleep(0.7)
+                        pwm.stop()
+                        GPIO.cleanup()
+                        #Check image capture
+                        #cv2.imshow('image', img)
         else:
-            id = "unknown"
-            confidence = "  {0}%".format(round(100 - confidence))
+                id = "unknown"
+                confidence = "  {0}%".format(round(100 - confidence))
         
         cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
         # cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  

@@ -21,6 +21,5 @@ public class RegisterTFormDto {
 
     private String kKID;
 
-//    private String tALIAS;
 
 }
