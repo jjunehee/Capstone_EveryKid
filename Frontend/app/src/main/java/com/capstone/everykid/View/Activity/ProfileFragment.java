@@ -19,6 +19,7 @@ import com.capstone.everykid.Model.G;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.Model.RecyclerItem;
@@ -31,7 +32,7 @@ public class ProfileFragment extends Fragment {
 //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-      TextView p_name;
+      TextView p_name, kinder_name;
       View view;
       ImageView p_img, child_img, kinder_img;
       Button info_btn, add_btn, profile_btn;
@@ -58,7 +59,11 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_profile, container, false);
-
+        if(createAccountItem.Name==null){
+            Toast.makeText(getActivity(),  "토큰이 만료되었습니다. 다시 로그인 해주세요.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+        }
 
 //        ActionBar bar =getActivity().getActionBar();
 //        bar.setTitle("프로필");
@@ -67,11 +72,17 @@ public class ProfileFragment extends Fragment {
         child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
         p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름
 
+        kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
+
+
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
+
+        kinder_name.setText(createAccountItem.K_name);
+
         //프로필 사진 배경에 맞게 자르기
         p_img.setClipToOutline(true);
         child_img.setClipToOutline(true);

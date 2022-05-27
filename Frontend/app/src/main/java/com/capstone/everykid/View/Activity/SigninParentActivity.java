@@ -137,6 +137,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         String id =result.getPid();
                         createAccountItem.Id=id;
 
+                        createAccountItem.K_id=result.getKkid();
+
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
