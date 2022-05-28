@@ -191,27 +191,18 @@
 <!--                        android:scaleType="centerCrop"-->
 <!--                        android:src="@drawable/kinderprofile"/>-->
 <!--                </FrameLayout>-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="5dp">
+
                     <TextView
                         android:id="@+id/kinder_name"
                         android:text="참사랑 어린이집"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="8dp"
+                        android:layout_margin="5dp"
+                        android:padding="15dp"
                         android:textSize="16dp"
                         android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/kinder_phone"
-                        android:text="02)1234-1234"
-                        android:padding="8dp"/>
-                </LinearLayout>
+
 
 
                 <FrameLayout

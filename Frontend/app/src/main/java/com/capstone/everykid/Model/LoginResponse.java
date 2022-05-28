@@ -65,6 +65,34 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.kkid = kkid;
     }
 
+
+    @SerializedName("kname")
+    public String kname;
+    public String getKname() {
+        return kname;
+    }
+    public void setKname(String kname) {
+        this.kname = kname;
+    }
+
+    @SerializedName("kphone")
+    public String kphone;
+    public String getKphone() {
+        return kphone;
+    }
+    public void setKphone(String kphone) {
+        this.kphone = kphone;
+    }
+
+    @SerializedName("kaddress")
+    public String kaddress;
+    public String getKaddress() {
+        return kaddress;
+    }
+    public void setKaddress(String kaddress) {
+        this.kaddress = kaddress;
+    }
+
     @SerializedName("palias")
     public String palias;
     public String getPalias() {
@@ -118,4 +146,6 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     public void setPphone(String pphone) {
         this.pphone = pphone;
     }
+
+
 }

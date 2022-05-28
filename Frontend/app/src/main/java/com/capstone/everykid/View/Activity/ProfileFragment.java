@@ -75,8 +75,6 @@ public class ProfileFragment extends Fragment {
         kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
 
-
-
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
@@ -101,6 +99,9 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), InfoActivity.class);
+                intent.putExtra("K_name", createAccountItem.K_name);
+                intent.putExtra("K_phone", createAccountItem.K_phone);
+                intent.putExtra("K_address",createAccountItem.K_address);
                 startActivity(intent);
             }
         });
