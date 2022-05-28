@@ -2,7 +2,6 @@ package com.aaop.everykid.controller;
 
 import com.aaop.everykid.dto.*;
 import com.aaop.everykid.entity.Parent;
-import com.aaop.everykid.entity.Teacher;
 import com.aaop.everykid.service.*;
 import com.aaop.everykid.dto.TokenResponseDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.util.List;
 import java.util.UUID;
 
 //import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,12 +29,15 @@ public class RegisterController {
     private final ParentService parentService;
     private final TeacherService teacherService;
     private final LoginService loginService;
+    private final ChildService childService;
 //    private final PasswordEncoder passwordEncoder;
 
     //jpa 문자열
 
     @PostMapping(value = "/parent")     //p_NAME
     public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
+        //Parent parent = Parent.createParent(registerPFormDto);
+        //registerPService.saveParent(parent);
         System.out.println("부모 회원가입 시도" + registerPFormDto);
         return parentService.findBypID(registerPFormDto.getPID()).isPresent()
                 ? ResponseEntity.badRequest().build()
@@ -52,7 +53,7 @@ public class RegisterController {
     }*/
 
     @PostMapping(value = "/teacher")     //p_NAME
-    public ResponseEntity signUp2(@RequestBody RegisterTFormDto registerTFormDto) {
+    public ResponseEntity signUp2(RegisterTFormDto registerTFormDto) {
         System.out.println("선생 회원가입 시도" + registerTFormDto);
         return teacherService.findBytID(registerTFormDto.getTID()).isPresent()
                 ? ResponseEntity.badRequest().build()
@@ -68,16 +69,16 @@ public class RegisterController {
     public ResponseEntity<TokenResponseDto2> signIn2(@RequestBody LoginTFormDto loginTFormDto) throws Exception {
         return ResponseEntity.ok().body(teacherService.signIn2(loginTFormDto));
     }
-
+}
+/*
     @GetMapping("/info")
     public ResponseEntity<List<Parent>> findUser() {
         return ResponseEntity.ok().body(parentService.findUsers());
     }
 
-
 /*
     @PostMapping(value="/child")
-    public ResponseEntity<Parent> register(@RequestPart("parent") String parentString, @RequestPart("file")MultipartFile picture)
+    public ResponseEntity<Parent> register(@RequestPart("parent") String parentString, @RequestPart("file") MultipartFile picture)
         throws Exception{
         log.info("parentString" + parentString);
 
@@ -90,20 +91,20 @@ public class RegisterController {
 
         MultipartFile file = parent.getPicture();
 
-        log.info("orginName:" + file.getOriginalFilename());
+        log.info("orginalName:" + file.getOriginalFilename());
         log.info("size" + file.getSize());
         log.info("contentType" + file.getContentType());
 
-        String createdFileName = uploadFile(file.getOriginalFilename(),file.getBytes());
+        String createdFileName = uploadFile(file.getOriginalFilename(), file.getBytes());
         parent.setPictureUrl(createdFileName);
-        this.parentService.regist(parent);
+        this.childService.regist(parent);
 
         Parent createParent = new Parent();
 
         return new ResponseEntity<>()(createdParent, HttpStatus.OK);
         }
 
-    private String uploadFile(String originalName, bytep[] fileData) throws Exception{
+    private String uploadFile(String originalName, byte[] fileData) throws Exception{
         UUID uid = UUID.randomUUID();
 
         String createdFileName = uid.toString() + "_" + originalName;
@@ -111,9 +112,5 @@ public class RegisterController {
         FileCopyUtils.copy(fileData, target);
         return createdFileName;
 
-    }
-*/
-
-
-}
+    */
 

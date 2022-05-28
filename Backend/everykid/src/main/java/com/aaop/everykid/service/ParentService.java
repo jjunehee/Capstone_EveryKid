@@ -5,9 +5,11 @@ import com.aaop.everykid.Jwt.TokenUtils;
 import com.aaop.everykid.dto.LoginPFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
 import com.aaop.everykid.entity.Auth;
+import com.aaop.everykid.entity.Kindergarten;
 import com.aaop.everykid.entity.Parent;
 import com.aaop.everykid.dto.TokenResponseDto;
 import com.aaop.everykid.repository.AuthRepository;
+import com.aaop.everykid.repository.KindergartenRepository;
 import com.aaop.everykid.repository.ParentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,6 +23,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ParentService {
     private final ParentRepository parentRepository;
+    private final KindergartenRepository kindergartenRepository;
     private final TokenUtils tokenUtils;
     private final AuthRepository authRepository;
     private final PasswordEncoder passwordEncoder;
@@ -29,6 +32,9 @@ public class ParentService {
 
         return parentRepository.findBypID(PID);
     }
+
+
+
 
     @Transactional
     public TokenResponseDto signUp(RegisterPFormDto registerPFormDto) {
@@ -40,6 +46,7 @@ public class ParentService {
                                 .pNAME(registerPFormDto.getPNAME())
                                 .pEMAIL(registerPFormDto.getPEMAIL())
                                 .pPHONE(registerPFormDto.getPPHONE())
+                                .kKID(registerPFormDto.getKKID())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(parent);
@@ -57,6 +64,10 @@ public class ParentService {
                 parentRepository
                         .findBypID(loginFormDto.getPID())
                         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
+        Kindergarten kindergarten =
+                kindergartenRepository
+                        .findByKKID(parent.getKKID())
+                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
         Auth auth =
                 authRepository
                         .findByParentPKID(parent.getPKID())
@@ -71,14 +82,18 @@ public class ParentService {
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
             return TokenResponseDto.builder()
+                    .status(200)
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
                     .pNAME(parent.getPNAME())
                     .pPHONE(parent.getPPHONE())
                     .pID(parent.getPID())
                     .PKID(parent.getPKID())
-                    .status(200)
+                    .kNAME(kindergarten.getKNAME())
+                    .kADDRESS(kindergarten.getKADDRESS())
+                    .kPHONE(kindergarten.getKPHONE())
                     .build();
+
         } else {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
             refreshToken = tokenUtils.saveRefreshToken(parent);

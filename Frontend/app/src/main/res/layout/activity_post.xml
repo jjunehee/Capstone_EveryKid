@@ -59,5 +59,33 @@
 
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:background="@drawable/round_background_2"
+            android:onClick="ok" />
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="수정"
+            android:textColor="@color/white"
+            android:background="@drawable/round_background_2"
+            android:onClick="update"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

@@ -37,18 +37,7 @@ public class Parent {
     private String pID;
 
     @Column(name="K_KID")
-    private String kKID;
-
-    @Column(name="C_IMG",length = 200)
-    private String cIMG;
-
-    @Transient
-    private MultipartFile picture;
-    //@Column(name="T_ID")
-    //private String tID;
-
-    //@Enumerated(EnumType.STRING)
-    //private Role role;
+    private Long kKID;
 
     @Column(name="C_NAME")
     private String cNAME;
@@ -56,6 +45,14 @@ public class Parent {
     @Column(name="C_AGE")
     private Integer cAGE;
 
+    @Transient
+    private MultipartFile picture;
+
+    @Column(name = "C_IMG")
+    private String pictureUrl;
+
+    //@Enumerated(EnumType.STRING)
+    //private Role role;
     //@Column(name="C_STATUS")
     //private boolean cSTATUS;
 
@@ -76,20 +73,21 @@ public class Parent {
     }*/
 
     @Builder
-    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL) {
+    public Parent(Long PKID, String pID, String pPWD, String pNAME, String pPHONE, String pEMAIL, Long kKID) {
         this.PKID = PKID;
         this.pID = pID;
         this.pPWD = pPWD;
         this.pNAME = pNAME;
         this.pPHONE = pPHONE;
         this.pEMAIL = pEMAIL;
+        this.kKID=kKID;
     }
-
+/*
     public static Parent createChild(RegisterCFormDto registerCFormDto){
         Parent child = new Parent();
         child.setPKID(registerCFormDto.getPKID());
         child.setCNAME(registerCFormDto.getCNAME());
         child.setCAGE(registerCFormDto.getCAGE());
         return child;
-    }
+    }*/
 }

@@ -44,11 +44,11 @@ Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Qu
     @GET("/board/select/{bKID}")
     Call<Void> selectBoard(@Path("bKID") Long kID);
 
-    @POST("/register/login")
+    @POST("/register/plogin")
     Call<LoginResponse> getLoginResponse(
             @Body LoginRequest loginRequest
     );
-    @POST("/register/login2")
+    @POST("/register/tlogin")
     Call<LoginResponse> getLogin2Response(
             @Body LoginRequestTeacher loginRequestTeacher
     );

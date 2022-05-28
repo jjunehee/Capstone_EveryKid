@@ -52,9 +52,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/button_yellow"
-            android:text="사진 선택"
             android:onClick="opengallery"
-            android:textSize="15dp"/>
+            android:text="사진 선택"
+            android:textSize="15dp" />
 
     </LinearLayout>
 

@@ -36,13 +36,13 @@ public class SigninParentActivity extends AppCompatActivity {
     String userId, userPwd;
     private RetrofitClient retrofitClient;
     private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
-
     CreateAccountItem createAccountItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_parent);
+
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
@@ -68,7 +68,6 @@ public class SigninParentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String id = userID.getText().toString();
                 String pw = userPW.getText().toString();
-
 
                 if (id.trim().length() == 0 || pw.trim().length() == 0 || id == null || pw == null) {
 
@@ -128,11 +127,13 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginPw", userPassword);
 
                         String name =result.getPname();
-                        createAccountItem.Name=name;
-                        String email =result.getPemail();
-                        createAccountItem.Email=email;
+                        createAccountItem.Name=result.getPname();
+
+                        createAccountItem.Email=result.getPemail();
+
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
+
                         String id =result.getPid();
                         createAccountItem.Id=id;
 
