@@ -36,7 +36,7 @@ public class RegisterController {
     //jpa 문자열
 
     @PostMapping(value = "/parent")     //p_NAME
-    public ResponseEntity signUp(@RequestBody RegisterPFormDto registerPFormDto) {
+    public ResponseEntity signUp(RegisterPFormDto registerPFormDto) {
         System.out.println("부모 회원가입 시도" + registerPFormDto);
         return parentService.findBypID(registerPFormDto.getPID()).isPresent()
                 ? ResponseEntity.badRequest().build()

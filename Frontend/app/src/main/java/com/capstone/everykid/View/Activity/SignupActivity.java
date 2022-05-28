@@ -128,11 +128,6 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
-<<<<<<< HEAD
-        final String alias = ealias.getText().toString();
-        final Integer kindergarten = Integer.parseInt(kindergartenID);
-=======
->>>>>>> fc78261984e1a788d16f6c4e3e66efbc84a4824b
 
 
 
