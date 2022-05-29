@@ -90,8 +90,12 @@ public class HomeFragment extends Fragment {
                     }
                 }
                 Intent intent = new Intent(getActivity(), NoticeWriteActivity.class);
-                intent.putExtra("subject", noticeSelected.getWriteSubject());
-                intent.putExtra("contents", noticeSelected.getContents());
+                try {
+                    intent.putExtra("subject", noticeSelected.getWriteSubject());
+                    intent.putExtra("contents", noticeSelected.getContents());
+                } catch(NullPointerException e) {
+                    
+                }
                 startActivity(intent);
             }
         });

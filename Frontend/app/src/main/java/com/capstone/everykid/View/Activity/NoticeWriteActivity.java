@@ -40,8 +40,12 @@ public class NoticeWriteActivity extends Activity {
         contentsView = findViewById(R.id.noticeContent_et);
         writeButton = findViewById(R.id.noticeWrite);
         cancelButton = findViewById(R.id.noticeCancel);
-        titleView.setText(intent.getExtras().getString("subject"));
-        contentsView.setText(intent.getExtras().getString("contents"));
+        try {
+            titleView.setText(intent.getExtras().getString("subject"));
+            contentsView.setText(intent.getExtras().getString("contents"));
+        } catch(NullPointerException e) {
+
+        }
 
         writeButton.setOnClickListener(new View.OnClickListener() {
             @Override
