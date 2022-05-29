@@ -22,11 +22,8 @@ import java.util.TimeZone;
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-<<<<<<< HEAD
 import com.capstone.everykid.Model.CreateAccountItem;
-=======
 import com.capstone.everykid.Model.Notice;
->>>>>>> 6ba6c8cdf855951c5a11e3a4695d41c14babed61
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.RetrofitAPI.OnItemClickListener;
 import com.capstone.everykid.R;
@@ -47,13 +44,11 @@ public class HomeFragment extends Fragment {
     RecyclerView mRecyclerView=null;
     NoticeItemAdapter mAdapter=null;
     ArrayList<RecyclerItem> mList= new ArrayList<RecyclerItem>();
-<<<<<<< HEAD
     CreateAccountItem createAccountItem;
-=======
     RetrofitAPI retrofitAPI;
     Call call;
     List<Notice> noticeList;
->>>>>>> 6ba6c8cdf855951c5a11e3a4695d41c14babed61
+
 
     public HomeFragment() {
         // Required empty public constructor
