@@ -23,7 +23,7 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     @SerializedName("refresh_TOKEN")
     public String refresh_token;
     public String getrefreshToken() {
-        return token;
+        return refresh_token;
     }
     public void setrefreshToken(String refresh_token) {
         this.refresh_token = refresh_token;
@@ -146,6 +146,9 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     public void setPphone(String pphone) {
         this.pphone = pphone;
     }
+
+
+
 
 
 }

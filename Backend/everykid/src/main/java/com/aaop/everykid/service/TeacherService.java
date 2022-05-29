@@ -41,6 +41,7 @@ public class TeacherService {
                                 .tNAME(registerTFormDto.getTNAME())
                                 .tEMAIL(registerTFormDto.getTEMAIL())
                                 .tPHONE(registerTFormDto.getTPHONE())
+                                .kKID(registerTFormDto.getKKID())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(teacher);

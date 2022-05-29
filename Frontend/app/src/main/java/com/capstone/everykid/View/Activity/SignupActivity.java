@@ -182,6 +182,7 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
+        final String kindergarten = kindergartenID;
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -189,7 +190,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getTeacherRegist(id, phone, username, password, email);
+        Call<String> call = api.getTeacherRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
         {
             @Override

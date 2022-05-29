@@ -19,6 +19,7 @@ import java.util.Date;
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.RetrofitAPI.OnItemClickListener;
 import com.capstone.everykid.R;
@@ -32,6 +33,7 @@ public class HomeFragment extends Fragment {
     RecyclerView mRecyclerView=null;
     NoticeItemAdapter mAdapter=null;
     ArrayList<RecyclerItem> mList= new ArrayList<RecyclerItem>();
+    CreateAccountItem createAccountItem;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -54,8 +56,12 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
-
         noticeWrite_btn = (Button)view.findViewById(R.id.noticeWrite_btn); //공지사항 글쓰는 버튼
+        if(createAccountItem.User.equals("t")){
+            noticeWrite_btn.setVisibility(View.VISIBLE);
+        }
+
+
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

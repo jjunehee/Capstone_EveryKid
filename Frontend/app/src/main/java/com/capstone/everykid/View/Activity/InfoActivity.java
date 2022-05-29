@@ -13,9 +13,7 @@ import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 public class InfoActivity extends Activity {
-    Intent intent;
     TextView K_name_tv, K_address_tv, K_phone_tv;
-    String kinder_name, kinder_address, kinder_phone;
     CreateAccountItem createAccountItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +21,14 @@ public class InfoActivity extends Activity {
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_info);
-        intent = getIntent();
-//        kinder_name= intent.getExtras().getString("K_name");
-//        kinder_phone= intent.getExtras().getString("K_phone");
-//        kinder_address= intent.getExtras().getString("K_address");
+
+        K_name_tv=(TextView)findViewById(R.id.info_txt1);
+        K_address_tv=(TextView)findViewById(R.id.info_txt2);
+        K_phone_tv=(TextView)findViewById(R.id.info_txt3);
 
         K_name_tv.setText(createAccountItem.K_name);//널오브젝트 수정
-        K_address_tv.setText(createAccountItem.K_address);
-        K_phone_tv.setText(createAccountItem.K_phone);
+        K_address_tv.setText("유치원 주소:" + createAccountItem.K_address);
+        K_phone_tv.setText("유치원 연락처" + createAccountItem.K_phone);
 
 
     }

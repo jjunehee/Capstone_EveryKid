@@ -24,10 +24,11 @@ public interface RegisterInterface
     @FormUrlEncoded
     @POST("/register/teacher")
     Call<String> getTeacherRegist(
-            @Field("tid") String id,
-            @Field("tphone") String phone,
-            @Field("tname") String username,
-            @Field("tpwd") String password,
-            @Field("temail") String email
+            @Field("TID") String id,
+            @Field("TPHONE") String phone,
+            @Field("TNAME") String username,
+            @Field("TPWD") String password,
+            @Field("TEMAIL") String email,
+            @Field("KKID") String kindergarten
     );
 }

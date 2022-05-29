@@ -6,6 +6,7 @@ import com.capstone.everykid.Model.Kindergarten;
 import com.capstone.everykid.Model.LoginRequest;
 import com.capstone.everykid.Model.LoginRequestTeacher;
 import com.capstone.everykid.Model.LoginResponse;
+import com.capstone.everykid.Model.LoginResponseTeacher;
 import com.capstone.everykid.Model.regionCode;
 
 import java.util.List;
@@ -49,7 +50,7 @@ Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Qu
             @Body LoginRequest loginRequest
     );
     @POST("/register/tlogin")
-    Call<LoginResponse> getLogin2Response(
+    Call<LoginResponseTeacher> getLogin2Response(
             @Body LoginRequestTeacher loginRequestTeacher
     );
 }
