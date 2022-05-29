@@ -6,9 +6,14 @@ import com.capstone.everykid.Model.Kindergarten;
 import com.capstone.everykid.Model.LoginRequest;
 import com.capstone.everykid.Model.LoginRequestTeacher;
 import com.capstone.everykid.Model.LoginResponse;
+<<<<<<< HEAD
 import com.capstone.everykid.Model.LoginResponseTeacher;
+=======
+import com.capstone.everykid.Model.Notice;
+>>>>>>> 6ba6c8cdf855951c5a11e3a4695d41c14babed61
 import com.capstone.everykid.Model.regionCode;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +33,7 @@ public interface RetrofitAPI {
     Call<Boolean> registBoard(@Path("kID") String kID, @Path("tID") String tID, @Path("pID") String pID, @Path("writeSUBJECT") String writeSUBJECT, @Path("contents") String contents);
 
     @GET("/board/search/{kID}")
-Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Query("page") int page);
+    Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Query("page") int page);
 
     @GET("region/findAll")
     Call<List<regionCode>> getAllRegionCode();
@@ -53,4 +58,10 @@ Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Qu
     Call<LoginResponseTeacher> getLogin2Response(
             @Body LoginRequestTeacher loginRequestTeacher
     );
+
+    @GET("/notice/write/{KKID}/{DATE}/{WRITESUBJECT}/{CONTENTS}")
+    Call<Boolean> registNotice(@Path("KKID") Long KKID, @Path("DATE") Date DATE, @Path("WRITESUBJECT") String WRITESUBJECT, @Path("CONTENTS") String CONTENTS);
+
+    @GET("/notice/notice/{KKID}")
+    Call<List<Notice>> getNoticeList(@Path("KKID") Long KKID);
 }

@@ -85,6 +85,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
@@ -98,7 +102,7 @@
       <recent name="com.aaop.everykid.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EverykidApplication">
+  <component name="RunManager" selected="Spring Boot.EverykidApplication">
     <configuration name="EverykidApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />

@@ -30,7 +30,6 @@ public class BoardController {
 
     // 유저가 소속된 유치원의 글들을 불러옴
     @RequestMapping("/board/{kID}")
-
     public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.DESC) Pageable pageable,
                           @PathVariable("kID") Long kID) {
 
