@@ -109,6 +109,11 @@
 - MainActivity에서 선생님 학부모 선택하고 로그인 하는것으로 나눔
 - SigninParentActivity.java, SigninTeacherActivity.java 생성
 
+### 05/28
+```[노수진] 선생님 회원가입, 로그인```
+- 선생님 회원가입 로그인 연결
+
+  
   
  </div>
 </details>
