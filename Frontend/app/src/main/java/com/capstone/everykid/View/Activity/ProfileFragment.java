@@ -1,5 +1,6 @@
 package com.capstone.everykid.View.Activity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -19,8 +20,10 @@ import com.capstone.everykid.Model.G;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.capstone.everykid.Model.LoginResponse;
+import com.capstone.everykid.Model.LoginResponseTeacher;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
@@ -31,12 +34,12 @@ public class ProfileFragment extends Fragment {
 //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-      TextView p_name;
+      TextView p_name, kinder_name, user_status,user_kinder;
       View view;
       ImageView p_img, child_img, kinder_img;
       Button info_btn, add_btn, profile_btn;
       CreateAccountItem createAccountItem;
-      LoginResponse loginResponse;
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -58,20 +61,30 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_profile, container, false);
-
-
-//        ActionBar bar =getActivity().getActionBar();
-//        bar.setTitle("프로필");
+        if(createAccountItem.Name==null){
+            Toast.makeText(getActivity(),  "다시 로그인 해주세요.", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+        }
 
         p_img = (ImageView)view.findViewById(R.id.profile_img); //로그인유저의 프로필사진
         child_img=(ImageView)view.findViewById(R.id.kidprofile_img);
         p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름
-
+        user_status=(TextView)view.findViewById(R.id.user_txt);
+        user_kinder=(TextView)view.findViewById(R.id.user_txt2);
+        if(createAccountItem.User.equals("t")){
+            user_status.setText("선생님");
+            user_kinder.setText("근무 유치원");
+        }
+        kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
+
+        kinder_name.setText(createAccountItem.K_name);
+
         //프로필 사진 배경에 맞게 자르기
         p_img.setClipToOutline(true);
         child_img.setClipToOutline(true);

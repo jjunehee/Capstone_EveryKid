@@ -6,6 +6,7 @@ import com.capstone.everykid.Model.Kindergarten;
 import com.capstone.everykid.Model.LoginRequest;
 import com.capstone.everykid.Model.LoginRequestTeacher;
 import com.capstone.everykid.Model.LoginResponse;
+import com.capstone.everykid.Model.LoginResponseTeacher;
 import com.capstone.everykid.Model.Notice;
 import com.capstone.everykid.Model.regionCode;
 
@@ -51,7 +52,7 @@ public interface RetrofitAPI {
             @Body LoginRequest loginRequest
     );
     @POST("/register/tlogin")
-    Call<LoginResponse> getLogin2Response(
+    Call<LoginResponseTeacher> getLogin2Response(
             @Body LoginRequestTeacher loginRequestTeacher
     );
 

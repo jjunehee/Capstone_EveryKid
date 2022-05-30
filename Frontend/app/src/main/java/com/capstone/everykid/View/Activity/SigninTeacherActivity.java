@@ -25,6 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.capstone.everykid.Model.LoginResponseTeacher;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitClient;
 
@@ -102,9 +103,9 @@ public class SigninTeacherActivity extends AppCompatActivity {
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
         //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음: 선생님 로그인
-        RetrofitAPI.getLogin2Response(loginRequestTeacher).enqueue(new Callback<LoginResponse>() {
+        RetrofitAPI.getLogin2Response(loginRequestTeacher).enqueue(new Callback<LoginResponseTeacher>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(Call<LoginResponseTeacher> call, Response<LoginResponseTeacher> response) {
 
                 Log.d("retrofit", "Data fetch success");
 
@@ -112,83 +113,115 @@ public class SigninTeacherActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
 
                     //response.body()를 result에 저장
-                    LoginResponse result = response.body();
+                    LoginResponseTeacher result = response.body();
 
                     //받은 토큰 저장
-                    String token = result.getToken();
+                    String token = result.getTokenT();
 
-                    if (result.getStatus().equals(0)) {
-                        String userId = userID.getText().toString();
-                        String userPassword = userPW.getText().toString();
+                    //여기서부터 status값 받아와서 해야하는데 일단..
+                    String userId = userID.getText().toString();
+                    String userPassword = userPW.getText().toString();
+                    setPreference(token, token);
+                    setPreference("autoLoginId", userId);
+                    setPreference("autoLoginPw", userPassword);
 
-                        //다른 통신을 하기 위해 token 저장
-                        setPreference(token, token);
-
-                        setPreference("autoLoginId", userId);
-                        setPreference("autoLoginPw", userPassword);
-
-                        String name =result.getPname().toString();
-
-
-                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
-                        intent.putExtra("userId", userId);
-                        startActivity(intent);
-                        SigninTeacherActivity.this.finish();
-
-                    }else if(result.getStatus().equals(200)) {
-                        String userId = userID.getText().toString();
-                        String userPassword = userPW.getText().toString();
-
-                        //다른 통신을 하기 위해 token 저장
-                        setPreference(token, token);
-
-                        setPreference("autoLoginId", userId);
-                        setPreference("autoLoginPw", userPassword);
-
-                        String name =result.getPname().toString();
+                    createAccountItem.User = "t";
+                    createAccountItem.Name = result.getTname();
+                    createAccountItem.Email = result.getTemail();
+                    createAccountItem.Phone = result.getTphone();
+                    createAccountItem.Id = result.getTid();
+//
+//                        createAccountItem.K_name=result.getKname();
+//                        createAccountItem.K_phone=result.getKphone();
+//                        createAccountItem.K_address=result.getKaddress();
 
 
-                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
-                        intent.putExtra("userId", userId);
-                        startActivity(intent);
-                        SigninTeacherActivity.this.finish();
+                    Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                    SigninTeacherActivity.this.finish();
 
-                    } else if (result.getStatus().equals(300)) {
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-                        builder.setTitle("알림")
-                                .setMessage("아이디가 존재하지 않습니다.")
-                                .setPositiveButton("확인", null)
-                                .create()
-                                .show();
-                        AlertDialog alertDialog = builder.create();
-                        alertDialog.show();
-
-                    } else if (result.getStatus().equals(400)) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-                        builder.setTitle("알림")
-                                .setMessage("비밀번호가 일치하지 않습니다.")
-                                .setPositiveButton("확인", null)
-                                .create()
-                                .show();
-                    } else {
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-                        builder.setTitle("알림")
-                                .setMessage("예기치 못한 오류가 발생하였습니다.")
-                                .setPositiveButton("확인", null)
-                                .create()
-                                .show();
-
-                    }
+//                    if (result.getStatus().equals(0)) {
+//                        String userId = userID.getText().toString();
+//                        String userPassword = userPW.getText().toString();
+//
+//                        //다른 통신을 하기 위해 token 저장
+//                        setPreference(token, token);
+//
+//                        setPreference("autoLoginId", userId);
+//                        setPreference("autoLoginPw", userPassword);
+//
+//                        String name =result.getTname().toString();
+//
+//
+//                        Toast.makeText(SigninTeacherActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+//                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+//                        intent.putExtra("userId", userId);
+//                        startActivity(intent);
+//                        SigninTeacherActivity.this.finish();
+//
+//                    }else if(result.getStatus().equals(200)) {
+//                        String userId = userID.getText().toString();
+//                        String userPassword = userPW.getText().toString();
+//
+//                        //다른 통신을 하기 위해 token 저장
+//                        setPreference(token, token);
+//
+//                        setPreference("autoLoginId", userId);
+//                        setPreference("autoLoginPw", userPassword);
+//
+//                        createAccountItem.Name=result.getTname();
+//                        createAccountItem.Email=result.getTemail();
+//                        createAccountItem.Phone=result.getTphone();
+//                        createAccountItem.Id=result.getTid();
+//
+////                        createAccountItem.K_name=result.getKname();
+////                        createAccountItem.K_phone=result.getKphone();
+////                        createAccountItem.K_address=result.getKaddress();
+//
+//
+//                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
+//                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+//                        intent.putExtra("userId", userId);
+//                        startActivity(intent);
+//                        SigninTeacherActivity.this.finish();
+//
+//                    } else if (result.getStatus().equals(300)) {
+//
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+//                        builder.setTitle("알림")
+//                                .setMessage("아이디가 존재하지 않습니다.")
+//                                .setPositiveButton("확인", null)
+//                                .create()
+//                                .show();
+//                        AlertDialog alertDialog = builder.create();
+//                        alertDialog.show();
+//
+//                    } else if (result.getStatus().equals(400)) {
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+//                        builder.setTitle("알림")
+//                                .setMessage("비밀번호가 일치하지 않습니다.")
+//                                .setPositiveButton("확인", null)
+//                                .create()
+//                                .show();
+//                    } else {
+//
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+//                        builder.setTitle("알림")
+//                                .setMessage("예기치 못한 오류가 발생하였습니다.")
+//                                .setPositiveButton("확인", null)
+//                                .create()
+//                                .show();
+//
+//                    }
                 }
             }
 
             //통신 실패
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(Call<LoginResponseTeacher> call, Throwable t) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
                 builder.setTitle("알림")
                         .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")

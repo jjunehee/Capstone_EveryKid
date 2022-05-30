@@ -25,38 +25,34 @@
     </LinearLayout>
     <!-- 타이틀바 end -->
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="220dp"
-            android:layout_height="197dp"
-
-            app:srcCompat="@drawable/kinderprofile" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/info_txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textSize="20dp"
             />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/info_txt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textSize="15dp"
             />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/info_txt3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textSize="15dp"
             />
 
     </LinearLayout>

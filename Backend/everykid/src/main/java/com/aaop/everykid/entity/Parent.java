@@ -80,7 +80,7 @@ public class Parent {
         this.pNAME = pNAME;
         this.pPHONE = pPHONE;
         this.pEMAIL = pEMAIL;
-        this.kKID=kKID;
+        this.kKID = kKID;
     }
 /*
     public static Parent createChild(RegisterCFormDto registerCFormDto){

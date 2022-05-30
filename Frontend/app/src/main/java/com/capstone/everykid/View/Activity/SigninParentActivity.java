@@ -126,9 +126,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-                        String name =result.getPname();
+                        createAccountItem.User = "p";
                         createAccountItem.Name=result.getPname();
-
                         createAccountItem.Email=result.getPemail();
 
                         String phone =result.getPphone();
@@ -136,6 +135,10 @@ public class SigninParentActivity extends AppCompatActivity {
 
                         String id =result.getPid();
                         createAccountItem.Id=id;
+
+                        createAccountItem.K_name=result.getKname();
+                        createAccountItem.K_phone=result.getKphone();
+                        createAccountItem.K_address=result.getKaddress();
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
@@ -154,14 +157,19 @@ public class SigninParentActivity extends AppCompatActivity {
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
 
-                        String name =result.getPname();
-                        createAccountItem.Name=name;
-                        String email =result.getPemail();
-                        createAccountItem.Email=email;
+                        createAccountItem.User = "p";
+                        createAccountItem.Name=result.getPname();
+                        createAccountItem.Email=result.getPemail();
+
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
+
                         String id =result.getPid();
                         createAccountItem.Id=id;
+
+                        createAccountItem.K_name=result.getKname();
+                        createAccountItem.K_phone=result.getKphone();
+                        createAccountItem.K_address=result.getKaddress();
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);

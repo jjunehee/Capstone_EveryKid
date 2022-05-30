@@ -9,9 +9,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 public class InfoActivity extends Activity {
+    TextView K_name_tv, K_address_tv, K_phone_tv;
+    CreateAccountItem createAccountItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,23 +22,14 @@ public class InfoActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_info);
 
-//        txtText = (TextView)findViewById(R.id.txtText);
+        K_name_tv=(TextView)findViewById(R.id.info_txt1);
+        K_address_tv=(TextView)findViewById(R.id.info_txt2);
+        K_phone_tv=(TextView)findViewById(R.id.info_txt3);
 
-        //데이터 가져오기
-        //   Intent intent = getIntent();
-        // String data = intent.getStringExtra("data");
-        // txtText.setText(data);
+        K_name_tv.setText(createAccountItem.K_name);//널오브젝트 수정
+        K_address_tv.setText("유치원 주소:" + createAccountItem.K_address);
+        K_phone_tv.setText("유치원 연락처" + createAccountItem.K_phone);
 
-//        Button imageButton1 = (Button) findViewById(R.id.button5);
-//        imageButton1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), play1Activity.class);
-//                intent.putExtra("number", 1);
-//                //startActivityForResult(intent, 1);
-//                startActivity(intent);
-//            }
-//        });
 
     }
     //확인 버튼 클릭
