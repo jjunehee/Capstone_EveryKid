@@ -8,6 +8,7 @@ import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,12 +38,13 @@ public class ProfileFragment extends Fragment {
       TextView p_name, kinder_name, user_status,user_kinder;
       View view;
       ImageView p_img, child_img, kinder_img;
-      Button info_btn, add_btn, profile_btn;
+      Button info_btn, add_btn, profile_btn, logout_btn;
       CreateAccountItem createAccountItem;
 
     public ProfileFragment() {
         // Required empty public constructor
     }
+
 
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
@@ -82,6 +84,7 @@ public class ProfileFragment extends Fragment {
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
+        logout_btn = view.findViewById(R.id.logout_btn);
 
         kinder_name.setText(createAccountItem.K_name);
 
@@ -112,6 +115,16 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ChildAddActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        logout_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+
             }
         });
         return view;
