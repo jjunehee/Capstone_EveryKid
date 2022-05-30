@@ -164,6 +164,19 @@ alter table board modify WRITE_DATE datetime;
 ```[spring]```
 - BoardController 매핑관련해서 url 수정
   
+### 05/31
+```[박경주] 공지사항, 게시판에 필요한 유치원별 kkid 받아와서 저장하는 작업 실시함```
+  
+```[android]```
+- loginresponseTeacher(Model) kkid항목 추가
+- signinteacherActivity/signinParentActivity KKid받도록 수정
+
+```[spring]```
+- ParentService signin -> kkid 반환하도록 추가
+- tokenresponsedto kkid 추가
+- TeacherService signin -> kkid 반환하도록 추가
+- tokenresponsedto2 kkid추가
+  
 </div>
 </details>
 
