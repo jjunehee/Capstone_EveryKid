@@ -104,8 +104,9 @@ public class ChatActivity extends AppCompatActivity {
 
     public void clickSend(View view) {
 
-        //firebase DB에 저장할 값들( 닉네임, 메세지, 프로필 이미지URL, 시간)
-        String nickName= G.nickName;
+        //firebase DB에 저장할 값들( 닉네임, id, 메세지, 프로필 이미지URL, 시간)
+        String nickName= CreateAccountItem.Name;
+        String chatid = CreateAccountItem.Id;
         String message= et.getText().toString();
         String pofileUrl= G.porfileUri;
 
@@ -114,7 +115,7 @@ public class ChatActivity extends AppCompatActivity {
         String time=calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE); //14:16
 
         //firebase DB에 저장할 값(MessageItem객체) 설정
-        MessageItem messageItem= new MessageItem(nickName,message,time,pofileUrl);
+        MessageItem messageItem= new MessageItem(nickName, chatid, message, time, pofileUrl);
         //'char'노드에 MessageItem객체를 통해
         chatRef.push().setValue(messageItem);
 

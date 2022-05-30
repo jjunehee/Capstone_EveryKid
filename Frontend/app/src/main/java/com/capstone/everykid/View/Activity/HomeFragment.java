@@ -73,9 +73,9 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
         noticeWrite_btn = (Button)view.findViewById(R.id.noticeWrite_btn); //공지사항 글쓰는 버튼
-        if(createAccountItem.User.equals("t")){
-            noticeWrite_btn.setVisibility(View.VISIBLE);
-        }
+//        if(createAccountItem.User.equals("t")){
+//            noticeWrite_btn.setVisibility(View.VISIBLE);
+//        }
 
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {

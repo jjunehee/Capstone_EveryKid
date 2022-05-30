@@ -3,12 +3,14 @@ package com.capstone.everykid.Model;
 public class MessageItem {
 
     String name;
+    String chatid;
     String message;
     String time;
     String pofileUrl;
 
-    public MessageItem(String name, String message, String time, String pofileUrl) {
+    public MessageItem(String name, String chatid, String message, String time, String pofileUrl) {
         this.name = name;
+        this.chatid = chatid;
         this.message = message;
         this.time = time;
         this.pofileUrl = pofileUrl;
@@ -27,6 +29,10 @@ public class MessageItem {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setChatId(String chatid){this.chatid = chatid;}
+
+    public String getChatId() {return chatid;}
 
     public String getMessage() {
         return message;
