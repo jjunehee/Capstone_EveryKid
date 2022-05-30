@@ -10,7 +10,6 @@ public class CreateAccountItem{
     public static String K_address;
     public static String Id;
     public static String Pwd;
-
     public static String Kindergarten;
 
 }
