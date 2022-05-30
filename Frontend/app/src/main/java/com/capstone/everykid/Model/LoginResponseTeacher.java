@@ -50,6 +50,15 @@ public class LoginResponseTeacher {
         this.tkid = tkid;
     }
 
+    @SerializedName("kkid")
+    public String kkid;
+    public String getKkid() {
+        return kkid;
+    }
+    public void setKkid(String kkid) {
+        this.kkid = kkid;
+    }
+
     @SerializedName("tname")
     public String tname;
     public String getTname() {

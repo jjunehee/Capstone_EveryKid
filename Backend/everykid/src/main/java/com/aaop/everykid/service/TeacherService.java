@@ -72,6 +72,7 @@ public class TeacherService {
 
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth2.getTeacher());
+            System.out.println(teacher.getKKID());
             return TokenResponseDto2.builder()
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth2.getRefreshToken())
@@ -80,6 +81,7 @@ public class TeacherService {
                     .tPHONE(teacher.getTPHONE())
                     .tID(teacher.getTID())
                     .TKID(teacher.getTKID())
+                    .KKID(Long.parseLong(teacher.getKKID()))
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth2.getTeacher());

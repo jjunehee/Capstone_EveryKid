@@ -109,6 +109,16 @@
 - MainActivity에서 선생님 학부모 선택하고 로그인 하는것으로 나눔
 - SigninParentActivity.java, SigninTeacherActivity.java 생성
 
+### 05/28
+```[노수진] 선생님 회원가입, 로그인```
+- 선생님 회원가입 로그인 연결
+
+### 05/29
+```[노수진, 최희정] 회원가입```
+- 회원가입시 유치원 이름 선택 후 DB에 삽입할 때 k_kid 삽입 가능
+- 선생님 회원가입 가능
+- 로그인시 회원정보를 CreateAccountItem.java의 전역변수에 저장 -> 프로필 정보, 게시물, 채팅시 사용 
+  
   
  </div>
 </details>
@@ -158,6 +168,19 @@ alter table board modify WRITE_DATE datetime;
 
 ```[spring]```
 - BoardController 매핑관련해서 url 수정
+  
+### 05/31
+```[박경주] 공지사항, 게시판에 필요한 유치원별 kkid 받아와서 저장하는 작업 실시함```
+  
+```[android]```
+- loginresponseTeacher(Model) kkid항목 추가
+- signinteacherActivity/signinParentActivity KKid받도록 수정
+
+```[spring]```
+- ParentService signin -> kkid 반환하도록 추가
+- tokenresponsedto kkid 추가
+- TeacherService signin -> kkid 반환하도록 추가
+- tokenresponsedto2 kkid추가
   
 </div>
 </details>

@@ -130,6 +130,8 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     createAccountItem.Email = result.getTemail();
                     createAccountItem.Phone = result.getTphone();
                     createAccountItem.Id = result.getTid();
+                    createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                    System.out.println(result.getKkid());
 //
 //                        createAccountItem.K_name=result.getKname();
 //                        createAccountItem.K_phone=result.getKphone();

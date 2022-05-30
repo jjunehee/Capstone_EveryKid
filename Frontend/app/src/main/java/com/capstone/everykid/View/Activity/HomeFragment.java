@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { ;
+            public void onClick(View view) {
                 Date date = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
@@ -130,8 +130,10 @@ public class HomeFragment extends Fragment {
                 }
 
                 String context = null;
+                String subject = null;
                 try {
                     context = noticeSelected.getContents();//그 날짜의 일정 가져와야함
+                    subject = noticeSelected.getWriteSubject();
                 } catch(NullPointerException e) {
                     return;
                 }
@@ -141,6 +143,7 @@ public class HomeFragment extends Fragment {
 
                 //날짜와 그날의 학사일정 값 넘겨주기
                 intent.putExtra("date", dateToStr);
+                intent.putExtra("subject", subject);
                 intent.putExtra("context", context);
 
                 view.getContext().startActivity(intent);
@@ -154,7 +157,7 @@ public class HomeFragment extends Fragment {
 
         retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        call = retrofitAPI.getNoticeList(Long.valueOf(1));
+        call = retrofitAPI.getNoticeList(CreateAccountItem.K_kid);
         call.enqueue(new Callback<List<Notice>>() {
             @Override
             public void onResponse(Call<List<Notice>> call, Response<List<Notice>> response) {
@@ -172,7 +175,7 @@ public class HomeFragment extends Fragment {
                         String day = formatDate.substring(8, 10);
 
                         Calendar calendar = Calendar.getInstance();
-                        events.add(new EventDay(calendar, R.drawable.circle_plus));
+                        events.add(new EventDay(calendar, R.drawable.conversation));
                         calendar.set(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day)); //month는 1빼야함
                         calendarView.setEvents(events);
                     }
