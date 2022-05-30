@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
@@ -65,8 +66,14 @@ public class NoticeWriteActivity extends Activity {
                             //통신이 성공된 경우
                             Boolean result = response.body();
                             System.out.println("통신 완료");
+                            //parent, teacher 구별
+                            finish();
+                            Intent intent = new Intent(NoticeWriteActivity.this, MainParent.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
                             //data 에서 필요한 내용 꺼내 쓰기
                         } else {
+                            Toast.makeText(NoticeWriteActivity.this, "통신에 실패했습니다", Toast.LENGTH_LONG).show();
                             //통신이 실패한 경우
                         }
                     }
