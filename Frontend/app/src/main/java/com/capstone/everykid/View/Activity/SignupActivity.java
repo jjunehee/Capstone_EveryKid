@@ -71,7 +71,7 @@ public class SignupActivity extends AppCompatActivity
         etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
-        ealias = (EditText) findViewById(R.id.alias);
+
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
         etid.setText(intent.getExtras().getString("etid"));
@@ -79,7 +79,6 @@ public class SignupActivity extends AppCompatActivity
         etusername.setText(intent.getExtras().getString("etusername"));
         etpassword.setText(intent.getExtras().getString("etpassword"));
         etemail.setText(intent.getExtras().getString("etemail"));
-        ealias.setText(intent.getExtras().getString("ealias"));
         ekindergarten.setText(intent.getExtras().getString("ekindergarten"));
         kkid = intent.getExtras().getLong("kkid");
         kindergartenID=Long.toString(kkid);
@@ -119,7 +118,6 @@ public class SignupActivity extends AppCompatActivity
                 intent.putExtra("etusername", etusername.getText().toString());
                 intent.putExtra("etpassword", etpassword.getText().toString());
                 intent.putExtra("etemail", etemail.getText().toString());
-                intent.putExtra("ealias", ealias.getText().toString());
                 intent.putExtra("ekindergarten", ekindergarten.getText().toString());
                 startActivity(intent);
             }

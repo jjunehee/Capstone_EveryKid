@@ -58,7 +58,8 @@
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".View.Activity.SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".View.Activity.ChildAddActivity"
             android:exported="false" />
