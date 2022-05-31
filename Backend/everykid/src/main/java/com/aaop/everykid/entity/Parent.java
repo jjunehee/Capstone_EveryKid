@@ -73,12 +73,9 @@ public class Parent {
         this.pNAME = pNAME;
         this.pPHONE = pPHONE;
         this.pEMAIL = pEMAIL;
-<<<<<<< HEAD
         this.kKID=kKID;
         this.tNAME=tNAME;
-=======
-        this.kKID = kKID;
->>>>>>> 84f3358ab0cc5472a1de8073e7fe8807e21cc243
+
     }
 /*
     public static Parent createChild(RegisterCFormDto registerCFormDto){

@@ -45,11 +45,8 @@ public class Teacher {
     //private Role role;
 
     @Builder
-<<<<<<< HEAD
     public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL,Long kKID) {
-=======
-    public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL, String kKID) {
->>>>>>> 84f3358ab0cc5472a1de8073e7fe8807e21cc243
+
         this.TKID = TKID;
         this.tID = tID;
         this.tPWD = tPWD;
@@ -57,6 +54,5 @@ public class Teacher {
         this.tPHONE = tPHONE;
         this.tEMAIL = tEMAIL;
         this.kKID = kKID;
-       // this.tALIAS = tALIAS;
     }
 }
