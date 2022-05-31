@@ -90,6 +90,8 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../오리/springboot_example1/photo" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -126,6 +128,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EverykidApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,10 +156,24 @@
       <workItem from="1653554677292" duration="3592000" />
       <workItem from="1653558438190" duration="3343000" />
       <workItem from="1653561937949" duration="23000" />
+      <workItem from="1653577512315" duration="1658000" />
+      <workItem from="1653649859587" duration="1113000" />
+      <workItem from="1653651078575" duration="467000" />
+      <workItem from="1653918137272" duration="5657000" />
+      <workItem from="1653924348839" duration="808000" />
+      <workItem from="1653958839170" duration="6343000" />
+      <workItem from="1653983310005" duration="1866000" />
+      <workItem from="1653985226716" duration="2321000" />
+      <workItem from="1653987834871" duration="529000" />
+      <workItem from="1653988745218" duration="45000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

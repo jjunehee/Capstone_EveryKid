@@ -8,9 +8,11 @@ import com.aaop.everykid.entity.Auth;
 import com.aaop.everykid.entity.Kindergarten;
 import com.aaop.everykid.entity.Parent;
 import com.aaop.everykid.dto.TokenResponseDto;
+import com.aaop.everykid.entity.Teacher;
 import com.aaop.everykid.repository.AuthRepository;
 import com.aaop.everykid.repository.KindergartenRepository;
 import com.aaop.everykid.repository.ParentRepository;
+import com.aaop.everykid.repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,8 +36,6 @@ public class ParentService {
     }
 
 
-
-
     @Transactional
     public TokenResponseDto signUp(RegisterPFormDto registerPFormDto) {
         Parent parent =
@@ -47,6 +47,7 @@ public class ParentService {
                                 .pEMAIL(registerPFormDto.getPEMAIL())
                                 .pPHONE(registerPFormDto.getPPHONE())
                                 .kKID(registerPFormDto.getKKID())
+                                .tNAME(registerPFormDto.getTNAME())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(parent);
@@ -67,11 +68,11 @@ public class ParentService {
         Kindergarten kindergarten =
                 kindergartenRepository
                         .findByKKID(parent.getKKID())
-                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
-        Auth auth =
-                authRepository
+                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유치원입니다."));
+        Auth auth = authRepository
                         .findByParentPKID(parent.getPKID())
-                        .orElseThrow(()-> new IllegalArgumentException("Token 이 존재하지 않습니다."));
+                        .orElseThrow(() -> new IllegalArgumentException("Token 이 존재하지 않습니다."));
+
         if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
@@ -93,6 +94,7 @@ public class ParentService {
                     .kNAME(kindergarten.getKNAME())
                     .kADDRESS(kindergarten.getKADDRESS())
                     .kPHONE(kindergarten.getKPHONE())
+                    .tNAME(parent.getTNAME())
                     .build();
 
         } else {
