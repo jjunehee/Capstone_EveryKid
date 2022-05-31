@@ -14,4 +14,7 @@ public class TokenResponseDto2 {
     private String tNAME;
     private String tPHONE;
     private String tEMAIL;
+    private String kNAME;
+    private String kPHONE;
+    private String kADDRESS;
 }

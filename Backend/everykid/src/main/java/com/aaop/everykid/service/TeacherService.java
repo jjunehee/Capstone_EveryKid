@@ -7,8 +7,10 @@ import com.aaop.everykid.dto.LoginTFormDto;
 import com.aaop.everykid.dto.RegisterTFormDto;
 import com.aaop.everykid.dto.TokenResponseDto2;
 import com.aaop.everykid.entity.Auth2;
+import com.aaop.everykid.entity.Kindergarten;
 import com.aaop.everykid.entity.Teacher;
 import com.aaop.everykid.repository.AuthRepository2;
+import com.aaop.everykid.repository.KindergartenRepository;
 import com.aaop.everykid.repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,9 +24,11 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TeacherService {
     private final TeacherRepository teacherRepository;
+    private final KindergartenRepository kindergartenRepository;
     private final TokenUtils2 tokenUtils;
     private final AuthRepository2 authRepository;
     private final PasswordEncoder passwordEncoder;
+
 
     public Optional<Teacher> findBytID(String TID) {
 
@@ -41,6 +45,7 @@ public class TeacherService {
                                 .tNAME(registerTFormDto.getTNAME())
                                 .tEMAIL(registerTFormDto.getTEMAIL())
                                 .tPHONE(registerTFormDto.getTPHONE())
+                                .kKID(registerTFormDto.getKKID())
                                 .build());
 
         String accessToken = tokenUtils.generateJwtToken(teacher);
@@ -58,6 +63,10 @@ public class TeacherService {
                 teacherRepository
                         .findBytID(loginFormDto.getTID())
                         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
+        Kindergarten kindergarten =
+                kindergartenRepository
+                        .findByKKID(teacher.getKKID())
+                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유치원입니다."));
         Auth2 auth2 =
                 authRepository
                         .findByTeacherTKID(teacher.getTKID())
@@ -75,10 +84,12 @@ public class TeacherService {
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth2.getRefreshToken())
                     .tNAME(teacher.getTNAME())
-                //    .tALIAS(teacher.getTALIAS())
                     .tPHONE(teacher.getTPHONE())
                     .tID(teacher.getTID())
                     .TKID(teacher.getTKID())
+                    .kNAME(kindergarten.getKNAME())
+                    .kADDRESS(kindergarten.getKADDRESS())
+                    .kPHONE(kindergarten.getKPHONE())
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth2.getTeacher());

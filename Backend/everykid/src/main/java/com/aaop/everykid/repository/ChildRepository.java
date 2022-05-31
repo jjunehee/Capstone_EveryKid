@@ -1,5 +1,7 @@
+/*
 package com.aaop.everykid.repository;
 
+import com.aaop.everykid.entity.Child;
 import com.aaop.everykid.entity.Parent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -7,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ChildRepository extends JpaRepository<Parent, Long> {
+public interface ChildRepository extends JpaRepository<Child, Long> {
 
-    Optional<Parent> findBypID(String PID);
+    Optional<Child> findBycKID(String CKID);
     //Parent findParentBypID(Long id);
-}
+}*/

@@ -14,12 +14,9 @@ public class TokenResponseDto {
     private String pNAME;
     private String pPHONE;
     private String pEMAIL;
-    private String pALIAS;
-    private String C_NAME;
-    private String C_AGE;
-    private String C_IMG;
     private int status;
     private String kNAME;
     private String kPHONE;
     private String kADDRESS;
+    private String tNAME;
 }
