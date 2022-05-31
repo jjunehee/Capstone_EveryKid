@@ -8,16 +8,84 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.capstone.everykid.R;
+import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
+
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NoticeWriteActivity extends Activity {
+    TextView titleView;
+    TextView contentsView;
+    Button writeButton;
+    Button cancelButton;
+    RetrofitAPI retrofitAPI;
+    Call call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_notice_write);
+        Intent intent = getIntent();
+        titleView = findViewById(R.id.noticeTitle_et);
+        contentsView = findViewById(R.id.noticeContent_et);
+        writeButton = findViewById(R.id.noticeWrite);
+        cancelButton = findViewById(R.id.noticeCancel);
+        try {
+            titleView.setText(intent.getExtras().getString("subject"));
+            contentsView.setText(intent.getExtras().getString("contents"));
+        } catch(NullPointerException e) {
+
+        }
+
+        writeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://10.0.2.2:8080/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                retrofitAPI = retrofit.create(RetrofitAPI.class);
+
+                call = retrofitAPI.registNotice(Long.valueOf(1), new Date(), titleView.getText().toString(), contentsView.getText().toString());
+                call.enqueue(new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        if(response.isSuccessful()) {
+                            //통신이 성공된 경우
+                            Boolean result = response.body();
+                            System.out.println("통신 완료");
+                            //parent, teacher 구별
+                            finish();
+                            Intent intent = new Intent(NoticeWriteActivity.this, MainParent.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            //data 에서 필요한 내용 꺼내 쓰기
+                        } else {
+                            Toast.makeText(NoticeWriteActivity.this, "통신에 실패했습니다", Toast.LENGTH_LONG).show();
+                            //통신이 실패한 경우
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+                        //통신 실패 (인터넷 끊김, 예외 발생 등 시스템적인 이유)
+                        t.printStackTrace();
+                    }
+                });
+            }
+        });
     }
     public void mOnClose(View v){ //창 닫기
         //데이터 전달하기

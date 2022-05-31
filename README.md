@@ -109,6 +109,21 @@
 - MainActivity에서 선생님 학부모 선택하고 로그인 하는것으로 나눔
 - SigninParentActivity.java, SigninTeacherActivity.java 생성
 
+### 05/28
+```[노수진] 선생님 회원가입, 로그인```
+- 선생님 회원가입 로그인 연결
+
+### 05/29
+```[노수진, 최희정] 회원가입```
+- 회원가입시 유치원 이름 선택 후 DB에 삽입할 때 k_kid 삽입 가능
+- 선생님 회원가입 가능
+- 로그인시 회원정보를 CreateAccountItem.java의 전역변수에 저장 -> 프로필 정보, 게시물, 채팅시 사용 
+  
+### 05/31
+```[노수진] 로그아웃, 사진 bitmap```
+- 사진 bitmap으로 변경, blob으로 데이터베이스에 추가 가능
+- 로그아웃 가능
+  
   
  </div>
 </details>
@@ -158,6 +173,19 @@ alter table board modify WRITE_DATE datetime;
 
 ```[spring]```
 - BoardController 매핑관련해서 url 수정
+  
+### 05/31
+```[박경주] 공지사항, 게시판에 필요한 유치원별 kkid 받아와서 저장하는 작업 실시함```
+  
+```[android]```
+- loginresponseTeacher(Model) kkid항목 추가
+- signinteacherActivity/signinParentActivity KKid받도록 수정
+
+```[spring]```
+- ParentService signin -> kkid 반환하도록 추가
+- tokenresponsedto kkid 추가
+- TeacherService signin -> kkid 반환하도록 추가
+- tokenresponsedto2 kkid추가
   
 </div>
 </details>
@@ -279,6 +307,11 @@ alter table board modify WRITE_DATE datetime;
   ```[조준희] [사용성 향상]  1. 라즈베리파이 피에조 부저 추가```
   - 카메라 앞에 서서 얼굴학습을 마치거나 등/하원시 얼굴인식을 마쳤을 때, 나오는 부저음 추가
   
+  ### ~05/31
+  ```[조준희] 2022 한국정보기술학회 대학생 논문 경진대회```
+  - '어린이집 등하원 관리를 위한 사물인터넷 서비스 개발'
+  - 발표영상 녹화, 제출 완료
+  - 6/3 10시 학회 온라인 발표 예정
 
   
   

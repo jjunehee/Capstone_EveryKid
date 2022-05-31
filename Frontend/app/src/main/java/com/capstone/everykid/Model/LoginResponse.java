@@ -23,7 +23,7 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     @SerializedName("refresh_TOKEN")
     public String refresh_token;
     public String getrefreshToken() {
-        return token;
+        return refresh_token;
     }
     public void setrefreshToken(String refresh_token) {
         this.refresh_token = refresh_token;
@@ -63,6 +63,34 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     }
     public void setKkid(String kkid) {
         this.kkid = kkid;
+    }
+
+
+    @SerializedName("kname")
+    public String kname;
+    public String getKname() {
+        return kname;
+    }
+    public void setKname(String kname) {
+        this.kname = kname;
+    }
+
+    @SerializedName("kphone")
+    public String kphone;
+    public String getKphone() {
+        return kphone;
+    }
+    public void setKphone(String kphone) {
+        this.kphone = kphone;
+    }
+
+    @SerializedName("kaddress")
+    public String kaddress;
+    public String getKaddress() {
+        return kaddress;
+    }
+    public void setKaddress(String kaddress) {
+        this.kaddress = kaddress;
     }
 
     @SerializedName("palias")
@@ -118,4 +146,9 @@ public class LoginResponse { //서버로 부터 받을 데이터들
     public void setPphone(String pphone) {
         this.pphone = pphone;
     }
+
+
+
+
+
 }

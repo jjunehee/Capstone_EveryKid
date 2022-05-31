@@ -1,10 +1,9 @@
 package com.capstone.everykid.View.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -13,18 +12,27 @@ import android.widget.TextView;
 import com.capstone.everykid.R;
 
 public class ScheduleActivity extends Activity {
+    TextView subjectView;
     TextView txt;
     private Intent intent;
+    String subject;
     String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_schedule);
-        txt =(TextView)findViewById(R.id.txt_schedule); // 학사일정 보여주는 textview
+        subjectView =(TextView)findViewById(R.id.txt_subject);
+        txt =(TextView)findViewById(R.id.txt_content); // 학사일정 보여주는 textview
+        txt.setMovementMethod(new ScrollingMovementMethod());
 
         intent = getIntent();
+        subject = intent.getExtras().getString("subject");
         text= intent.getExtras().getString("context");
+        if(subject!=null) {
+            subjectView.setText(subject);
+        }
+
         if(text==null){ //일정 없을 때
             txt.setText("일정 없음");
         }else{

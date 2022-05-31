@@ -98,10 +98,12 @@ public class SignupActivity extends AppCompatActivity
                 if(accountUser.equals("Parent")){
                     registerParent();
                     Intent intent = new Intent(getApplicationContext(), SigninParentActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }else if(accountUser.equals("Teacher")){
                     registerTeacher();
                     Intent intent = new Intent(getApplicationContext(), SigninTeacherActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             }
@@ -182,6 +184,7 @@ public class SignupActivity extends AppCompatActivity
         final String username = etusername.getText().toString();
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
+        final String kindergarten = kindergartenID;
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -189,7 +192,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getTeacherRegist(id, phone, username, password, email);
+        Call<String> call = api.getTeacherRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
         {
             @Override

@@ -10,6 +10,7 @@ public class TokenResponseDto2 {
     private String ACCESS_TOKEN;
     private String REFRESH_TOKEN;
     private Long TKID;
+    private Long KKID;
     private String tID;
     private String tNAME;
     private String tPHONE;

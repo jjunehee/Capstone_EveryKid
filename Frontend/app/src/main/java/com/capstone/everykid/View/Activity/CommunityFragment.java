@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.capstone.everykid.Model.BoardList;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.CommunityFragmentAdapter;
@@ -103,10 +104,11 @@ public class CommunityFragment extends Fragment {
     }
 
     public void getBoardList(int page, int whichMethod, String key) { //key는 searchBoard에서 사용
+        System.out.println(CreateAccountItem.User + "-----------------------------------------------------");
         if(whichMethod == 1) {
-            call = retrofitAPI.listBoard(Long.valueOf(1), page); //kID 사용자의 kID로 바꿔주기
+            call = retrofitAPI.listBoard(CreateAccountItem.K_kid, page); //kID 사용자의 kID로 바꿔주기
         } else if(whichMethod == 2) {
-            call = retrofitAPI.searchBoard(Long.valueOf(1), key, page);
+            call = retrofitAPI.searchBoard(CreateAccountItem.K_kid, key, page);
         }
 
         String finalKey = key;
