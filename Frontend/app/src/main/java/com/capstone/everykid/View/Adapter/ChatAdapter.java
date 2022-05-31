@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.G;
 import com.capstone.everykid.Model.MessageItem;
 import com.capstone.everykid.R;
@@ -51,7 +52,7 @@ public class ChatAdapter extends BaseAdapter {
         View itemView=null;
 
         //메세지가 내 메세지인지 확인
-        if(item.getName().equals(G.nickName)){
+        if(item.getChatId().equals(CreateAccountItem.Id)){
             itemView= layoutInflater.inflate(R.layout.my_msgbox,viewGroup,false);
         }else{
             itemView= layoutInflater.inflate(R.layout.other_msgbox,viewGroup,false);

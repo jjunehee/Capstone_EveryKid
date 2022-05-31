@@ -133,13 +133,20 @@ public class SigninParentActivity extends AppCompatActivity {
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
 
-                        String id =result.getPid();
-                        createAccountItem.Id=id;
+                        createAccountItem.Id=userId;
 
                         createAccountItem.K_name=result.getKname();
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
                         createAccountItem.K_kid=Long.parseLong(result.getKkid());
+
+                        //채팅
+                        SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
+                        SharedPreferences.Editor editor=preferences.edit();
+
+                        editor.putString("chat_name",createAccountItem.Name);
+
+                        editor.commit();
 
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
@@ -166,8 +173,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         String phone =result.getPphone();
                         createAccountItem.Phone=phone;
 
-                        String id =result.getPid();
-                        createAccountItem.Id=id;
+                        createAccountItem.Id=userId;
 
                         createAccountItem.K_name=result.getKname();
                         createAccountItem.K_phone=result.getKphone();
