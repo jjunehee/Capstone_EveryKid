@@ -98,10 +98,12 @@ public class SignupActivity extends AppCompatActivity
                 if(accountUser.equals("Parent")){
                     registerParent();
                     Intent intent = new Intent(getApplicationContext(), SigninParentActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }else if(accountUser.equals("Teacher")){
                     registerTeacher();
                     Intent intent = new Intent(getApplicationContext(), SigninTeacherActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             }
