@@ -21,13 +21,15 @@
         <ListView
             android:id="@+id/kg_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="10" />
 
         <com.lakue.pagingbutton.LakuePagingButton
             android:id="@+id/lpb_buttonlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

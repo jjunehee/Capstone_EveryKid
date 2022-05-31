@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 
@@ -41,8 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 String TITLE = title.getText().toString();
                 String CONTENT = content.getText().toString();
-                String USER_ID="bbbb";
-                String K_ID = "1";
+                String USER_ID = CreateAccountItem.Id;
+                String K_ID = Long.toString(CreateAccountItem.K_kid);
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("http://10.0.2.2:8080/")
@@ -51,7 +52,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                 RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-                Call<Boolean> call = retrofitAPI.registBoard(K_ID, "null", USER_ID, TITLE, CONTENT); //tID를 null이나, 빈 문자열로 비워두면 매핑이 안된다. 서버에서 처리해주도록 하자.
+                Call<Boolean> call = null;
+                if(CreateAccountItem.User.equals("p"))
+                    call = retrofitAPI.registBoard(K_ID, "null", USER_ID, TITLE, CONTENT); //tID를 null이나, 빈 문자열로 비워두면 매핑이 안된다. 서버에서 처리해주도록 하자.
+                else if(CreateAccountItem.User.equals("t"))
+                    call = retrofitAPI.registBoard(K_ID, USER_ID, "null", TITLE, CONTENT); //tID를 null이나, 빈 문자열로 비워두면 매핑이 안된다. 서버에서 처리해주도록 하자.
+
 
                 call.enqueue(new Callback<Boolean>() {
                     @Override
