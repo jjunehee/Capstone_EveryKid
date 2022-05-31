@@ -108,7 +108,8 @@ public class ChatActivity extends AppCompatActivity {
         String nickName= CreateAccountItem.Name;
         String chatid = CreateAccountItem.Id;
         String message= et.getText().toString();
-        String pofileUrl= G.porfileUri;
+        //String pofileUrl= G.porfileUri;
+        String pofileUrl="";
 
         //메세지 작성 시간 문자열로..
         Calendar calendar= Calendar.getInstance(); //현재 시간을 가지고 있는 객체

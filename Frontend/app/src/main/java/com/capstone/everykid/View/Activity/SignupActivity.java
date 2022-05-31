@@ -134,10 +134,6 @@ public class SignupActivity extends AppCompatActivity
         final String email = etemail.getText().toString();
         final String kindergarten = kindergartenID;
 
-
-
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -163,7 +159,6 @@ public class SignupActivity extends AppCompatActivity
                     {
                         e.printStackTrace();
                     }
-
                 }
             }
 
@@ -188,7 +183,6 @@ public class SignupActivity extends AppCompatActivity
                 .baseUrl(RegisterInterface.REGIST_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-
         RegisterInterface api = retrofit.create(RegisterInterface.class);
         Call<String> call = api.getTeacherRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
@@ -213,7 +207,6 @@ public class SignupActivity extends AppCompatActivity
 
                 }
             }
-
             @Override
             public void onFailure(@NonNull Call<String> call, @NonNull Throwable t)
             {
@@ -221,7 +214,6 @@ public class SignupActivity extends AppCompatActivity
             }
         });
     }
-
     private void parseRegData(String response) throws JSONException
     {
         JSONObject jsonObject = new JSONObject(response);
@@ -234,7 +226,6 @@ public class SignupActivity extends AppCompatActivity
             Toast.makeText(SignupActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
         }
     }
-
     private void saveInfo(String response)
     {
         preferenceHelper.putIsLogin(true);
@@ -273,6 +264,4 @@ public class SignupActivity extends AppCompatActivity
         }
         return super.dispatchTouchEvent(ev);
     }
-
-
 }
