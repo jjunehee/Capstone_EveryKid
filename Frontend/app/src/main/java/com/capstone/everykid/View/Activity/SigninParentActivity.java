@@ -178,7 +178,12 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_name=result.getKname();
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
-                        createAccountItem.K_kid=Long.parseLong(result.getKkid());
+                        //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                        try {
+                            createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                        } catch (NumberFormatException e) {
+                            return;
+                        }
 
                         Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);

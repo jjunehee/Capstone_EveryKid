@@ -48,6 +48,7 @@ public class HomeFragment extends Fragment {
     RetrofitAPI retrofitAPI;
     Call call;
     List<Notice> noticeList;
+    Notice todayNotice = null;
 
 
     public HomeFragment() {
@@ -73,29 +74,16 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
         noticeWrite_btn = (Button)view.findViewById(R.id.noticeWrite_btn); //공지사항 글쓰는 버튼
-//        if(createAccountItem.User.equals("t")){
-//            noticeWrite_btn.setVisibility(View.VISIBLE);
-//        }
+        if(createAccountItem.User.equals("t")){
+            noticeWrite_btn.setVisibility(View.VISIBLE);
+        }
 
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Date date = new Date();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
-                String dateToStr = dateFormat.format(date);
-                Notice noticeSelected = null;
-                if(noticeList != null) {
-                    for(int i = 0; i < noticeList.size(); i++) {
-                        if(dateFormat.format(noticeList.get(i).getWriteDate()).equals(dateToStr)) {
-                            System.out.println(dateToStr);
-                            System.out.println(dateFormat.format(noticeList.get(i).getWriteDate()));
-                            noticeSelected = noticeList.get(i);
-                            break;
-                        }
-                    }
-                }
+                Notice noticeSelected = getTodayNotice();
+
                 Intent intent = new Intent(getActivity(), NoticeWriteActivity.class);
                 try {
                     intent.putExtra("subject", noticeSelected.getWriteSubject());
@@ -182,6 +170,16 @@ public class HomeFragment extends Fragment {
                     for(int i=0; i<result.size(); i++) {
                         System.out.println(result.get(i).getContents());
                     }
+
+                    if(mList.size() > 0)
+                        mList.remove(0);
+                    try {
+                        todayNotice = getTodayNotice();
+                        addItem(todayNotice.getWriteSubject()); //리사이클러뷰어댑터에 아이템 임시 추가
+                    } catch(NullPointerException e) {
+                        addItem("오늘의 알림장이 없습니다."); //리사이클러뷰어댑터에 아이템 임시 추가
+                    }
+                    mAdapter.notifyDataSetChanged();
                     calendarView.invalidate();
                     System.out.println("통신 완료");
                     //data 에서 필요한 내용 꺼내 쓰기
@@ -203,7 +201,7 @@ public class HomeFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.notice_recycler);
         mAdapter = new NoticeItemAdapter(mList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        addItem("공지사항 제목"); //리사이클러뷰어댑터에 아이템 임시 추가
+        addItem("");
         mRecyclerView.setAdapter(mAdapter);
 
         mAdapter.setOnItemClicklistener(new OnItemClickListener() {
@@ -211,7 +209,13 @@ public class HomeFragment extends Fragment {
             public void onItemClick(NoticeItemAdapter.ViewHolder holder, View view, int position) {
                 //RecyclerItem item = mAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(), NoticeActivity.class);
-                intent.putExtra("notice_content", "");
+                if(todayNotice != null) {
+                    intent.putExtra("subject", todayNotice.getWriteSubject());
+                    intent.putExtra("contents", todayNotice.getContents());
+                } else {
+                    intent.putExtra("subject", getTodayNotice().getWriteSubject());
+                    intent.putExtra("contents", getTodayNotice().getContents());
+                }
                 startActivity(intent);
             }
         });
@@ -222,6 +226,25 @@ public class HomeFragment extends Fragment {
         RecyclerItem item = new RecyclerItem();
         item.setNotice_title(title);
         mList.add(item);
+    }
+
+    public Notice getTodayNotice() {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
+        String dateToStr = dateFormat.format(date);
+        Notice noticeSelected = null;
+        if(noticeList != null) {
+            for(int i = 0; i < noticeList.size(); i++) {
+                if(dateFormat.format(noticeList.get(i).getWriteDate()).equals(dateToStr)) {
+                    System.out.println(dateToStr);
+                    System.out.println(dateFormat.format(noticeList.get(i).getWriteDate()));
+                    noticeSelected = noticeList.get(i);
+                    break;
+                }
+            }
+        }
+        return noticeSelected;
     }
 }
 

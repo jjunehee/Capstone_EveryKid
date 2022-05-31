@@ -29,7 +29,7 @@ public class BoardController {
     BoardService boardService;
 
     // 유저가 소속된 유치원의 글들을 불러옴
-    @RequestMapping("/board/{kID}")
+    @RequestMapping(value="/board/{kID}", produces="application/json;charset=UTF-8")
     public String getList(@PageableDefault(size = 10, sort = "BKID", direction = Sort.Direction.DESC) Pageable pageable,
                           @PathVariable("kID") Long kID) {
 
@@ -51,7 +51,7 @@ public class BoardController {
         return jsonString;
     }
 
-    @RequestMapping ("/write/{kID}/{tID}/{pID}/{writeSUBJECT}/{contents}")
+    @RequestMapping (value="/write/{kID}/{tID}/{pID}/{writeSUBJECT}/{contents}", produces="application/json;charset=UTF-8")
     public Boolean writeContent(@PathVariable("kID") Long kID, @PathVariable("tID") String tID, @PathVariable("pID") String pID,
                                 @PathVariable("writeSUBJECT") String writeSUBJECT, @PathVariable("contents") String contents) {
 
@@ -97,7 +97,7 @@ public class BoardController {
     }
 
 
-    @RequestMapping("/search/{kID}")
+    @RequestMapping(value="/search/{kID}", produces="application/json;charset=UTF-8")
     public String searchContent(@PageableDefault(size = 10, sort = "B_KID", direction = Sort.Direction.DESC) Pageable pageable,
                                 @RequestParam("key") String key,@PathVariable("kID") Long kID) {
 
