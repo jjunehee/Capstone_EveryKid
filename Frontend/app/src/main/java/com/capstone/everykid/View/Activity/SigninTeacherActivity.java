@@ -130,7 +130,13 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     createAccountItem.Email = result.getTemail();
                     createAccountItem.Phone = result.getTphone();
                     createAccountItem.Id = result.getTid();
-                    createAccountItem.K_kid = Long.parseLong(result.getKkid());
+
+                    //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                    try {
+                        createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                    } catch (NumberFormatException e) {
+                        return;
+                    }
                     System.out.println(result.getKkid());
 //
 //                        createAccountItem.K_name=result.getKname();

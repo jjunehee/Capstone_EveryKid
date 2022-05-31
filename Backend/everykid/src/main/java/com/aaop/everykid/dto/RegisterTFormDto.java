@@ -19,7 +19,7 @@ public class RegisterTFormDto {
 
     private String tEMAIL;
 
-    private String kKID;
+    private Long kKID;
 
 
 }

@@ -15,11 +15,12 @@
         android:orientation="horizontal"
         android:background="@color/main_yellow"
         android:padding="4dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="공지사항"
+            android:text="오늘의 알림장"
             android:textSize="18dp" />
     </LinearLayout>
     <!-- 타이틀바 end -->

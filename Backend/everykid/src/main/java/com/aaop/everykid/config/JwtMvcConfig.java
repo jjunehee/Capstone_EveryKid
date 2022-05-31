@@ -13,7 +13,6 @@ public class JwtMvcConfig implements WebMvcConfigurer {
     private final JwtTokenInterceptor jwtTokenInterceptor;
 
     public void addInterceptors(InterceptorRegistry registry) {
-        System.out.println("인터셉터 등록");
         registry.addInterceptor(jwtTokenInterceptor)
                 .addPathPatterns("/**")
                 .excludePathPatterns("/signUp");

@@ -15,7 +15,7 @@ public class Auth2 {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name="ID")
+    @Column(name = "ID")
     private Long ID;
 
     private String refreshToken;
@@ -29,6 +29,7 @@ public class Auth2 {
         this.refreshToken = refreshToken;
         this.teacher = teacher;
     }
+
     public void refreshUpdate(String refreshToken) {
         this.refreshToken = refreshToken;
     }

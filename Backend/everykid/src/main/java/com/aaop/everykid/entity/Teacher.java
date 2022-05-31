@@ -39,17 +39,17 @@ public class Teacher {
   //  private String tALIAS;
 
     @Column(name="K_KID")
-    private String kKID;
-
-
-    //@Column(name="T_ID")
-    //private String tID;
+    private Long kKID;
 
     //@Enumerated(EnumType.STRING)
     //private Role role;
 
     @Builder
+<<<<<<< HEAD
+    public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL,Long kKID) {
+=======
     public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL, String kKID) {
+>>>>>>> 84f3358ab0cc5472a1de8073e7fe8807e21cc243
         this.TKID = TKID;
         this.tID = tID;
         this.tPWD = tPWD;

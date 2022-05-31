@@ -1,7 +1,22 @@
+/*
 package com.aaop.everykid.service;
 
+import com.aaop.everykid.entity.Child;
 import com.aaop.everykid.entity.Parent;
 
+import java.util.List;
+
 public interface ChildService {
-    public void regist(Parent parent) throws Exception;
+    public void regist(Child child) throws Exception;
+
+    public Child read(Long childId) throws Exception;
+
+    public void modify(Child child) throws Exception;
+
+    public void remove(Long childId) throws Exception;
+
+    public List<Child> list() throws Exception;
+
+    public String getPicture(Long childId) throws Exception;
 }
+*/
