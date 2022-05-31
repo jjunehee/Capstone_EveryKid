@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="학사일정"
+            android:text="알림장"
             android:textSize="18dp" />
     </LinearLayout>
     <!-- 타이틀바 end -->

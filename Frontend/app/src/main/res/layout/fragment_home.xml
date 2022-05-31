@@ -31,14 +31,14 @@
                             android:background="@drawable/round_background_2"
                             android:backgroundTint="@color/button_yellow"
                             android:layout_margin="3dp">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="학사일정"
-                                android:textSize="15dp"
-                                android:padding="10dp"
                                 android:layout_gravity="center"
-                            />
+                                android:padding="10dp"
+                                android:text="지난 알림장"
+                                android:textSize="15dp" />
                         </FrameLayout>
                         <com.applandeo.materialcalendarview.CalendarView
                             android:id="@+id/calendarView"
@@ -78,24 +78,24 @@
                         android:background="@drawable/round_background_2"
                         android:backgroundTint="@color/button_yellow"
                         android:layout_margin="3dp">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="공지사항"
-                            android:textSize="15dp"
-                            android:padding="10dp"
                             android:layout_gravity="center"
-                            />
+                            android:padding="10dp"
+                            android:text="오늘의 알림장"
+                            android:textSize="15dp" />
+
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/noticeWrite_btn"
                             android:layout_width="23dp"
                             android:layout_height="23dp"
-                            android:background="@drawable/ic_write"
-                            android:backgroundTint="@color/gray_text_color"
                             android:layout_gravity="end|center_vertical"
                             android:layout_marginEnd="15dp"
-                            android:visibility="invisible"
-                            />
+                            android:background="@drawable/ic_write"
+                            android:backgroundTint="@color/gray_text_color"
+                            android:visibility="invisible" />
                     </FrameLayout>
 
 

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -94,6 +95,10 @@ public class findKindergarten extends AppCompatActivity {
                 String siGunGuCode = "";
                 String siDo = adapter.getRegionName().get(0);
                 String siGunGu = adapter.getRegionName().get(1);
+                if(siDo.equals("시도명") || siGunGu.equals("시군구명")) {
+                    Toast.makeText(findKindergarten.this, "시도, 시군구를 모두 선택해주세요.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 System.out.println(siDo + " " + siGunGu);
                 for(int i = 0; i < codeList.size(); i++) {
                     if(codeList.get(i).getSiDoName().equals(siDo) && codeList.get(i).getSiGunGuName().equals(siGunGu)) {
@@ -122,7 +127,12 @@ public class findKindergarten extends AppCompatActivity {
                         Intent intent = getIntent();
                         Intent intent1 = new Intent(getApplicationContext(), selectKindergarten.class);
                         ArrayList<ItemClass> list = new ArrayList<ItemClass>();
-                        list.addAll(kindergartenList);
+                        try {
+                            list.addAll(kindergartenList);
+                        } catch(NullPointerException e) {
+                            Toast.makeText(findKindergarten.this, "시군구 코드 오류입니다. 고객센터로 문의 해주세요.", Toast.LENGTH_LONG).show();
+                            return;
+                        }
                         intent1.putExtra("list", list);
                         intent1.putExtra("User", intent.getExtras().getString("User"));
 //                        System.out.println(intent.getExtras().getString("User"));

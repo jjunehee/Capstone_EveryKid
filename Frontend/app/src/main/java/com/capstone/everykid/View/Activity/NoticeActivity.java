@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.capstone.everykid.R;
 
@@ -18,6 +19,10 @@ public class NoticeActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_notice);
+        Intent intent = getIntent();
+        TextView txtcontent = (TextView) findViewById(R.id.txt_content);
+        String subject = intent.getExtras().getString("subject");
+        String contents = intent.getExtras().getString("contents");
     }
     public void mOnClose(View v){
         //데이터 전달하기
