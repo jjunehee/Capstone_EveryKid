@@ -1,5 +1,6 @@
 package com.capstone.everykid.View.Adapter;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatAdapter extends BaseAdapter {
+
     ArrayList<MessageItem> messageItems;
     LayoutInflater layoutInflater;
 
@@ -50,11 +52,13 @@ public class ChatAdapter extends BaseAdapter {
         View itemView=null;
 
         //메세지가 내 메세지인지 확인
-        if(item.getName().equals(G.nickName)){
+        if(item.getChatId().equals(CreateAccountItem.Id)){
             itemView= layoutInflater.inflate(R.layout.my_msgbox,viewGroup,false);
         }else{
             itemView= layoutInflater.inflate(R.layout.other_msgbox,viewGroup,false);
         }
+
+
 
         //만들어진 itemView에 값들 설정
         CircleImageView iv= itemView.findViewById(R.id.iv);
