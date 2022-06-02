@@ -91,6 +91,7 @@ public class ParentService {
                     .pID(parent.getPID())
                     .pEMAIL(parent.getPEMAIL())
                     .PKID(parent.getPKID())
+                    .pEMAIL(parent.getPEMAIL())
                     .KKID(parent.getKKID())
                     .kNAME(kindergarten.getKNAME())
                     .kADDRESS(kindergarten.getKADDRESS())
