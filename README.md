@@ -134,13 +134,18 @@
 <details>
  <summary> Backend </summary>
  <div markdown="1">
+  
 ### 04/03 
+  ```[김혁진]```
+  
 데이터베이스 초기설계
 이미지
 
 
 ### 04/06 
-스프링부트 init 설정
+  ```[김혁진]```
+  
+- 스프링부트 init 설정
 ---------------------------------------------------------------
 SPRINGBOOT INITIALIZE
 build : Gradle
@@ -157,23 +162,27 @@ init Dependencies
 
 ### 04/08
    ```[김혁진]```
-DataSource 설정(application.properties)
+  
+- DataSource 설정(application.properties)
 ㄴatasource.url=jdbc:mysql://localhost:3306/everykid?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
 ㄴspring.jpa.database=mysql
 
 ### 04/13 
    ```[김혁진]```
-회원가입 요구사항 작성
+  
+- 회원가입 요구사항 작성
 
 ### 04/19
    ```[김혁진]```
+  
 초기 회원가입 구현
 security dependency REST.FUL 가능하도록 추가 설정
 
 ### 04/20
    ```[김혁진]```
-부모 회원가입 구현
-Dto/Entity/Service/Controller
+  
+- 부모 회원가입 구현
+- Dto/Entity/Service/Controller
 ㄴ(com.aaop.everykid.dto.ParentFormDto.java)
 ㄴ(com.aaop.everykid.repository.ParentRepository)
 ㄴ(com.aaop.everykid.service.ParentService)
@@ -181,27 +190,31 @@ Dto/Entity/Service/Controller
 
 ### 04/27
    ```[김혁진]```
-로그인 구현 및 회원가입 테스트
-데이터베이스 1차 수정
-SpringSecurity 추가 및 설정
+  
+- 로그인 구현 및 회원가입 테스트
+- 데이터베이스 1차 수정
+- SpringSecurity 추가 및 설정
 ㄴcsrf().disable().cors().disable().headers().frameOptions().disable()
 ㄴ비밀번호 암호화 
 
 ### 05/04
    ```[김혁진]```
-jwt 토큰 추가 및 회원가입 전면 재수정
+  
+- jwt 토큰 추가 및 회원가입 전면 재수정
 ㄴ(package com.aaop.everykid.Jwt.TokenUtils)
 ㄴ((package com.aaop.everykid.service.ParentService)
-데이터베이스 2차 수정 및 jpa 관계 매핑
+- 데이터베이스 2차 수정 및 jpa 관계 매핑
 
 ### 05/11
    ```[김혁진]```
-SWAGGER API 추가
-토큰저장 테이블 생성 및 부모 토큰 저장 구현
+  
+- SWAGGER API 추가
+- 토큰저장 테이블 생성 및 부모 토큰 저장 구현
 
 ### 05/18
   ```[김혁진]```
-시스템 개념도 구상
+  
+- 시스템 개념도 구상
 
 
 ### 05/20
@@ -245,7 +258,7 @@ alter table board modify WRITE_DATE datetime;
   
 ### 05/25
 ```[김혁진]```
-선생님 서비스 추가 구현
+- 선생님 서비스 추가 구현
 ㄴ(package com.aaop.everykid.Jwt.TokenUtils2)
 ㄴ((package com.aaop.everykid.service.TeacherService)
 아이 등록 api create 추가
