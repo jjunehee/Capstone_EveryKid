@@ -59,6 +59,35 @@ public class LoginResponseTeacher {
         this.kkid = kkid;
     }
 
+
+    @SerializedName("kname")
+    public String knameT;
+    public String getKnameT() {
+        return knameT;
+    }
+    public void setKname(String kname) {
+        this.knameT = knameT;
+    }
+
+    @SerializedName("kphone")
+    public String kphoneT;
+    public String getKphoneT() {
+        return kphoneT;
+    }
+    public void setKphone(String kphoneT) {
+        this.kphoneT = kphoneT;
+    }
+
+    @SerializedName("kaddress")
+    public String kaddressT;
+    public String getKaddressT() {
+        return kaddressT;
+    }
+    public void setKaddress(String kaddressT) {
+        this.kaddressT = kaddressT;
+    }
+
+
     @SerializedName("tname")
     public String tname;
     public String getTname() {

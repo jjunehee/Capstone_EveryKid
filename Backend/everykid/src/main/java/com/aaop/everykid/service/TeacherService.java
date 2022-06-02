@@ -88,13 +88,10 @@ public class TeacherService {
                     .tPHONE(teacher.getTPHONE())
                     .tID(teacher.getTID())
                     .TKID(teacher.getTKID())
-<<<<<<< HEAD
                     .kNAME(kindergarten.getKNAME())
                     .kADDRESS(kindergarten.getKADDRESS())
                     .kPHONE(kindergarten.getKPHONE())
-=======
-                    .KKID(Long.parseLong(teacher.getKKID()))
->>>>>>> 84f3358ab0cc5472a1de8073e7fe8807e21cc243
+                    .KKID(teacher.getKKID())
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth2.getTeacher());

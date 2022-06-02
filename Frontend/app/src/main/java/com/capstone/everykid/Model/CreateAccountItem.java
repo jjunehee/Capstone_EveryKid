@@ -3,6 +3,7 @@ package com.capstone.everykid.Model;
 public class CreateAccountItem{
     public static String User;
     public static String Name;
+    public static String Tname;
     public static String Phone;
     public static String Email;
     public static Long K_kid;

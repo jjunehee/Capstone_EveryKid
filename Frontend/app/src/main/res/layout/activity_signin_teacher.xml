@@ -116,7 +116,7 @@
         android:paddingBottom="8dp" android:paddingStart="25dp" android:paddingEnd="25dp" android:paddingTop="8dp"
         android:background="@drawable/button_round"
         android:backgroundTint="#FFD864"
-        android:text="CREATE TEACHER ACCOUNT"
+        android:text="SIGN UP"
         android:textColor="#FFFFFF"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"

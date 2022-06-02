@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:text="ㅁ월 ㅁ일 ㅁ요일"
-        android:textSize="25dp"
+        android:text="1월 1일 월요일"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:padding="8dp"
         android:layout_margin="8dp"/>
     <FrameLayout
@@ -33,6 +34,7 @@
                 android:backgroundTint="#A3C398"
                 android:paddingLeft="6dp" android:paddingTop="3dp" android:paddingRight="6dp" android:paddingBottom="3dp"
                 android:text="등원"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
 
@@ -47,6 +49,7 @@
                 android:backgroundTint="#CA8B8B"
                 android:paddingLeft="6dp" android:paddingTop="3dp" android:paddingRight="6dp" android:paddingBottom="3dp"
                 android:text="하원"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
 

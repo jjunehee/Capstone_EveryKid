@@ -147,6 +147,15 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.pphone = pphone;
     }
 
+    @SerializedName("tname")
+    public String tname;
+    public String getPtname() {
+        return tname;
+    }
+    public void setPtname(String tname) {
+        this.tname = tname;
+    }
+
 
 
 

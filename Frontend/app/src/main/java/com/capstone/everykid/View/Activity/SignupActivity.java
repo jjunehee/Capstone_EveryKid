@@ -37,7 +37,7 @@ public class SignupActivity extends AppCompatActivity
 {
     public final String TAG = "SignupActivity";
 
-    private EditText etid, etphone, etusername, etpassword, etemail, ealias, ekindergarten;
+    private EditText etid, etphone, etusername, etpassword, etemail, ekindergarten, etteachername;
     private TextView text;
     private Button btnregister, btnduplicateCheck, btnkindergarten;
     private PreferenceHelper preferenceHelper;
@@ -60,10 +60,6 @@ public class SignupActivity extends AppCompatActivity
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
 
-        //학부모 회원가입인지 선생님 회원가입인지 임시로 띄워둠
-        text=findViewById(R.id.textView6);
-        text.setText(accountUser);
-
         preferenceHelper = new PreferenceHelper(this);
 
         etid = (EditText) findViewById(R.id.id);
@@ -71,6 +67,7 @@ public class SignupActivity extends AppCompatActivity
         etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
+        etteachername=(EditText) findViewById(R.id.teachername);
 
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
@@ -133,6 +130,7 @@ public class SignupActivity extends AppCompatActivity
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
         final String kindergarten = kindergartenID;
+        final String tname=etteachername.getText().toString();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -140,7 +138,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten,tname);
         call.enqueue(new Callback<String>()
         {
             @Override

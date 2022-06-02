@@ -130,6 +130,9 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     createAccountItem.Email = result.getTemail();
                     createAccountItem.Phone = result.getTphone();
                     createAccountItem.Id = result.getTid();
+                    createAccountItem.K_name=result.getKnameT();
+                    createAccountItem.K_phone=result.getKphoneT();
+                    createAccountItem.K_address=result.getKaddressT();
 
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
