@@ -56,6 +56,7 @@ public class SignupActivity extends AppCompatActivity
         intent = getIntent();
         accountUser= intent.getExtras().getString("User"); //회원가입하는 사용자가 선생님인지 학부모인지
 
+
         retrofitClient = RetrofitClient.getInstance();
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
@@ -68,6 +69,10 @@ public class SignupActivity extends AppCompatActivity
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
         etteachername=(EditText) findViewById(R.id.teachername);
+
+        if(accountUser.equals("Teacher")){
+            etteachername.setVisibility(View.GONE);
+        }
 
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
