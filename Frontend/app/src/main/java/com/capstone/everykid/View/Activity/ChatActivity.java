@@ -37,10 +37,8 @@ public class ChatActivity extends AppCompatActivity {
 
     String chat_kkid = Long.toString(createAccountItem.K_kid);
 
-    //Firebase Database 관리 객체참조변수
     FirebaseDatabase firebaseDatabase;
 
-    //'chat'노드의 참조객체 참조변수
     DatabaseReference chatRef;
 
     @Override
@@ -49,36 +47,25 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
 
-        //제목줄 제목글시를 닉네임으로(또는 채팅방) 현재 닉네임이 없어서 채팅 실행 불가 학부모 계정 생성 후 테스트 해야함
-//        getSupportActionBar().setTitle(G.nickName);
-
         et=findViewById(R.id.et);
         listView=findViewById(R.id.listview);
         adapter=new ChatAdapter(messageItems,getLayoutInflater());
         listView.setAdapter(adapter);
 
-        //Firebase DB관리 객체와 'caht'노드 참조객체 얻어오기
         firebaseDatabase= FirebaseDatabase.getInstance();
         chatRef= firebaseDatabase.getReference("chat"+chat_kkid);
 
-
-        //firebaseDB에서 채팅 메세지들 실시간 읽어오기
-        //'chat'노드에 저장되어 있는 데이터들을 읽어오기
-        //chatRef에 데이터가 변경되는 것으 듣는 리스너 추가
         chatRef.addChildEventListener(new ChildEventListener() {
             //새로 추가된 것만 줌 ValueListener는 하나의 값만 바뀌어도 처음부터 다시 값을 줌
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                //새로 추가된 데이터(값 : MessageItem객체) 가져오기
                 MessageItem messageItem= dataSnapshot.getValue(MessageItem.class);
 
-                //새로운 메세지를 리스뷰에 추가하기 위해 ArrayList에 추가
                 messageItems.add(messageItem);
 
-                //리스트뷰를 갱신
                 adapter.notifyDataSetChanged();
-                listView.setSelection(messageItems.size()-1); //리스트뷰의 마지막 위치로 스크롤 위치 이동
+                listView.setSelection(messageItems.size()-1);
             }
 
             @Override
