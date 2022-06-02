@@ -57,7 +57,6 @@ public class SettingActivity extends AppCompatActivity {
         phone.setText(createAccountItem.Phone);
         id.setText(createAccountItem.Id);
 
-
     }
     //확인 뒤로가기 버튼
     public void ok(View v){
@@ -71,9 +70,8 @@ public class SettingActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent,10);
-
-
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -97,7 +95,7 @@ public class SettingActivity extends AppCompatActivity {
         String fileName= sdf.format(new Date())+".png";
 
         FirebaseStorage firebaseStorage= FirebaseStorage.getInstance();
-        final StorageReference imgRef= firebaseStorage.getReference("profileImages/"+fileName);
+        final StorageReference imgRef= firebaseStorage.getReference("profileImages/"+createAccountItem.Id+"_"+fileName);
 
         //파일 업로드
         UploadTask uploadTask=imgRef.putFile(imgUri);

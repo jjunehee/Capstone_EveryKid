@@ -62,6 +62,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        String pofileUrl= createAccountItem.porfileUri;
         view = inflater.inflate(R.layout.fragment_profile, container, false);
         if(createAccountItem.Name==null){
             Toast.makeText(getActivity(),  "다시 로그인 해주세요.", Toast.LENGTH_LONG).show();
