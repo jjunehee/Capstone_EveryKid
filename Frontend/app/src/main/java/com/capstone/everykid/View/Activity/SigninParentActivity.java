@@ -50,7 +50,11 @@ public class SigninParentActivity extends AppCompatActivity {
         createBtn = (Button) findViewById(R.id.signupparent_btn);
 
         if (!getPreferenceString("autoLoginId").equals("") && !getPreferenceString("autoLoginPw").equals("")) {
-            //  checkAutoLogin(getPreferenceString("autoLoginId"));
+            if(!createAccountItem.Name.equals("")){
+                createAccountItem.User = "p";
+                checkAutoLogin(getPreferenceString("autoLoginId"));
+            }
+
         }
 
         createBtn.setOnClickListener(new View.OnClickListener() {
@@ -276,7 +280,7 @@ public class SigninParentActivity extends AppCompatActivity {
     //자동 로그인 유저
     public void checkAutoLogin(String id) {
 
-        //Toast.makeText(this, id + "님 환영합니다.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, id + "님 환영합니다.", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, MainParent.class);
         startActivity(intent);
         finish();
