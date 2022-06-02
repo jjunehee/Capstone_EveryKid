@@ -91,11 +91,7 @@ public class TeacherService {
                     .kNAME(kindergarten.getKNAME())
                     .kADDRESS(kindergarten.getKADDRESS())
                     .kPHONE(kindergarten.getKPHONE())
-<<<<<<< HEAD
-                    .KKID(teacher.getKKID())
-=======
                     .KKID(kindergarten.getKKID())
->>>>>>> 6fbe78ffe763b0af56e599f2eb51973ead1ec444
                     .build();
         } else {
             accessToken = tokenUtils.generateJwtToken(auth2.getTeacher());
