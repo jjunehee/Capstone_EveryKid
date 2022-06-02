@@ -14,4 +14,6 @@ public class CreateAccountItem{
     public static String Pwd;
     public static String Kindergarten;
 
+    public static String porfileUri;
+
 }

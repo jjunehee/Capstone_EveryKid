@@ -31,9 +31,11 @@ public class ChatActivity extends AppCompatActivity {
     EditText et;
     ListView listView;
     TextView p_name;
-
+    CreateAccountItem createAccountItem;
     ArrayList<MessageItem> messageItems=new ArrayList<>();
     ChatAdapter adapter;
+
+    String chat_kkid = Long.toString(createAccountItem.K_kid);
 
     //Firebase Database 관리 객체참조변수
     FirebaseDatabase firebaseDatabase;
@@ -57,7 +59,7 @@ public class ChatActivity extends AppCompatActivity {
 
         //Firebase DB관리 객체와 'caht'노드 참조객체 얻어오기
         firebaseDatabase= FirebaseDatabase.getInstance();
-        chatRef= firebaseDatabase.getReference("chat");
+        chatRef= firebaseDatabase.getReference("chat"+chat_kkid);
 
 
         //firebaseDB에서 채팅 메세지들 실시간 읽어오기
@@ -108,8 +110,7 @@ public class ChatActivity extends AppCompatActivity {
         String nickName= CreateAccountItem.Name;
         String chatid = CreateAccountItem.Id;
         String message= et.getText().toString();
-        //String pofileUrl= G.porfileUri;
-        String pofileUrl="";
+        String pofileUrl= G.porfileUri;
 
         //메세지 작성 시간 문자열로..
         Calendar calendar= Calendar.getInstance(); //현재 시간을 가지고 있는 객체
