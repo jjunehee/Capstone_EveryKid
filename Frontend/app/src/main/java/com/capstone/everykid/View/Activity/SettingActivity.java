@@ -70,8 +70,6 @@ public class SettingActivity extends AppCompatActivity {
     }
     public void OpenPhoto(View v){
         Intent intent = new Intent(Intent.ACTION_PICK);
-//        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
-//        startActivityForResult(intent, GET_GALLERY_IMAGE);
         intent.setType("image/*");
         startActivityForResult(intent,10);
 
@@ -80,23 +78,12 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-//            Uri selectedImageUri = data.getData();
-//            profileimg.setImageURI(selectedImageUri);
-//        }
         switch (requestCode){
             case 10:
                 if(resultCode==RESULT_OK){
                     imgUri= data.getData();
-                    //Glide.with(this).load(imgUri).into(ivProfile);
-                    //Glide는 이미지를 읽어와서 보여줄때 내 device의 외장메모리에 접근하는 퍼미션이 요구됨.
-                    //(퍼미션이 없으면 이미지가 보이지 않음.)
-                    //Glide를 사용할 때는 동적 퍼미션 필요함.
-
-                    //Picasso 라이브러리는 퍼미션 없어도 됨.
                     Picasso.get().load(imgUri).into(profileimg);
 
-                    //변경된 이미지가 있다.
                     isChanged=true;
                 }
                 break;
@@ -124,13 +111,9 @@ public class SettingActivity extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         createAccountItem.porfileUri = uri.toString();
 
-                        //1. Firebase Database에 nickName, profileUrl을 저장
-                        //firebase DB관리자 객체 소환
                         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-                        //'profiles'라는 이름의 자식 노드 참조 객체 얻어오기
                         DatabaseReference profileRef= firebaseDatabase.getReference("profile_images");
 
-                        //닉네임을 key 식별자로 하고 프로필 이미지의 주소를 값으로 저장
                         profileRef.child(createAccountItem.Id).setValue(createAccountItem.porfileUri);
 
                         Toast.makeText(SettingActivity.this, "프로필 수정 완료", Toast.LENGTH_SHORT).show();
