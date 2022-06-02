@@ -96,7 +96,7 @@ public class SettingActivity extends AppCompatActivity {
         String fileName= sdf.format(new Date())+".png";
 
         FirebaseStorage firebaseStorage= FirebaseStorage.getInstance();
-        final StorageReference imgRef= firebaseStorage.getReference("profileImages/"+fileName);
+        final StorageReference imgRef= firebaseStorage.getReference("profileImages/"+createAccountItem.Id+"_"+fileName);
 
         //파일 업로드
         UploadTask uploadTask=imgRef.putFile(imgUri);

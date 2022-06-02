@@ -95,7 +95,7 @@ public class ChatActivity extends AppCompatActivity {
         String nickName= CreateAccountItem.Name;
         String chatid = CreateAccountItem.Id;
         String message= et.getText().toString();
-        String pofileUrl= G.porfileUri;
+        String pofileUrl= createAccountItem.porfileUri;
 
         Calendar calendar= Calendar.getInstance();
         String time=calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE);
