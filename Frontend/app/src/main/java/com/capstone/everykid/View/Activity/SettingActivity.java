@@ -57,7 +57,6 @@ public class SettingActivity extends AppCompatActivity {
         phone.setText(createAccountItem.Phone);
         id.setText(createAccountItem.Id);
 
-
     }
     //확인버튼
     public void ok(View v){
@@ -72,9 +71,8 @@ public class SettingActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent,10);
-
-
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
