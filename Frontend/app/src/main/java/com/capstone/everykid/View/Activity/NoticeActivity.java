@@ -24,6 +24,7 @@ public class NoticeActivity extends Activity {
         String subject = intent.getExtras().getString("subject");
         String contents = intent.getExtras().getString("contents");
 
+        System.out.println(contents);
         txtcontent.setText(contents);
     }
     public void mOnClose(View v){
