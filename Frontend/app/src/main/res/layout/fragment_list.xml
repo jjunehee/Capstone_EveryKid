@@ -14,8 +14,9 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="ㅇㅇㅇ어린이 (ㅇㅇㅇ어린이집)"
-            android:textSize="20sp"
+            android:text="김민지어린이 (참사랑 어린이집)"
+            android:textStyle="bold"
+            android:textSize="19sp"
             >
 
         </TextView>
@@ -24,7 +25,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="알림설정"
-            android:layout_marginRight="5dp"
+            android:background="@drawable/button_round"
+            android:textStyle="bold"
+            android:layout_marginRight="15dp"
             >
 
         </Button>
@@ -37,4 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />
+
+
 </LinearLayout>

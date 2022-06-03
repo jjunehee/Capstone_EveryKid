@@ -23,6 +23,8 @@ public class NoticeActivity extends Activity {
         TextView txtcontent = (TextView) findViewById(R.id.txt_content);
         String subject = intent.getExtras().getString("subject");
         String contents = intent.getExtras().getString("contents");
+
+        txtcontent.setText(contents);
     }
     public void mOnClose(View v){
         //데이터 전달하기

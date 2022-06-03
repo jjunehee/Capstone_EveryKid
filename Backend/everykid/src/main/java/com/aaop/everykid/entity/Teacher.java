@@ -53,6 +53,5 @@ public class Teacher {
         this.tPHONE = tPHONE;
         this.tEMAIL = tEMAIL;
         this.kKID = kKID;
-       // this.tALIAS = tALIAS;
     }
 }

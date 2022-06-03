@@ -18,7 +18,8 @@ public interface RegisterInterface
             @Field("PNAME") String username,
             @Field("PPWD") String password,
             @Field("PEMAIL") String email,
-            @Field("KKID") String kindergarten
+            @Field("KKID") String kindergarten,
+            @Field("TNAME") String tname
     );
 
     @FormUrlEncoded

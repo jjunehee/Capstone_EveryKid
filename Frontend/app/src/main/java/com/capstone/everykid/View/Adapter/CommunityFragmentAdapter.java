@@ -66,9 +66,9 @@ public class CommunityFragmentAdapter extends BaseAdapter {
         TextView HITSView = convertView.findViewById(R.id.HITS_cm);
 
         //데이터를 set해줌
-        titleView.setText(board.getWRITE_SUBJECT());
+        titleView.setText(" "+board.getWRITE_SUBJECT());
         String id = (board.getP_ID() == null) ? board.getT_ID() : board.getP_ID();
-        idView.setText(id);
+        idView.setText(" "+id);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         dateView.setText(format.format(board.getWRITE_DATE()));
         HITSView.setText("조회수: " + board.getHITS());
