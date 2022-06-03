@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_findkindergarten.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_findkindergarten.xml" afterDir="false" />
     </list>
-=======
-    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes" />
->>>>>>> 322a47dc13034a7e0f009e14bc4f1dddf52a7f96
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,11 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.EverykidApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
