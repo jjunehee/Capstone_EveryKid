@@ -210,11 +210,19 @@ public class HomeFragment extends Fragment {
                 //RecyclerItem item = mAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(), NoticeActivity.class);
                 if(todayNotice != null) {
-                    intent.putExtra("subject", todayNotice.getWriteSubject());
-                    intent.putExtra("contents", todayNotice.getContents());
+                    try {
+                        intent.putExtra("subject", todayNotice.getWriteSubject());
+                        intent.putExtra("contents", todayNotice.getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 } else {
-                    intent.putExtra("subject", getTodayNotice().getWriteSubject());
-                    intent.putExtra("contents", getTodayNotice().getContents());
+                    try {
+                        intent.putExtra("subject", getTodayNotice().getWriteSubject());
+                        intent.putExtra("contents", getTodayNotice().getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 }
                 startActivity(intent);
             }

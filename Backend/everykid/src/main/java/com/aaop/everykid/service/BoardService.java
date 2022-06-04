@@ -25,8 +25,18 @@ public class BoardService {
     }
 
     @Transactional
-    public Page<Board> getSearchList(String key, Long kID, Pageable pageable) {
-        return boardRepository.searchBoard(key, kID, pageable);
+    public Page<Board> getSearchSubject(String key, Long kID, Pageable pageable) {
+        return boardRepository.searchSubject(key, kID, pageable);
+    }
+
+    @Transactional
+    public Page<Board> getSearchContents(String key, Long kID, Pageable pageable) {
+        return boardRepository.searchContents(key, kID, pageable);
+    }
+
+    @Transactional
+    public Page<Board> getSearchWriter(String key, Long kID, Pageable pageable) {
+        return boardRepository.searchWriter(key, kID, pageable);
     }
 
     @Transactional
