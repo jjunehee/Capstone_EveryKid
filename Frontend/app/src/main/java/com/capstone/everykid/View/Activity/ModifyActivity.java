@@ -29,8 +29,8 @@ public class ModifyActivity extends AppCompatActivity {
         Intent intent = getIntent();
         board = (Board) intent.getSerializableExtra("board");
 
-        titleView = (TextView) findViewById(R.id.title_tv);
-        contentView = (TextView) findViewById(R.id.content_tv);
+        titleView = (TextView) findViewById(R.id.title_et);
+        contentView = (TextView) findViewById(R.id.content_et);
 
         titleView.setText(board.getWRITE_SUBJECT());
         contentView.setText(board.getCONTENTS());
