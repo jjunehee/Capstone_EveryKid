@@ -144,14 +144,13 @@ public class ProfileFragment extends Fragment {
         logout_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-//                pref = context.getSharedPreferences("DATA_STORE", context.MODE_PRIVATE);
-//                editor = pref.edit();
-//                editor.putString("autoLoginId", "");
-//                editor.apply();
-
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
+                pref = getActivity().getSharedPreferences("DATA_STORE", context.MODE_PRIVATE);
+                editor = pref.edit();
+                editor.clear();
+                editor.commit();
 
             }
         });

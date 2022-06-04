@@ -233,6 +233,7 @@ public class SigninParentActivity extends AppCompatActivity {
         });
     }
 
+
     //데이터를 내부 저장소에 저장하기
     public void setPreference(String key, String value) {
         SharedPreferences pref = getSharedPreferences("DATA_STORE", MODE_PRIVATE);
@@ -345,11 +346,12 @@ public class SigninParentActivity extends AppCompatActivity {
             }
         });
         createAccountItem.User = "p";
-        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다. 헤헤헤", Toast.LENGTH_LONG).show();
+        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
         intent.putExtra("userId", userId);
         startActivity(intent);
         SigninParentActivity.this.finish();
     }
+
 
 }
