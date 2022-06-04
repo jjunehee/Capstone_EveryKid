@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 
@@ -58,7 +59,7 @@ public class NoticeWriteActivity extends Activity {
 
                 retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-                call = retrofitAPI.registNotice(Long.valueOf(1), new Date(), titleView.getText().toString(), contentsView.getText().toString());
+                call = retrofitAPI.registNotice(CreateAccountItem.K_kid, new Date(), titleView.getText().toString(), contentsView.getText().toString());
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

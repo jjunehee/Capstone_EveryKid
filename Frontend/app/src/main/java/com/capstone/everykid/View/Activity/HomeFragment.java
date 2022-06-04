@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public class HomeFragment extends Fragment {
     Call call;
     List<Notice> noticeList;
     Notice todayNotice = null;
+    TextView kinder_name;
 
 
     public HomeFragment() {
@@ -77,6 +79,9 @@ public class HomeFragment extends Fragment {
         if(createAccountItem.User.equals("t")){
             noticeWrite_btn.setVisibility(View.VISIBLE);
         }
+
+        kinder_name = view.findViewById(R.id.kinder_name2);
+        kinder_name.setText(CreateAccountItem.K_name);
 
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
