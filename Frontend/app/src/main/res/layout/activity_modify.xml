@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:id="@+id/title_tv"
+                android:id="@+id/title_et"
                 android:padding="16dp"
                 android:background="#eeeeee"
                 android:layout_width="match_parent"
@@ -27,7 +27,7 @@
 
 
             <EditText
-                android:id="@+id/content_tv"
+                android:id="@+id/content_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#eeeeee"

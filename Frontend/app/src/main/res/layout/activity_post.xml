@@ -83,6 +83,16 @@
             android:background="@drawable/round_background_2"
             android:onClick="update"
             android:visibility="gone"/>
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="삭제"
+            android:textColor="@color/white"
+            android:background="@drawable/round_background_2"
+            android:onClick="delete"
+            android:visibility="gone"/>
     </LinearLayout>
 
 
