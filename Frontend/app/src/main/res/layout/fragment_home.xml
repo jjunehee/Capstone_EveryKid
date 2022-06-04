@@ -9,8 +9,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+        <ImageView
+            android:id="@+id/profile_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_background"
+            android:src="@drawable/home_kindergarden">
+        </ImageView>
+        <TextView
+            android:id="@+id/kinder_name2"
+            android:text="유치원 이름"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+        </LinearLayout>
         <!--        학사일정start-->
                 <FrameLayout
                     android:layout_width="wrap_content"
@@ -43,7 +68,7 @@
                         <com.applandeo.materialcalendarview.CalendarView
                             android:id="@+id/calendarView"
                             android:layout_width="wrap_content"
-                            android:layout_height="280dp" android:layout_margin="5dp"
+                            android:layout_height="320dp" android:layout_margin="5dp"
                             android:background="@drawable/round_background_2"
                             app:abbreviationsBarColor="@color/backgrond"
                             app:daysLabelsColor="@color/gray_text_color"
