@@ -2,9 +2,11 @@ package com.capstone.everykid.View.Activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,7 +34,8 @@ import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
-//    RecyclerView mRecyclerView=null;
+   
+    //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
       TextView p_name, kinder_name, user_status,user_kinder,teacher_name;
@@ -40,6 +43,9 @@ public class ProfileFragment extends Fragment {
       ImageView p_img, child_img, kinder_img;
       Button info_btn, add_btn, profile_btn, logout_btn,teacher_btn;
       CreateAccountItem createAccountItem;
+      Context context;
+      SharedPreferences pref;
+      SharedPreferences.Editor editor;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -141,12 +147,16 @@ public class ProfileFragment extends Fragment {
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
+                pref = getActivity().getSharedPreferences("DATA_STORE", context.MODE_PRIVATE);
+                editor = pref.edit();
+                editor.clear();
+                editor.commit();
 
             }
         });
+
         return view;
     }
-
 }
 
 

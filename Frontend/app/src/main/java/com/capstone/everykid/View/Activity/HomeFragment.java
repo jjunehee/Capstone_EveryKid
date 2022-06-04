@@ -150,7 +150,7 @@ public class HomeFragment extends Fragment {
 
         retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        call = retrofitAPI.getNoticeList(CreateAccountItem.K_kid);
+        call = retrofitAPI.getNoticeList(createAccountItem.K_kid);
         call.enqueue(new Callback<List<Notice>>() {
             @Override
             public void onResponse(Call<List<Notice>> call, Response<List<Notice>> response) {
