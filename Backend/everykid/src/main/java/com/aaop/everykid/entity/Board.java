@@ -60,7 +60,8 @@ public class Board {
                 '}';
     }
 
-    public void modifyContents(String contents) {
+    public void modifyContents(String subject, String contents) {
+        this.writeSUBJECT = subject;
         this.contents = contents;
     }
 

@@ -40,9 +40,9 @@ public class BoardService {
     }
 
     @Transactional
-    public void update(Long b_ID, String contents) { //수정완료 눌렀을 때 실행
+    public void update(Long b_ID, String subject, String contents) { //수정완료 눌렀을 때 실행
         Board board = boardRepository.findByBKID(b_ID);
-        board.modifyContents(contents); //수정된 content
+        board.modifyContents(subject, contents); //수정된 content
     }
 
     @Transactional

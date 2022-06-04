@@ -78,8 +78,7 @@ public class BoardController {
 
     //글삭제
     @RequestMapping("/delete")
-
-    public String deleteContent(Long bKID) {
+    public String deleteContent(@RequestParam("bKID") Long bKID) {
 
         Board board = boardRepository.findByBKID(bKID);
 
@@ -89,9 +88,9 @@ public class BoardController {
     }
 
     @RequestMapping("/modify")
-    public String updateContent(Long bKID, String contents) {
+    public String updateContent(@RequestParam("bKID") Long bKID, @RequestParam("subject") String subject, @RequestParam("contents") String contents) {
 
-        boardService.update(bKID, contents);
+        boardService.update(bKID, subject, contents);
 
         return "";
     }
