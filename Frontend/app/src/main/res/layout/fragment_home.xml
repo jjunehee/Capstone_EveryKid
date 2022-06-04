@@ -68,7 +68,7 @@
                         <com.applandeo.materialcalendarview.CalendarView
                             android:id="@+id/calendarView"
                             android:layout_width="wrap_content"
-                            android:layout_height="320dp" android:layout_margin="5dp"
+                            android:layout_height="280dp" android:layout_margin="5dp"
                             android:background="@drawable/round_background_2"
                             app:abbreviationsBarColor="@color/backgrond"
                             app:daysLabelsColor="@color/gray_text_color"
