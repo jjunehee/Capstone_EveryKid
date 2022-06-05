@@ -75,7 +75,6 @@ public class Parent {
         this.pEMAIL = pEMAIL;
         this.kKID=kKID;
         this.tNAME=tNAME;
-
     }
 /*
     public static Parent createChild(RegisterCFormDto registerCFormDto){

@@ -51,7 +51,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
         createBtn = (Button) findViewById(R.id.signupteacher_btn);
 
         if (!getPreferenceString("autoLoginId").equals("") && !getPreferenceString("autoLoginPw").equals("")) {
-            //  checkAutoLogin(getPreferenceString("autoLoginId"));
+              checkAutoLogin(getPreferenceString("autoLoginId"));
         }
 
         createBtn.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +121,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     //여기서부터 status값 받아와서 해야하는데 일단..
                     String userId = userID.getText().toString();
                     String userPassword = userPW.getText().toString();
-                    setPreference(token, token);
+                    setPreference("token", token);
                     setPreference("autoLoginId", userId);
                     setPreference("autoLoginPw", userPassword);
 
@@ -130,6 +130,9 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     createAccountItem.Email = result.getTemail();
                     createAccountItem.Phone = result.getTphone();
                     createAccountItem.Id = result.getTid();
+                    createAccountItem.K_name=result.getKnameT();
+                    createAccountItem.K_phone=result.getKphoneT();
+                    createAccountItem.K_address=result.getKaddressT();
 
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
@@ -282,11 +285,81 @@ public class SigninTeacherActivity extends AppCompatActivity {
 
     //자동 로그인 유저
     public void checkAutoLogin(String id) {
+        String userId = id;
+        String userPassword =getPreferenceString("autoLoginPw");
 
-        //Toast.makeText(this, id + "님 환영합니다.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, MainParent.class);
+        //loginRequest에 사용자가 입력한 id와 pw를 저장
+        LoginRequestTeacher loginRequestTeacher = new LoginRequestTeacher(userId, userPassword);
+
+        //retrofit 생성
+        retrofitClient = RetrofitClient.getInstance();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
+
+        //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음: 선생님 로그인
+        RetrofitAPI.getLogin2Response(loginRequestTeacher).enqueue(new Callback<LoginResponseTeacher>() {
+            @Override
+            public void onResponse(Call<LoginResponseTeacher> call, Response<LoginResponseTeacher> response) {
+
+                Log.d("retrofit", "Data fetch success");
+
+                //통신 성공
+                if (response.isSuccessful() && response.body() != null) {
+
+                    //response.body()를 result에 저장
+                    LoginResponseTeacher result = response.body();
+
+                    //받은 토큰 저장
+                    String token = result.getTokenT();
+
+                    //여기서부터 status값 받아와서 해야하는데 일단..
+                    setPreference("token", token);
+                    setPreference("autoLoginId", userId);
+                    setPreference("autoLoginPw", userPassword);
+
+                    createAccountItem.User = "t";
+                    createAccountItem.Name = result.getTname();
+                    createAccountItem.Email = result.getTemail();
+                    createAccountItem.Phone = result.getTphone();
+                    createAccountItem.Id = result.getTid();
+                    createAccountItem.K_name=result.getKnameT();
+                    createAccountItem.K_phone=result.getKphoneT();
+                    createAccountItem.K_address=result.getKaddressT();
+
+                    //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                    try {
+                        createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                    } catch (NumberFormatException e) {
+                        return;
+                    }
+                    System.out.println(result.getKkid());
+
+                    Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                    SigninTeacherActivity.this.finish();
+
+                }
+            }
+
+            //통신 실패
+            @Override
+            public void onFailure(Call<LoginResponseTeacher> call, Throwable t) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                builder.setTitle("알림")
+                        .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
+                        .setPositiveButton("확인", null)
+                        .create()
+                        .show();
+            }
+        });
+        createAccountItem.User = "t";
+        
+        Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+        intent.putExtra("userId", userId);
         startActivity(intent);
-        finish();
+        SigninTeacherActivity.this.finish();
 
     }
 

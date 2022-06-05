@@ -21,6 +21,7 @@ public class ChatAdapter extends BaseAdapter {
 
     ArrayList<MessageItem> messageItems;
     LayoutInflater layoutInflater;
+    CreateAccountItem createAccountItem;
 
     public ChatAdapter(ArrayList<MessageItem> messageItems, LayoutInflater layoutInflater) {
         this.messageItems = messageItems;
@@ -48,6 +49,7 @@ public class ChatAdapter extends BaseAdapter {
         //현재 보여줄 번째의(position)의 데이터로 뷰를 생성
         MessageItem item=messageItems.get(position);
 
+
         //재활용할 뷰는 사용하지 않음
         View itemView=null;
 
@@ -57,6 +59,8 @@ public class ChatAdapter extends BaseAdapter {
         }else{
             itemView= layoutInflater.inflate(R.layout.other_msgbox,viewGroup,false);
         }
+
+
 
         //만들어진 itemView에 값들 설정
         CircleImageView iv= itemView.findViewById(R.id.iv);

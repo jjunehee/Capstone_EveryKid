@@ -34,7 +34,6 @@ public class MainTeacher extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-
                     case R.id.chatting:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, chatFragment).commit();
                         return true;

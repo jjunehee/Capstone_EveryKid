@@ -46,7 +46,6 @@ public class Teacher {
 
     @Builder
     public Teacher(Long TKID, String tID, String tPWD, String tNAME, String tPHONE, String tEMAIL,Long kKID) {
-
         this.TKID = TKID;
         this.tID = tID;
         this.tPWD = tPWD;

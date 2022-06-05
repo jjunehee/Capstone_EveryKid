@@ -30,9 +30,9 @@ public class MessageItem {
         this.name = name;
     }
 
-    public void setChatId(String chatid){this.chatid = chatid;}
-
     public String getChatId() {return chatid;}
+
+    public void setChatId(String chatid){this.chatid = chatid;}
 
     public String getMessage() {
         return message;

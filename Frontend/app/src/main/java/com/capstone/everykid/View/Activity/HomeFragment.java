@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public class HomeFragment extends Fragment {
     Call call;
     List<Notice> noticeList;
     Notice todayNotice = null;
+    TextView kinder_name;
 
 
     public HomeFragment() {
@@ -77,6 +79,9 @@ public class HomeFragment extends Fragment {
         if(createAccountItem.User.equals("t")){
             noticeWrite_btn.setVisibility(View.VISIBLE);
         }
+
+        kinder_name = view.findViewById(R.id.kinder_name2);
+        kinder_name.setText(CreateAccountItem.K_name);
 
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
@@ -145,7 +150,7 @@ public class HomeFragment extends Fragment {
 
         retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        call = retrofitAPI.getNoticeList(CreateAccountItem.K_kid);
+        call = retrofitAPI.getNoticeList(createAccountItem.K_kid);
         call.enqueue(new Callback<List<Notice>>() {
             @Override
             public void onResponse(Call<List<Notice>> call, Response<List<Notice>> response) {
@@ -210,11 +215,19 @@ public class HomeFragment extends Fragment {
                 //RecyclerItem item = mAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(), NoticeActivity.class);
                 if(todayNotice != null) {
-                    intent.putExtra("subject", todayNotice.getWriteSubject());
-                    intent.putExtra("contents", todayNotice.getContents());
+                    try {
+                        intent.putExtra("subject", todayNotice.getWriteSubject());
+                        intent.putExtra("contents", todayNotice.getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 } else {
-                    intent.putExtra("subject", getTodayNotice().getWriteSubject());
-                    intent.putExtra("contents", getTodayNotice().getContents());
+                    try {
+                        intent.putExtra("subject", getTodayNotice().getWriteSubject());
+                        intent.putExtra("contents", getTodayNotice().getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 }
                 startActivity(intent);
             }

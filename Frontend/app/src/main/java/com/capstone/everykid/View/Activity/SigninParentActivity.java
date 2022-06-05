@@ -30,7 +30,6 @@ import com.capstone.everykid.Model.G;
 
 public class SigninParentActivity extends AppCompatActivity {
 
-
     EditText userID, userPW;
     Button signinBtn, createBtn;
     String userId, userPwd;
@@ -50,7 +49,7 @@ public class SigninParentActivity extends AppCompatActivity {
         createBtn = (Button) findViewById(R.id.signupparent_btn);
 
         if (!getPreferenceString("autoLoginId").equals("") && !getPreferenceString("autoLoginPw").equals("")) {
-            //  checkAutoLogin(getPreferenceString("autoLoginId"));
+            checkAutoLogin(getPreferenceString("autoLoginId"));
         }
 
         createBtn.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +120,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         String userPassword = userPW.getText().toString();
 
                         //다른 통신을 하기 위해 token 저장
-                        setPreference(token, token);
+                        setPreference("token", token);
 
                         setPreference("autoLoginId", userId);
                         setPreference("autoLoginPw", userPassword);
@@ -139,6 +138,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
                         createAccountItem.K_kid=Long.parseLong(result.getKkid());
+                        createAccountItem.Tname=result.getPtname();
 
                         //채팅
                         SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
@@ -233,6 +233,7 @@ public class SigninParentActivity extends AppCompatActivity {
         });
     }
 
+
     //데이터를 내부 저장소에 저장하기
     public void setPreference(String key, String value) {
         SharedPreferences pref = getSharedPreferences("DATA_STORE", MODE_PRIVATE);
@@ -274,12 +275,83 @@ public class SigninParentActivity extends AppCompatActivity {
 
     //자동 로그인 유저
     public void checkAutoLogin(String id) {
+        String userId = id;
+        String userPassword = getPreferenceString("autoLoginPw");
 
-        //Toast.makeText(this, id + "님 환영합니다.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, MainParent.class);
+        //loginRequest에 사용자가 입력한 id와 pw를 저장
+        LoginRequest loginRequest = new LoginRequest(userId, userPassword);
+
+        //retrofit 생성
+        retrofitClient = RetrofitClient.getInstance();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
+
+        //loginRequest에 저장된 데이터와 함께 init에서 정의한 getLoginResponse 함수를 실행한 후 응답을 받음
+        RetrofitAPI.getLoginResponse(loginRequest).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                Log.d("retrofit", "Data fetch success");
+
+                //통신 성공
+                if (response.isSuccessful() && response.body() != null) {
+
+                    //response.body()를 result에 저장
+                    LoginResponse result = response.body();
+
+                    //받은 토큰 저장
+                    String token = result.getToken();
+
+
+                    String userId =id;
+                    String userPassword = getPreferenceString("autoLoginPw");
+
+                    //다른 통신을 하기 위해 token 저장
+                    setPreference(token, token);
+
+                    setPreference("autoLoginId", userId);
+                    setPreference("autoLoginPw", userPassword);
+
+                    createAccountItem.User = "p";
+                    createAccountItem.Name=result.getPname();
+                    createAccountItem.Email=result.getPemail();
+
+                    String phone =result.getPphone();
+                    createAccountItem.Phone=phone;
+
+                    createAccountItem.Id=userId;
+
+                    createAccountItem.K_name=result.getKname();
+                    createAccountItem.K_phone=result.getKphone();
+                    createAccountItem.K_address=result.getKaddress();
+                    createAccountItem.Tname=result.getPtname();
+
+                    //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                    try {
+                        createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                    } catch (NumberFormatException e) {
+                        return;
+                    }
+
+
+                }
+            }
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
+                builder.setTitle("알림")
+                        .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
+                        .setPositiveButton("확인", null)
+                        .create()
+                        .show();
+            }
+        });
+        createAccountItem.User = "p";
+        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
+        intent.putExtra("userId", userId);
         startActivity(intent);
-        finish();
-
+        SigninParentActivity.this.finish();
     }
+
 
 }

@@ -37,7 +37,7 @@ public class SignupActivity extends AppCompatActivity
 {
     public final String TAG = "SignupActivity";
 
-    private EditText etid, etphone, etusername, etpassword, etemail, ealias, ekindergarten;
+    private EditText etid, etphone, etusername, etpassword, etemail, ekindergarten, etteachername;
     private TextView text;
     private Button btnregister, btnduplicateCheck, btnkindergarten;
     private PreferenceHelper preferenceHelper;
@@ -56,13 +56,10 @@ public class SignupActivity extends AppCompatActivity
         intent = getIntent();
         accountUser= intent.getExtras().getString("User"); //회원가입하는 사용자가 선생님인지 학부모인지
 
+
         retrofitClient = RetrofitClient.getInstance();
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
-
-        //학부모 회원가입인지 선생님 회원가입인지 임시로 띄워둠
-        text=findViewById(R.id.textView6);
-        text.setText(accountUser);
 
         preferenceHelper = new PreferenceHelper(this);
 
@@ -71,7 +68,12 @@ public class SignupActivity extends AppCompatActivity
         etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
-        ealias = (EditText) findViewById(R.id.alias);
+        etteachername=(EditText) findViewById(R.id.teachername);
+
+        if(accountUser.equals("Teacher")){
+            etteachername.setVisibility(View.GONE);
+        }
+
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
         etid.setText(intent.getExtras().getString("etid"));
@@ -79,7 +81,6 @@ public class SignupActivity extends AppCompatActivity
         etusername.setText(intent.getExtras().getString("etusername"));
         etpassword.setText(intent.getExtras().getString("etpassword"));
         etemail.setText(intent.getExtras().getString("etemail"));
-        ealias.setText(intent.getExtras().getString("ealias"));
         ekindergarten.setText(intent.getExtras().getString("ekindergarten"));
         kkid = intent.getExtras().getLong("kkid");
         kindergartenID=Long.toString(kkid);
@@ -120,7 +121,6 @@ public class SignupActivity extends AppCompatActivity
                 intent.putExtra("etusername", etusername.getText().toString());
                 intent.putExtra("etpassword", etpassword.getText().toString());
                 intent.putExtra("etemail", etemail.getText().toString());
-                intent.putExtra("ealias", ealias.getText().toString());
                 intent.putExtra("ekindergarten", ekindergarten.getText().toString());
                 startActivity(intent);
             }
@@ -136,6 +136,10 @@ public class SignupActivity extends AppCompatActivity
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
         final String kindergarten = kindergartenID;
+<<<<<<< HEAD
+=======
+        final String tname=etteachername.getText().toString();
+>>>>>>> 6fe11c00b7f8eb2106cc0938a09c41bb25320706
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
@@ -143,7 +147,7 @@ public class SignupActivity extends AppCompatActivity
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten);
+        Call<String> call = api.getParentRegist(id, phone, username, password, email, kindergarten,tname);
         call.enqueue(new Callback<String>()
         {
             @Override
@@ -162,7 +166,6 @@ public class SignupActivity extends AppCompatActivity
                     {
                         e.printStackTrace();
                     }
-
                 }
             }
 
@@ -187,7 +190,6 @@ public class SignupActivity extends AppCompatActivity
                 .baseUrl(RegisterInterface.REGIST_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
-
         RegisterInterface api = retrofit.create(RegisterInterface.class);
         Call<String> call = api.getTeacherRegist(id, phone, username, password, email, kindergarten);
         call.enqueue(new Callback<String>()
@@ -212,7 +214,6 @@ public class SignupActivity extends AppCompatActivity
 
                 }
             }
-
             @Override
             public void onFailure(@NonNull Call<String> call, @NonNull Throwable t)
             {
@@ -220,7 +221,6 @@ public class SignupActivity extends AppCompatActivity
             }
         });
     }
-
     private void parseRegData(String response) throws JSONException
     {
         JSONObject jsonObject = new JSONObject(response);
@@ -233,7 +233,6 @@ public class SignupActivity extends AppCompatActivity
             Toast.makeText(SignupActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
         }
     }
-
     private void saveInfo(String response)
     {
         preferenceHelper.putIsLogin(true);
@@ -272,6 +271,4 @@ public class SignupActivity extends AppCompatActivity
         }
         return super.dispatchTouchEvent(ev);
     }
-
-
 }

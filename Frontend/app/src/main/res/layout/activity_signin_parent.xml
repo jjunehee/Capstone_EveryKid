@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="341dp"
+        android:layout_width="250dp"
         android:layout_height="147dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,6 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="ID"
+                android:ems="10"
+                android:textStyle="bold"
                 android:padding="16dp"
                 android:textSize="18dp" />
 
@@ -85,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="PASSWORD"
+                android:textStyle="bold"
                 android:ems="10"
                 android:padding="16dp"
                 android:inputType="textPassword"
@@ -116,7 +119,7 @@
         android:paddingBottom="8dp" android:paddingStart="25dp" android:paddingEnd="25dp" android:paddingTop="8dp"
         android:background="@drawable/button_round"
         android:backgroundTint="#FFD864"
-        android:text="CREATE PARENT ACCOUNT"
+        android:text="SIGN UP"
         android:textColor="#FFFFFF"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"

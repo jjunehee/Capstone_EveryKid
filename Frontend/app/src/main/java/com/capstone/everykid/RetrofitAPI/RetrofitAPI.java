@@ -38,7 +38,13 @@ public interface RetrofitAPI {
     Call<Boolean> registBoard(@Path("kID") String kID, @Path("tID") String tID, @Path("pID") String pID, @Path("writeSUBJECT") String writeSUBJECT, @Path("contents") String contents);
 
     @GET("/board/search/{kID}")
-    Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Query("page") int page);
+    Call<BoardList> searchBoard(@Path("kID") Long kID, @Query("key") String key, @Query("SPINNER") String spinnerSelect, @Query("page") int page);
+
+    @GET("/board/delete")
+    Call<String> deleteBoard(@Query("bKID") Long bKID);
+
+    @GET("/board/modify")
+    Call<String> modifyBoard(@Query("bKID") Long bKID, @Query("subject") String subject, @Query("contents") String contents);
 
     @GET("region/findAll")
     Call<List<regionCode>> getAllRegionCode();

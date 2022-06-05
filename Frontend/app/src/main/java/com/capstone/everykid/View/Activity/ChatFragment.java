@@ -11,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 public class ChatFragment extends Fragment {
     private View view;
     private Button gochat_btn;
     private ImageView img;
+    CreateAccountItem createAccountItem;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -39,7 +41,11 @@ public class ChatFragment extends Fragment {
 
 
         gochat_btn = (Button) view.findViewById(R.id.btn_gochat);
-
+        if(createAccountItem.User.equals("t")){
+            Intent intent = new Intent(getActivity(), ChatActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
+        }
         //프로필 사진 배경에 맞게 자르기
         img = (ImageView) view.findViewById(R.id.chat_profile); //프로필 사진
         img.setClipToOutline(true);

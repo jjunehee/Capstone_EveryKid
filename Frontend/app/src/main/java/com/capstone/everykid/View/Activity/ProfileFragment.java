@@ -2,9 +2,11 @@ package com.capstone.everykid.View.Activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,14 +34,18 @@ import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
-//    RecyclerView mRecyclerView=null;
+   
+    //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-      TextView p_name, kinder_name, user_status,user_kinder;
+      TextView p_name, kinder_name, user_status,user_kinder,teacher_name;
       View view;
       ImageView p_img, child_img, kinder_img;
-      Button info_btn, add_btn, profile_btn, logout_btn;
+      Button info_btn, add_btn, profile_btn, logout_btn,teacher_btn;
       CreateAccountItem createAccountItem;
+      Context context;
+      SharedPreferences pref;
+      SharedPreferences.Editor editor;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -62,6 +68,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        String pofileUrl= createAccountItem.porfileUri;
         view = inflater.inflate(R.layout.fragment_profile, container, false);
         if(createAccountItem.Name==null){
             Toast.makeText(getActivity(),  "다시 로그인 해주세요.", Toast.LENGTH_LONG).show();
@@ -74,17 +81,22 @@ public class ProfileFragment extends Fragment {
         p_name = (TextView)view.findViewById(R.id.profile_name); //로그인 유저의 이름
         user_status=(TextView)view.findViewById(R.id.user_txt);
         user_kinder=(TextView)view.findViewById(R.id.user_txt2);
+        teacher_name=(TextView)view.findViewById(R.id.teacher_name);
+
         if(createAccountItem.User.equals("t")){
             user_status.setText("선생님");
             user_kinder.setText("근무 유치원");
         }
         kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
+        teacher_name.setText(createAccountItem.Tname);
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
         logout_btn = view.findViewById(R.id.logout_btn);
+        teacher_btn=view.findViewById(R.id.teacher_btn);
+
 
         kinder_name.setText(createAccountItem.K_name);
 
@@ -101,11 +113,22 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        //선생님 정보 확인 버튼
+        teacher_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), InfoActivity.class);
+                intent.putExtra("info", "teacherinfo");
+                startActivity(intent);
+            }
+        });
+
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), InfoActivity.class);
+                intent.putExtra("info", "kinderinfo");
                 startActivity(intent);
             }
         });
@@ -124,12 +147,16 @@ public class ProfileFragment extends Fragment {
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
+                pref = getActivity().getSharedPreferences("DATA_STORE", context.MODE_PRIVATE);
+                editor = pref.edit();
+                editor.clear();
+                editor.commit();
 
             }
         });
+
         return view;
     }
-
 }
 
 

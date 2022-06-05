@@ -12,7 +12,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="50dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,20 +51,9 @@
                 android:layout_margin="10dp"
                 android:ems="10"
                 android:hint="이메일주소를 입력해주세요."
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:layout_marginBottom="50dp"/>
 
-            <EditText
-                android:id="@+id/alias"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="30dp"
-                android:ems="10"
-                android:hint="닉네임을 입력해주세요."
-                android:inputType="textPersonName" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,6 +90,16 @@
                 android:layout_margin="10dp"
                 android:ems="10"
                 android:hint="비밀번호를 입력해주세요."
+                android:inputType="textPassword"/>
+            <EditText
+                android:id="@+id/teachername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:hint="담당선생님을 등록해주세요."
                 android:inputType="textPersonName" />
 
             <LinearLayout
@@ -126,6 +127,10 @@
                     android:layout_margin="10dp"
                     android:text="검색" />
 
+
+
+
+
             </LinearLayout>
 
 
@@ -137,15 +142,9 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_background"
                 android:text="회원가입"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_marginBottom="50dp"/>
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="TextView" />
 
 
         </LinearLayout>

@@ -9,7 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--레이아웃 틀        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +31,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/round_background"
-                    android:src="@drawable/img" />
+                    android:src="@drawable/default_profile" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -222,6 +221,67 @@
 
             </LinearLayout>
 <!--어린이집 정보 end-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E4E4E4"
+                android:padding="4dp">
+                <TextView
+                    android:id="@+id/user_txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우리 아이 선생님"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="5dp"
+                android:background="@drawable/round_background_2"
+                android:orientation="horizontal">
+
+                <!--                <FrameLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:padding="5dp">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/kinder_profile"-->
+                <!--                        android:layout_width="80dp"-->
+                <!--                        android:layout_height="80dp"-->
+                <!--                        android:background="@drawable/round_background"-->
+                <!--                        android:scaleType="centerCrop"-->
+                <!--                        android:src="@drawable/kinderprofile"/>-->
+                <!--                </FrameLayout>-->
+
+                <TextView
+                    android:id="@+id/teacher_name"
+                    android:text="선생님"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:padding="15dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="50dp" android:layout_height="50dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:background="@drawable/ic_baseline_chevron_right_24"
+                        android:id="@+id/teacher_btn"
+                        android:backgroundTint="@color/gray_text_color"
+                        android:textColor="#7A7A7A" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+
 <!--            구분선 start-->
             <FrameLayout
                 android:layout_width="match_parent"
