@@ -354,7 +354,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
             }
         });
         createAccountItem.User = "t";
-        
+
         Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
         intent.putExtra("userId", userId);

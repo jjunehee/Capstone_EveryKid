@@ -32,7 +32,6 @@ public class SigninParentActivity extends AppCompatActivity {
 
     EditText userID, userPW;
     Button signinBtn, createBtn;
-    String userId, userPwd;
     private RetrofitClient retrofitClient;
     private com.capstone.everykid.RetrofitAPI.RetrofitAPI RetrofitAPI;
     CreateAccountItem createAccountItem;
@@ -41,7 +40,6 @@ public class SigninParentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_parent);
-
 
         userID = (EditText) findViewById(R.id.userID);
         userPW = (EditText) findViewById(R.id.userPW);
