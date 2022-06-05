@@ -70,13 +70,13 @@
                     android:hint="아이디를 입력해주세요."
                     android:inputType="textPersonName" />
 
-                <Button
-                    android:id="@+id/duplicateCheck_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+<!--                <Button-->
+<!--                    android:id="@+id/duplicateCheck_btn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
 
-                    android:layout_margin="10dp"
-                    android:text="중복 확인" />
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:text="중복 확인" />-->
 
             </LinearLayout>
 
@@ -90,16 +90,7 @@
                 android:ems="10"
                 android:hint="비밀번호를 입력해주세요."
                 android:inputType="textPassword"/>
-            <EditText
-                android:id="@+id/teachername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                android:ems="10"
-                android:hint="담당선생님을 등록해주세요."
-                android:inputType="textPersonName" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,7 +121,18 @@
 
 
 
+
             </LinearLayout>
+            <EditText
+                android:id="@+id/etteachername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:hint="담당선생님을 등록해주세요."
+                android:inputType="textPersonName" />
 
 
             <Button

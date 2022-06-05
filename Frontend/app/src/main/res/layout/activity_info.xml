@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#eeeeee"
+    android:background="@drawable/round_background_2"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     tools:context=".View.Activity.InfoActivity">
@@ -13,13 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/main_yellow"
+        android:backgroundTint="@color/main_yellow"
+        android:background="@drawable/round_background_2"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp" android:layout_marginLeft="10dp"
         android:padding="4dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/gray_text_color"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:text="정보"
             android:textSize="20sp" />
     </LinearLayout>
@@ -36,6 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
             android:textSize="20dp"
             />
 
@@ -44,6 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+
+            android:textColor="@color/black"
             android:textSize="15dp"
             />
 
@@ -52,6 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+
+            android:textColor="@color/black"
             android:textSize="15dp"
             />
 
@@ -70,11 +80,12 @@
             android:background="@drawable/round_background_2"
             android:backgroundTint="@color/main_yellow"
             android:gravity="center"
-            android:padding="10dp"
-            android:paddingEnd="20dp"
+            android:paddingLeft="20dp" android:paddingRight="20dp"   android:paddingTop="10dp" android:paddingBottom="10dp"
+
             android:paddingStart="20dp"
             android:text="확인"
-            android:textColor="@color/gray_text_color"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:textSize="15dp"
             android:onClick="mOnClose"/>
     </LinearLayout>

@@ -145,6 +145,7 @@ public class findKindergarten extends AppCompatActivity {
                         intent1.putExtra("etemail", intent.getExtras().getString("etemail"));
                         intent1.putExtra("ealias", intent.getExtras().getString("ealias"));
                         intent1.putExtra("ekindergarten", intent.getExtras().getString("ekindergarten"));
+                        intent1.putExtra("etteachername", intent.getExtras().getString("etteachername"));
                         startActivity(intent1);
                     }
 

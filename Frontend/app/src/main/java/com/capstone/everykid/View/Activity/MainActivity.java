@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent intent = new Intent(getApplicationContext(), SigninTeacherActivity.class);
-                //intent.putExtra("User", "Teacher");
                 startActivity(intent);
             }
         });
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent intent = new Intent(getApplicationContext(), SigninParentActivity.class);
-                //intent.putExtra("User", "Parent");
                 startActivity(intent);
             }
         });

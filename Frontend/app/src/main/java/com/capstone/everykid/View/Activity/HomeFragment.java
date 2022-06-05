@@ -168,7 +168,7 @@ public class HomeFragment extends Fragment {
                         String day = formatDate.substring(8, 10);
 
                         Calendar calendar = Calendar.getInstance();
-                        events.add(new EventDay(calendar, R.drawable.conversation));
+                        events.add(new EventDay(calendar, R.drawable.ic_round_new_releases_24));
                         calendar.set(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day)); //month는 1빼야함
                         calendarView.setEvents(events);
                     }
@@ -180,9 +180,9 @@ public class HomeFragment extends Fragment {
                         mList.remove(0);
                     try {
                         todayNotice = getTodayNotice();
-                        addItem(todayNotice.getWriteSubject()); //리사이클러뷰어댑터에 아이템 임시 추가
+                        addItem(todayNotice.getWriteSubject());
                     } catch(NullPointerException e) {
-                        addItem("오늘의 알림장이 없습니다."); //리사이클러뷰어댑터에 아이템 임시 추가
+                        addItem("오늘의 알림장이 없습니다.");
                     }
                     mAdapter.notifyDataSetChanged();
                     calendarView.invalidate();

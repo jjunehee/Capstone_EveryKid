@@ -147,7 +147,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         editor.commit();
 
 
-                        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SigninParentActivity.this, createAccountItem.Name + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
@@ -183,7 +183,7 @@ public class SigninParentActivity extends AppCompatActivity {
                             return;
                         }
 
-                        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SigninParentActivity.this, createAccountItem.Name + "님 환영합니다.", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
@@ -274,6 +274,7 @@ public class SigninParentActivity extends AppCompatActivity {
     //자동 로그인 유저
     public void checkAutoLogin(String id) {
         String userId = id;
+
         String userPassword = getPreferenceString("autoLoginPw");
 
         //loginRequest에 사용자가 입력한 id와 pw를 저장
@@ -322,13 +323,18 @@ public class SigninParentActivity extends AppCompatActivity {
                     createAccountItem.K_phone=result.getKphone();
                     createAccountItem.K_address=result.getKaddress();
                     createAccountItem.Tname=result.getPtname();
-
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
                         createAccountItem.K_kid = Long.parseLong(result.getKkid());
                     } catch (NumberFormatException e) {
                         return;
                     }
+                    Toast.makeText(getApplication(), createAccountItem.Name + "님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplication(), MainParent.class);
+                    intent.putExtra("userId", userId);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    SigninParentActivity.this.finish();
 
 
                 }
@@ -342,13 +348,9 @@ public class SigninParentActivity extends AppCompatActivity {
                         .create()
                         .show();
             }
+
         });
-        createAccountItem.User = "p";
-        Toast.makeText(SigninParentActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(SigninParentActivity.this, MainParent.class);
-        intent.putExtra("userId", userId);
-        startActivity(intent);
-        SigninParentActivity.this.finish();
+
     }
 
 

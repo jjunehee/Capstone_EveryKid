@@ -141,13 +141,8 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         return;
                     }
                     System.out.println(result.getKkid());
-//
-//                        createAccountItem.K_name=result.getKname();
-//                        createAccountItem.K_phone=result.getKphone();
-//                        createAccountItem.K_address=result.getKaddress();
 
-
-                    Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SigninTeacherActivity.this, createAccountItem.Name + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
                     intent.putExtra("userId", userId);
                     startActivity(intent);
@@ -333,9 +328,10 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     }
                     System.out.println(result.getKkid());
 
-                    Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SigninTeacherActivity.this, createAccountItem.Name + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
                     intent.putExtra("userId", userId);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     SigninTeacherActivity.this.finish();
 
@@ -353,13 +349,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                         .show();
             }
         });
-        createAccountItem.User = "t";
 
-        Toast.makeText(SigninTeacherActivity.this, userId + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
-        intent.putExtra("userId", userId);
-        startActivity(intent);
-        SigninTeacherActivity.this.finish();
 
     }
 
