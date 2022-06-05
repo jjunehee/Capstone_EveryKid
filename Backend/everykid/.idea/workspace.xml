@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes" />
+    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChildAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChildAddActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_child_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_child_add.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,6 +164,20 @@
       <workItem from="1653985226716" duration="2321000" />
       <workItem from="1653987834871" duration="529000" />
       <workItem from="1653988745218" duration="45000" />
+      <workItem from="1653996065667" duration="194000" />
+      <workItem from="1653996342652" duration="588000" />
+      <workItem from="1654106880953" duration="1090000" />
+      <workItem from="1654141401246" duration="3203000" />
+      <workItem from="1654149327516" duration="605000" />
+      <workItem from="1654150547158" duration="4543000" />
+      <workItem from="1654160028712" duration="2871000" />
+      <workItem from="1654164084666" duration="491000" />
+      <workItem from="1654308422471" duration="2026000" />
+      <workItem from="1654395341966" duration="5336000" />
+      <workItem from="1654407086299" duration="974000" />
+      <workItem from="1654409932609" duration="1723000" />
+      <workItem from="1654413420505" duration="52000" />
+      <workItem from="1654413582594" duration="8000" />
     </task>
     <servers />
   </component>

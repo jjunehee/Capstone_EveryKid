@@ -107,7 +107,8 @@ public class SignupActivity extends AppCompatActivity
                     startActivity(intent);
                 }
             }
-        });
+        }
+        );
 
         btnkindergarten.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,10 +136,6 @@ public class SignupActivity extends AppCompatActivity
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
         final String kindergarten = kindergartenID;
-
-
-
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
