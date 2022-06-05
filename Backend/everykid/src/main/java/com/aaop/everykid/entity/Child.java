@@ -10,11 +10,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Child")
-@Getter @Setter
+@Getter
+@Setter
+@ToString
 public class Child {
 
     @Id
-    @Column(name="C_ID")
+    @Column(name="C_KID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long CKID;
 

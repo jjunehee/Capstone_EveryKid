@@ -27,7 +27,7 @@
         android:theme="@style/Theme.EveryKid"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ModifyActivity"
+            android:name=".View.Activity.ModifyActivity"
             android:exported="false" />
         <activity
             android:name=".View.Activity.SigninTeacherActivity"

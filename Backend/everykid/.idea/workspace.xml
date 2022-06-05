@@ -5,9 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninTeacherActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninTeacherActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ModifyActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/drawable-v24/home_kindergarden.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/drawable-xhdpi/default_profile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/ListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/ListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponseTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponseTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/MessageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/MessageItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/ModifyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/ModifyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChatFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChatFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/CommunityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/CommunityFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/InfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/InfoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/MainTeacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeWriteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeWriteActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/PostActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/PostActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SettingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninTeacherActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninTeacherActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/ChatAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/ChatAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/CommunityFragmentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/CommunityFragmentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_child_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_child_add.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_findkindergarten.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_findkindergarten.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_modify.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_modify.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_notification.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_notification.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_post.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_post.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signin_parent.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signin_parent.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signin_teacher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signin_teacher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/chatting_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_community.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_community.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/listview_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/listview_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+>>>>>>> 7ff2fa65d369b0acbb2e10adf0cfabce2ebbe732
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +137,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -97,7 +150,7 @@
       <recent name="com.aaop.everykid.config" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.EverykidApplication">
+  <component name="RunManager" selected="Application.EverykidApplication">
     <configuration name="EverykidApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />
@@ -121,6 +174,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EverykidApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -154,6 +212,21 @@
       <workItem from="1653985226716" duration="2321000" />
       <workItem from="1653987834871" duration="529000" />
       <workItem from="1653988745218" duration="45000" />
+      <workItem from="1653996065667" duration="194000" />
+      <workItem from="1653996342652" duration="588000" />
+      <workItem from="1654106880953" duration="1090000" />
+      <workItem from="1654141401246" duration="3203000" />
+      <workItem from="1654149327516" duration="605000" />
+      <workItem from="1654150547158" duration="4543000" />
+      <workItem from="1654160028712" duration="2871000" />
+      <workItem from="1654164084666" duration="491000" />
+      <workItem from="1654308422471" duration="2026000" />
+      <workItem from="1654395341966" duration="5336000" />
+      <workItem from="1654407086299" duration="974000" />
+      <workItem from="1654409932609" duration="1723000" />
+      <workItem from="1654413420505" duration="52000" />
+      <workItem from="1654413582594" duration="8000" />
+      <workItem from="1654413680074" duration="138000" />
     </task>
     <servers />
   </component>

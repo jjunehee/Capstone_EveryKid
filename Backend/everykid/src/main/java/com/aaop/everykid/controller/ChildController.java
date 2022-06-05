@@ -1,4 +1,3 @@
-/*
 package com.aaop.everykid.controller;
 
 import com.aaop.everykid.entity.Child;
@@ -21,18 +20,17 @@ import java.util.UUID;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-
-
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/child")
 public class ChildController {
 
     private final ChildService childService;
 
+
     //@Value("${upload.path}")
-    private String uploadPath;
+    private String uploadPath = "C:/upload";
 
     @PostMapping(value = "/child")
     public ResponseEntity register(@RequestPart("child") String childString,
@@ -45,10 +43,10 @@ public class ChildController {
         String cAGE = child.getCAGE();
         String cNAME = child.getCNAME();
 
-        if(cNAME != null){
+        if (cNAME != null) {
             log.info("child.getCNAME()");
         }
-        if(cAGE != null){
+        if (cAGE != null) {
             log.info("child.getCAGE()");
         }
         child.setPicture(picture);
@@ -115,15 +113,15 @@ public class ChildController {
         return entity;
     }
 
-    private  MediaType getMediaType(String formatName){
-        if(formatName != null){
-            if(formatName.equals("JPG")){
+    private MediaType getMediaType(String formatName) {
+        if (formatName != null) {
+            if (formatName.equals("JPG")) {
                 return MediaType.IMAGE_JPEG;
             }
-            if(formatName.equals("GIF")){
+            if (formatName.equals("GIF")) {
                 return MediaType.IMAGE_GIF;
             }
-            if(formatName.equals("PNG")){
+            if (formatName.equals("PNG")) {
                 return MediaType.IMAGE_PNG;
             }
         }
@@ -131,7 +129,7 @@ public class ChildController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Child>> list() throws Exception{
+    public ResponseEntity<List<Child>> list() throws Exception {
         log.info("list");
         List<Child> childList = this.childService.list();
 
@@ -139,19 +137,58 @@ public class ChildController {
     }
 
     @GetMapping("/{childId}")
-    public ResponseEntity<Child> read(@PathVariable("childId") Long childId) throws Exception{
+    public ResponseEntity<Child> read(@PathVariable("childId") Long childId) throws Exception {
         log.info("read");
 
-        Child child = this.childService.read(ChildId);
+        Child child = this.childService.read(childId);
 
         return new ResponseEntity<>(child, HttpStatus.OK);
     }
+    @DeleteMapping("/{childId}")
+    public ResponseEntity<Void> remove(@PathVariable("childId") Long childId) throws Exception{
+        log.info("remove");
+        this.childService.remove(childId);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping
+    public ResponseEntity<Child> modify(@RequestPart("child") String childString, @RequestPart(name = "file", required = false) MultipartFile picture) throws Exception {
+        log.info("childString:" + childString);
+
+        Child child = new ObjectMapper().readValue(childString, Child.class);
+
+        String childName = child.getCNAME();
+        String childAge = child.getCAGE();
+
+        if (childName != null) {
+            child.setCNAME(childName);
+        }
+        if (childAge != null) {
+            child.setCAGE(childAge);
+        }
+
+        if (picture != null) {
+            child.setPicture(picture);
+
+            MultipartFile file = child.getPicture();
+            String createdFileName = uploadFile(file.getOriginalFilename(), file.getBytes());
+            child.setPictureUrl(createdFileName);
+        } else {
+            Child oldchild = this.childService.read(child.getCKID());
+            child.setPictureUrl(oldchild.getPictureUrl());
+
+        }
+        this.childService.modify(child);
+
+        Child modifiedChild = new Child();
+        modifiedChild.setCKID(child.getCKID());
+
+        return new ResponseEntity<>(modifiedChild, HttpStatus.OK);
+    }
+}
 
 
 
-
-
-*/
 
 
 

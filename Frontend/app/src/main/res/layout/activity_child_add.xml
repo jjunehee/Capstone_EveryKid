@@ -86,6 +86,7 @@
         android:layout_gravity="center">
     </LinearLayout>
     <Button
+        android:id="@+id/child"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -93,7 +94,7 @@
         android:text="등록하기"
         android:textColor="@color/white"
         android:background="@drawable/round_background_2"
-        android:onClick="register"/>
+        android:onClick="child"/>
     </LinearLayout>
 
 

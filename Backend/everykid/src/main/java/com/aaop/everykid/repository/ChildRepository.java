@@ -1,4 +1,4 @@
-/*
+
 package com.aaop.everykid.repository;
 
 import com.aaop.everykid.entity.Child;
@@ -10,7 +10,4 @@ import java.util.Optional;
 
 @Repository
 public interface ChildRepository extends JpaRepository<Child, Long> {
-
-    Optional<Child> findBycKID(String CKID);
-    //Parent findParentBypID(Long id);
-}*/
+}
