@@ -45,7 +45,7 @@
             android:maxWidth="200dp"
             android:maxHeight="200dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/kidprofile"
+            android:src="@drawable/default_profile"
             android:onClick="opengallery"/>
 
         <Button

@@ -21,7 +21,9 @@ import android.view.ViewGroup;
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.G;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +48,8 @@ public class ProfileFragment extends Fragment {
       Context context;
       SharedPreferences pref;
       SharedPreferences.Editor editor;
+      FrameLayout frame,frame2;
+      LinearLayout linear;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -82,11 +86,10 @@ public class ProfileFragment extends Fragment {
         user_status=(TextView)view.findViewById(R.id.user_txt);
         user_kinder=(TextView)view.findViewById(R.id.user_txt2);
         teacher_name=(TextView)view.findViewById(R.id.teacher_name);
+        frame = view.findViewById(R.id.teacherinfo);
+        linear = view.findViewById(R.id.teacherinfo2);
+        frame2 = view.findViewById(R.id.childinfo);
 
-        if(createAccountItem.User.equals("t")){
-            user_status.setText("선생님");
-            user_kinder.setText("근무 유치원");
-        }
         kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
         teacher_name.setText(createAccountItem.Tname);
@@ -97,7 +100,14 @@ public class ProfileFragment extends Fragment {
         logout_btn = view.findViewById(R.id.logout_btn);
         teacher_btn=view.findViewById(R.id.teacher_btn);
 
-
+        if(createAccountItem.User.equals("t")){
+            user_status.setText("선생님");
+            user_kinder.setText("근무 유치원");
+            frame.setVisibility(View.GONE);
+            linear.setVisibility(View.GONE);
+            frame2.setVisibility(View.GONE);
+            add_btn.setVisibility(View.GONE);
+        }
         kinder_name.setText(createAccountItem.K_name);
 
         //프로필 사진 배경에 맞게 자르기
@@ -114,14 +124,14 @@ public class ProfileFragment extends Fragment {
         });
 
         //선생님 정보 확인 버튼
-        teacher_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), InfoActivity.class);
-                intent.putExtra("info", "teacherinfo");
-                startActivity(intent);
-            }
-        });
+//        teacher_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), InfoActivity.class);
+//                intent.putExtra("info", "teacherinfo");
+//                startActivity(intent);
+//            }
+//        });
 
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
