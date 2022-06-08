@@ -65,6 +65,12 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.kkid = kkid;
     }
 
+    @SerializedName("pkid")
+    public String pkid;
+    public String getPkid() {
+        return pkid;
+    }
+    public void setPkid(String pkid) { this.pkid = pkid; }
 
     @SerializedName("kname")
     public String kname;
@@ -120,14 +126,6 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.pid = pid;
     }
 
-    @SerializedName("pkid")
-    public int pkid;
-    public int getPkid() {
-        return pkid;
-    }
-    public void setPkid(int pkid) {
-        this.pkid = pkid;
-    }
 
     @SerializedName("pname")
     public String pname;

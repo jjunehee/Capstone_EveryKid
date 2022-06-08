@@ -1,3 +1,4 @@
+/*
 
 package com.aaop.everykid.service;
 
@@ -11,7 +12,16 @@ import java.util.List;
 
 @Service
 public interface ChildService {
-    public void regist(Child child) throws Exception;
+
+
+
+
+
+
+
+
+*/
+/*    public void regist(Child child) throws Exception;
 
     public Child read(Long childId) throws Exception;
 
@@ -21,5 +31,7 @@ public interface ChildService {
 
     public List<Child> list() throws Exception;
 
-    public String getPicture(Long childId) throws Exception;
+    public String getPicture(Long childId) throws Exception;*//*
+
 }
+*/

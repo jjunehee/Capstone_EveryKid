@@ -136,10 +136,7 @@ public class SignupActivity extends AppCompatActivity
         final String password = etpassword.getText().toString();
         final String email = etemail.getText().toString();
         final String kindergarten = kindergartenID;
-<<<<<<< HEAD
-=======
         final String tname=etteachername.getText().toString();
->>>>>>> 6fe11c00b7f8eb2106cc0938a09c41bb25320706
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)

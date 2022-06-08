@@ -139,6 +139,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_address=result.getKaddress();
                         createAccountItem.K_kid=Long.parseLong(result.getKkid());
                         createAccountItem.Tname=result.getPtname();
+                        createAccountItem.P_kid=Long.parseLong(result.getPkid());
 
                         //채팅
                         SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
