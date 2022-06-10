@@ -1,7 +1,9 @@
 package com.aaop.everykid.controller;
 
+import com.aaop.everykid.dto.ChildFormDto;
+import com.aaop.everykid.dto.RegisterCFormDto;
 import com.aaop.everykid.entity.Child;
-import com.aaop.everykid.service.ChildService;
+import com.aaop.everykid.service.RegisterCService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -26,9 +28,20 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequestMapping("/child")
 public class ChildController {
 
-    private final ChildService childService;
+    private final RegisterCService registerCService;
 
 
+    @PostMapping(value = "/child")
+    public RegisterCFormDto registerCFormDto(RegisterCFormDto registerCFormDto) {
+        Child child = Child.createChild(registerCFormDto);
+        registerCService.saveChild(child);
+        System.out.println("아이등록" + registerCFormDto);
+        return registerCFormDto;
+    }
+}
+
+
+/*
     //@Value("${upload.path}")
     private String uploadPath = "C:/upload";
 
@@ -189,6 +202,7 @@ public class ChildController {
 
 
 
+*/
 
 
 

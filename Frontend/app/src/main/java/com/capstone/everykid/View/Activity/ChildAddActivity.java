@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.capstone.everykid.Model.CreateAccountItem;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -49,6 +50,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ChildAddActivity extends AppCompatActivity {
+    CreateAccountItem createAccountItem;
     private final int GET_GALLERY_IMAGE = 200;
     private ImageView imageview;
     private RetrofitClient retrofitClient;
@@ -58,6 +60,8 @@ public class ChildAddActivity extends AppCompatActivity {
     private PreferenceHelper preferenceHelper;
     CreateAccountItem createAccountItem;
     private Intent intent;
+    private String pkid = Long.toString(createAccountItem.P_kid);
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,7 +101,7 @@ public class ChildAddActivity extends AppCompatActivity {
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.setChildData(name1, age1);
+        Call<String> call = api.setChildData(pkid, name1, age1);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull retrofit2.Response<String> response) {

@@ -2,6 +2,7 @@ package com.capstone.everykid.View.Activity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -13,7 +14,11 @@ import com.capstone.everykid.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class LoadActivity extends AppCompatActivity {
 

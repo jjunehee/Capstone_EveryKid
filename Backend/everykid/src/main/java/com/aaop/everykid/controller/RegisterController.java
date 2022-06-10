@@ -45,7 +45,7 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/teacher")     //p_NAME
-    public ResponseEntity signUp2(RegisterTFormDto registerTFormDto) {
+    public ResponseEntity signUp2(@RequestBody RegisterTFormDto registerTFormDto) {
         System.out.println("선생 회원가입 시도" + registerTFormDto);
         return teacherService.findBytID(registerTFormDto.getTID()).isPresent()
                 ? ResponseEntity.badRequest().build()

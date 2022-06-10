@@ -415,7 +415,11 @@ alter table board modify WRITE_DATE datetime;
   - 하지만 같은 와이파이 내에 있어야하고, 장소나 와이파이 변경 시, 매번 ip주소를 바꿔줘야하는 불편함이 있음.
   - 따라서 집에 서버를 두고 포트포워딩을 통해 해결 혹은 네이버클라우드 배포를 고려중임
   
-  
+  ### 06/07
+  ```[조준희] [사용성 향상] 2. 등하원 이력확인 및 이미지 조회```
+  - 따로 버튼을 클릭하여 등하원 여부를 확인하는 것이 아닌, ListFragment에서 등하원 이력을 조회하고 등하원 이력이 있다면 버튼을 변경하여 사용자가 확인할 수 있도록 구현.
+  <img src="https://user-images.githubusercontent.com/83155528/172223737-52eb0a3d-cb70-4734-b257-743ab6b84f9c.PNG" width="300" height="490">
+
   
 </div>
 </details>
