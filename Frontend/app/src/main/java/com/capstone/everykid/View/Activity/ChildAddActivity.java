@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
@@ -55,6 +56,7 @@ public class ChildAddActivity extends AppCompatActivity {
     private EditText name, age;
     private Button btn;
     private PreferenceHelper preferenceHelper;
+    CreateAccountItem createAccountItem;
     private Intent intent;
 
     @Override
@@ -101,6 +103,8 @@ public class ChildAddActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<String> call, @NonNull retrofit2.Response<String> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String jsonResponse = response.body();
+
+
                     try {
                         parseRegData(jsonResponse);
                     } catch (JSONException e) {

@@ -13,6 +13,8 @@ public class CreateAccountItem{
     public static String Id;
     public static String Pwd;
     public static String Kindergarten;
+    public static String C_name;
+    public static String C_age;
 
     public static String porfileUri;
 

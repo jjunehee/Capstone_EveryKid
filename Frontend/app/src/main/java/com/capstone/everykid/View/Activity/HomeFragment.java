@@ -26,7 +26,7 @@ import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.Notice;
 import com.capstone.everykid.Model.RecyclerItem;
-import com.capstone.everykid.RetrofitAPI.OnItemClickListener;
+import com.capstone.everykid.OnItemClickListener;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.NoticeItemAdapter;
