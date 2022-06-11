@@ -420,6 +420,8 @@ alter table board modify WRITE_DATE datetime;
   - 따로 버튼을 클릭하여 등하원 여부를 확인하는 것이 아닌, ListFragment에서 등하원 이력을 조회하고 등하원 이력이 있다면 버튼을 변경하여 사용자가 확인할 수 있도록 구현.
   <img src="https://user-images.githubusercontent.com/83155528/172223737-52eb0a3d-cb70-4734-b257-743ab6b84f9c.PNG" width="300" height="490">
 
+  ### 06/12
+  ```[조준희] opencv 얼굴인식 한글 깨짐 ~ing```
   
 </div>
 </details>
