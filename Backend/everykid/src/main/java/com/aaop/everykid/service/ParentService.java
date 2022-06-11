@@ -60,25 +60,30 @@ public class ParentService {
         Parent parent =
                 parentRepository
                         .findBypID(loginFormDto.getPID())
-                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
+                        .orElseGet(Parent::new);
         Kindergarten kindergarten =
                 kindergartenRepository
                         .findByKKID(parent.getKKID())
-                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유치원입니다."));
+                        .orElseGet(Kindergarten::new);
         Auth auth = authRepository
                         .findByParentPKID(parent.getPKID())
-                        .orElseThrow(() -> new IllegalArgumentException("Token 이 존재하지 않습니다."));
+                        .orElseGet(Auth::new);
 
         Child child = childRepository
                 .findByPKID(parent.getPKID()).orElseGet(Child::new);
 
-
+        if (parent.getPID() == null){
+            return TokenResponseDto.builder()
+                    .status(300)
+                    .build();
+        }
         if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
-            throw new Exception("비밀번호가 일치하지 않습니다.");
+            return TokenResponseDto.builder()
+                    .status(400)
+                    .build();
         }
         String accessToken = "";
         String refreshToken = auth.getRefreshToken();
-
 
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
