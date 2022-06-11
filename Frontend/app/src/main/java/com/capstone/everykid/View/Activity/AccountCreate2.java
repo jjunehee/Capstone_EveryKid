@@ -40,6 +40,4 @@ public class AccountCreate2 extends AppCompatActivity {
             }
         });
     }
-
-
 }

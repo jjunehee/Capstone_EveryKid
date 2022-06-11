@@ -93,6 +93,9 @@ public class ChildAddActivity extends AppCompatActivity {
          String name1 = name.getText().toString();
          String age1 = age.getText().toString();
 
+        retrofitClient = RetrofitClient.getInstance();
+        RetrofitAPI = RetrofitClient.getRetrofitInterface();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())

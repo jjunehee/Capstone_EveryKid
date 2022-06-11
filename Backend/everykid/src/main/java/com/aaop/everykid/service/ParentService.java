@@ -4,15 +4,9 @@ package com.aaop.everykid.service;
 import com.aaop.everykid.Jwt.TokenUtils;
 import com.aaop.everykid.dto.LoginPFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
-import com.aaop.everykid.entity.Auth;
-import com.aaop.everykid.entity.Kindergarten;
-import com.aaop.everykid.entity.Parent;
+import com.aaop.everykid.entity.*;
 import com.aaop.everykid.dto.TokenResponseDto;
-import com.aaop.everykid.entity.Teacher;
-import com.aaop.everykid.repository.AuthRepository;
-import com.aaop.everykid.repository.KindergartenRepository;
-import com.aaop.everykid.repository.ParentRepository;
-import com.aaop.everykid.repository.TeacherRepository;
+import com.aaop.everykid.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -29,6 +23,7 @@ public class ParentService {
     private final TokenUtils tokenUtils;
     private final AuthRepository authRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ChildRepository childRepository;
 
     public Optional<Parent> findBypID(String PID) {
 
@@ -74,6 +69,10 @@ public class ParentService {
                         .findByParentPKID(parent.getPKID())
                         .orElseThrow(() -> new IllegalArgumentException("Token 이 존재하지 않습니다."));
 
+        Child child = childRepository
+                .findByPKID(parent.getPKID()).orElseGet(Child::new);
+
+
         if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
@@ -98,6 +97,8 @@ public class ParentService {
                     .kADDRESS(kindergarten.getKADDRESS())
                     .kPHONE(kindergarten.getKPHONE())
                     .tNAME(parent.getTNAME())
+                    .cAGE(child.getCAGE())
+                    .cNAME(child.getCNAME())
                     .build();
 
         } else {

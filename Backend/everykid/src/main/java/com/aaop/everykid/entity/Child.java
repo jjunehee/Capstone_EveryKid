@@ -31,6 +31,7 @@ public class Child {
     @Column(name ="P_KID")
     private Long PKID;
 
+
     public static Child createChild(RegisterCFormDto registerCFormDto){
         Child child = new Child();
         child.setCNAME(registerCFormDto.getCNAME());

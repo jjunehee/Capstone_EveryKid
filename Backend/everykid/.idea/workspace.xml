@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/CreateAccountItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/Model/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/AccountCreate2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/AccountCreate2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChildAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ChildAddActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SigninParentActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/SignupActivity.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RegisterInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/CommunityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/CommunityFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ModifyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ModifyActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeWriteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/NoticeWriteActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/PostActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/PostActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/findKindergarten.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/findKindergarten.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/CommunityFragmentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/CommunityFragmentAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/selectKindergartenAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Adapter/selectKindergartenAdapter.java" afterDir="false" />
->>>>>>> 3c913b77cbc7805d5f5fb4eeac8b0e7ed8d56e08
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +85,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/eclipse-workspace/chromy" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -203,6 +185,9 @@
       <workItem from="1654494839181" duration="623000" />
       <workItem from="1654525642528" duration="5039000" />
       <workItem from="1654605485207" duration="7000" />
+      <workItem from="1654861435871" duration="203000" />
+      <workItem from="1654926364754" duration="2117000" />
+      <workItem from="1654965446175" duration="3498000" />
     </task>
     <servers />
   </component>
