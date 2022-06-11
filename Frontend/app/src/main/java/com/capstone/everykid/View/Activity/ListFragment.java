@@ -14,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 
 import com.capstone.everykid.Model.ListItem;
@@ -38,6 +40,7 @@ public class ListFragment extends Fragment {
     ListView listView;
     ListItemAdapter adapter;
     Button notiBtn;
+    TextView textView;
 
     final Calendar c = Calendar.getInstance();
     int mYear = c.get(Calendar.YEAR);
@@ -47,6 +50,7 @@ public class ListFragment extends Fragment {
     ImageView load;
     FirebaseDatabase mdatabase;
     DatabaseReference myRef;
+    CreateAccountItem createAccountItem;
 
 
     public ListFragment() {
@@ -79,6 +83,10 @@ public class ListFragment extends Fragment {
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH)+1;
         mDay = c.get(Calendar.DAY_OF_MONTH);
+        textView=view.findViewById(R.id.textView9);
+        if(createAccountItem.C_name!=null){
+            textView.setText(createAccountItem.K_name +" " +createAccountItem.C_name+"어린이");
+        }
 
 
         notiBtn = (Button) view.findViewById(R.id.notificationSetting);

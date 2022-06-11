@@ -138,7 +138,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_kid=Long.parseLong(result.getKkid());
                         createAccountItem.Tname=result.getPtname();
                         createAccountItem.P_kid=Long.parseLong(result.getPkid());
-
+                        createAccountItem.C_name=null;
+                        createAccountItem.C_age=null;
                         //채팅
                         SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
                         SharedPreferences.Editor editor=preferences.edit();
@@ -177,6 +178,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_name=result.getKname();
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
+                        createAccountItem.P_kid=Long.parseLong(result.getPkid());
                         //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                         try {
                             createAccountItem.K_kid = Long.parseLong(result.getKkid());
@@ -319,11 +321,13 @@ public class SigninParentActivity extends AppCompatActivity {
                     createAccountItem.Phone=phone;
 
                     createAccountItem.Id=userId;
-
+                    createAccountItem.C_name=null;
+                    createAccountItem.C_age=null;
                     createAccountItem.K_name=result.getKname();
                     createAccountItem.K_phone=result.getKphone();
                     createAccountItem.K_address=result.getKaddress();
                     createAccountItem.Tname=result.getPtname();
+                    createAccountItem.P_kid=Long.parseLong(result.getPkid());
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
                         createAccountItem.K_kid = Long.parseLong(result.getKkid());
@@ -342,12 +346,12 @@ public class SigninParentActivity extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
-                builder.setTitle("알림")
-                        .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
-                        .setPositiveButton("확인", null)
-                        .create()
-                        .show();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(SigninParentActivity.this);
+//                builder.setTitle("알림")
+//                        .setMessage("예기치 못한 오류가 발생하였습니다.\n 고객센터에 문의바랍니다.")
+//                        .setPositiveButton("확인", null)
+//                        .create()
+//                        .show();
             }
 
         });

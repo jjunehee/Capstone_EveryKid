@@ -26,6 +26,7 @@ import com.capstone.everykid.Model.CreateAccountItem;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.PreferenceHelper;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
@@ -90,8 +91,8 @@ public class ChildAddActivity extends AppCompatActivity {
     }
 
     private void registerChild() {
-         String name1 = name.getText().toString();
-         String age1 = age.getText().toString();
+        String name1 = name.getText().toString();
+        String age1 = age.getText().toString();
 
         retrofitClient = RetrofitClient.getInstance();
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
@@ -108,6 +109,10 @@ public class ChildAddActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<String> call, @NonNull retrofit2.Response<String> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String jsonResponse = response.body();
+                    createAccountItem.C_name = name1;
+                    createAccountItem.C_age = age1;
+                    createAccountItem.Child = "child";
+                    Log.e(TAG, "등록 완료");
                     try {
                         parseRegData(jsonResponse);
                     } catch (JSONException e) {
@@ -150,15 +155,13 @@ public class ChildAddActivity extends AppCompatActivity {
     }
 
 
-
-    //사진 등록 버튼
+    //갤러리 여는 버튼
     public void opengallery(View v) {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         startActivityForResult(intent, GET_GALLERY_IMAGE);
     }
-}
-/*
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -166,20 +169,16 @@ public class ChildAddActivity extends AppCompatActivity {
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
             imageview.setImageURI(selectedImageUri);
+            createAccountItem.C_uri=selectedImageUri;
             try {
-                ImageDecoder.Source source = ImageDecoder.createSource(this.getContentResolver(), selectedImageUri);
-                Bitmap bitmap = ImageDecoder.decodeBitmap(source);
-                bitmap = resize(bitmap);
-                String image = bitmapToByteArray(bitmap); //image 스트링에 비트맵으로 저장됨
-                changeProfileImageToDB(image);
 
-
-            } catch(Exception e){
+            } catch (Exception e) {
 
             }
         }
     }
-
+}
+/*
     private Bitmap resize(Bitmap bm){
         Configuration config = getResources().getConfiguration();
         if(config.smallestScreenWidthDp >= 800)

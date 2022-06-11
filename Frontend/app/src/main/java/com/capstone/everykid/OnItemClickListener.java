@@ -1,4 +1,4 @@
-package com.capstone.everykid.RetrofitAPI;
+package com.capstone.everykid;
 
 import android.view.View;
 
