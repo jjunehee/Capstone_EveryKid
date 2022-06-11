@@ -2,6 +2,7 @@ package com.aaop.everykid.service;
 
 
 import com.aaop.everykid.Jwt.TokenUtils;
+import com.aaop.everykid.config.StatusCode;
 import com.aaop.everykid.dto.LoginPFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
 import com.aaop.everykid.entity.*;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+
+import static com.aaop.everykid.config.StatusCode.*;
 
 @Service
 @RequiredArgsConstructor
@@ -74,12 +77,12 @@ public class ParentService {
 
         if (parent.getPID() == null){
             return TokenResponseDto.builder()
-                    .status(300)
+                    .status(NOT_FOUND)
                     .build();
         }
         if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
             return TokenResponseDto.builder()
-                    .status(400)
+                    .status(BAD_REQUEST)
                     .build();
         }
         String accessToken = "";
@@ -88,7 +91,7 @@ public class ParentService {
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
             return TokenResponseDto.builder()
-                    .status(200)
+                    .status(OK)
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
                     .pNAME(parent.getPNAME())
