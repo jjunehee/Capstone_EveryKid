@@ -97,12 +97,6 @@ public class ProfileFragment extends Fragment {
         kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
         teacher_name.setText(createAccountItem.Tname);
-        if(createAccountItem.C_name!=null){
-            child_name.setText(createAccountItem.C_name);
-            child_age.setText(createAccountItem.C_age);
-            child_img.setImageURI(createAccountItem.C_uri);
-        }
-
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
@@ -111,6 +105,16 @@ public class ProfileFragment extends Fragment {
         teacher_btn=view.findViewById(R.id.teacher_btn);
 
 
+        if(createAccountItem.C_name==null){
+            kidprofile.setVisibility(View.GONE);
+        }
+
+        if(createAccountItem.C_name!=null){
+            add_btn.setVisibility(View.GONE);
+            child_name.setText(createAccountItem.C_name);
+            child_age.setText(createAccountItem.C_age+"세");
+            child_img.setImageURI(createAccountItem.C_uri);
+        }
 
 
         if(createAccountItem.User.equals("t")){
@@ -122,7 +126,6 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
         }
         kinder_name.setText(createAccountItem.K_name);
-
         //프로필 사진 배경에 맞게 자르기
         p_img.setClipToOutline(true);
         child_img.setClipToOutline(true);
@@ -146,11 +149,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        if(createAccountItem.C_name!=null) {
-
-            kidprofile.setVisibility(View.VISIBLE);
-            add_btn.setVisibility(View.GONE);
-        }
 
 
 //        자녀 추가 버튼
