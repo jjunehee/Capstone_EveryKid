@@ -40,16 +40,16 @@ public class ProfileFragment extends Fragment {
     //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-      TextView p_name, kinder_name, user_status,user_kinder,teacher_name;
+      TextView p_name, kinder_name, user_status,user_kinder,teacher_name, child_name, child_age;
       View view;
-      ImageView p_img, child_img, kinder_img;
+      ImageView p_img, child_img;
       Button info_btn, add_btn, profile_btn, logout_btn,teacher_btn;
       CreateAccountItem createAccountItem;
       Context context;
       SharedPreferences pref;
       SharedPreferences.Editor editor;
       FrameLayout frame,frame2;
-      LinearLayout linear;
+      LinearLayout linear,kidprofile;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -89,16 +89,29 @@ public class ProfileFragment extends Fragment {
         frame = view.findViewById(R.id.teacherinfo);
         linear = view.findViewById(R.id.teacherinfo2);
         frame2 = view.findViewById(R.id.childinfo);
+        kidprofile=view.findViewById(R.id.kidprofile);
+        child_name=view.findViewById(R.id.child_name);
+        child_age=view.findViewById(R.id.child_age);
+
 
         kinder_name=(TextView)view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
         teacher_name.setText(createAccountItem.Tname);
+        if(createAccountItem.C_name!=null){
+            child_name.setText(createAccountItem.C_name);
+            child_age.setText(createAccountItem.C_age);
+            child_img.setImageURI(createAccountItem.C_uri);
+        }
+
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
         add_btn = view.findViewById(R.id.profile_kidadd_btn);
         logout_btn = view.findViewById(R.id.logout_btn);
         teacher_btn=view.findViewById(R.id.teacher_btn);
+
+
+
 
         if(createAccountItem.User.equals("t")){
             user_status.setText("선생님");
@@ -123,16 +136,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        //선생님 정보 확인 버튼
-//        teacher_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), InfoActivity.class);
-//                intent.putExtra("info", "teacherinfo");
-//                startActivity(intent);
-//            }
-//        });
-
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +145,14 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        if(createAccountItem.C_name!=null) {
+
+            kidprofile.setVisibility(View.VISIBLE);
+            add_btn.setVisibility(View.GONE);
+        }
+
+
 //        자녀 추가 버튼
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,22 +179,3 @@ public class ProfileFragment extends Fragment {
         return view;
     }
 }
-
-
-        // 부모님일 경우 자녀 정보 리싸이클러뷰
-//        mRecyclerView = view.findViewById(R.id.recycler1);
-//        mAdapter = new RecyclerImageTextAdapter(mList);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-//        //자녀들 리사이클러뷰어댑터에 임시 추가
-//        addItem(getResources().getDrawable(R.drawable.kidprofile), "김말이(7세)");
-//        addItem(getResources().getDrawable(R.drawable.kidprofile), "김밥(2세)");
-//        mRecyclerView.setAdapter(mAdapter);
-//        mAdapter.notifyDataSetChanged();
-//
-//    }
-//    public void addItem(Drawable icon, String title){
-//        RecyclerItem item = new RecyclerItem();
-//        item.setIcon(icon);
-//        item.setTitle(title);
-//        mList.add(item);
-//    }
