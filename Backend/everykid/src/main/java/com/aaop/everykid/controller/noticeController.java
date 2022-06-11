@@ -16,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,8 +34,8 @@ public class noticeController {
     @Autowired
     noticeService noticeService;
 
-    @RequestMapping ("/write/{KKID}/{DATE}/{WRITESUBJECT}/{CONTENTS}")
-    public Boolean writeContent(@PathVariable("KKID") Long KKID, @PathVariable("DATE") Date DATE, @PathVariable("WRITESUBJECT") String WRITESUBJECT, @PathVariable("CONTENTS") String CONTENTS) {
+    @RequestMapping (value="/write/{KKID}/{DATE}/{WRITESUBJECT}/{CONTENTS}", produces="application/json;charset=UTF-8")
+    public Boolean writeContent(@PathVariable("KKID") Long KKID, @PathVariable("DATE") @DateTimeFormat(pattern="yyyy-MM-dd") Date DATE, @PathVariable("WRITESUBJECT") String WRITESUBJECT, @PathVariable("CONTENTS") String CONTENTS) {
 
         SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy-MM-dd");
         String formatDate = dtFormat.format(DATE);

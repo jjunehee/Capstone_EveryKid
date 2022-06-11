@@ -71,7 +71,7 @@ public interface RetrofitAPI {
     );
 
     @GET("/notice/write/{KKID}/{DATE}/{WRITESUBJECT}/{CONTENTS}")
-    Call<Boolean> registNotice(@Path("KKID") Long KKID, @Path("DATE") Date DATE, @Path("WRITESUBJECT") String WRITESUBJECT, @Path("CONTENTS") String CONTENTS);
+    Call<Boolean> registNotice(@Path("KKID") Long KKID, @Path("DATE") String DATE, @Path("WRITESUBJECT") String WRITESUBJECT, @Path("CONTENTS") String CONTENTS);
 
     @GET("/notice/notice/{KKID}")
     Call<List<Notice>> getNoticeList(@Path("KKID") Long KKID);
