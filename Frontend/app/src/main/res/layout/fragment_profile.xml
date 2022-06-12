@@ -25,7 +25,7 @@
                 android:orientation="horizontal"
                 android:padding="15dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_img"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
@@ -107,7 +107,6 @@
                 android:padding="5dp"
                 android:background="@drawable/round_background_2"
                 android:orientation="horizontal"
-                android:visibility="gone"
                 >
 
                 <FrameLayout
@@ -115,13 +114,13 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@drawable/default_profile"
                         android:id="@+id/kidprofile_img"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/round_background"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/kidprofile"/>
+
+                        />
                 </FrameLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -143,6 +142,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/child_age"
                         android:text="7세"
+                        android:textStyle="bold"
                         android:padding="8dp"/>
                 </LinearLayout>
             </LinearLayout>

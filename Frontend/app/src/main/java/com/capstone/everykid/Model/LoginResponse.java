@@ -29,7 +29,7 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.refresh_token = refresh_token;
     }
 
-    @SerializedName("c_AGE")
+    @SerializedName("cage")
     public String c_age;
     public String getC_age() {
         return c_age;
@@ -47,7 +47,7 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.c_img = c_img;
     }
 
-    @SerializedName("c_NAME")
+    @SerializedName("cname")
     public String c_name;
     public String getC_name() {
         return c_name;

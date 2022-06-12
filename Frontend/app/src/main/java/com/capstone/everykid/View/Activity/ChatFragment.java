@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
@@ -19,6 +20,8 @@ public class ChatFragment extends Fragment {
     private Button gochat_btn;
     private ImageView img;
     CreateAccountItem createAccountItem;
+    private TextView k_name;
+    private TextView t_name;
 
     public ChatFragment() {
         // Required empty public constructor
@@ -38,6 +41,11 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_chat, container, false);
+
+        k_name = view.findViewById(R.id.profile_K_name);
+        k_name.setText(createAccountItem.K_name);
+        t_name = view.findViewById(R.id.profile_T_name);
+        t_name.setText(createAccountItem.Tname);
 
 
         gochat_btn = (Button) view.findViewById(R.id.btn_gochat);

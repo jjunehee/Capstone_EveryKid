@@ -1,5 +1,7 @@
 package com.capstone.everykid.View.Activity;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -138,8 +140,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_kid=Long.parseLong(result.getKkid());
                         createAccountItem.Tname=result.getPtname();
                         createAccountItem.P_kid=Long.parseLong(result.getPkid());
-                        createAccountItem.C_name=null;
-                        createAccountItem.C_age=null;
+                        createAccountItem.C_name=result.getC_name();
+                        createAccountItem.C_age=result.getC_age();
                         //채팅
                         SharedPreferences preferences= getSharedPreferences("chataccount",MODE_PRIVATE);
                         SharedPreferences.Editor editor=preferences.edit();
@@ -179,6 +181,8 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
                         createAccountItem.P_kid=Long.parseLong(result.getPkid());
+                        createAccountItem.C_name=result.getC_name();
+                        createAccountItem.C_age=result.getC_age();
                         //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                         try {
                             createAccountItem.K_kid = Long.parseLong(result.getKkid());
@@ -321,8 +325,8 @@ public class SigninParentActivity extends AppCompatActivity {
                     createAccountItem.Phone=phone;
 
                     createAccountItem.Id=userId;
-                    createAccountItem.C_name=null;
-                    createAccountItem.C_age=null;
+                    createAccountItem.C_name=result.getC_name();
+                    createAccountItem.C_age=result.getC_age();
                     createAccountItem.K_name=result.getKname();
                     createAccountItem.K_phone=result.getKphone();
                     createAccountItem.K_address=result.getKaddress();

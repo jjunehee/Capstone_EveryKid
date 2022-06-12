@@ -21,7 +21,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/round_background"
             android:src="@drawable/home_kindergarden">
         </ImageView>
         <TextView
