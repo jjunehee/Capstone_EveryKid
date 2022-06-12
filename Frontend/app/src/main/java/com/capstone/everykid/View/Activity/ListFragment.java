@@ -156,15 +156,18 @@ public class ListFragment extends Fragment {
                     .addOnSuccessListener(new OnSuccessListener<ListResult>() {
                         @Override
                         public void onSuccess(ListResult listResult) {
+                            textView=view.findViewById(R.id.textView9);
+                            if(createAccountItem.C_name!=null){
                             List<String> dates = listResult.getItems().stream().map(StorageReference::getName)
                                     .filter(name -> name.contains(createAccountItem.C_name))
                                     .collect(Collectors.toList());
 
                             adapter.setFileContainList(dates);
                             listView.setAdapter(adapter);
-                            textView=view.findViewById(R.id.textView9);
-                            if(createAccountItem.C_name!=null){
-                                textView.setText(createAccountItem.C_name+" 어린이");
+                            textView.setText(createAccountItem.C_name+" 어린이");
+                            }
+                            else if(createAccountItem.C_name==null) {
+                                textView.setText("아이 미등록");
                             }
                         }
                     })
