@@ -23,4 +23,8 @@ public class RegisterCService {
 
         return childRepository.save(child);
     }
+
+    public void deleteChild(Long pkid) {
+        childRepository.deleteById(pkid);
+    }
 }
