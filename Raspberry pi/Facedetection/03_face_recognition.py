@@ -180,7 +180,7 @@ while True:
                 firebase(firebase_id)
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():
-                    if(var['name']==id):
+                    if(var['name']==firebase_id):
                         if(now.hour < 12):
                             mesgSend1(var['token'],firebase_id)
                         else:
@@ -192,11 +192,11 @@ while True:
                         pwm = GPIO.PWM(buzzer, 1.0)
                         pwm.start(50.0)
                         pwm.ChangeFrequency(262)
-                        time.sleep(0.7)
+                        time.sleep(0.5)
                         pwm.ChangeFrequency(294)
-                        time.sleep(0.7)
+                        time.sleep(0.5)
                         pwm.ChangeFrequency(330)
-                        time.sleep(0.7)
+                        time.sleep(0.5)
                         pwm.stop()
                         GPIO.cleanup()
                         #Check image capture

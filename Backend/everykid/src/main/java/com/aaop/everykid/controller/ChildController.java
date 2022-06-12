@@ -1,26 +1,12 @@
 package com.aaop.everykid.controller;
 
-import com.aaop.everykid.dto.ChildFormDto;
+import com.aaop.everykid.dto.DeleteCFormDto;
 import com.aaop.everykid.dto.RegisterCFormDto;
 import com.aaop.everykid.entity.Child;
 import com.aaop.everykid.service.RegisterCService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.util.List;
-import java.util.UUID;
-
-import static org.springframework.http.HttpStatus.CREATED;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -37,6 +23,13 @@ public class ChildController {
         registerCService.saveChild(child);
         System.out.println("아이등록" + registerCFormDto);
         return registerCFormDto;
+    }
+
+    @PostMapping(value = "/delete")
+    public DeleteCFormDto deleteCFormDto(DeleteCFormDto deleteCFormDto) {
+        registerCService.deleteChild(deleteCFormDto.getPKID());
+        System.out.println("아이삭제");
+        return null;
     }
 }
 
