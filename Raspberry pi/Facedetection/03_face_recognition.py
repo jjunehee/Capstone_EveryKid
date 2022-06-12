@@ -51,7 +51,7 @@ def clearAll():
     path = '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage'
     os.system('rm -rf %s/*' % path)
 
-def firebase():
+def firebase(id):
     if(now.hour < 12):
         cv2.imwrite( '/home/pi/Capstone_EveryKid/Raspberry pi/firebase/image_storage/' + str(id) + ' ' + nowDate + ' 등원' + '.jpg', img)
         fileUpload(str(id) + ' ' + nowDate + ' 등원' +'.jpg')
@@ -133,10 +133,11 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 #iniciate id counter
 id = 0
 
+
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
 names = ['None', 'Junhee', 'Jinsun', 'hyeokjin', 'ksw']
-
+firebase_names = ['None', '준희', 'Jinsun', 'hyeokjin', 'ksw']
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
@@ -155,7 +156,7 @@ while True:
     faces = faceCascade.detectMultiScale( 
         gray,
         scaleFactor = 1.2,
-        minNeighbors = 5,
+        minNeighbors = 3,
         minSize = (int(minW), int(minH)),
        )
 
@@ -164,7 +165,9 @@ while True:
         id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
         # Check if confidence is less them 100 ==> "0" is perfect match
         if (confidence < 100):
+            firebase_id = firebase_names[id]
             id = names[id]
+            
             #confidence = "  {0}%".format(round(100 - confidence))
             #5초 이상 지속되면 캡쳐해서 파일명을 id(name)으로 저장하고 그 이미지  Firebase로
             now = datetime.datetime.now()
@@ -174,14 +177,14 @@ while True:
             
             count+=1
             if(count % 45 == 0 and confidence < 45 ):
-                firebase()
+                firebase(firebase_id)
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():
                     if(var['name']==id):
                         if(now.hour < 12):
-                            mesgSend1(var['token'],id)
+                            mesgSend1(var['token'],firebase_id)
                         else:
-                            mesgSend2(var['token'],id)
+                            mesgSend2(var['token'],firebase_id)
                         buzzer = 18
                         GPIO.setmode(GPIO.BCM)
                         GPIO.setup(buzzer, GPIO.OUT)
@@ -197,7 +200,7 @@ while True:
                         pwm.stop()
                         GPIO.cleanup()
                         #Check image capture
-                        #cv2.imshow('image', img)
+                        #cv2.imshow('image', img)'''
         else:
                 id = "unknown"
                 confidence = "  {0}%".format(round(100 - confidence))
@@ -213,3 +216,4 @@ while True:
 print("\n [INFO] Exiting Program and cleanup stuff")
 cam.release()
 cv2.destroyAllWindows()
+

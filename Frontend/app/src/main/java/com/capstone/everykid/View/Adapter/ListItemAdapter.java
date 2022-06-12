@@ -19,6 +19,7 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.ListItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Activity.LoadActivity;
@@ -35,6 +36,7 @@ public class ListItemAdapter extends BaseAdapter {
     private List<String> fileContainList = new ArrayList<>();
     List<ListItem> items = new ArrayList<>();
     Context context;
+    private CreateAccountItem createAccountItem;
 
     public void setFileContainList(List<String> fileContainList) {
         this.fileContainList = fileContainList;
@@ -69,14 +71,14 @@ public class ListItemAdapter extends BaseAdapter {
         Date.setText(listItem.getDate());
 //        등원버튼
         Button btn1 = (Button) convertView.findViewById(R.id.btn_attend);
-        if (this.fileContainList.contains("Junhee " + listItem.getDate() + " 등원.jpg")) {
+        if (this.fileContainList.contains(createAccountItem.C_name+ " " + listItem.getDate() + " 등원.jpg")) {
             Log.i("ListItemAdapter", "color changed");
             btn1.setBackgroundTintList(context.getResources().getColorStateList(R.color.Green));
             btn1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Log.i(TAG, "clicked button");
                     Intent intent = new Intent(context, LoadActivity.class);
-                    intent.putExtra("name", "Junhee");
+                    intent.putExtra("name", createAccountItem.C_name);
                     intent.putExtra("date", listItem.getDate());
                     intent.putExtra("time", "등원");
                     context.startActivity(intent);
@@ -87,14 +89,14 @@ public class ListItemAdapter extends BaseAdapter {
 
 //         하원버튼
         Button btn2 = (Button) convertView.findViewById(R.id.btn_exit);
-        Log.i("ListItemAdapter", "Junhee " + listItem.getDate() + " 하원.jpg");
-        if (this.fileContainList.contains("Junhee " + listItem.getDate() + " 하원.jpg")) {
+        Log.i("ListItemAdapter", createAccountItem.C_name + listItem.getDate() + " 하원.jpg");
+        if (this.fileContainList.contains(createAccountItem.C_name+ " " + listItem.getDate() + " 하원.jpg")) {
             Log.i("ListItemAdapter", "color changed 하원");
             btn2.setBackgroundTintList(context.getResources().getColorStateList(R.color.Red));
             btn2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, LoadActivity.class);
-                    intent.putExtra("name", "Junhee");
+                    intent.putExtra("name",createAccountItem.C_name);
                     intent.putExtra("date", listItem.getDate());
                     intent.putExtra("time", "하원");
                     context.startActivity(intent);

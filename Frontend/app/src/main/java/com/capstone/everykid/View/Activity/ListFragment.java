@@ -83,10 +83,7 @@ public class ListFragment extends Fragment {
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH)+1;
         mDay = c.get(Calendar.DAY_OF_MONTH);
-        textView=view.findViewById(R.id.textView9);
-        if(createAccountItem.C_name!=null){
-            textView.setText(createAccountItem.K_name +" " +createAccountItem.C_name+"어린이");
-        }
+
 
 
         notiBtn = (Button) view.findViewById(R.id.notificationSetting);
@@ -160,11 +157,15 @@ public class ListFragment extends Fragment {
                         @Override
                         public void onSuccess(ListResult listResult) {
                             List<String> dates = listResult.getItems().stream().map(StorageReference::getName)
-                                    .filter(name -> name.contains("Junhee"))
+                                    .filter(name -> name.contains(createAccountItem.C_name))
                                     .collect(Collectors.toList());
 
                             adapter.setFileContainList(dates);
                             listView.setAdapter(adapter);
+                            textView=view.findViewById(R.id.textView9);
+                            if(createAccountItem.C_name!=null){
+                                textView.setText(createAccountItem.C_name+" 어린이");
+                            }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -175,5 +176,6 @@ public class ListFragment extends Fragment {
                         }
                     });
         }
+
     }
 }

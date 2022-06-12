@@ -101,7 +101,7 @@
       <recent name="com.aaop.everykid.config" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.EverykidApplication">
+  <component name="RunManager" selected="Application.EverykidApplication">
     <configuration name="EverykidApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />
@@ -127,14 +127,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.EverykidApplication" />
+        <item itemvalue="Application.EverykidApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
       <created>1649225969211</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

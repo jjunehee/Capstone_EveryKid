@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.FcmUser;
 import com.capstone.everykid.R;
 import com.google.firebase.database.DataSnapshot;
@@ -42,6 +43,7 @@ public class NotificationSetting extends AppCompatActivity {
     FirebaseDatabase mdatabase;
     DatabaseReference myRef;
     private String userId;
+    private CreateAccountItem createAccountItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,7 @@ public class NotificationSetting extends AppCompatActivity {
             btSubscribe.setText("해지합니다.");
         }
 
-        String userName = "Junhee";
+        String userName = createAccountItem.C_name;
 
         Query myQuery = myRef.orderByChild("name").equalTo(userName);
         myQuery.addValueEventListener(new ValueEventListener() {
@@ -84,7 +86,7 @@ public class NotificationSetting extends AppCompatActivity {
                     FcmUser user = userSnapshot.getValue(FcmUser.class);
                     String name = user.getName();
                     String email = user.getEmail();
-                    tvResult.setText("Name: "+name+" Email: " +email+" 으로 구독중입니다." + token);
+                    tvResult.setText("Name: "+name+"                                                               Email: " +email+" 으로 구독중입니다.");
                     etName.setText(name);
                     etEmail.setText(email);
                 }
