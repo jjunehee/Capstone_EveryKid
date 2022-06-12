@@ -101,7 +101,7 @@
       <recent name="com.aaop.everykid.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EverykidApplication">
+  <component name="RunManager" selected="애플리케이션.EverykidApplication">
     <configuration name="EverykidApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />
@@ -127,7 +127,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EverykidApplication" />
+        <item itemvalue="애플리케이션.EverykidApplication" />
       </list>
     </recent_temporary>
   </component>
