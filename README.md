@@ -421,7 +421,9 @@ alter table board modify WRITE_DATE datetime;
   <img src="https://user-images.githubusercontent.com/83155528/172223737-52eb0a3d-cb70-4734-b257-743ab6b84f9c.PNG" width="300" height="490">
 
   ### 06/12
-  ```[조준희] opencv 얼굴인식 한글 깨짐 ~ing```
+  ```[조준희] {라즈베리파이} 아이등록 한글로 저장가능하도록 구현```
+  '''[조준희] {안드로이드} 등하원리스트 아이정보 적용 / 채팅,등하원리스트 UI 수정```
+  
   
 </div>
 </details>
