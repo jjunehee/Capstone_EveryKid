@@ -176,7 +176,7 @@ while True:
             
             
             count+=1
-            if(count % 45 == 0 and confidence < 45 ):
+            if(count % 20 == 0 and confidence < 45 ):
                 firebase(firebase_id)
                 userInfo = db.reference('users')
                 for var in userInfo.get().values():
