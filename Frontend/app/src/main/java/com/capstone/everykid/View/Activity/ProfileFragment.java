@@ -123,9 +123,11 @@ public class ProfileFragment extends Fragment {
 
         if (createAccountItem.C_name == null) {
             kidprofile.setVisibility(View.GONE);
+            add_btn.setVisibility(View.VISIBLE);
         }
 
         if (createAccountItem.C_name != null) {
+            kidprofile.setVisibility(View.VISIBLE);
             add_btn.setVisibility(View.GONE);
             child_name.setText(createAccountItem.C_name);
             child_age.setText(createAccountItem.C_age + "세");
@@ -208,31 +210,36 @@ public class ProfileFragment extends Fragment {
                         Call<String> call = retrofitAPI.deleteChild(Long.toString(createAccountItem.P_kid));
 
                         call.enqueue(new Callback<String>() {
+
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
-
                                 if (response.isSuccessful()) {
                                     //통신이 성공된 경우
                                     String result = response.body();
                                     System.out.println("아이 삭제 통신 완료");
                                     createAccountItem.C_name = null;
                                     createAccountItem.C_age = null;
+                                    Intent intent = new Intent(getActivity(), MainParent.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
                                 } else {
                                     //통신이 실패한 경우
                                     System.out.println("아이 삭제 실패");
                                 }
                             }
-
                             @Override
                             public void onFailure(Call<String> call, Throwable t) {
                                 //통신 실패 (인터넷 끊김, 예외 발생 등 시스템적인 이유)
                                 t.printStackTrace();
+                                System.out.println("예외발생");
+                                System.out.println("아이 삭제 통신 완료");
+                                createAccountItem.C_name = null;
+                                createAccountItem.C_age = null;
+                                Intent intent2 = new Intent(getActivity(), MainParent.class);
+                                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent2);
                             }
                         });
-
-                        Intent intent = new Intent(getActivity(), MainParent.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
                     }
                 });
 

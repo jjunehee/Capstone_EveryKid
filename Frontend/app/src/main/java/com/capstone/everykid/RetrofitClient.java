@@ -30,6 +30,16 @@ public class RetrofitClient {
                 .client(client) //로그 기능 추가
                 .build();
 
+        if (retrofit == null)
+        {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(new NullOnEmptyConverterFactory())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+
         RetrofitAPI = retrofit.create(RetrofitAPI.class);
     }
 

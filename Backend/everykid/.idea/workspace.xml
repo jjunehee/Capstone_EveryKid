@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="" />
-=======
-    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="변경">
+    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/RetrofitAPI/RetrofitAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/java/com/capstone/everykid/View/Activity/ProfileFragment.java" afterDir="false" />
     </list>
->>>>>>> d761e46875467bfb971bd445909acff8a324aed8
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +104,7 @@
       <recent name="com.aaop.everykid.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EverykidApplication">
+  <component name="RunManager" selected="애플리케이션.EverykidApplication">
     <configuration name="EverykidApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />
