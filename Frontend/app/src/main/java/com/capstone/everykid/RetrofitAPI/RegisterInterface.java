@@ -42,4 +42,7 @@ public interface RegisterInterface
             @Field("CNAME") String name,
             @Field("CAGE") String age
     );
+    @FormUrlEncoded
+    @POST("/child/delete")
+    Call<String> deleteChild(@Field("PKID") String pkid);
 }

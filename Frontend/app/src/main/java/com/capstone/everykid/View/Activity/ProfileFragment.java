@@ -35,6 +35,7 @@ import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.Model.LoginResponseTeacher;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
+import com.capstone.everykid.RetrofitAPI.RegisterInterface;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
 
@@ -203,8 +204,8 @@ public class ProfileFragment extends Fragment {
                                 .build();
                         System.out.println("------------------------" + createAccountItem.P_kid);
 
-                        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
-                        Call call = retrofitAPI.deleteChild(createAccountItem.P_kid);
+                        RegisterInterface retrofitAPI = retrofit.create(RegisterInterface.class);
+                        Call<String> call = retrofitAPI.deleteChild(Long.toString(createAccountItem.P_kid));
 
                         call.enqueue(new Callback<String>() {
                             @Override
