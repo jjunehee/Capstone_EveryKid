@@ -136,8 +136,8 @@ id = 0
 
 # names related to ids: example ==> loze: id=1,  etc
 # 이런식으로 사용자의 이름을 사용자 수만큼 추가해준다.
-names = ['None', 'Junhee', 'Jinsun', 'hyeokjin', 'ksw']
-firebase_names = ['None', '준희', 'Jinsun', 'hyeokjin', 'ksw']
+names = ['None', 'Junseung', 'Jinsun', 'hyeokjin', 'ksw']
+firebase_names = ['None', '준승', 'Jinsun', 'hyeokjin', 'ksw']
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video widht
