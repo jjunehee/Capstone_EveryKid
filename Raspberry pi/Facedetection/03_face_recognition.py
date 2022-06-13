@@ -66,7 +66,7 @@ def mesgSend1(token,id):
     message = messaging.Message (
         notification=messaging.Notification(
             title='EveryKid알림',
-            body='안녕하세요 ' +id+ '가 등원했어요!',
+            body='안녕하세요 ' +id+ '(이)가 등원했어요!',
             ),
         android=messaging.AndroidConfig(
             ttl=datetime.timedelta(seconds=3600),
@@ -98,7 +98,7 @@ def mesgSend2(token,id):
     message = messaging.Message (
         notification=messaging.Notification(
             title='EveryKid알림',
-            body='안녕하세요 ' +id+ '가 하원했어요!',
+            body='안녕하세요 ' +id+ '(이)가 하원했어요!',
             ),
         android=messaging.AndroidConfig(
             ttl=datetime.timedelta(seconds=3600),
