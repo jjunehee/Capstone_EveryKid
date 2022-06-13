@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="341dp"
+        android:layout_width="250dp"
         android:layout_height="147dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="ID"
+                android:textStyle="bold"
                 android:padding="16dp"
                 android:textSize="18dp" />
 
@@ -85,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="PASSWORD"
+                android:textStyle="bold"
                 android:ems="10"
                 android:inputType="textPassword"
                 android:padding="16dp"
@@ -126,6 +128,19 @@
         app:layout_constraintTop_toBottomOf="@+id/signinteacher_btn"
         app:layout_constraintVertical_bias="0.072" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For Teacher"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

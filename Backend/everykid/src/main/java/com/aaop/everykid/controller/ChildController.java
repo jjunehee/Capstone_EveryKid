@@ -1,38 +1,42 @@
-/*
 package com.aaop.everykid.controller;
 
+import com.aaop.everykid.dto.DeleteCFormDto;
+import com.aaop.everykid.dto.RegisterCFormDto;
 import com.aaop.everykid.entity.Child;
-import com.aaop.everykid.service.ChildService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.aaop.everykid.service.RegisterCService;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.util.List;
-import java.util.UUID;
-
-import static org.springframework.http.HttpStatus.CREATED;
-
-
 
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/child")
 public class ChildController {
 
-    private final ChildService childService;
+    private final RegisterCService registerCService;
 
+
+    @PostMapping(value = "/child")
+    public RegisterCFormDto registerCFormDto(RegisterCFormDto registerCFormDto) {
+        Child child = Child.createChild(registerCFormDto);
+        registerCService.saveChild(child);
+        System.out.println("아이등록" + registerCFormDto);
+        return registerCFormDto;
+    }
+
+    @PostMapping(value = "/delete")
+    public DeleteCFormDto deleteCFormDto(DeleteCFormDto deleteCFormDto) {
+        registerCService.deleteChild(deleteCFormDto.getPKID());
+        System.out.println("아이삭제");
+        return null;
+    }
+}
+
+
+/*
     //@Value("${upload.path}")
-    private String uploadPath;
+    private String uploadPath = "C:/upload";
 
     @PostMapping(value = "/child")
     public ResponseEntity register(@RequestPart("child") String childString,
@@ -45,10 +49,10 @@ public class ChildController {
         String cAGE = child.getCAGE();
         String cNAME = child.getCNAME();
 
-        if(cNAME != null){
+        if (cNAME != null) {
             log.info("child.getCNAME()");
         }
-        if(cAGE != null){
+        if (cAGE != null) {
             log.info("child.getCAGE()");
         }
         child.setPicture(picture);
@@ -115,15 +119,15 @@ public class ChildController {
         return entity;
     }
 
-    private  MediaType getMediaType(String formatName){
-        if(formatName != null){
-            if(formatName.equals("JPG")){
+    private MediaType getMediaType(String formatName) {
+        if (formatName != null) {
+            if (formatName.equals("JPG")) {
                 return MediaType.IMAGE_JPEG;
             }
-            if(formatName.equals("GIF")){
+            if (formatName.equals("GIF")) {
                 return MediaType.IMAGE_GIF;
             }
-            if(formatName.equals("PNG")){
+            if (formatName.equals("PNG")) {
                 return MediaType.IMAGE_PNG;
             }
         }
@@ -131,7 +135,7 @@ public class ChildController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Child>> list() throws Exception{
+    public ResponseEntity<List<Child>> list() throws Exception {
         log.info("list");
         List<Child> childList = this.childService.list();
 
@@ -139,15 +143,55 @@ public class ChildController {
     }
 
     @GetMapping("/{childId}")
-    public ResponseEntity<Child> read(@PathVariable("childId") Long childId) throws Exception{
+    public ResponseEntity<Child> read(@PathVariable("childId") Long childId) throws Exception {
         log.info("read");
 
-        Child child = this.childService.read(ChildId);
+        Child child = this.childService.read(childId);
 
         return new ResponseEntity<>(child, HttpStatus.OK);
     }
+    @DeleteMapping("/{childId}")
+    public ResponseEntity<Void> remove(@PathVariable("childId") Long childId) throws Exception{
+        log.info("remove");
+        this.childService.remove(childId);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
 
+    @PutMapping
+    public ResponseEntity<Child> modify(@RequestPart("child") String childString, @RequestPart(name = "file", required = false) MultipartFile picture) throws Exception {
+        log.info("childString:" + childString);
 
+        Child child = new ObjectMapper().readValue(childString, Child.class);
+
+        String childName = child.getCNAME();
+        String childAge = child.getCAGE();
+
+        if (childName != null) {
+            child.setCNAME(childName);
+        }
+        if (childAge != null) {
+            child.setCAGE(childAge);
+        }
+
+        if (picture != null) {
+            child.setPicture(picture);
+
+            MultipartFile file = child.getPicture();
+            String createdFileName = uploadFile(file.getOriginalFilename(), file.getBytes());
+            child.setPictureUrl(createdFileName);
+        } else {
+            Child oldchild = this.childService.read(child.getCKID());
+            child.setPictureUrl(oldchild.getPictureUrl());
+
+        }
+        this.childService.modify(child);
+
+        Child modifiedChild = new Child();
+        modifiedChild.setCKID(child.getCKID());
+
+        return new ResponseEntity<>(modifiedChild, HttpStatus.OK);
+    }
+}
 
 
 

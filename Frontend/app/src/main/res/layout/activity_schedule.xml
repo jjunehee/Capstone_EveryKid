@@ -3,17 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#eeeeee"
+    android:background="@drawable/round_background_2"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     tools:context=".View.Activity.ScheduleActivity">
 
     <!-- 타이틀바 -->
     <LinearLayout
+        android:background="@drawable/round_background_2"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp" android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/main_yellow"
+        android:backgroundTint="@color/main_yellow"
         android:padding="4dp">
 
         <TextView
@@ -21,6 +24,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="알림장"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="18dp" />
     </LinearLayout>
     <!-- 타이틀바 end -->
@@ -37,6 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textSize="13dp"
+            android:textStyle="bold"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -52,6 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textStyle="bold"
+            android:textSize="13dp"
             android:scrollbars="vertical"
             android:textColor="#000000" />
 
@@ -64,11 +73,14 @@
         android:layout_margin="9dp">
         <Button
             android:text="확인"
-            android:textSize="13dp"
-            android:textColor="#000000"
-            android:padding="3dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:paddingLeft="20dp" android:paddingRight="20dp"   android:paddingTop="10dp" android:paddingBottom="10dp"
             android:gravity="center"
             android:layout_width="wrap_content"
+            android:background="@drawable/round_background"
+            android:backgroundTint="@color/main_yellow"
             android:layout_height="wrap_content"
             android:onClick="mOnClose"/>
     </LinearLayout>

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes" />
+=======
+    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="" />
+>>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,15 +80,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/choi/AndroidStudioProjects/Capstone_EveryKid/Backend/everykid&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="모듈" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\everykid\src\main\resources\templates" />
       <recent name="C:\Users\user\IdeaProjects\everykid\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\young\Desktop\Project\EveryKid Project\Capstone_EveryKid\Backend\everykid\src\main\java\com\aaop\everykid\service" />
+      <recent name="C:\Users\young\Desktop\Project\EveryKid Project\Capstone_EveryKid\Backend\everykid\src\main\java\com\aaop\everykid\Jwt" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.aaop.everykid.controller" />
@@ -93,7 +106,7 @@
     </key>
   </component>
   <component name="RunManager" selected="애플리케이션.EverykidApplication">
-    <configuration name="EverykidApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="EverykidApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaop.everykid.EverykidApplication" />
       <module name="everykid.main" />
       <extension name="coverage">
@@ -116,16 +129,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="애플리케이션.EverykidApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="" />
+      <changelist id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="" />
       <created>1649225969211</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -154,6 +162,37 @@
       <workItem from="1653985226716" duration="2321000" />
       <workItem from="1653987834871" duration="529000" />
       <workItem from="1653988745218" duration="45000" />
+      <workItem from="1653996065667" duration="194000" />
+      <workItem from="1653996342652" duration="588000" />
+      <workItem from="1654106880953" duration="1090000" />
+      <workItem from="1654141401246" duration="3203000" />
+      <workItem from="1654149327516" duration="605000" />
+      <workItem from="1654150547158" duration="4543000" />
+      <workItem from="1654160028712" duration="2871000" />
+      <workItem from="1654164084666" duration="491000" />
+      <workItem from="1654308422471" duration="2026000" />
+      <workItem from="1654395341966" duration="5336000" />
+      <workItem from="1654407086299" duration="974000" />
+      <workItem from="1654409932609" duration="1723000" />
+      <workItem from="1654413420505" duration="52000" />
+      <workItem from="1654413582594" duration="8000" />
+      <workItem from="1654413680074" duration="138000" />
+      <workItem from="1654452632333" duration="2007000" />
+      <workItem from="1654484692467" duration="1891000" />
+      <workItem from="1654488953630" duration="1220000" />
+      <workItem from="1654494839181" duration="623000" />
+      <workItem from="1654525642528" duration="5039000" />
+      <workItem from="1654605485207" duration="7000" />
+      <workItem from="1654861435871" duration="203000" />
+      <workItem from="1654926364754" duration="2117000" />
+      <workItem from="1654965446175" duration="3498000" />
+      <workItem from="1654969545056" duration="273000" />
+      <workItem from="1654969900676" duration="1273000" />
+      <workItem from="1654971538987" duration="351000" />
+      <workItem from="1655047126006" duration="3172000" />
+      <workItem from="1655051071837" duration="125000" />
+      <workItem from="1655051683292" duration="118000" />
+      <workItem from="1655092709209" duration="2783000" />
     </task>
     <servers />
   </component>

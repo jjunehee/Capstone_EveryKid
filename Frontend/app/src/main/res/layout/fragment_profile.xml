@@ -25,7 +25,7 @@
                 android:orientation="horizontal"
                 android:padding="15dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_img"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
@@ -80,7 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#E4E4E4"
-                android:padding="4dp">
+                android:padding="4dp"
+
+                android:id="@+id/childinfo">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,48 +100,64 @@
 <!--                android:layout_height="wrap_content"-->
 <!--               />-->
             <LinearLayout
+                android:id="@+id/kidprofile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:padding="5dp"
                 android:background="@drawable/round_background_2"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@drawable/default_profile"
                         android:id="@+id/kidprofile_img"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/round_background"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/kidprofile"/>
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+
+                        />
                 </FrameLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_margin="5dp">
+                    android:layout_margin="5dp"
+                    >
                     <TextView
                         android:id="@+id/child_name"
                         android:text="김밥"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="8dp"
+                        android:padding="7dp"
                         android:textSize="16dp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/kid_info"
-                        android:text="7세 햇님반"
-                        android:padding="8dp"/>
+                        android:id="@+id/child_age"
+                        android:text="7세"
+                        android:textStyle="bold"
+                        android:padding="7dp"/>
                 </LinearLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/child_delete"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/ic_baseline_close_24"
+                        android:backgroundTint="@color/gray_text_color" />
+                </FrameLayout>
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -221,11 +239,13 @@
 
             </LinearLayout>
 <!--어린이집 정보 end-->
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#E4E4E4"
-                android:padding="4dp">
+                android:padding="4dp"
+                android:id="@+id/teacherinfo">
                 <TextView
                     android:id="@+id/user_txt3"
                     android:layout_width="wrap_content"
@@ -240,7 +260,9 @@
                 android:layout_margin="15dp"
                 android:padding="5dp"
                 android:background="@drawable/round_background_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+
+                android:id="@+id/teacherinfo2">
 
                 <!--                <FrameLayout-->
                 <!--                    android:layout_width="wrap_content"-->
@@ -267,17 +289,17 @@
                     android:textSize="16dp"
                     android:textStyle="bold"/>
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="50dp" android:layout_height="50dp"
-                        android:layout_gravity="end|center_vertical"
-                        android:background="@drawable/ic_baseline_chevron_right_24"
-                        android:id="@+id/teacher_btn"
-                        android:backgroundTint="@color/gray_text_color"
-                        android:textColor="#7A7A7A" />
-                </FrameLayout>
+<!--                <FrameLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent">-->
+<!--                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                        android:layout_width="50dp" android:layout_height="50dp"-->
+<!--                        android:layout_gravity="end|center_vertical"-->
+<!--                        android:background="@drawable/ic_baseline_chevron_right_24"-->
+<!--                        android:id="@+id/teacher_btn"-->
+<!--                        android:backgroundTint="@color/gray_text_color"-->
+<!--                        android:textColor="#7A7A7A" />-->
+<!--                </FrameLayout>-->
 
             </LinearLayout>
 
@@ -302,14 +324,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/profile_post_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="start|center"
-                    android:background="#FFFFFF"
-                    android:paddingStart="10dp"
-                    android:text="내가 쓴 게시글" />
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

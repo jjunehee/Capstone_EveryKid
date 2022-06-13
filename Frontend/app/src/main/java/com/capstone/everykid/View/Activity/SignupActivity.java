@@ -56,6 +56,7 @@ public class SignupActivity extends AppCompatActivity
         intent = getIntent();
         accountUser= intent.getExtras().getString("User"); //회원가입하는 사용자가 선생님인지 학부모인지
 
+
         retrofitClient = RetrofitClient.getInstance();
         RetrofitAPI = RetrofitClient.getRetrofitInterface();
 
@@ -67,7 +68,11 @@ public class SignupActivity extends AppCompatActivity
         etusername = findViewById(R.id.name);
         etpassword = (EditText) findViewById(R.id.pw);
         etemail = (EditText) findViewById(R.id.email);
-        etteachername=(EditText) findViewById(R.id.teachername);
+        etteachername=(EditText) findViewById(R.id.etteachername);
+
+        if(accountUser.equals("Teacher")){
+            etteachername.setVisibility(View.GONE);
+        }
 
         ekindergarten = (EditText) findViewById(R.id.kindergarten) ;
 
@@ -76,13 +81,14 @@ public class SignupActivity extends AppCompatActivity
         etusername.setText(intent.getExtras().getString("etusername"));
         etpassword.setText(intent.getExtras().getString("etpassword"));
         etemail.setText(intent.getExtras().getString("etemail"));
+        etteachername.setText(intent.getExtras().getString("etteachername"));
         ekindergarten.setText(intent.getExtras().getString("ekindergarten"));
         kkid = intent.getExtras().getLong("kkid");
         kindergartenID=Long.toString(kkid);
         System.out.println(kindergartenID);
 
         btnregister = (Button) findViewById(R.id.button4);
-        btnduplicateCheck = (Button) findViewById(R.id.duplicateCheck_btn);
+//        btnduplicateCheck = (Button) findViewById(R.id.duplicateCheck_btn);
         btnkindergarten = (Button) findViewById(R.id.kindergarten_btn);
 
 
@@ -103,7 +109,8 @@ public class SignupActivity extends AppCompatActivity
                     startActivity(intent);
                 }
             }
-        });
+        }
+        );
 
         btnkindergarten.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +123,7 @@ public class SignupActivity extends AppCompatActivity
                 intent.putExtra("etpassword", etpassword.getText().toString());
                 intent.putExtra("etemail", etemail.getText().toString());
                 intent.putExtra("ekindergarten", ekindergarten.getText().toString());
+                intent.putExtra("etteachername",etteachername.getText().toString());
                 startActivity(intent);
             }
         });
@@ -168,6 +176,8 @@ public class SignupActivity extends AppCompatActivity
             }
         });
     }
+
+    //선생님 회원가입
     private void registerTeacher()
     {
         final String id = etid.getText().toString();

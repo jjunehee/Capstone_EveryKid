@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingTop="50dp">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,13 +70,13 @@
                     android:hint="아이디를 입력해주세요."
                     android:inputType="textPersonName" />
 
-                <Button
-                    android:id="@+id/duplicateCheck_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+<!--                <Button-->
+<!--                    android:id="@+id/duplicateCheck_btn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
 
-                    android:layout_margin="10dp"
-                    android:text="중복 확인" />
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:text="중복 확인" />-->
 
             </LinearLayout>
 
@@ -89,17 +89,8 @@
                 android:layout_margin="10dp"
                 android:ems="10"
                 android:hint="비밀번호를 입력해주세요."
-                android:inputType="textPersonName" />
-            <EditText
-                android:id="@+id/teachername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                android:ems="10"
-                android:hint="담당선생님을 등록해주세요."
-                android:inputType="textPersonName" />
+                android:inputType="textPassword"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,7 +113,6 @@
                     android:id="@+id/kindergarten_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_margin="10dp"
                     android:text="검색" />
 
@@ -130,7 +120,18 @@
 
 
 
+
             </LinearLayout>
+            <EditText
+                android:id="@+id/etteachername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:hint="담당선생님을 등록해주세요."
+                android:inputType="textPersonName" />
 
 
             <Button
@@ -141,7 +142,8 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/round_background"
                 android:text="회원가입"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_marginBottom="50dp"/>
 
 
 

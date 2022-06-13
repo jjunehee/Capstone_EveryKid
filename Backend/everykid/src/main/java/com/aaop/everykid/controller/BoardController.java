@@ -78,8 +78,7 @@ public class BoardController {
 
     //글삭제
     @RequestMapping("/delete")
-
-    public String deleteContent(Long bKID) {
+    public String deleteContent(@RequestParam("bKID") Long bKID) {
 
         Board board = boardRepository.findByBKID(bKID);
 
@@ -89,9 +88,9 @@ public class BoardController {
     }
 
     @RequestMapping("/modify")
-    public String updateContent(Long bKID, String contents) {
+    public String updateContent(@RequestParam("bKID") Long bKID, @RequestParam("subject") String subject, @RequestParam("contents") String contents) {
 
-        boardService.update(bKID, contents);
+        boardService.update(bKID, subject, contents);
 
         return "";
     }
@@ -99,21 +98,24 @@ public class BoardController {
 
     @RequestMapping(value="/search/{kID}", produces="application/json;charset=UTF-8")
     public String searchContent(@PageableDefault(size = 10, sort = "B_KID", direction = Sort.Direction.DESC) Pageable pageable,
-                                @RequestParam("key") String key,@PathVariable("kID") Long kID) {
+                                @RequestParam("key") String key, @RequestParam("SPINNER") String spinner, @PathVariable("kID") Long kID) {
 
         if(key.length() < 2 && key.length() > 0 )
             return "";
 
-        Page<Board> board;
+        Page<Board> board = null;
         System.out.println("+++" + key.length() + "+++" + key + "+++");
-        board = boardService.getSearchList(key, kID, pageable);
+        switch(spinner) {
+            case "제목": board = boardService.getSearchSubject(key, kID, pageable);
+                break;
+            case "내용": board = boardService.getSearchContents(key, kID, pageable);
+                break;
+            case "작성자": board = boardService.getSearchWriter(key, kID, pageable);
+                break;
+        }
 
-        System.out.println(board.getTotalElements());
-        System.out.println(board.getTotalPages());
-        System.out.println(board.getNumber()); //page는 0부터 시작
-        System.out.println(board.getSize());
-        System.out.println(board.getContent());
-
+        if(board == null)
+            return "";
         BoardList boardList = new BoardList(board.getContent(), (int)board.getTotalElements(), board.getSize(), board.getNumber(), board.getTotalPages());
 
         Gson gson = new GsonBuilder().setDateFormat("MMM dd, yyyy HH:mm:ss a").create();

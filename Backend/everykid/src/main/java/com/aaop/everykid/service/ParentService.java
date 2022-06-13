@@ -2,17 +2,12 @@ package com.aaop.everykid.service;
 
 
 import com.aaop.everykid.Jwt.TokenUtils;
+import com.aaop.everykid.config.StatusCode;
 import com.aaop.everykid.dto.LoginPFormDto;
 import com.aaop.everykid.dto.RegisterPFormDto;
-import com.aaop.everykid.entity.Auth;
-import com.aaop.everykid.entity.Kindergarten;
-import com.aaop.everykid.entity.Parent;
+import com.aaop.everykid.entity.*;
 import com.aaop.everykid.dto.TokenResponseDto;
-import com.aaop.everykid.entity.Teacher;
-import com.aaop.everykid.repository.AuthRepository;
-import com.aaop.everykid.repository.KindergartenRepository;
-import com.aaop.everykid.repository.ParentRepository;
-import com.aaop.everykid.repository.TeacherRepository;
+import com.aaop.everykid.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +15,8 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+
+import static com.aaop.everykid.config.StatusCode.*;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +26,7 @@ public class ParentService {
     private final TokenUtils tokenUtils;
     private final AuthRepository authRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ChildRepository childRepository;
 
     public Optional<Parent> findBypID(String PID) {
 
@@ -61,29 +59,39 @@ public class ParentService {
 
     @Transactional
     public TokenResponseDto signIn(LoginPFormDto loginFormDto) throws Exception {
+
         Parent parent =
                 parentRepository
                         .findBypID(loginFormDto.getPID())
-                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
+                        .orElseGet(Parent::new);
         Kindergarten kindergarten =
                 kindergartenRepository
                         .findByKKID(parent.getKKID())
-                        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유치원입니다."));
+                        .orElseGet(Kindergarten::new);
         Auth auth = authRepository
                         .findByParentPKID(parent.getPKID())
-                        .orElseThrow(() -> new IllegalArgumentException("Token 이 존재하지 않습니다."));
+                        .orElseGet(Auth::new);
 
+        Child child = childRepository
+                .findByPKID(parent.getPKID()).orElseGet(Child::new);
+
+        if (parent.getPID() == null){
+            return TokenResponseDto.builder()
+                    .status(NOT_FOUND)
+                    .build();
+        }
         if (!passwordEncoder.matches(loginFormDto.getPPWD(), parent.getPPWD())) {
-            throw new Exception("비밀번호가 일치하지 않습니다.");
+            return TokenResponseDto.builder()
+                    .status(BAD_REQUEST)
+                    .build();
         }
         String accessToken = "";
         String refreshToken = auth.getRefreshToken();
 
-
         if (tokenUtils.isValidRefreshToken(refreshToken)) {
             accessToken = tokenUtils.generateJwtToken(auth.getParent());
             return TokenResponseDto.builder()
-                    .status(200)
+                    .status(OK)
                     .ACCESS_TOKEN(accessToken)
                     .REFRESH_TOKEN(auth.getRefreshToken())
                     .pNAME(parent.getPNAME())
@@ -97,6 +105,8 @@ public class ParentService {
                     .kADDRESS(kindergarten.getKADDRESS())
                     .kPHONE(kindergarten.getKPHONE())
                     .tNAME(parent.getTNAME())
+                    .cAGE(child.getCAGE())
+                    .cNAME(child.getCNAME())
                     .build();
 
         } else {

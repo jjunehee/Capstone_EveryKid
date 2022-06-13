@@ -1,4 +1,5 @@
 /*
+
 package com.aaop.everykid.config;
 
 import com.aaop.everykid.Jwt.JwtTokenInterceptor;
@@ -17,4 +18,5 @@ public class JwtMvcConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/signUp");
     }
-}*/
+}
+*/

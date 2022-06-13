@@ -1,5 +1,7 @@
 package com.capstone.everykid.RetrofitAPI;
 
+import com.capstone.everykid.View.Activity.ChildData;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -32,4 +34,15 @@ public interface RegisterInterface
             @Field("TEMAIL") String email,
             @Field("KKID") String kindergarten
     );
+
+    @FormUrlEncoded
+    @POST("child/child")
+    Call<String> setChildData(
+            @Field("PKID") String pkid,
+            @Field("CNAME") String name,
+            @Field("CAGE") String age
+    );
+    @FormUrlEncoded
+    @POST("/child/delete")
+    Call<String> deleteChild(@Field("PKID") String pkid);
 }

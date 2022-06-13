@@ -6,16 +6,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-        <EditText
-            android:id="@+id/searchBoard"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:ems="10"
-            android:hint="검색"
-            android:inputType="textPersonName" />
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/boardSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="7" />
+
+            <EditText
+                android:id="@+id/searchBoard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_weight="3"
+                android:ems="10"
+                android:hint="검색"
+                android:inputType="textPersonName" />
+        </LinearLayout>
 
         <ListView
             android:id="@+id/kg_list"

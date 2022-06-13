@@ -2,4 +2,9 @@
     <string name="app_name">EveryKid</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="search_array">
+        <item>제목</item>
+        <item>내용</item>
+        <item>작성자</item>
+    </string-array>
 </resources>

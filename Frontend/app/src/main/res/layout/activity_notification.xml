@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center">
 
     <TextView
         android:textSize="20dp"
@@ -15,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="30dp"
-        android:text="알림서비스 Test" />
+        android:text="알림서비스" />
 
     <EditText
         android:id="@+id/et_name"
@@ -38,7 +39,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="미세먼지알림을 받겠습니다." />
+        android:text="등하원 알림을 받겠습니다." />
 
     <Button
         android:text="알림 구독"

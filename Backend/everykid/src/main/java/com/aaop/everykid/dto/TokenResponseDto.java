@@ -20,4 +20,6 @@ public class TokenResponseDto {
     private String kPHONE;
     private String kADDRESS;
     private String tNAME;
+    private String cNAME;
+    private String cAGE;
 }

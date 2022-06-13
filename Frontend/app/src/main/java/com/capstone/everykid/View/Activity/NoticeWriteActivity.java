@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,9 +14,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import retrofit2.Call;
@@ -35,6 +39,7 @@ public class NoticeWriteActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         setContentView(R.layout.activity_notice_write);
         Intent intent = getIntent();
         titleView = findViewById(R.id.noticeTitle_et);
@@ -58,7 +63,10 @@ public class NoticeWriteActivity extends Activity {
 
                 retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-                call = retrofitAPI.registNotice(Long.valueOf(1), new Date(), titleView.getText().toString(), contentsView.getText().toString());
+                SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String formatDate = dtFormat.format(new Date());
+
+                call = retrofitAPI.registNotice(CreateAccountItem.K_kid, formatDate, titleView.getText().toString(), contentsView.getText().toString());
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

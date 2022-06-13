@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".View.Activity.ChatFragment">
+    tools:context=".View.Activity.ChatFragment"
+    android:gravity="center">
 
     <LinearLayout
 
@@ -27,13 +28,12 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:background="@drawable/round_background"
             android:maxWidth="200dp"
             android:maxHeight="200dp"
-            android:src="@drawable/profile" />
+            android:src="@drawable/teacher_icon" />
 
         <TextView
-            android:id="@+id/profile_username"
+            android:id="@+id/profile_T_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -54,7 +54,7 @@
                 android:src="@drawable/ic_class" />
 
             <TextView
-                android:id="@+id/profile_classname"
+                android:id="@+id/profile_K_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

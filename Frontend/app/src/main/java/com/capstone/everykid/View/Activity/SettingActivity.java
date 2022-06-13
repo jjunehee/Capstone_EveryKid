@@ -58,14 +58,13 @@ public class SettingActivity extends AppCompatActivity {
         id.setText(createAccountItem.Id);
 
     }
-    //확인버튼
+    //확인 뒤로가기 버튼
     public void ok(View v){
-        saveData();
         finish();
     }
     //수정버튼
     public void update(View v){
-
+        saveData();
     }
     public void OpenPhoto(View v){
         Intent intent = new Intent(Intent.ACTION_PICK);

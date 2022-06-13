@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.Notice;
 import com.capstone.everykid.Model.RecyclerItem;
-import com.capstone.everykid.RetrofitAPI.OnItemClickListener;
+import com.capstone.everykid.OnItemClickListener;
 import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.View.Adapter.NoticeItemAdapter;
@@ -49,6 +50,7 @@ public class HomeFragment extends Fragment {
     Call call;
     List<Notice> noticeList;
     Notice todayNotice = null;
+    TextView kinder_name;
 
 
     public HomeFragment() {
@@ -77,6 +79,9 @@ public class HomeFragment extends Fragment {
         if(createAccountItem.User.equals("t")){
             noticeWrite_btn.setVisibility(View.VISIBLE);
         }
+
+        kinder_name = view.findViewById(R.id.kinder_name2);
+        kinder_name.setText(CreateAccountItem.K_name);
 
 
         noticeWrite_btn.setOnClickListener(new View.OnClickListener() {
@@ -145,7 +150,7 @@ public class HomeFragment extends Fragment {
 
         retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        call = retrofitAPI.getNoticeList(CreateAccountItem.K_kid);
+        call = retrofitAPI.getNoticeList(createAccountItem.K_kid);
         call.enqueue(new Callback<List<Notice>>() {
             @Override
             public void onResponse(Call<List<Notice>> call, Response<List<Notice>> response) {
@@ -163,7 +168,7 @@ public class HomeFragment extends Fragment {
                         String day = formatDate.substring(8, 10);
 
                         Calendar calendar = Calendar.getInstance();
-                        events.add(new EventDay(calendar, R.drawable.conversation));
+                        events.add(new EventDay(calendar, R.drawable.ic_round_new_releases_24));
                         calendar.set(Integer.parseInt(year), Integer.parseInt(month)-1, Integer.parseInt(day)); //month는 1빼야함
                         calendarView.setEvents(events);
                     }
@@ -175,9 +180,9 @@ public class HomeFragment extends Fragment {
                         mList.remove(0);
                     try {
                         todayNotice = getTodayNotice();
-                        addItem(todayNotice.getWriteSubject()); //리사이클러뷰어댑터에 아이템 임시 추가
+                        addItem(todayNotice.getWriteSubject());
                     } catch(NullPointerException e) {
-                        addItem("오늘의 알림장이 없습니다."); //리사이클러뷰어댑터에 아이템 임시 추가
+                        addItem("오늘의 알림장이 없습니다.");
                     }
                     mAdapter.notifyDataSetChanged();
                     calendarView.invalidate();
@@ -210,11 +215,19 @@ public class HomeFragment extends Fragment {
                 //RecyclerItem item = mAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(), NoticeActivity.class);
                 if(todayNotice != null) {
-                    intent.putExtra("subject", todayNotice.getWriteSubject());
-                    intent.putExtra("contents", todayNotice.getContents());
+                    try {
+                        intent.putExtra("subject", todayNotice.getWriteSubject());
+                        intent.putExtra("contents", todayNotice.getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 } else {
-                    intent.putExtra("subject", getTodayNotice().getWriteSubject());
-                    intent.putExtra("contents", getTodayNotice().getContents());
+                    try {
+                        intent.putExtra("subject", getTodayNotice().getWriteSubject());
+                        intent.putExtra("contents", getTodayNotice().getContents());
+                    } catch(NullPointerException e) {
+                        return;
+                    }
                 }
                 startActivity(intent);
             }
