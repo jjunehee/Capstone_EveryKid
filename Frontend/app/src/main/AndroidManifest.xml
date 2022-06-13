@@ -5,6 +5,7 @@
     <queries>
         <provider android:authorities="kr.co.softcampus.dbprovider"/>
     </queries>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

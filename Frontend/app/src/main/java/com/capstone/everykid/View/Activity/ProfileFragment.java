@@ -113,7 +113,7 @@ public class ProfileFragment extends Fragment {
 
         kinder_name = (TextView) view.findViewById(R.id.kinder_name);
         p_name.setText(createAccountItem.Name);
-        teacher_name.setText(createAccountItem.Tname);
+        teacher_name.setText(createAccountItem.Tname+" 선생님");
 
         info_btn = view.findViewById(R.id.kinder_btn);
         profile_btn = view.findViewById(R.id.profileInfo_btn);
@@ -121,6 +121,7 @@ public class ProfileFragment extends Fragment {
         logout_btn = view.findViewById(R.id.logout_btn);
         teacher_btn = view.findViewById(R.id.teacher_btn);
 
+        System.out.println("==========================="+createAccountItem.C_name);
 
         if (createAccountItem.C_name == null) {
             kidprofile.setVisibility(View.GONE);
@@ -133,19 +134,16 @@ public class ProfileFragment extends Fragment {
             child_name.setText(createAccountItem.C_name);
             child_age.setText(createAccountItem.C_age + "세");
             child_img.setImageURI(createAccountItem.C_uri);
-            pref = getActivity().getSharedPreferences("CHILD", context.MODE_PRIVATE);
-            editor = pref.edit();
-//            if (!pref.getString("childUri", "").equals("")) {
-//                String uri = pref.getString("childUri", "");
+//            if (!getPreferenceString("childImage").equals("")){
+//                String uri = getPreferenceString("childImage");
 //                Uri imageUri = Uri.parse(uri);
 //                child_img.setImageURI(imageUri);
 //            }else{
-//                child_img.setImageDrawable(getResources().getDrawable(R.drawable.default_profile));
+//                child_img.setImageResource(R.drawable.default_profile);
 //            }
 
+
         }
-
-
         if (createAccountItem.User.equals("t")) {
             user_status.setText("선생님");
             user_kinder.setText("근무 유치원");
@@ -155,9 +153,6 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
         }
         kinder_name.setText(createAccountItem.K_name);
-        //프로필 사진 배경에 맞게 자르기
-        p_img.setClipToOutline(true);
-        child_img.setClipToOutline(true);
 
         //프로필 정보 확인 버튼
         profile_btn.setOnClickListener(new View.OnClickListener() {
@@ -188,6 +183,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+//        로그아웃 버튼
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -231,8 +227,10 @@ public class ProfileFragment extends Fragment {
                                     createAccountItem.C_name = null;
                                     createAccountItem.C_age = null;
                                     Intent intent = new Intent(getActivity(), MainParent.class);
+                                    intent.putExtra("child", 1);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(intent);
+                                    Toast.makeText(getActivity(), "아이 삭제 완료", Toast.LENGTH_SHORT).show();
                                 } else {
                                     //통신이 실패한 경우
                                     System.out.println("아이 삭제 실패");
@@ -247,8 +245,10 @@ public class ProfileFragment extends Fragment {
                                 createAccountItem.C_name = null;
                                 createAccountItem.C_age = null;
                                 Intent intent2 = new Intent(getActivity(), MainParent.class);
+                                intent2.putExtra("child", 1);
                                 intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent2);
+                                Toast.makeText(getActivity(), "아이 삭제 완료", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -269,5 +269,9 @@ public class ProfileFragment extends Fragment {
 
 
         return view;
+    }
+    public String getPreferenceString(String key) {
+        SharedPreferences pref = getActivity().getSharedPreferences("CHILD", context.MODE_PRIVATE);
+        return pref.getString(key, "");
     }
 }

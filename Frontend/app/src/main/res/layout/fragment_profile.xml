@@ -117,8 +117,8 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:src="@drawable/default_profile"
                         android:id="@+id/kidprofile_img"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
 
                         />
                 </FrameLayout>
@@ -134,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="8dp"
+                        android:padding="7dp"
                         android:textSize="16dp"
                         android:textStyle="bold"/>
                     <TextView
@@ -143,21 +143,20 @@
                         android:id="@+id/child_age"
                         android:text="7세"
                         android:textStyle="bold"
-                        android:padding="8dp"/>
+                        android:padding="7dp"/>
                 </LinearLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <Button
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_gravity="end|center_vertical"
-                        android:background="@drawable/round_background_2"
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/child_delete"
-                        android:text="아이 삭제"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
-                        android:layout_marginRight="10dp"
-                       />
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/ic_baseline_close_24"
+                        android:backgroundTint="@color/gray_text_color" />
                 </FrameLayout>
             </LinearLayout>
 

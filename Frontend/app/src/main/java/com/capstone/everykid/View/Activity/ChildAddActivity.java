@@ -58,7 +58,7 @@ public class ChildAddActivity extends AppCompatActivity {
     private EditText name, age;
     private Button btn;
     private PreferenceHelper preferenceHelper;
-    private Intent intent;
+    private Intent intent, intent2;
     private String pkid = Long.toString(createAccountItem.P_kid);
 
 
@@ -82,15 +82,17 @@ public class ChildAddActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e(TAG, "버튼 클릭");
+                Log.e(TAG, "등록 버튼 클릭");
                 registerChild();
-                Intent intent = new Intent(getApplicationContext(), MainParent.class);
-                startActivity(intent);
+                intent2 = new Intent(getApplicationContext(), MainParent.class);
+                intent2.putExtra("childadd", 1);
+                startActivity(intent2);
             }
         });
     }
 
     private void registerChild() {
+
         String name1 = name.getText().toString();
         String age1 = age.getText().toString();
 
@@ -113,12 +115,12 @@ public class ChildAddActivity extends AppCompatActivity {
                     createAccountItem.C_age = age1;
                     createAccountItem.Child = "child";
                     Log.e(TAG, "등록 완료");
+                    Toast.makeText(ChildAddActivity.this, "아이 등록 완료", Toast.LENGTH_SHORT).show();
                     try {
                         parseRegData(jsonResponse);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                 }
             }
 
@@ -157,7 +159,10 @@ public class ChildAddActivity extends AppCompatActivity {
 
     //갤러리 여는 버튼
     public void opengallery(View v) {
-        Intent intent = new Intent(Intent.ACTION_PICK);
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addFlags(intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.addFlags(intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         startActivityForResult(intent, GET_GALLERY_IMAGE);
     }
@@ -168,8 +173,11 @@ public class ChildAddActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
+            String uri = selectedImageUri.toString();
+
             imageview.setImageURI(selectedImageUri);
-            setPreference("childUri", selectedImageUri.toString());
+
+            setPreference("childImage", uri);
             createAccountItem.C_uri=selectedImageUri;
             try {
             } catch (Exception e) {
@@ -182,12 +190,7 @@ public class ChildAddActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(key, value);
         editor.apply();
-    }
-
-    //내부 저장소에 저장된 데이터 가져오기
-    public String getPreferenceString(String key) {
-        SharedPreferences pref = getSharedPreferences("CHILD", MODE_PRIVATE);
-        return pref.getString(key, "");
+        editor.commit();
     }
 }
 /*

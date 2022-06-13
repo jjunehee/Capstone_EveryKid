@@ -18,12 +18,15 @@ public class MainParent extends AppCompatActivity {
     ProfileFragment profileFragment;
     CommunityFragment communityFragment;
     int flag = 0;
+    int child =0;
+    int childadd =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_main);
         Intent intent = getIntent();
+
         try {
             flag = intent.getExtras().getInt("cmFlag");
         } catch(NullPointerException e) {
@@ -46,14 +49,29 @@ public class MainParent extends AppCompatActivity {
             navigationBarView.setSelectedItemId(R.id.home);
         }
 
+//        try {
+//            child = intent.getExtras().getInt("child");
+//        } catch(NullPointerException e) {
+//
+//        }
+//
+//            if(child == 1) {//아이 삭제하고 온 경우
+//            child = 0;
+//            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
+//            navigationBarView.setSelectedItemId(R.id.profile);
+//
+//        } else {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
+//            navigationBarView.setSelectedItemId(R.id.home);
+//        }
+
+
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.chatting:
-                        //1) 선생님과 대화가 처음이거나 예전에 종료되었을때
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, chatFragment).commit();
-                        //2) 선생님이 아직 대화 종료를 안함 (추가해야됨)
                         return true;
                     case R.id.community:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers, communityFragment).commit();
