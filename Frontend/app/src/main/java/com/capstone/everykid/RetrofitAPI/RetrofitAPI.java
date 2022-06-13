@@ -76,7 +76,7 @@ public interface RetrofitAPI {
     @GET("/notice/notice/{KKID}")
     Call<List<Notice>> getNoticeList(@Path("KKID") Long KKID);
 
-    @GET("/child/delete")
-    Call<String> deleteChild(@Query("PKID") String pkid);
+    @POST("/child/delete")
+    Call<String> deleteChild(@Query("pKID") Long pKID);
 
 }
