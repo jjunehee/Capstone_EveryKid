@@ -19,7 +19,6 @@ public class Child {
 
     @Id
     @Column(name="C_KID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long CKID;
 
     @Column(name ="C_AGE")
@@ -37,6 +36,7 @@ public class Child {
         child.setCNAME(registerCFormDto.getCNAME());
         child.setCAGE(registerCFormDto.getCAGE());
         child.setPKID(registerCFormDto.getPKID());
+        child.setCKID(registerCFormDto.getPKID());
         return child;
     }
 
