@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -132,6 +133,16 @@ public class ProfileFragment extends Fragment {
             child_name.setText(createAccountItem.C_name);
             child_age.setText(createAccountItem.C_age + "세");
             child_img.setImageURI(createAccountItem.C_uri);
+            pref = getActivity().getSharedPreferences("CHILD", context.MODE_PRIVATE);
+            editor = pref.edit();
+//            if (!pref.getString("childUri", "").equals("")) {
+//                String uri = pref.getString("childUri", "");
+//                Uri imageUri = Uri.parse(uri);
+//                child_img.setImageURI(imageUri);
+//            }else{
+//                child_img.setImageDrawable(getResources().getDrawable(R.drawable.default_profile));
+//            }
+
         }
 
 
@@ -255,6 +266,8 @@ public class ProfileFragment extends Fragment {
 
             }
         });
+
+
         return view;
     }
 }
