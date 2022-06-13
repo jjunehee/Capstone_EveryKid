@@ -119,12 +119,14 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     String token = result.getTokenT();
 
                     //여기서부터 status값 받아와서 해야하는데 일단..
-                    String userId = userID.getText().toString();
+
+                    if (result.getStatus().equals(0)) {
+                        String userId = userID.getText().toString();
                     String userPassword = userPW.getText().toString();
                     setPreference("token", token);
                     setPreference("autoLoginId", userId);
                     setPreference("autoLoginPw", userPassword);
-
+                        setPreference("autoUser","t");
                     createAccountItem.User = "t";
                     createAccountItem.Name = result.getTname();
                     createAccountItem.Email = result.getTemail();
@@ -148,80 +150,64 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     startActivity(intent);
                     SigninTeacherActivity.this.finish();
 
+                    }else if(result.getStatus().equals(200)) {
+                  String userId = userID.getText().toString();
+                    String userPassword = userPW.getText().toString();
+                    setPreference("token", token);
+                    setPreference("autoLoginId", userId);
+                    setPreference("autoLoginPw", userPassword);
+                        setPreference("autoUser","t");
+                    createAccountItem.User = "t";
+                    createAccountItem.Name = result.getTname();
+                    createAccountItem.Email = result.getTemail();
+                    createAccountItem.Phone = result.getTphone();
+                    createAccountItem.Id = result.getTid();
+                    createAccountItem.K_name=result.getKnameT();
+                    createAccountItem.K_phone=result.getKphoneT();
+                    createAccountItem.K_address=result.getKaddressT();
 
-//                    if (result.getStatus().equals(0)) {
-//                        String userId = userID.getText().toString();
-//                        String userPassword = userPW.getText().toString();
-//
-//                        //다른 통신을 하기 위해 token 저장
-//                        setPreference(token, token);
-//
-//                        setPreference("autoLoginId", userId);
-//                        setPreference("autoLoginPw", userPassword);
-//
-//                        String name =result.getTname().toString();
-//
-//
-//                        Toast.makeText(SigninTeacherActivity.this, userId + "님 환영합니다.", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
-//                        intent.putExtra("userId", userId);
-//                        startActivity(intent);
-//                        SigninTeacherActivity.this.finish();
-//
-//                    }else if(result.getStatus().equals(200)) {
-//                        String userId = userID.getText().toString();
-//                        String userPassword = userPW.getText().toString();
-//
-//                        //다른 통신을 하기 위해 token 저장
-//                        setPreference(token, token);
-//
-//                        setPreference("autoLoginId", userId);
-//                        setPreference("autoLoginPw", userPassword);
-//
-//                        createAccountItem.Name=result.getTname();
-//                        createAccountItem.Email=result.getTemail();
-//                        createAccountItem.Phone=result.getTphone();
-//                        createAccountItem.Id=result.getTid();
-//
-////                        createAccountItem.K_name=result.getKname();
-////                        createAccountItem.K_phone=result.getKphone();
-////                        createAccountItem.K_address=result.getKaddress();
-//
-//
-//                        Toast.makeText(SigninTeacherActivity.this, userID + "님 환영합니다.", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
-//                        intent.putExtra("userId", userId);
-//                        startActivity(intent);
-//                        SigninTeacherActivity.this.finish();
-//
-//                    } else if (result.getStatus().equals(300)) {
-//
-//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-//                        builder.setTitle("알림")
-//                                .setMessage("아이디가 존재하지 않습니다.")
-//                                .setPositiveButton("확인", null)
-//                                .create()
-//                                .show();
-//                        AlertDialog alertDialog = builder.create();
-//                        alertDialog.show();
-//
-//                    } else if (result.getStatus().equals(400)) {
-//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-//                        builder.setTitle("알림")
-//                                .setMessage("비밀번호가 일치하지 않습니다.")
-//                                .setPositiveButton("확인", null)
-//                                .create()
-//                                .show();
-//                    } else {
-//
-//                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
-//                        builder.setTitle("알림")
-//                                .setMessage("예기치 못한 오류가 발생하였습니다.")
-//                                .setPositiveButton("확인", null)
-//                                .create()
-//                                .show();
-//
-//                    }
+                    //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
+                    try {
+                        createAccountItem.K_kid = Long.parseLong(result.getKkid());
+                    } catch (NumberFormatException e) {
+                        return;
+                    }
+                    System.out.println(result.getKkid());
+
+                    Toast.makeText(SigninTeacherActivity.this, createAccountItem.Name + "선생님 환영합니다.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(SigninTeacherActivity.this, MainParent.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                    SigninTeacherActivity.this.finish();
+
+                    } else if (result.getStatus().equals(300)) {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        builder.setTitle("알림")
+                                .setMessage("아이디가 존재하지 않습니다.")
+                                .setPositiveButton("확인", null)
+                                .create()
+                                .show();
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+
+                    } else if (result.getStatus().equals(400)) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        builder.setTitle("알림")
+                                .setMessage("비밀번호가 일치하지 않습니다.")
+                                .setPositiveButton("확인", null)
+                                .create()
+                                .show();
+                    } else {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SigninTeacherActivity.this);
+                        builder.setTitle("알림")
+                                .setMessage("예기치 못한 오류가 발생하였습니다.")
+                                .setPositiveButton("확인", null)
+                                .create()
+                                .show();
+
+                    }
                 }
             }
 
@@ -310,7 +296,7 @@ public class SigninTeacherActivity extends AppCompatActivity {
                     setPreference("token", token);
                     setPreference("autoLoginId", userId);
                     setPreference("autoLoginPw", userPassword);
-
+                    setPreference("autoUser","t");
                     createAccountItem.User = "t";
                     createAccountItem.Name = result.getTname();
                     createAccountItem.Email = result.getTemail();

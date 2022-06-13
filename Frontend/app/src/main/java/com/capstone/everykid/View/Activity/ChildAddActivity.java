@@ -1,7 +1,7 @@
 package com.capstone.everykid.View.Activity;
 
 import static android.content.ContentValues.TAG;
-
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
@@ -169,13 +169,25 @@ public class ChildAddActivity extends AppCompatActivity {
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
             imageview.setImageURI(selectedImageUri);
+            setPreference("childUri", selectedImageUri.toString());
             createAccountItem.C_uri=selectedImageUri;
             try {
-
             } catch (Exception e) {
 
             }
         }
+    }
+    public void setPreference(String key, String value) {
+        SharedPreferences pref = getSharedPreferences("CHILD", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    //내부 저장소에 저장된 데이터 가져오기
+    public String getPreferenceString(String key) {
+        SharedPreferences pref = getSharedPreferences("CHILD", MODE_PRIVATE);
+        return pref.getString(key, "");
     }
 }
 /*

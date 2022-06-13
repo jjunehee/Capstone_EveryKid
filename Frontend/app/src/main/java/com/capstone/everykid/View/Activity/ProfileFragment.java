@@ -213,7 +213,7 @@ public class ProfileFragment extends Fragment {
 
                             @Override
                             public void onResponse(Call<String> call, Response<String> response) {
-                                if (response.isSuccessful()) {
+                                if (response.isSuccessful() && response.body()!= null) {
                                     //통신이 성공된 경우
                                     String result = response.body();
                                     System.out.println("아이 삭제 통신 완료");
