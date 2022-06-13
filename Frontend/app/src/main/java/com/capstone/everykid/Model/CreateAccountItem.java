@@ -1,5 +1,7 @@
 package com.capstone.everykid.Model;
 
+import android.net.Uri;
+
 public class CreateAccountItem{
     public static String User="";
     public static String Name="";
@@ -15,5 +17,9 @@ public class CreateAccountItem{
     public static String Kindergarten;
 
     public static String porfileUri;
+
+    public String getPofileUrl() {
+        return porfileUri;
+    }
 
 }

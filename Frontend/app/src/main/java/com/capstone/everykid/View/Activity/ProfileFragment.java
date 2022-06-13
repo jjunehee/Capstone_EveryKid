@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.capstone.everykid.Model.CreateAccountItem;
 import com.capstone.everykid.Model.G;
 import android.widget.Button;
@@ -25,14 +27,17 @@ import android.widget.Toast;
 
 import com.capstone.everykid.Model.LoginResponse;
 import com.capstone.everykid.Model.LoginResponseTeacher;
+import com.capstone.everykid.Model.MessageItem;
 import com.capstone.everykid.Model.RecyclerItem;
 import com.capstone.everykid.R;
 import com.capstone.everykid.View.Adapter.RecyclerImageTextAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
-//    RecyclerView mRecyclerView=null;
+    private static final int RESULT_OK = -1;
+    //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
 //    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
       TextView p_name, kinder_name, user_status,user_kinder,teacher_name;
@@ -40,6 +45,9 @@ public class ProfileFragment extends Fragment {
       ImageView p_img, child_img, kinder_img;
       Button info_btn, add_btn, profile_btn, logout_btn,teacher_btn;
       CreateAccountItem createAccountItem;
+      Uri imgUri;
+
+    boolean isChanged= false; //프로필을 변경한 적이 있는가?
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -57,6 +65,7 @@ public class ProfileFragment extends Fragment {
         //mList= new ArrayList<RecyclerItem>();
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,8 +103,8 @@ public class ProfileFragment extends Fragment {
 
         kinder_name.setText(createAccountItem.K_name);
 
-        //프로필 사진 배경에 맞게 자르기
-        p_img.setClipToOutline(true);
+        //프로필 사진
+        Glide.with(this).load(pofileUrl).into(p_img);
         child_img.setClipToOutline(true);
 
         //프로필 정보 확인 버튼
@@ -106,6 +115,8 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
 
         //선생님 정보 확인 버튼
         teacher_btn.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +156,8 @@ public class ProfileFragment extends Fragment {
             }
         });
         return view;
+
+
     }
 
 }

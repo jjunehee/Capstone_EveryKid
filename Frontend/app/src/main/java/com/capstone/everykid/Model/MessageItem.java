@@ -6,7 +6,7 @@ public class MessageItem {
     String chatid;
     String message;
     String time;
-    String pofileUrl;
+    public static String pofileUrl;
 
     public MessageItem(String name, String chatid, String message, String time, String pofileUrl) {
         this.name = name;
