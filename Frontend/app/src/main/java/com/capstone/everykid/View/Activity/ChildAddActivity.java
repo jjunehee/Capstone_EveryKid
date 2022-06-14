@@ -159,7 +159,7 @@ public class ChildAddActivity extends AppCompatActivity {
 
     //갤러리 여는 버튼
     public void opengallery(View v) {
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        Intent intent = new Intent(Intent.ACTION_PICK);
         intent.addFlags(intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.addFlags(intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
 

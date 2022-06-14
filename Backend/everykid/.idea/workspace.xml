@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes" />
-=======
-    <list default="true" id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="" />
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
+    <list default="true" id="7821f536-3cbb-4698-9ade-3e38887cd4c7" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
+    </list>
+    <list id="3383c3ac-f463-440f-988a-cb606a6dfb36" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

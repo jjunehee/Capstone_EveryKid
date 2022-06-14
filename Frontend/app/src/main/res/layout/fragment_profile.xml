@@ -30,7 +30,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/round_background"
                     android:src="@drawable/default_profile" />
 
                 <LinearLayout

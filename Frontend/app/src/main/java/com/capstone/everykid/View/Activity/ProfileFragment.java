@@ -143,7 +143,12 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
             child_name.setText(createAccountItem.C_name);
             child_age.setText(createAccountItem.C_age + "세");
-            child_img.setImageURI(createAccountItem.C_uri);
+            if(createAccountItem.C_uri!=null){
+                child_img.setImageURI(createAccountItem.C_uri);
+            }else{
+                child_img.setImageResource(R.drawable.default_profile);
+            }
+
 //            if (!getPreferenceString("childImage").equals("")){
 //                String uri = getPreferenceString("childImage");
 //                Uri imageUri = Uri.parse(uri);
@@ -153,9 +158,14 @@ public class ProfileFragment extends Fragment {
 //            }
 
 
+            if(pofileUrl!=null){
+                Glide.with(this).load(pofileUrl).into(p_img);
+            }else{
+                Glide.with(this).load(R.drawable.default_profile).into(p_img);
+            }
         //프로필 사진
-        Glide.with(this).load(pofileUrl).into(p_img);
-        child_img.setClipToOutline(true);
+
+
         }
         if (createAccountItem.User.equals("t")) {
             user_status.setText("선생님");
@@ -177,16 +187,6 @@ public class ProfileFragment extends Fragment {
         });
 
 
-
-        //선생님 정보 확인 버튼
-        teacher_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), InfoActivity.class);
-                intent.putExtra("info", "teacherinfo");
-                startActivity(intent);
-            }
-        });
 
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
