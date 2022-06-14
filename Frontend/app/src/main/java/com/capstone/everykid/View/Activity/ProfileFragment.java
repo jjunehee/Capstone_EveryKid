@@ -7,10 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
-<<<<<<< HEAD
-=======
 import android.content.SharedPreferences;
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -58,20 +55,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileFragment extends Fragment {
-<<<<<<< HEAD
+
     private static final int RESULT_OK = -1;
-    //    RecyclerView mRecyclerView=null;
-//    RecyclerImageTextAdapter mAdapter=null;
-//    ArrayList<RecyclerItem>mList= new ArrayList<RecyclerItem>();
-      TextView p_name, kinder_name, user_status,user_kinder,teacher_name;
-      View view;
-      ImageView p_img, child_img, kinder_img;
-      Button info_btn, add_btn, profile_btn, logout_btn,teacher_btn;
-      CreateAccountItem createAccountItem;
-      Uri imgUri;
 
     boolean isChanged= false; //프로필을 변경한 적이 있는가?
-=======
+
 
     //    RecyclerView mRecyclerView=null;
 //    RecyclerImageTextAdapter mAdapter=null;
@@ -86,7 +74,7 @@ public class ProfileFragment extends Fragment {
     SharedPreferences.Editor editor;
     FrameLayout frame, frame2;
     LinearLayout linear, kidprofile;
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -165,11 +153,9 @@ public class ProfileFragment extends Fragment {
 //            }
 
 
-<<<<<<< HEAD
         //프로필 사진
         Glide.with(this).load(pofileUrl).into(p_img);
         child_img.setClipToOutline(true);
-=======
         }
         if (createAccountItem.User.equals("t")) {
             user_status.setText("선생님");
@@ -180,7 +166,6 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
         }
         kinder_name.setText(createAccountItem.K_name);
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
 
         //프로필 정보 확인 버튼
         profile_btn.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +176,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-<<<<<<< HEAD
 
 
         //선생님 정보 확인 버튼
@@ -204,8 +188,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-=======
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
 //        유치원 정보 버튼
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override

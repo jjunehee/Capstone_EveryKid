@@ -1,9 +1,5 @@
 package com.capstone.everykid.Model;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 538deaf3d04d866cea2408b90b3a6e14736ec340
 import android.net.Uri;
 
 public class CreateAccountItem{
