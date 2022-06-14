@@ -29,6 +29,7 @@ public class MainParent extends AppCompatActivity {
 
         try {
             flag = intent.getExtras().getInt("cmFlag");
+            child = intent.getExtras().getInt("child");
         } catch(NullPointerException e) {
 
         }
@@ -44,26 +45,22 @@ public class MainParent extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.containers, communityFragment).commit();
             navigationBarView.setSelectedItemId(R.id.community);
             flag = 0;
-        } else {
+        } else if(child ==1){
+            child = 0;
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.profile);
+        }
+        else if(childadd==1){
+            childadd = 0;
+            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
+            navigationBarView.setSelectedItemId(R.id.profile);
+        }
+        else {
             getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
             navigationBarView.setSelectedItemId(R.id.home);
         }
 
-//        try {
-//            child = intent.getExtras().getInt("child");
-//        } catch(NullPointerException e) {
-//
-//        }
-//
-//            if(child == 1) {//아이 삭제하고 온 경우
-//            child = 0;
-//            getSupportFragmentManager().beginTransaction().replace(R.id.containers,profileFragment).commit();
-//            navigationBarView.setSelectedItemId(R.id.profile);
-//
-//        } else {
-//            getSupportFragmentManager().beginTransaction().replace(R.id.containers, homeFragment).commit();
-//            navigationBarView.setSelectedItemId(R.id.home);
-//        }
+
 
 
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
