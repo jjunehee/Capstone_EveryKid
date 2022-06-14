@@ -69,8 +69,8 @@ public class ParentService {
                         .findByKKID(parent.getKKID())
                         .orElseGet(Kindergarten::new);
         Auth auth = authRepository
-                        .findByParentPKID(parent.getPKID())
-                        .orElseGet(Auth::new);
+                .findByParentPKID(parent.getPKID())
+                .orElseGet(Auth::new);
 
         Child child = childRepository
                 .findByPKID(parent.getPKID()).orElseGet(Child::new);
@@ -107,6 +107,7 @@ public class ParentService {
                     .tNAME(parent.getTNAME())
                     .cAGE(child.getCAGE())
                     .cNAME(child.getCNAME())
+                    .cIMG(child.getCIMG())
                     .build();
 
         } else {

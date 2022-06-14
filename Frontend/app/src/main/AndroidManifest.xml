@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.capstone.everykid">
+    package="com.capstone.everykid"
+    >
     <queries>
-        <provider android:authorities="kr.co.softcampus.dbprovider"/>
+        <provider android:authorities="com.google.android.apps.photos.contentprovider"
+            />
     </queries>
+
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />

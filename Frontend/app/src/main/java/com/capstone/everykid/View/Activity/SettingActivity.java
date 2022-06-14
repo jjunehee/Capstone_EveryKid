@@ -2,6 +2,8 @@ package com.capstone.everykid.View.Activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -62,10 +64,15 @@ public class SettingActivity extends AppCompatActivity {
     public void ok(View v){
         finish();
     }
+
+
     //수정버튼
     public void update(View v){
         saveData();
+        finish();
     }
+
+
     public void OpenPhoto(View v){
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");

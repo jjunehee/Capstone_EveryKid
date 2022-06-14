@@ -135,6 +135,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.K_phone=result.getKphone();
                         createAccountItem.K_address=result.getKaddress();
                         createAccountItem.Tname=result.getPtname();
+                        createAccountItem.C_img=result.getC_img();
 
                         createAccountItem.C_name=result.getC_name();
                         createAccountItem.C_age=result.getC_age();
@@ -180,6 +181,7 @@ public class SigninParentActivity extends AppCompatActivity {
                         createAccountItem.Tname=result.getPtname();
                         createAccountItem.C_name=result.getC_name();
                         createAccountItem.C_age=result.getC_age();
+                        createAccountItem.C_img=result.getC_img();
                         //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                         try {
                             createAccountItem.K_kid = Long.parseLong(result.getKkid());
@@ -326,6 +328,7 @@ public class SigninParentActivity extends AppCompatActivity {
                     createAccountItem.Tname=result.getPtname();
                     createAccountItem.C_name=result.getC_name();
                     createAccountItem.C_age=result.getC_age();
+                    createAccountItem.C_img=result.getC_img();
                     //로그인할 때 가끔씩 NumberFormatException이 생김. 이유를 모르겠음.
                     try {
                         createAccountItem.K_kid = Long.parseLong(result.getKkid());

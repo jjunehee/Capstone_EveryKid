@@ -38,7 +38,7 @@ public class LoginResponse { //서버로 부터 받을 데이터들
         this.c_age = c_age;
     }
 
-    @SerializedName("c_IMG")
+    @SerializedName("cimg")
     public String c_img;
     public String getC_img() {
         return c_img;

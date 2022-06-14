@@ -7,7 +7,8 @@ import lombok.Setter;
 @Setter
 public class RegisterCFormDto {
     public Long pKID;
-   // private String cIMG;
+    // private String cIMG;
     private String CNAME;
     private String CAGE;
+    private String CIMG;
 }

@@ -19,6 +19,7 @@ public class CreateAccountItem{
     public static String C_name;
     public static String C_age;
     public static Uri C_uri;
+    public static String C_img;
     public static Long P_kid;
     public static String porfileUri;
 

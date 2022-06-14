@@ -3,7 +3,9 @@ package com.capstone.everykid.View.Activity;
 import static android.content.ContentValues.TAG;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -32,13 +34,17 @@ import com.capstone.everykid.R;
 import com.capstone.everykid.RetrofitAPI.RegisterInterface;
 import com.capstone.everykid.RetrofitAPI.RetrofitAPI;
 import com.capstone.everykid.RetrofitClient;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -59,7 +65,7 @@ public class ChildAddActivity extends AppCompatActivity {
     private Button btn;
     private PreferenceHelper preferenceHelper;
     private Intent intent, intent2;
-    private String pkid = Long.toString(createAccountItem.P_kid);
+    private String pkid = Long.toString(createAccountItem.P_kid), img;
 
 
     @Override
@@ -105,7 +111,7 @@ public class ChildAddActivity extends AppCompatActivity {
                 .build();
 
         RegisterInterface api = retrofit.create(RegisterInterface.class);
-        Call<String> call = api.setChildData(pkid, name1, age1);
+        Call<String> call = api.setChildData(pkid, name1, age1, img);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull retrofit2.Response<String> response) {
@@ -113,7 +119,7 @@ public class ChildAddActivity extends AppCompatActivity {
                     String jsonResponse = response.body();
                     createAccountItem.C_name = name1;
                     createAccountItem.C_age = age1;
-                    createAccountItem.Child = "child";
+
                     Log.e(TAG, "등록 완료");
                     Toast.makeText(ChildAddActivity.this, "아이 등록 완료", Toast.LENGTH_SHORT).show();
                     try {
@@ -162,7 +168,6 @@ public class ChildAddActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.addFlags(intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.addFlags(intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
-
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         startActivityForResult(intent, GET_GALLERY_IMAGE);
     }
@@ -173,12 +178,15 @@ public class ChildAddActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri selectedImageUri = data.getData();
+
             String uri = selectedImageUri.toString();
 
-            imageview.setImageURI(selectedImageUri);
+            img = uri; //img변수에 uri 스트링으로 바꿔서 저장
+            createAccountItem.C_img=uri;
+            System.out.println("==========================="+createAccountItem.C_img);
+            Picasso.get().load(createAccountItem.C_img).into(imageview);
+            // imageview.setImageURI(selectedImageUri);
 
-            setPreference("childImage", uri);
-            createAccountItem.C_uri=selectedImageUri;
             try {
             } catch (Exception e) {
 
@@ -192,6 +200,8 @@ public class ChildAddActivity extends AppCompatActivity {
         editor.apply();
         editor.commit();
     }
+
+
 }
 /*
     private Bitmap resize(Bitmap bm){

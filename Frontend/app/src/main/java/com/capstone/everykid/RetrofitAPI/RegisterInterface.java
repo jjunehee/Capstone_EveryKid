@@ -40,7 +40,8 @@ public interface RegisterInterface
     Call<String> setChildData(
             @Field("PKID") String pkid,
             @Field("CNAME") String name,
-            @Field("CAGE") String age
+            @Field("CAGE") String age,
+            @Field("CIMG") String img
     );
     @FormUrlEncoded
     @POST("/child/delete")

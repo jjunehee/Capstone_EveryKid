@@ -143,8 +143,29 @@ public class ProfileFragment extends Fragment {
             add_btn.setVisibility(View.GONE);
             child_name.setText(createAccountItem.C_name);
             child_age.setText(createAccountItem.C_age + "세");
-            if(createAccountItem.C_uri!=null){
-                child_img.setImageURI(createAccountItem.C_uri);
+           // Picasso.get().load(createAccountItem.C_img).into(child_img);
+
+//            if(createAccountItem.C_uri!=null){
+//                child_img.setImageURI(createAccountItem.C_uri);
+//            }else{
+//                child_img.setImageResource(R.drawable.default_profile);
+//            }
+
+            if(createAccountItem.C_img!=null){
+                Uri imageUri = Uri.parse(createAccountItem.C_img);
+                //child_img.setImageURI(imageUri);
+
+
+                //Uri imgUri=Uri.parse("android.resource://my.package.name/"+R.drawable.default_profile);
+                //child_img.setImageResource(R.drawable.default_profile);
+                //child_img.setImageURI(imgUri);
+
+                Picasso.get().load(createAccountItem.C_img).into(child_img);
+//                Glide.with(this)
+//                        .load(createAccountItem.C_img)
+//                        .into(child_img);
+
+                System.out.println("uri 받아짐");
             }else{
                 child_img.setImageResource(R.drawable.default_profile);
             }

@@ -30,12 +30,16 @@ public class Child {
     @Column(name ="P_KID")
     private Long PKID;
 
+    @Column(name ="C_IMG")
+    private String cIMG;
+
 
     public static Child createChild(RegisterCFormDto registerCFormDto){
         Child child = new Child();
         child.setCNAME(registerCFormDto.getCNAME());
         child.setCAGE(registerCFormDto.getCAGE());
         child.setPKID(registerCFormDto.getPKID());
+        child.setCIMG(registerCFormDto.getCIMG());
         child.setCKID(registerCFormDto.getPKID());
         return child;
     }
